@@ -1,0 +1,16 @@
+#
+# Edit Lock-Stake file. CAUTION: Please do not change.
+#
+# Information about current Edit Lock Owner.
+#
+LockStakeVersion               1.1
+LoginName                      Vedant_int
+HostName                       nsdcs.iiti.ac.in
+ProcessIdentifier              13572
+ProcessCreationTime_UTC        1780903473
+ProcessCreationTime_Readable   Mon Jun  8 12:54:33 2026 IST
+AppIdentifier                  /progs/cadence/IC618/tools.lnx86/dfII/bin/64bit/virtuoso
+OSType                         lnx86
+ReasonForPlacingEditLock       
+FilePathUsedToEditLock         /home/Vedant_int/Desktop/VEDANT_WORK/VEDANT/cmos_inv/physConfig/physExpand.cfg
+TimeEditLocked                 Tue Jun  9 18:04:31 2026 IST

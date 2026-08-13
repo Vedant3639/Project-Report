@@ -1,0 +1,16 @@
+#
+# Edit Lock-Stake file. CAUTION: Please do not change.
+#
+# Information about current Edit Lock Owner.
+#
+LockStakeVersion               1.1
+LoginName                      Vedant_int
+HostName                       nsdcs.iiti.ac.in
+ProcessIdentifier              29841
+ProcessCreationTime_UTC        1784542576
+ProcessCreationTime_Readable   Mon Jul 20 15:46:16 2026 IST
+AppIdentifier                  OA File System Design Manager
+OSType                         unix
+ReasonForPlacingEditLock       OpenAccess edit lock
+FilePathUsedToEditLock         /home/Vedant_int/Desktop/VEDANT_WORK/VEDANT_NEW/SRAM_CHIP/layout/layout.oa.cdslck
+TimeEditLocked                 Mon Jul 20 15:46:36 2026 IST

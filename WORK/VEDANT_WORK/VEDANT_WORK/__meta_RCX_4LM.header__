@@ -1,0 +1,15 @@
+
+
+// +++ CUSTOMIZATION SETTINGS START +++
+
+#define "4M1L" 
+#define "PEX_TECH" ts18scl
+#define "LVS_TECH" ts18scl
+#define "PEX_TYPE" USG
+#undefine "HSPICE_SIM"
+
+// +++ CUSTOMIZATION SETTINGS END +++
+
+DRC ICSTATION YES
+
+INCLUDE "/progs/FOUNDRY/SCL_FILES/scl_pdk/design_kit/pex_rsf/calibre_xrc/RCX_4LM.header"

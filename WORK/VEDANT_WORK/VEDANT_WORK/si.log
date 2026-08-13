@@ -1,0 +1,51 @@
+Virtuoso Framework License (111) was checked out successfully. Total checkout time was 1.49s.
+MPS timeout is set to '60' seconds.
+*WARNING* LIB avTech from File /home/Vedant_int/Desktop/VEDANT_WORK/cds.lib Line 30 redefines
+LIB avTech from the same file (defined earlier.)
+*WARNING* The directory: '/home/Vedant_int/Desktop/VEDANT_WORK/cmos_inv' does not exist
+	but was defined in libFile '/home/Vedant_int/Desktop/VEDANT_WORK/cds.lib' for Lib 'cmos_inv'.
+*WARNING* The directory: '/home/Vedant_int/Desktop/VEDANT_WORK/VEDANT2' does not exist
+	but was defined in libFile '/home/Vedant_int/Desktop/VEDANT_WORK/cds.lib' for Lib 'VEDANT2'.
+*WARNING* The directory: '/progs/cadence/INCISIVE152/tools/affirma_ams/etc/connect_lib/connectLib' does not exist
+	but was defined in libFile '/home/Vedant_int/Desktop/VEDANT_WORK/cds.lib' for Lib 'connectLib'.
+*WARNING* LIB avTech from File /home/Vedant_int/Desktop/VEDANT_WORK/cds.lib Line 30 redefines
+LIB avTech from the same file (defined earlier.)
+*WARNING* The directory: '/home/Vedant_int/Desktop/VEDANT_WORK/cmos_inv' does not exist
+	but was defined in libFile '/home/Vedant_int/Desktop/VEDANT_WORK/cds.lib' for Lib 'cmos_inv'.
+*WARNING* The directory: '/home/Vedant_int/Desktop/VEDANT_WORK/VEDANT2' does not exist
+	but was defined in libFile '/home/Vedant_int/Desktop/VEDANT_WORK/cds.lib' for Lib 'VEDANT2'.
+*WARNING* The directory: '/progs/cadence/INCISIVE152/tools/affirma_ams/etc/connect_lib/connectLib' does not exist
+	but was defined in libFile '/home/Vedant_int/Desktop/VEDANT_WORK/cds.lib' for Lib 'connectLib'.
+Loading ts018_scl_prim/libInit.il ...
+	Loading ts018_scl_prim/loadCxt.ile ... done!
+	Loading context 'ts018_scl_prim' from library 'ts018_scl_prim' ... done!
+	Loading context 'pdkUtils' from library 'ts018_scl_prim' ... done!
+	Loading ts018_scl_prim/libInitCustomExit.il ... *WARNING* Cannot find /progs/cadence/IC618/tools.lnx86/dfII/etc/tools/hspiceS directory to load environment variables
+*WARNING* envSetVal: could not find tool[.partition] 'hspiceS.opts'
+*WARNING* Cannot find /progs/cadence/IC618/tools.lnx86/dfII/etc/tools/eldo directory to load environment variables
+*WARNING* envSetVal: could not find tool[.partition] 'eldo.opts'
+*WARNING* Cannot find /progs/cadence/IC618/tools.lnx86/dfII/etc/tools/eldoD directory to load environment variables
+**
+Attach user init procedure to Virtuoso CDL Out form**
+done!
+Loaded ts018_scl_prim/libInit.il successfully!
+*WARNING* envSetVal: could not find tool[.partition] 'eldoD.opts'
+Running Artist Hierarchical Netlisting ...
+Loading cdf.cxt 
+WARNING (AUCDL-42): Terminal BL0 appearing in CDF termOrder for 
+		component   : 6TSRAM_ARRAY
+		in cellview : schematic
+		of library  : VEDANT_NEW
+is either invalid or duplicated. CDF termOrder for this component will be ignored.
+Ensure that termOrder matches actual terminals in cellview and re-netlist to reflect any change in termOrder.
+Nets will be printed in default terminal order for this component.
+
+WARNING (AUCDL-43): Terminal VSS0 appearing in CDF termOrder for 
+		component   : pvda
+		in cellview : symbol
+		of library  : importpads
+is invalid. 
+Ensure that this CDF has same terminal names as specified in this cell view.
+Nets will be printed in default terminal order for this component.
+
+End netlisting Jul 20 04:14:56 2026

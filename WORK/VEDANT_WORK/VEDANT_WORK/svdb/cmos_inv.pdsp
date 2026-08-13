@@ -1,0 +1,31 @@
+* Calibre pushdown separate-properties (back-annotation) data
+***************************************
+*
+* These lvs-actionable properties, indexed by DEVICE element(model) will be kept in the netlist:
+*
+* KEEP_PROP_BEGIN
+* KEEP_PROP C(CH) w l
+* KEEP_PROP C(CH3) w l
+* KEEP_PROP C(CL) w l
+* KEEP_PROP C(CL3) w l
+* KEEP_PROP D(DN) A P
+* KEEP_PROP D(DP) A P
+* KEEP_PROP D(N3) A P
+* KEEP_PROP D(NS) A P
+* KEEP_PROP D(P3) A P
+* KEEP_PROP D(PS) A P
+* KEEP_PROP Q(VD) M
+* KEEP_PROP Q(VD10) M
+* KEEP_PROP Q(VD5) M
+* KEEP_PROP Q(VH) M
+* KEEP_PROP Q(VH10) M
+* KEEP_PROP Q(VH5) M
+* KEEP_PROP Q(VNPN18_S) A P
+* KEEP_PROP Q(VPNP18_S) A P
+* KEEP_PROP Q(VPNP33_S) A P
+* KEEP_PROP_END
+*
+.SUBCKT cmos_inv
+* nothing transcripted
+.ENDS
+***************************************

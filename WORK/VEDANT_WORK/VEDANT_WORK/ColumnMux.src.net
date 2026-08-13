@@ -1,0 +1,47 @@
+************************************************************************
+* auCdl Netlist:
+* 
+* Library Name:  VEDANT
+* Top Cell Name: ColumnMux
+* View Name:     schematic
+* Netlisted on:  Jul  4 21:01:12 2026
+************************************************************************
+
+*.EQUATION
+*.SCALE METER
+*.MEGA
+.PARAM
+
+
+
+************************************************************************
+* Library Name: VEDANT
+* Cell Name:    CMOS_INV
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT CMOS_INV out vdd vin vss
+*.PININFO vdd:I vin:I vss:I out:O
+MM1 out vin vss vss N W=0.42 L=0.18 m=1
+MM0 out vin vdd vdd P W=0.42 L=0.18 m=1
+.ENDS
+
+************************************************************************
+* Library Name: VEDANT
+* Cell Name:    ColumnMux
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT ColumnMux BL BLB SA_BL SA_BLB VDD VSS WD_BL WD_BLB YSR
+*.PININFO VDD:I VSS:I YSR:I SA_BL:O SA_BLB:O BL:B BLB:B WD_BL:B WD_BLB:B
+MM3 BLB YSR WD_BLB VSS N W=0.42 L=0.18 m=1
+MM2 WD_BL YSR BL VSS N W=0.42 L=0.18 m=1
+MM1 SA_BLB YSR_BAR BLB VSS N W=0.42 L=0.18 m=1
+MM0 BL YSR_BAR SA_BL VSS N W=0.42 L=0.18 m=1
+MM7 BLB YSR_BAR WD_BLB VDD P W=0.42 L=0.18 m=1
+MM6 WD_BL YSR_BAR BL VDD P W=0.42 L=0.18 m=1
+MM5 SA_BLB YSR BLB VDD P W=0.42 L=0.18 m=1
+MM4 BL YSR SA_BL VDD P W=0.42 L=0.18 m=1
+XI0 YSR_BAR VDD YSR VSS / CMOS_INV
+.ENDS
+

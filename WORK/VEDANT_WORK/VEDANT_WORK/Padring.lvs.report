@@ -1,0 +1,523 @@
+
+
+
+                  ##################################################
+                  ##                                              ##
+                  ##         C A L I B R E    S Y S T E M         ##
+                  ##                                              ##
+                  ##             L V S   R E P O R T              ##
+                  ##                                              ##
+                  ##################################################
+
+
+
+REPORT FILE NAME:         Padring.lvs.report
+LAYOUT NAME:              Padring.sp ('Padring')
+SOURCE NAME:              /home/Vedant_int/Desktop/VEDANT_WORK/netlist.cdl ('Padring')
+RULE FILE:                _LVS_iopad.header_
+CREATION TIME:            Sun Jul 19 12:38:40 2026
+CURRENT DIRECTORY:        /home/Vedant_int/Desktop/VEDANT_WORK
+USER NAME:                Vedant_int
+CALIBRE VERSION:          v2022.4_37.20    Fri Dec 2 17:41:13 PST 2022
+
+
+
+                               OVERALL COMPARISON RESULTS
+
+
+
+                  #   #         #####################  
+                   # #          #                   #  
+                    #           #     INCORRECT     #  
+                   # #          #                   #  
+                  #   #         #####################  
+
+
+  Error:    Connectivity errors.
+  Warning:  Ambiguity points were found and resolved arbitrarily.
+  Warning:  LVS property resolution maximum exceeded.
+
+
+**************************************************************************************************************
+                                      CELL  SUMMARY
+**************************************************************************************************************
+
+  Result         Layout                        Source
+  -----------    -----------                   --------------
+  INCORRECT      Padring                       Padring
+
+
+
+**************************************************************************************************************
+                                      LVS PARAMETERS
+**************************************************************************************************************
+
+
+o LVS Setup:
+
+   // LVS COMPONENT TYPE PROPERTY
+   // LVS COMPONENT SUBTYPE PROPERTY
+   // LVS PIN NAME PROPERTY
+   LVS POWER NAME                         "VDD" "vdd" "VCC" "vcc" "VDD!" "vdd!" "VCC!" "vcc!" "AVDD" "DVDD"
+   LVS GROUND NAME                        "GND" "gnd" "VSS" "vss" "GND!" "gnd!" "VSS!" "vss!" "AVSS" "DVSS"
+   LVS CELL SUPPLY                        NO
+   LVS RECOGNIZE GATES                    ALL
+   // LVS HCELL REPORT
+   LVS IGNORE PORTS                       YES
+   LVS CHECK PORT NAMES                   NO
+   LVS IGNORE TRIVIAL NAMED PORTS         NO
+   LVS BUILTIN DEVICE PIN SWAP            YES
+   LVS ALL CAPACITOR PINS SWAPPABLE       NO
+   LVS DISCARD PINS BY DEVICE             NO
+   LVS SOFT SUBSTRATE PINS                NO
+   LVS INJECT LOGIC                       YES
+   LVS EXPAND UNBALANCED CELLS            YES
+   LVS FLATTEN INSIDE CELL                NO
+   LVS EXPAND SEED PROMOTIONS             NO
+   LVS PRESERVE PARAMETERIZED CELLS       NO
+   LVS GLOBALS ARE PORTS                  YES
+   LVS RELAX INITIAL CPOINTS              NONE
+   LVS REVERSE WL                         NO
+   // LVS NETLIST FILTER DEVICES          NO
+   // LVS PRESERVE BOX PORTS              NO
+   LVS SPICE PREFER PINS                  NO
+   LVS SPICE SLASH IS SPACE               YES
+   LVS SPICE ALLOW FLOATING PINS          YES
+   // LVS SPICE ALLOW INLINE PARAMETERS     
+   LVS SPICE ALLOW UNQUOTED STRINGS       NO
+   LVS SPICE CONDITIONAL LDD              NO
+   LVS SPICE CULL PRIMITIVE SUBCIRCUITS   NO
+   // LVS SPICE EXCLUDE CELL SOURCE
+   // LVS SPICE EXCLUDE CELL LAYOUT
+   LVS SPICE IMPLIED MOS AREA             NO
+   // LVS SPICE MULTIPLIER NAME
+   LVS SPICE OVERRIDE GLOBALS             NO
+   LVS SPICE REDEFINE PARAM               NO
+   LVS SPICE REPLICATE DEVICES            YES
+   LVS SPICE SCALE X PARAMETERS           NO
+   LVS SPICE STRICT WL                    NO
+   // LVS SPICE OPTION
+   LVS STRICT SUBTYPES                    NO
+   LVS EXACT SUBTYPES                     NO
+   LAYOUT CASE                            YES
+   SOURCE CASE                            YES
+   LVS COMPARE CASE                       NO
+   LVS COMPARE CASE STRICT                NO
+   LVS DOWNCASE DEVICE                    NO
+   LVS REPORT MAXIMUM                     2000
+   LVS PROPERTY RESOLUTION MAXIMUM        32
+   // LVS SIGNATURE MAXIMUM
+   LVS FILTER UNUSED OPTION               AB RC RE RG
+   LVS REPORT OPTION                      S
+   LVS REPORT UNITS                       YES
+   LVS SWAPPABLE HCELL PINS               GENERAL
+   // LVS NON USER NAME PORT
+   // LVS NON USER NAME NET
+   // LVS NON USER NAME INSTANCE
+   // LVS IGNORE DEVICE PIN
+   // LVS PREFER NETS FILTER SOURCE
+   // LVS PREFER NETS FILTER LAYOUT
+   LVS PREFER PORT NETS                   NO
+   LVS EXPAND ON ERROR                    NO
+   LVS EXPAND AMBIGUOUSLY HIGH SHORTED HCELLS NO
+
+   // Reduction
+
+   LVS REDUCE SERIES MOS                  NO
+   LVS REDUCE PARALLEL MOS                YES
+   LVS REDUCE SEMI SERIES MOS             NO
+   LVS REDUCE SPLIT GATES                 YES
+   LVS REDUCE PARALLEL BIPOLAR            YES
+   LVS REDUCE SERIES CAPACITORS           NO
+   LVS REDUCE PARALLEL CAPACITORS         NO
+   LVS REDUCE SERIES RESISTORS            YES
+   LVS REDUCE PARALLEL RESISTORS          YES
+   LVS REDUCE PARALLEL DIODES             YES
+
+   LVS REDUCE  Q(VD)  PARALLEL
+   LVS REDUCE  Q(VD5)  PARALLEL
+   LVS REDUCE  Q(VD10)  PARALLEL
+   LVS REDUCE  Q(VH)  PARALLEL
+   LVS REDUCE  Q(VH5)  PARALLEL
+   LVS REDUCE  Q(VH10)  PARALLEL
+   LVS REDUCE  C(CL)  PARALLEL
+   LVS REDUCE  C(CH)  PARALLEL
+   LVS REDUCE  C(CH3)  PARALLEL
+   LVS REDUCE  C(CL3)  PARALLEL
+   LVS REDUCE  C(CB)  PARALLEL
+   LVS REDUCTION PRIORITY                 PARALLEL
+   
+   LVS SHORT EQUIVALENT NODES             NO
+
+   // Trace Property
+
+   TRACE PROPERTY  c(cl)  w w 3
+   TRACE PROPERTY  c(cl)  l l 3
+   TRACE PROPERTY  c(cl3)  w w 3
+   TRACE PROPERTY  c(cl3)  l l 3
+   TRACE PROPERTY  c(ch)  w w 3
+   TRACE PROPERTY  c(ch)  l l 3
+   TRACE PROPERTY  c(ch3)  w w 3
+   TRACE PROPERTY  c(ch3)  l l 3
+   TRACE PROPERTY  r(rl)  r r 10
+   TRACE PROPERTY  r(rt)  r r 10
+   TRACE PROPERTY  r(ra)  r r 10
+   TRACE PROPERTY  r(rb)  r r 10
+   TRACE PROPERTY  r(rc)  r r 10
+   TRACE PROPERTY  r(rd)  r r 10
+   TRACE PROPERTY  r(re)  r r 10
+   TRACE PROPERTY  r(rg)  r r 10
+   TRACE PROPERTY  r(rh)  r r 10
+   TRACE PROPERTY  r(rw)  r r 10
+   TRACE PROPERTY  r(rf)  r r 10
+   TRACE PROPERTY  r(rk)  r r 10
+   TRACE PROPERTY  r(rm)  r r 10
+   TRACE PROPERTY  r(r1)  r r 10
+   TRACE PROPERTY  r(r2)  r r 10
+   TRACE PROPERTY  r(rb3)  r r 10
+   TRACE PROPERTY  r(ra3)  r r 10
+   TRACE PROPERTY  r(rc3)  r r 10
+   TRACE PROPERTY  r(rd3)  r r 10
+   TRACE PROPERTY  r(re3)  r r 10
+   TRACE PROPERTY  r(rg3)  r r 10
+   TRACE PROPERTY  r(rh3)  r r 10
+   TRACE PROPERTY  r(rw3)  r r 10
+   TRACE PROPERTY  r(rf3)  r r 10
+   TRACE PROPERTY  r(rk3)  r r 10
+   TRACE PROPERTY  r(rm3)  r r 10
+   TRACE PROPERTY  r(r3)  r r 10
+   TRACE PROPERTY  c(cb)  c c 6
+   TRACE PROPERTY  d(ns)  a a 10
+   TRACE PROPERTY  d(dn)  a a 10
+   TRACE PROPERTY  d(n3)  a a 10
+   TRACE PROPERTY  d(ps)  a a 10
+   TRACE PROPERTY  d(dp)  a a 10
+   TRACE PROPERTY  d(p3)  a a 10
+   TRACE PROPERTY  d(ns)  p p 10
+   TRACE PROPERTY  d(dn)  p p 10
+   TRACE PROPERTY  d(n3)  p p 10
+   TRACE PROPERTY  d(ps)  p p 10
+   TRACE PROPERTY  d(dp)  p p 10
+   TRACE PROPERTY  d(p3)  p p 10
+   TRACE PROPERTY  q(vd)  m m 0
+   TRACE PROPERTY  q(vd5)  m m 0
+   TRACE PROPERTY  q(vd10)  m m 0
+   TRACE PROPERTY  q(vh)  m m 0
+   TRACE PROPERTY  q(vh5)  m m 0
+   TRACE PROPERTY  q(vh10)  m m 0
+   TRACE PROPERTY  q(vpnp18_s)  a a 10
+   TRACE PROPERTY  q(vpnp33_s)  a a 10
+   TRACE PROPERTY  q(vnpn18_s)  a a 10
+   TRACE PROPERTY  q(vpnp18_s)  p p 10
+   TRACE PROPERTY  q(vpnp33_s)  p p 10
+   TRACE PROPERTY  q(vnpn18_s)  p p 10
+
+
+
+                   CELL COMPARISON RESULTS ( TOP LEVEL )
+
+
+
+                  #   #         #####################  
+                   # #          #                   #  
+                    #           #     INCORRECT     #  
+                   # #          #                   #  
+                  #   #         #####################  
+
+
+  Error:    Connectivity errors.
+  Warning:  Ambiguity points were found and resolved arbitrarily.
+  Warning:  LVS property resolution maximum exceeded.
+
+LAYOUT CELL NAME:         Padring
+SOURCE CELL NAME:         Padring
+
+--------------------------------------------------------------------------------------------------------------
+
+INITIAL NUMBERS OF OBJECTS
+--------------------------
+
+                Layout    Source         Component Type
+                ------    ------         --------------
+ Nets:             380       324    *
+
+ Instances:        720       720         MN (4 pins)
+                   672       672         MP (4 pins)
+                     8         8         C (2 pins)
+                   272       272         R (2 pins)
+                   816       112    *    D (2 pins)
+                ------    ------
+ Total Inst:      2488      1784
+
+
+NUMBERS OF OBJECTS AFTER TRANSFORMATION
+---------------------------------------
+
+                Layout    Source         Component Type
+                ------    ------         --------------
+ Nets:             260       260
+
+ Instances:        104       104         MN (4 pins)
+                    56        56         MP (4 pins)
+                     8         8         C (2 pins)
+                   208       208         R (2 pins)
+                     2         2         D (2 pins)
+                ------    ------
+ Total Inst:       378       378
+
+
+       * = Number of objects in layout different from number in source.
+
+
+
+**************************************************************************************************************
+                                 INCORRECT OBJECTS
+**************************************************************************************************************
+
+
+LEGEND:
+-------
+
+  ne  = Naming Error (same layout name found in source
+        circuit, but object was matched otherwise).
+
+
+**************************************************************************************************************
+                                   INCORRECT NETS
+
+DISC#  LAYOUT NAME                                               SOURCE NAME
+**************************************************************************************************************
+
+  1    Net 10                                                    VDD
+       --- 20 Connections On This Net ---                        --- 30 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       ** missing connection **                                  XI24/R28:pos
+       ** missing connection **                                  XI24/C3_5:pos
+       ** missing connection **                                  XI29/R28:pos
+       ** missing connection **                                  XI29/C3_5:pos
+       ** missing connection **                                  XI24/M4:d
+       ** missing connection **                                  XI29/M4:d
+       ** missing connection **                                  XI24/M16:b
+       ** missing connection **                                  XI24/M16:s
+       ** missing connection **                                  XI29/M16:b
+       ** missing connection **                                  XI29/M16:s
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+  2    Net 1                                                     VDDO
+       --- 164 Connections On This Net ---                       --- 154 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       X115/X5/C18(2289.755,472.725):pos                         ** missing connection **
+       X115/X1/R0(2249.375,508.600):pos                          ** missing connection **
+       X114/X5/C18(2099.755,472.725):pos                         ** missing connection **
+       X114/X1/R0(2059.375,508.600):pos                          ** missing connection **
+       X115/X13/X0/X0/M0(2258.895,505.570):b                     ** missing connection **
+       X115/X13/X0/X0/M0(2258.895,505.570):d                     ** missing connection **
+       X114/X13/X0/X0/M0(2068.895,505.570):b                     ** missing connection **
+       X114/X13/X0/X0/M0(2068.895,505.570):d                     ** missing connection **
+       X115/X8/X0/M0(2258.755,427.500):s                         ** missing connection **
+       X114/X8/X0/M0(2068.755,427.500):s                         ** missing connection **
+       
+
+
+
+**************************************************************************************************************
+                               INFORMATION AND WARNINGS
+**************************************************************************************************************
+
+
+                  Matched    Matched    Unmatched    Unmatched    Component
+                   Layout     Source       Layout       Source    Type
+                  -------    -------    ---------    ---------    ---------
+   Nets:              260        260            0            0
+
+   Instances:           4          4            0            0    MN(N)
+                      100        100            0            0    MN(NH)
+                        4          4            0            0    MP(P)
+                       52         52            0            0    MP(PH)
+                        8          8            0            0    C(CH)
+                       48         48            0            0    R(RE)
+                      160        160            0            0    R(RW)
+                        2          2            0            0    D(P3)
+                  -------    -------    ---------    ---------
+   Total Inst:        378        378            0            0
+
+
+o Statistics:
+
+   56 isolated layout nets were deleted.
+
+   1344 layout mos transistors were reduced to 112.
+     1232 mos transistors were deleted by parallel reduction.
+   1344 source mos transistors were reduced to 112.
+     1232 mos transistors were deleted by parallel reduction.
+
+   128 series layout resistors were reduced to 64.  64 connecting nets were deleted.
+   128 series source resistors were reduced to 64.  64 connecting nets were deleted.
+
+   816 parallel layout diodes were reduced to 2.
+   112 parallel source diodes were reduced to 2.
+
+   53 nets and 2 instances were matched arbitrarily.
+
+
+o Ambiguity Resolution Points:
+
+      (Each one of the following objects belongs to a group of indistinguishable objects.
+       The listed objects were matched arbitrarily by the Ambiguity Resolution feature of LVS.
+       Arbitrary matching may be prevented by assigning names to these objects or to adjacent nets).
+
+       Layout                                                    Source
+       ------                                                    ------
+
+                                     Nets
+                                     ----
+
+       X117/7                                                    XI28/U19_U22$11_gate
+       X119/6                                                    XI30/U31_U18_r1
+       X113/7                                                    XI27/U31_U18_r1
+       X112/8                                                    XI25/U33_U31_r2
+       X113/8                                                    XI27/U33_U31_r2
+       X118/7                                                    XI23/U32_U31_r2
+       X75/11                                                    XI44/U18_U79$3_gate
+       X71/11                                                    XI18/U18_U79$3_gate
+       X83/11                                                    XI37/U18_U79$3_gate
+       X79/11                                                    XI41/U18_U79$3_gate
+       X74/11                                                    XI45/U18_U79$3_gate
+       X70/11                                                    XI16/U18_U79$3_gate
+       X107/11                                                   XI15/U18_U79$3_gate
+       X82/11                                                    XI34/U18_U79$3_gate
+       X78/11                                                    XI46/U18_U79$3_gate
+       X69/11                                                    XI1/U18_U79$3_gate
+       X87/11                                                    XI20/U18_U79$3_gate
+       X96/11                                                    XI2/U18_U79$3_gate
+       X80/11                                                    XI47/U18_U79$3_gate
+       X68/11                                                    XI35/U18_U79$3_gate
+       X99/11                                                    XI39/U18_U79$3_gate
+       X93/11                                                    XI12/U18_U79$3_gate
+       X92/11                                                    XI48/U18_U79$3_gate
+       X67/11                                                    XI40/U18_U79$3_gate
+       X84/11                                                    XI36/U18_U79$3_gate
+       X89/11                                                    XI14/U18_U79$3_gate
+       X73/11                                                    XI6/U18_U79$3_gate
+       X66/11                                                    XI56/U18_U79$3_gate
+       X90/11                                                    XI13/U18_U79$3_gate
+       X102/11                                                   XI17/U18_U79$3_gate
+       X105/11                                                   XI3/U18_U79$3_gate
+       X65/11                                                    XI38/U18_U79$3_gate
+       X88/11                                                    XI54/U18_U79$3_gate
+       X97/11                                                    XI8/U18_U79$3_gate
+       X95/11                                                    XI42/U18_U79$3_gate
+       X64/11                                                    XI10/U18_U79$3_gate
+       X91/11                                                    XI7/U18_U79$3_gate
+       X106/11                                                   XI53/U18_U79$3_gate
+       X76/11                                                    XI49/U18_U79$3_gate
+       X63/11                                                    XI43/U18_U79$3_gate
+       X85/11                                                    XI22/U18_U79$3_gate
+       X104/11                                                   XI11/U18_U79$3_gate
+       X72/11                                                    XI33/U18_U79$3_gate
+       X62/11                                                    XI52/U18_U79$3_gate
+       X100/11                                                   XI21/U18_U79$3_gate
+       X101/11                                                   XI4/U18_U79$3_gate
+       X86/11                                                    XI19/U18_U79$3_gate
+       X61/11                                                    XI5/U18_U79$3_gate
+       X103/11                                                   XI51/U18_U79$3_gate
+       X98/11                                                    XI32/U18_U79$3_gate
+       X94/11                                                    XI0/U18_U79$3_gate
+       X60/11                                                    XI9/U18_U79$3_gate
+       X77/11                                                    XI31/U18_U79$3_gate
+
+
+                                   Instances
+                                   ---------
+
+       X117/X12/X2/R0(2211.025,1954.940)  R(RW)                  XI28/R2  R(RW)
+       X115/X3/R0(2306.515,508.600)  R(RW)                       XI24/R2  R(RW)
+
+
+
+**************************************************************************************************************
+                             DETAILED INSTANCE CONNECTIONS
+
+       LAYOUT NAME                                               SOURCE NAME
+**************************************************************************************************************
+
+          (This section contains detailed information about connections of
+           matched instances that are involved in net discrepancies).
+
+--------------------------------------------------------------------------------------------------------------
+
+       X114/X8/X0/M0(2068.755,427.500)  MN(NH)                   XI29/M4  MN(NH)
+         g: X114/6                                                 g: XI29/U30_U29_c2
+         d: 9                                                      s: VSSO
+         b: 9                                                      b: VSSO
+         s: 1                                                      ** VDDO **
+         ** 10 **                                                  d: VDD
+
+--------------------------------------------------------------------------------------------------------------
+
+       X115/X8/X0/M0(2258.755,427.500)  MN(NH)                   XI24/M4  MN(NH)
+         g: X115/6                                                 g: XI24/U30_U29_c2
+         d: 9                                                      s: VSSO
+         b: 9                                                      b: VSSO
+         s: 1                                                      ** VDDO **
+         ** 10 **                                                  d: VDD
+
+--------------------------------------------------------------------------------------------------------------
+
+       X114/X13/X0/X0/M0(2068.895,505.570)  MP(PH)               XI24/M16  MP(PH)
+         g: X114/8                                                 g: XI24/U19_U22$11_gate
+         s: 9                                                      d: VSSO
+         d: 1                                                      ** VDDO **
+         b: 1                                                      ** VDDO **
+         ** 10 **                                                  s: VDD
+         ** 10 **                                                  b: VDD
+
+--------------------------------------------------------------------------------------------------------------
+
+       X115/X13/X0/X0/M0(2258.895,505.570)  MP(PH)               XI29/M16  MP(PH)
+         g: X115/8                                                 g: XI29/U19_U22$11_gate
+         s: 9                                                      d: VSSO
+         d: 1                                                      ** VDDO **
+         b: 1                                                      ** VDDO **
+         ** 10 **                                                  s: VDD
+         ** 10 **                                                  b: VDD
+
+--------------------------------------------------------------------------------------------------------------
+
+       X114/X1/R0(2059.375,508.600)  R(RW)                       XI24/R28  R(RW)
+         neg: X114/8                                               neg: XI24/U19_U22$11_gate
+         pos: 1                                                    ** VDDO **
+         ** 10 **                                                  pos: VDD
+
+--------------------------------------------------------------------------------------------------------------
+
+       X114/X5/C18(2099.755,472.725)  C(CH)                      XI29/C3_5  C(CH)
+         neg: X114/6                                               neg: XI29/U30_U29_c2
+         pos: 1                                                    ** VDDO **
+         ** 10 **                                                  pos: VDD
+
+--------------------------------------------------------------------------------------------------------------
+
+       X115/X1/R0(2249.375,508.600)  R(RW)                       XI29/R28  R(RW)
+         neg: X115/8                                               neg: XI29/U19_U22$11_gate
+         pos: 1                                                    ** VDDO **
+         ** 10 **                                                  pos: VDD
+
+--------------------------------------------------------------------------------------------------------------
+
+       X115/X5/C18(2289.755,472.725)  C(CH)                      XI24/C3_5  C(CH)
+         neg: X115/6                                               neg: XI24/U30_U29_c2
+         pos: 1                                                    ** VDDO **
+         ** 10 **                                                  pos: VDD
+
+
+**************************************************************************************************************
+                                         SUMMARY
+**************************************************************************************************************
+
+Total CPU Time:      0 sec
+Total Elapsed Time:  0 sec

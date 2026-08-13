@@ -1,0 +1,5 @@
+# Automagically generated file: Please do not edit!
+pex_PexParam RUNDIR /home/Vedant_int/Desktop/VEDANT_WORK
+pex_PexParam LAYOUT_PRIMARY cmos_inv
+pex_PexParam TOOL xRC
+pex_PexParam CORNER_PDBS { {CMOS_INV "" CMOS_INV.pdb "" } } 

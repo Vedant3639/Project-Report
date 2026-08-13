@@ -1,0 +1,213 @@
+********************************************************************************
+Product   : Virtuoso(R) XStream Out
+Program   : @(#)$CDS: strmout version 6.1.8-64b 04/27/2021 19:14 (cpgsrv11) $
+          : sub-version  IC6.1.8-64b.500.18 
+Started at: 09-Jul-2026  17:15:38
+User Name : Vedant_int
+Host Name : nsdcs.iiti.ac.in
+Directory : /home/Vedant_int/Desktop/VEDANT_WORK
+CADENCE Design Systems, Inc.
+********************************************************************************
+Info: Cellview Rev Num:99,  Tech Rev Num:59
+
+
+                       Individual Cell Statistics - Basic Objects
+---------------------------------------------------------------------------------------------------------------------------------------
+Library/Cell/View               Instance Array   Polygon  Rect   Path   PathSeg   Text   TextDisplay   Line   Dot   Arc   Donut   Ellipse 
+---------------------------------------------------------------------------------------------------------------------------------------
+ts018_scl_prim/M2_M1_S/layout   0        0       0        3      0      0         0      0             0      0     0     0       0       
+VEDANT/Precharge_Circuit/layout 4        0       0        0      0      14        2      0             0      0     0     0       0       
+VEDANT/SenseAmplifier/layout    5        0       0        2      0      32        6      0             0      0     0     0       0       
+ts018_scl_prim/ML_M3_S/layout   0        0       0        3      0      0         0      0             0      0     0     0       0       
+ts018_scl_prim/M1_PO_4X/layout  0        0       0        3      0      0         0      0             0      0     0     0       0       
+ts018_scl_prim/M3_M2_S/layout   0        0       0        3      0      0         0      0             0      0     0     0       0       
+ts018_scl_prim/M3_M2_S/layout   0        0       0        3      0      0         0      0             0      0     0     0       0       
+ts018_scl_prim/M3_M2_S/layout   0        0       0        3      0      0         0      0             0      0     0     0       0       
+ts018_scl_prim/M1_PO_4X/layout  0        0       0        3      0      0         0      0             0      0     0     0       0       
+ts018_scl_prim/M2_M1_S/layout   0        0       0        3      0      0         0      0             0      0     0     0       0       
+ts018_scl_prim/pmos_18/layout   0        0       0        16     0      0         1      0             0      0     0     0       0       
+ts018_scl_prim/M3_M2_S/layout   0        0       0        3      0      0         0      0             0      0     0     0       0       
+ts018_scl_prim/M2_M1_S/layout   0        0       0        3      0      0         0      0             0      0     0     0       0       
+ts018_scl_prim/M3_M2_S/layout   0        0       0        3      0      0         0      0             0      0     0     0       0       
+ts018_scl_prim/pmos_18/layout   0        0       0        13     0      0         1      0             0      0     0     0       0       
+ts018_scl_prim/M3_M2_S/layout   0        0       0        3      0      0         0      0             0      0     0     0       0       
+ts018_scl_prim/M2_M1_S/layout   0        0       0        3      0      0         0      0             0      0     0     0       0       
+ts018_scl_prim/M2_M1_S/layout   0        0       0        3      0      0         0      0             0      0     0     0       0       
+ts018_scl_prim/ML_M3_S/layout   0        0       0        3      0      0         0      0             0      0     0     0       0       
+ts018_scl_prim/nmos_18/layout   0        0       0        17     0      0         1      0             0      0     0     0       0       
+VEDANT/Write_Driver/layout      3        0       0        2      0      12        5      0             0      0     0     0       0       
+ts018_scl_prim/M3_M2_S/layout   0        0       0        3      0      0         0      0             0      0     0     0       0       
+ts018_scl_prim/M3_M2_S/layout   0        0       0        3      0      0         0      0             0      0     0     0       0       
+ts018_scl_prim/pmos_18/layout   0        0       0        16     0      0         1      0             0      0     0     0       0       
+ts018_scl_prim/nmos_18/layout   0        0       0        12     0      0         1      0             0      0     0     0       0       
+ts018_scl_prim/nmos_18/layout   0        0       0        15     0      0         1      0             0      0     0     0       0       
+ts018_scl_prim/pmos_18/layout   0        0       0        16     0      0         1      0             0      0     0     0       0       
+ts018_scl_prim/nmos_18/layout   0        0       0        15     0      0         1      0             0      0     0     0       0       
+ts018_scl_prim/M2_M1_S/layout   0        0       0        3      0      0         0      0             0      0     0     0       0       
+ts018_scl_prim/M3_M2_S/layout   0        0       0        3      0      0         0      0             0      0     0     0       0       
+ts018_scl_prim/M2_M1_S/layout   0        0       0        3      0      0         0      0             0      0     0     0       0       
+ts018_scl_prim/M2_M1_S/layout   0        0       0        3      0      0         0      0             0      0     0     0       0       
+ts018_scl_prim/M2_M1_S/layout   0        0       0        3      0      0         0      0             0      0     0     0       0       
+SAMPLE/3_8_DECODER/layout       19       0       0        8      6      107       13     0             0      0     0     0       0       
+VEDANT/SRAM_ARRAY_BACKUP/layout 97       0       0        161    117    256       15     0             0      0     0     0       0       
+ts018_scl_prim/ML_M3_S/layout   0        0       0        3      0      0         0      0             0      0     0     0       0       
+ts018_scl_prim/M2_M1_S/layout   0        0       0        3      0      0         0      0             0      0     0     0       0       
+SAMPLE/INVERTER/layout          2        0       0        1      0      9         4      0             0      0     0     0       0       
+VEDANT/CMOS_INV/layout          2        0       0        0      0      9         4      0             0      0     0     0       0       
+ts018_scl_prim/M3_M2_S/layout   0        0       0        3      0      0         0      0             0      0     0     0       0       
+ts018_scl_prim/M2_M1_S/layout   0        0       0        3      0      0         0      0             0      0     0     0       0       
+ts018_scl_prim/M3_M2_S/layout   0        0       0        3      0      0         0      0             0      0     0     0       0       
+ts018_scl_prim/M1_PO_4X/layout  0        0       0        3      0      0         0      0             0      0     0     0       0       
+ts018_scl_prim/M1_PO/layout     0        0       0        3      0      0         0      0             0      0     0     0       0       
+SAMPLE/NAND/layout              6        0       0        3      0      15        4      0             0      0     0     0       0       
+ts018_scl_prim/nmos_18/layout   0        0       0        15     0      0         1      0             0      0     0     0       0       
+VEDANT/SRAM/layout              6        0       0        8      0      12        5      0             0      0     0     0       0       
+ts018_scl_prim/M2_M1_S/layout   0        0       0        3      0      0         0      0             0      0     0     0       0       
+ts018_scl_prim/M3_M2_S/layout   0        0       0        3      0      0         0      0             0      0     0     0       0       
+ts018_scl_prim/M2_M1_S/layout   0        0       0        3      0      0         0      0             0      0     0     0       0       
+ts018_scl_prim/M2_M1_S/layout   0        0       0        3      0      0         0      0             0      0     0     0       0       
+ts018_scl_prim/M2_M1_S/layout   0        0       0        3      0      0         0      0             0      0     0     0       0       
+ts018_scl_prim/M3_M2_S/layout   0        0       0        3      0      0         0      0             0      0     0     0       0       
+ts018_scl_prim/M2_M1_S/layout   0        0       0        3      0      0         0      0             0      0     0     0       0       
+ts018_scl_prim/M2_M1_S/layout   0        0       0        3      0      0         0      0             0      0     0     0       0       
+ts018_scl_prim/ML_M3_S/layout   0        0       0        3      0      0         0      0             0      0     0     0       0       
+ts018_scl_prim/ML_M3_S/layout   0        0       0        3      0      0         0      0             0      0     0     0       0       
+VEDANT/ColumnMux/layout         9        0       0        0      0      56        8      0             0      0     0     0       0       
+ts018_scl_prim/M2_M1_S/layout   0        0       0        3      0      0         0      0             0      0     0     0       0       
+ts018_scl_prim/M3_M2_S/layout   0        0       0        3      0      0         0      0             0      0     0     0       0       
+ts018_scl_prim/pmos_18/layout   0        0       0        13     0      0         1      0             0      0     0     0       0       
+ts018_scl_prim/nmos_18/layout   0        0       0        15     0      0         1      0             0      0     0     0       0       
+ts018_scl_prim/M2_M1_S/layout   0        0       0        3      0      0         0      0             0      0     0     0       0       
+ts018_scl_prim/pmos_18/layout   0        0       0        18     0      0         1      0             0      0     0     0       0       
+ts018_scl_prim/pmos_18/layout   0        0       0        13     0      0         1      0             0      0     0     0       0       
+ts018_scl_prim/M2_M1_S/layout   0        0       0        3      0      0         0      0             0      0     0     0       0       
+---------------------------------------------------------------------------------------------------------------------------------------
+
+                       Individual Cell Statistics - Advanced Objects
+---------------------------------------------------------------------------------------------------------------------------------------
+Library/Cell/View               PRBdy    OtherBdy   AreaBlkg   LayerBlkg  AreaHalo   Row   Marker   CustVia   StdVia    CdsGenVia
+---------------------------------------------------------------------------------------------------------------------------------------
+ts018_scl_prim/M2_M1_S/layout   0        0          0          0          0          0     0        0         0         0        
+VEDANT/Precharge_Circuit/layout 1        0          0          0          0          0     0        0         15        0        
+VEDANT/SenseAmplifier/layout    1        0          0          0          0          0     0        0         21        0        
+ts018_scl_prim/ML_M3_S/layout   0        0          0          0          0          0     0        0         0         0        
+ts018_scl_prim/M1_PO_4X/layout  0        0          0          0          0          0     0        0         0         0        
+ts018_scl_prim/M3_M2_S/layout   0        0          0          0          0          0     0        0         0         0        
+ts018_scl_prim/M3_M2_S/layout   0        0          0          0          0          0     0        0         0         0        
+ts018_scl_prim/M3_M2_S/layout   0        0          0          0          0          0     0        0         0         0        
+ts018_scl_prim/M1_PO_4X/layout  0        0          0          0          0          0     0        0         0         0        
+ts018_scl_prim/M2_M1_S/layout   0        0          0          0          0          0     0        0         0         0        
+ts018_scl_prim/pmos_18/layout   0        0          0          0          0          0     0        0         0         0        
+ts018_scl_prim/M3_M2_S/layout   0        0          0          0          0          0     0        0         0         0        
+ts018_scl_prim/M2_M1_S/layout   0        0          0          0          0          0     0        0         0         0        
+ts018_scl_prim/M3_M2_S/layout   0        0          0          0          0          0     0        0         0         0        
+ts018_scl_prim/pmos_18/layout   0        0          0          0          0          0     0        0         0         0        
+ts018_scl_prim/M3_M2_S/layout   0        0          0          0          0          0     0        0         0         0        
+ts018_scl_prim/M2_M1_S/layout   0        0          0          0          0          0     0        0         0         0        
+ts018_scl_prim/M2_M1_S/layout   0        0          0          0          0          0     0        0         0         0        
+ts018_scl_prim/ML_M3_S/layout   0        0          0          0          0          0     0        0         0         0        
+ts018_scl_prim/nmos_18/layout   0        0          0          0          0          0     0        0         0         0        
+VEDANT/Write_Driver/layout      1        0          0          0          0          0     0        0         7         0        
+ts018_scl_prim/M3_M2_S/layout   0        0          0          0          0          0     0        0         0         0        
+ts018_scl_prim/M3_M2_S/layout   0        0          0          0          0          0     0        0         0         0        
+ts018_scl_prim/pmos_18/layout   0        0          0          0          0          0     0        0         0         0        
+ts018_scl_prim/nmos_18/layout   0        0          0          0          0          0     0        0         0         0        
+ts018_scl_prim/nmos_18/layout   0        0          0          0          0          0     0        0         0         0        
+ts018_scl_prim/pmos_18/layout   0        0          0          0          0          0     0        0         0         0        
+ts018_scl_prim/nmos_18/layout   0        0          0          0          0          0     0        0         0         0        
+ts018_scl_prim/M2_M1_S/layout   0        0          0          0          0          0     0        0         0         0        
+ts018_scl_prim/M3_M2_S/layout   0        0          0          0          0          0     0        0         0         0        
+ts018_scl_prim/M2_M1_S/layout   0        0          0          0          0          0     0        0         0         0        
+ts018_scl_prim/M2_M1_S/layout   0        0          0          0          0          0     0        0         0         0        
+ts018_scl_prim/M2_M1_S/layout   0        0          0          0          0          0     0        0         0         0        
+SAMPLE/3_8_DECODER/layout       0        0          0          0          0          0     0        0         77        0        
+VEDANT/SRAM_ARRAY_BACKUP/layout 1        0          0          0          0          0     0        0         169       0        
+ts018_scl_prim/ML_M3_S/layout   0        0          0          0          0          0     0        0         0         0        
+ts018_scl_prim/M2_M1_S/layout   0        0          0          0          0          0     0        0         0         0        
+SAMPLE/INVERTER/layout          1        0          0          0          0          0     0        0         6         0        
+VEDANT/CMOS_INV/layout          0        0          0          0          0          0     0        0         6         0        
+ts018_scl_prim/M3_M2_S/layout   0        0          0          0          0          0     0        0         0         0        
+ts018_scl_prim/M2_M1_S/layout   0        0          0          0          0          0     0        0         0         0        
+ts018_scl_prim/M3_M2_S/layout   0        0          0          0          0          0     0        0         0         0        
+ts018_scl_prim/M1_PO_4X/layout  0        0          0          0          0          0     0        0         0         0        
+ts018_scl_prim/M1_PO/layout     0        0          0          0          0          0     0        0         0         0        
+SAMPLE/NAND/layout              1        0          0          0          0          0     0        0         11        0        
+ts018_scl_prim/nmos_18/layout   0        0          0          0          0          0     0        0         0         0        
+VEDANT/SRAM/layout              1        0          0          0          0          0     0        0         14        0        
+ts018_scl_prim/M2_M1_S/layout   0        0          0          0          0          0     0        0         0         0        
+ts018_scl_prim/M3_M2_S/layout   0        0          0          0          0          0     0        0         0         0        
+ts018_scl_prim/M2_M1_S/layout   0        0          0          0          0          0     0        0         0         0        
+ts018_scl_prim/M2_M1_S/layout   0        0          0          0          0          0     0        0         0         0        
+ts018_scl_prim/M2_M1_S/layout   0        0          0          0          0          0     0        0         0         0        
+ts018_scl_prim/M3_M2_S/layout   0        0          0          0          0          0     0        0         0         0        
+ts018_scl_prim/M2_M1_S/layout   0        0          0          0          0          0     0        0         0         0        
+ts018_scl_prim/M2_M1_S/layout   0        0          0          0          0          0     0        0         0         0        
+ts018_scl_prim/ML_M3_S/layout   0        0          0          0          0          0     0        0         0         0        
+ts018_scl_prim/ML_M3_S/layout   0        0          0          0          0          0     0        0         0         0        
+VEDANT/ColumnMux/layout         1        0          0          0          0          0     0        0         44        0        
+ts018_scl_prim/M2_M1_S/layout   0        0          0          0          0          0     0        0         0         0        
+ts018_scl_prim/M3_M2_S/layout   0        0          0          0          0          0     0        0         0         0        
+ts018_scl_prim/pmos_18/layout   0        0          0          0          0          0     0        0         0         0        
+ts018_scl_prim/nmos_18/layout   0        0          0          0          0          0     0        0         0         0        
+ts018_scl_prim/M2_M1_S/layout   0        0          0          0          0          0     0        0         0         0        
+ts018_scl_prim/pmos_18/layout   0        0          0          0          0          0     0        0         0         0        
+ts018_scl_prim/pmos_18/layout   0        0          0          0          0          0     0        0         0         0        
+ts018_scl_prim/M2_M1_S/layout   0        0          0          0          0          0     0        0         0         0        
+---------------------------------------------------------------------------------------------------------------------------------------
+
+                       Statistics of Layers 
+---------------------------------------------------------------------------------------------------------------------------------------
+Cadence         Cadence         Stream  Stream   
+Layer           Purpose         Layer   Datatype  Polygon  Rect     Path     Text     TextDisplay   Line Dot Arc Donut Ellipse Pathseg
+---------------------------------------------------------------------------------------------------------------------------------------
+XN              drawing         32      0         0        9        25       0        0             0    0   0   0     0      0      
+TOP_V           drawing         49      0         0        5        0        0        0             0    0   0   0     0      0      
+WN              drawing         3       0         0        22       0        0        0             0    0   0   0     0      0      
+TOP_M           drawing         50      0         0        5        0        1        0             0    0   0   0     0      51     
+V3              drawing         43      0         0        14       0        0        0             0    0   0   0     0      0      
+GC              label           8       7         0        0        0        7        0             0    0   0   0     0      0      
+M3              label           44      7         0        0        0        9        0             0    0   0   0     0      0      
+V2              drawing         41      0         0        20       0        0        0             0    0   0   0     0      0      
+CS              drawing         34      0         0        148      0        0        0             0    0   0   0     0      0      
+ACTIVE          drawing         9       0         0        43       41       0        0             0    0   0   0     0      0      
+M1              label           40      7         0        0        0        14       0             0    0   0   0     0      0      
+M1              drawing         40      0         0        101      41       0        0             0    0   0   0     0      177    
+M3              drawing         44      0         0        19       0        4        0             0    0   0   0     0      138    
+M2              label           42      7         0        0        0        25       0             0    0   0   0     0      0      
+text            drawing         77      7         0        0        0        13       0             0    0   0   0     0      0      
+GC              drawing         8       0         0        77       0        0        0             0    0   0   0     0      25     
+XP              drawing         31      0         0        9        16       0        0             0    0   0   0     0      0      
+prBoundary      drawing         235     0         0        2        0        0        0             0    0   0   0     0      0      
+TOP_M           label           50      7         0        0        0        6        0             0    0   0   0     0      0      
+M2              drawing         42      0         0        34       0        0        0             0    0   0   0     0      131    
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Summary of Objects Translated:
+	Scalar Instances:		153
+	Array Instances:		0
+	Polygons:			0
+	Paths:				123
+	Rectangles:			508
+	Lines:				0
+	Arcs:				0
+	Donuts:				0
+	Dots:				0
+	Ellipses:			0
+	Boundaries:			8
+	Area Blockages:			0
+	Layer Blockages:		0
+	Area Halos:			0
+	Markers:			0
+	Rows:				0
+	Standard Vias:			370
+	Custom Vias:			0
+	CdsGen Vias:			0
+	Pathsegs:			522
+	Text:				79
+	TextDisplay:		0
+	Cells:				66
+Design Libraries: 
+
+DEFINE ts018_scl_prim	/progs/FOUNDRY/SCL_FILES/scl_pdk/design_kit/pdklib/cadence/OA/ts018_compana_4M1L_OA/rev0.0/ref_libs/ts018_scl_prim
+DEFINE SAMPLE	/home/Vedant_int/Desktop/VEDANT_WORK/SAMPLE
+DEFINE VEDANT	/home/Vedant_int/Desktop/VEDANT_WORK/VEDANT

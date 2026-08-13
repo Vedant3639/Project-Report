@@ -1,0 +1,16 @@
+#
+# Edit Lock-Stake file. CAUTION: Please do not change.
+#
+# Information about current Edit Lock Owner.
+#
+LockStakeVersion               1.1
+LoginName                      Vedant_int
+HostName                       nsdcs.iiti.ac.in
+ProcessIdentifier              31112
+ProcessCreationTime_UTC        1780513735
+ProcessCreationTime_Readable   Thu Jun  4 00:38:55 2026 IST
+AppIdentifier                  /progs/cadence/IC618/tools.lnx86/dfII/bin/64bit/virtuoso
+OSType                         lnx86
+ReasonForPlacingEditLock       Set lock by hiiLockFile
+FilePathUsedToEditLock         /home/Vedant_int/Desktop/VEDANT_WORK/logs_Vedant_int/logs0/Job7.log
+TimeEditLocked                 Thu Jun  4 00:38:56 2026 IST

@@ -1,0 +1,35 @@
+//
+//  Rule file generated on Mon Jul 20 18:02:38 2026
+//  by Calibre Interactive v2022.4_37.20    Fri Dec 2 17:41:17 PST 2022
+//
+//      *** PLEASE DO NOT MODIFY THIS FILE ***
+//
+//
+
+
+// +++ CUSTOMIZATION SETTINGS START +++
+
+#define "DRC_OPT" ANTENNA
+#define "DRC_TECH" ts18scl
+#define "4M1L" 
+#define "USG" 
+
+// +++ CUSTOMIZATION SETTINGS END +++
+
+
+LAYOUT PATH "SRAM_CHIP.calibre.db"
+LAYOUT SYSTEM GDSII
+LAYOUT PRIMARY "SRAM_CHIP"
+
+DRC RESULTS DATABASE "SRAM_CHIP.drc.results" ASCII
+DRC CELL NAME YES CELL SPACE XFORM
+
+DRC SUMMARY REPORT "SRAM_CHIP.drc.summary" REPLACE HIER
+
+DRC MAXIMUM RESULTS 1000
+
+DRC MAXIMUM VERTEX 4096
+
+DRC ICSTATION YES
+
+INCLUDE "/progs/FOUNDRY/SCL_FILES/scl_pdk/design_kit/drclvs_rsf/ANTENNA.header"

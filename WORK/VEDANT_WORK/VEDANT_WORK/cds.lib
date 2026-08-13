@@ -1,0 +1,68 @@
+# File Created by  at Mon Jul 20 02:39:40 2026
+# assisted by CdsLibEditor
+# File Created by root at Mon Nov 18 19:52:07 2013
+# assisted by CdsLibEditor
+# Base gpdk045 library definition file	
+
+
+UNDEFINE US_8ths
+UNDEFINE cdsDefTechLib
+UNDEFINE basic
+UNDEFINE analogLib
+UNDEFINE ahdlLib
+
+UNDEFINE avTech
+UNDEFINE sample
+UNDEFINE connectLib
+UNDEFINE SubstrateLib
+UNDEFINE gpdk180
+
+UNDEFINE gpdk090
+UNDEFINE gpdk045
+
+
+DEFINE US_8ths $CDSHOME/tools/dfII/etc/cdslib/sheets/US_8ths
+DEFINE cdsDefTechLib $CDSHOME/tools/dfII/etc/cdsDefTechLib
+DEFINE ahdlLib ${CDSHOME}/tools/dfII/samples/artist/ahdlLib
+
+
+DEFINE avTech $ASSURAHOME/tools/assura/etc/avtech/avTech
+DEFINE sample $CDSHOME/tools/dfII/samples/cdslib/sample
+DEFINE connectLib $AMSHOME/tools/affirma_ams/etc/connect_lib/connectLib
+
+#DEFINE gpdk180	 	$GPDK/gpdk180/libs.oa22/gpdk180
+#DEFINE SubstrateLib	$GPDK/gpdk180/libs.oa22/substrateLib
+#DEFINE gpdk090	 	$GPDK/gpdk090/libs.oa22/gpdk090
+#DEFINE gpdk045	 	$GPDK/gpdk045/gpdk045
+
+
+########################################################
+DEFINE basic $CDSHOME/tools/dfII/etc/cdslib/basic
+DEFINE analogLib $CDSHOME/tools/dfII/etc/cdslib/artist/analogLib
+DEFINE avTech $ASSURAHOME/tools/assura/etc/avtech/avTech
+DEFINE gpdk045 $ANALOG/45nm/gpdk045
+DEFINE gpdk090 $ANALOG/90nm/libs.oa22/gpdk090
+DEFINE gpdk180 $ANALOG/180nm/libs.oa22/gpdk180
+
+########################################################
+### Standard Cell Libraries (gsclib) ##########
+########################################################
+
+DEFINE gpdk045_sc $STDCELL/gsclib045
+DEFINE gpdk45_iolib $STDCELL/giolib045
+
+########################################################
+DEFINE ts018_scl_prim /progs/FOUNDRY/SCL_FILES/scl_pdk/design_kit/pdklib/cadence/OA/ts018_compana_4M1L_OA/rev0.0/ref_libs/ts018_scl_prim
+DEFINE VEDANT /home/Vedant_int/Desktop/VEDANT_WORK/VEDANT
+DEFINE VEDANT1 /home/Vedant_int/Desktop/VEDANT_WORK/VEDANT1
+DEFINE VEDANT2 /home/Vedant_int/Desktop/VEDANT_WORK/VEDANT2
+DEFINE cmos_inv /home/Vedant_int/Desktop/VEDANT_WORK/cmos_inv
+DEFINE test1 /home/Vedant_int/Desktop/VEDANT_WORK/test1
+DEFINE SAMPLE /home/Vedant_int/Desktop/VEDANT_WORK/SAMPLE
+#Removed by ddDeleteObj: DEFINE ANUPAM ANUPAM
+DEFINE CMOS_inv CMOS_inv
+DEFINE VEDANT_NEW /home/Vedant_int/Desktop/VEDANT_WORK/VEDANT_NEW
+DEFINE importpads /home/Vedant_int/Desktop/VEDANT_WORK/importpads
+DEFINE padring /home/Vedant_int/Desktop/VEDANT_WORK/padring
+DEFINE padring1 padring1
+DEFINE dummy_SRAM_CHIP /home/Vedant_int/Desktop/VEDANT_WORK/dummy_SRAM_CHIP

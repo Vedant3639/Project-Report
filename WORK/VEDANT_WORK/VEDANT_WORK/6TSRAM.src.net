@@ -1,0 +1,34 @@
+************************************************************************
+* auCdl Netlist:
+* 
+* Library Name:  VEDANT
+* Top Cell Name: 6TSRAM
+* View Name:     schematic
+* Netlisted on:  Jun 12 19:39:14 2026
+************************************************************************
+
+*.EQUATION
+*.SCALE METER
+*.MEGA
+.PARAM
+
+*.GLOBAL gnd!
+
+*.PIN gnd!
+
+************************************************************************
+* Library Name: VEDANT
+* Cell Name:    6TSRAM
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT 6TSRAM BL BLB VDD VSS WL Q QB VIN
+*.PININFO BL:B BLB:B Q:B QB:B VDD:B VIN:B VSS:B WL:B
+MM5 QB VIN VDD VDD P W=0.22 L=0.18 m=1
+MM1 Q VIN VDD VDD P W=0.22 L=0.18 m=1
+MM4 BLB WL QB VSS N W=0.22 L=0.18 m=1
+MM0 Q VIN VSS VSS N W=0.44 L=0.18 m=1
+MM3 Q WL BL VSS N W=0.22 L=0.18 m=1
+MM2 QB VIN VSS VSS N W=0.44 L=0.18 m=1
+.ENDS
+

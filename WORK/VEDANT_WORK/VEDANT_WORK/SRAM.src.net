@@ -1,0 +1,32 @@
+************************************************************************
+* auCdl Netlist:
+* 
+* Library Name:  VEDANT
+* Top Cell Name: SRAM
+* View Name:     schematic
+* Netlisted on:  Jun 30 21:54:36 2026
+************************************************************************
+
+*.EQUATION
+*.SCALE METER
+*.MEGA
+.PARAM
+
+
+
+************************************************************************
+* Library Name: VEDANT
+* Cell Name:    SRAM
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT SRAM BL BLB VDD VSS WL
+*.PININFO BL:B BLB:B VDD:B VSS:B WL:B
+MM4 BLB WL net2 VSS N W=0.22 L=0.18 m=1
+MM2 net2 net1 VSS VSS N W=0.44 L=0.18 m=1
+MM0 net1 net2 VSS VSS N W=0.44 L=0.18 m=1
+MM3 net1 WL BL VSS N W=0.22 L=0.18 m=1
+MM5 net2 net1 VDD VDD P W=0.22 L=0.18 m=1
+MM1 net1 net2 VDD VDD P W=0.22 L=0.18 m=1
+.ENDS
+

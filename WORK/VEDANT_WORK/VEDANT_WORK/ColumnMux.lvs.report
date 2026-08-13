@@ -1,0 +1,284 @@
+
+
+
+                  ##################################################
+                  ##                                              ##
+                  ##         C A L I B R E    S Y S T E M         ##
+                  ##                                              ##
+                  ##             L V S   R E P O R T              ##
+                  ##                                              ##
+                  ##################################################
+
+
+
+REPORT FILE NAME:         ColumnMux.lvs.report
+LAYOUT NAME:              ColumnMux.sp ('ColumnMux')
+SOURCE NAME:              ColumnMux.src.net ('ColumnMux')
+RULE FILE:                _LVS.header_
+CREATION TIME:            Sat Jul  4 21:01:18 2026
+CURRENT DIRECTORY:        /home/Vedant_int/Desktop/VEDANT_WORK
+USER NAME:                Vedant_int
+CALIBRE VERSION:          v2022.4_37.20    Fri Dec 2 17:41:13 PST 2022
+
+
+
+                               OVERALL COMPARISON RESULTS
+
+
+
+                         #       ###################       _   _   
+                        #        #                 #       *   *   
+                   #   #         #     CORRECT     #         |     
+                    # #          #                 #       \___/  
+                     #           ###################               
+
+
+
+
+**************************************************************************************************************
+                                      CELL  SUMMARY
+**************************************************************************************************************
+
+  Result         Layout                        Source
+  -----------    -----------                   --------------
+  CORRECT        ColumnMux                     ColumnMux
+
+
+
+**************************************************************************************************************
+                                      LVS PARAMETERS
+**************************************************************************************************************
+
+
+o LVS Setup:
+
+   // LVS COMPONENT TYPE PROPERTY
+   // LVS COMPONENT SUBTYPE PROPERTY
+   // LVS PIN NAME PROPERTY
+   LVS POWER NAME                         "VDD" "vdd" "VCC" "vcc" "VDD!" "vdd!" "VCC!" "vcc!" "AVDD" "DVDD"
+   LVS GROUND NAME                        "GND" "gnd" "VSS" "vss" "GND!" "gnd!" "VSS!" "vss!" "AVSS" "DVSS"
+   LVS CELL SUPPLY                        NO
+   LVS RECOGNIZE GATES                    ALL
+   // LVS HCELL REPORT
+   LVS IGNORE PORTS                       YES
+   LVS CHECK PORT NAMES                   NO
+   LVS IGNORE TRIVIAL NAMED PORTS         NO
+   LVS BUILTIN DEVICE PIN SWAP            YES
+   LVS ALL CAPACITOR PINS SWAPPABLE       NO
+   LVS DISCARD PINS BY DEVICE             NO
+   LVS SOFT SUBSTRATE PINS                NO
+   LVS INJECT LOGIC                       YES
+   LVS EXPAND UNBALANCED CELLS            YES
+   LVS FLATTEN INSIDE CELL                NO
+   LVS EXPAND SEED PROMOTIONS             NO
+   LVS PRESERVE PARAMETERIZED CELLS       NO
+   LVS GLOBALS ARE PORTS                  YES
+   LVS RELAX INITIAL CPOINTS              NONE
+   LVS REVERSE WL                         NO
+   // LVS NETLIST FILTER DEVICES          NO
+   // LVS PRESERVE BOX PORTS              NO
+   LVS SPICE PREFER PINS                  NO
+   LVS SPICE SLASH IS SPACE               YES
+   LVS SPICE ALLOW FLOATING PINS          YES
+   // LVS SPICE ALLOW INLINE PARAMETERS     
+   LVS SPICE ALLOW UNQUOTED STRINGS       NO
+   LVS SPICE CONDITIONAL LDD              NO
+   LVS SPICE CULL PRIMITIVE SUBCIRCUITS   NO
+   // LVS SPICE EXCLUDE CELL SOURCE
+   // LVS SPICE EXCLUDE CELL LAYOUT
+   LVS SPICE IMPLIED MOS AREA             NO
+   // LVS SPICE MULTIPLIER NAME
+   LVS SPICE OVERRIDE GLOBALS             NO
+   LVS SPICE REDEFINE PARAM               NO
+   LVS SPICE REPLICATE DEVICES            YES
+   LVS SPICE SCALE X PARAMETERS           NO
+   LVS SPICE STRICT WL                    NO
+   // LVS SPICE OPTION
+   LVS STRICT SUBTYPES                    NO
+   LVS EXACT SUBTYPES                     NO
+   LAYOUT CASE                            YES
+   SOURCE CASE                            YES
+   LVS COMPARE CASE                       NO
+   LVS COMPARE CASE STRICT                NO
+   LVS DOWNCASE DEVICE                    NO
+   LVS REPORT MAXIMUM                     2000
+   LVS PROPERTY RESOLUTION MAXIMUM        32
+   // LVS SIGNATURE MAXIMUM
+   LVS FILTER UNUSED OPTION               AB RC RE RG
+   LVS REPORT OPTION                      S
+   LVS REPORT UNITS                       YES
+   LVS SWAPPABLE HCELL PINS               GENERAL
+   // LVS NON USER NAME PORT
+   // LVS NON USER NAME NET
+   // LVS NON USER NAME INSTANCE
+   // LVS IGNORE DEVICE PIN
+   // LVS PREFER NETS FILTER SOURCE
+   // LVS PREFER NETS FILTER LAYOUT
+   LVS PREFER PORT NETS                   NO
+   LVS EXPAND ON ERROR                    NO
+   LVS EXPAND AMBIGUOUSLY HIGH SHORTED HCELLS NO
+
+   // Reduction
+
+   LVS REDUCE SERIES MOS                  NO
+   LVS REDUCE PARALLEL MOS                YES
+   LVS REDUCE SEMI SERIES MOS             NO
+   LVS REDUCE SPLIT GATES                 YES
+   LVS REDUCE PARALLEL BIPOLAR            YES
+   LVS REDUCE SERIES CAPACITORS           NO
+   LVS REDUCE PARALLEL CAPACITORS         NO
+   LVS REDUCE SERIES RESISTORS            YES
+   LVS REDUCE PARALLEL RESISTORS          YES
+   LVS REDUCE PARALLEL DIODES             YES
+
+   LVS REDUCE  Q(VD)  PARALLEL
+   LVS REDUCE  Q(VD5)  PARALLEL
+   LVS REDUCE  Q(VD10)  PARALLEL
+   LVS REDUCE  Q(VH)  PARALLEL
+   LVS REDUCE  Q(VH5)  PARALLEL
+   LVS REDUCE  Q(VH10)  PARALLEL
+   LVS REDUCE  C(CL)  PARALLEL
+   LVS REDUCE  C(CH)  PARALLEL
+   LVS REDUCE  C(CH3)  PARALLEL
+   LVS REDUCE  C(CL3)  PARALLEL
+   LVS REDUCE  C(CB)  PARALLEL
+   LVS REDUCTION PRIORITY                 PARALLEL
+   
+   LVS SHORT EQUIVALENT NODES             NO
+
+   // Trace Property
+
+   TRACE PROPERTY  c(cl)  w w 3
+   TRACE PROPERTY  c(cl)  l l 3
+   TRACE PROPERTY  c(cl3)  w w 3
+   TRACE PROPERTY  c(cl3)  l l 3
+   TRACE PROPERTY  c(ch)  w w 3
+   TRACE PROPERTY  c(ch)  l l 3
+   TRACE PROPERTY  c(ch3)  w w 3
+   TRACE PROPERTY  c(ch3)  l l 3
+   TRACE PROPERTY  r(rl)  r r 10
+   TRACE PROPERTY  r(rt)  r r 10
+   TRACE PROPERTY  r(ra)  r r 10
+   TRACE PROPERTY  r(rb)  r r 10
+   TRACE PROPERTY  r(rc)  r r 10
+   TRACE PROPERTY  r(rd)  r r 10
+   TRACE PROPERTY  r(re)  r r 10
+   TRACE PROPERTY  r(rg)  r r 10
+   TRACE PROPERTY  r(rh)  r r 10
+   TRACE PROPERTY  r(rw)  r r 10
+   TRACE PROPERTY  r(rf)  r r 10
+   TRACE PROPERTY  r(rk)  r r 10
+   TRACE PROPERTY  r(rm)  r r 10
+   TRACE PROPERTY  r(r1)  r r 10
+   TRACE PROPERTY  r(r2)  r r 10
+   TRACE PROPERTY  r(rb3)  r r 10
+   TRACE PROPERTY  r(ra3)  r r 10
+   TRACE PROPERTY  r(rc3)  r r 10
+   TRACE PROPERTY  r(rd3)  r r 10
+   TRACE PROPERTY  r(re3)  r r 10
+   TRACE PROPERTY  r(rg3)  r r 10
+   TRACE PROPERTY  r(rh3)  r r 10
+   TRACE PROPERTY  r(rw3)  r r 10
+   TRACE PROPERTY  r(rf3)  r r 10
+   TRACE PROPERTY  r(rk3)  r r 10
+   TRACE PROPERTY  r(rm3)  r r 10
+   TRACE PROPERTY  r(r3)  r r 10
+   TRACE PROPERTY  c(cb)  c c 6
+   TRACE PROPERTY  d(ns)  a a 10
+   TRACE PROPERTY  d(dn)  a a 10
+   TRACE PROPERTY  d(n3)  a a 10
+   TRACE PROPERTY  d(ps)  a a 10
+   TRACE PROPERTY  d(dp)  a a 10
+   TRACE PROPERTY  d(p3)  a a 10
+   TRACE PROPERTY  d(ns)  p p 10
+   TRACE PROPERTY  d(dn)  p p 10
+   TRACE PROPERTY  d(n3)  p p 10
+   TRACE PROPERTY  d(ps)  p p 10
+   TRACE PROPERTY  d(dp)  p p 10
+   TRACE PROPERTY  d(p3)  p p 10
+   TRACE PROPERTY  q(vd)  m m 0
+   TRACE PROPERTY  q(vd5)  m m 0
+   TRACE PROPERTY  q(vd10)  m m 0
+   TRACE PROPERTY  q(vh)  m m 0
+   TRACE PROPERTY  q(vh5)  m m 0
+   TRACE PROPERTY  q(vh10)  m m 0
+   TRACE PROPERTY  q(vpnp18_s)  a a 10
+   TRACE PROPERTY  q(vpnp33_s)  a a 10
+   TRACE PROPERTY  q(vnpn18_s)  a a 10
+   TRACE PROPERTY  q(vpnp18_s)  p p 10
+   TRACE PROPERTY  q(vpnp33_s)  p p 10
+   TRACE PROPERTY  q(vnpn18_s)  p p 10
+
+
+
+                   CELL COMPARISON RESULTS ( TOP LEVEL )
+
+
+
+                         #       ###################       _   _   
+                        #        #                 #       *   *   
+                   #   #         #     CORRECT     #         |     
+                    # #          #                 #       \___/  
+                     #           ###################               
+
+
+
+LAYOUT CELL NAME:         ColumnMux
+SOURCE CELL NAME:         ColumnMux
+
+--------------------------------------------------------------------------------------------------------------
+
+INITIAL NUMBERS OF OBJECTS
+--------------------------
+
+                Layout    Source         Component Type
+                ------    ------         --------------
+ Nets:              10        10
+
+ Instances:          5         5         MN (4 pins)
+                     5         5         MP (4 pins)
+                ------    ------
+ Total Inst:        10        10
+
+
+NUMBERS OF OBJECTS AFTER TRANSFORMATION
+---------------------------------------
+
+                Layout    Source         Component Type
+                ------    ------         --------------
+ Nets:              10        10
+
+ Instances:          1         1         _invv (4 pins)
+                     2         2         _tgmb (7 pins)
+                ------    ------
+ Total Inst:         3         3
+
+
+
+**************************************************************************************************************
+                               INFORMATION AND WARNINGS
+**************************************************************************************************************
+
+
+                  Matched    Matched    Unmatched    Unmatched    Component
+                   Layout     Source       Layout       Source    Type
+                  -------    -------    ---------    ---------    ---------
+   Nets:               10         10            0            0
+
+   Instances:           1          1            0            0    _invv
+                        2          2            0            0    _tgmb
+                  -------    -------    ---------    ---------
+   Total Inst:          3          3            0            0
+
+
+o Initial Correspondence Points:
+
+   Nets:         YSR BLB BL YSR_BAR
+
+
+**************************************************************************************************************
+                                         SUMMARY
+**************************************************************************************************************
+
+Total CPU Time:      0 sec
+Total Elapsed Time:  0 sec

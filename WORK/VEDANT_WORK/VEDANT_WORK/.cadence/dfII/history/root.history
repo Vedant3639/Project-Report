@@ -1,0 +1,1 @@
+("nmos_char:/\tnmos_char VEDANT1 schematic" (("open" (nil hierarchy "/{VEDANT1 nmos_char schematic }:a"))) (((-1.3625 -1.29375) (1.9375 1.275)) "a" "Schematics" 4))("cmos_inv:/\tcmos_inv VEDANT schematic" (("open" (nil hierarchy "/{VEDANT cmos_inv schematic }:r"))) (((0.10625 -1.925) (3.33125 0.58125)) "r" "Schematics" 2))

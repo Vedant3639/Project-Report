@@ -1,0 +1,9 @@
+# Automagically generated file: Please do not edit!
+lvs_ExtfVersion 3
+lvs_ExtRunTimes 1784497333 1784497334
+lvs_ExtOutFile RUNDIR /home/Vedant_int/Desktop/VEDANT_WORK
+lvs_ExtOutFile RULES_FILE _LVS.header_
+lvs_ExtInfoExtSummary {0 0 0 0 0 0 0 0 0 0 0}
+lvs_ExtInfoDfmSummary {0}
+lvs_ExtOutFile LAYOUT_NETLIST 6TSRAM_ARRAY.sp
+lvs_ExtOutFile EXTRACTION_REPORT 6TSRAM_ARRAY.lvs.report.ext

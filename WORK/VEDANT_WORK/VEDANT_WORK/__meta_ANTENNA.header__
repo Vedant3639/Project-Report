@@ -1,0 +1,14 @@
+
+
+// +++ CUSTOMIZATION SETTINGS START +++
+
+#define "DRC_OPT" ANTENNA
+#define "DRC_TECH" ts18scl
+#define "4M1L" 
+#define "USG" 
+
+// +++ CUSTOMIZATION SETTINGS END +++
+
+DRC ICSTATION YES
+
+INCLUDE "/progs/FOUNDRY/SCL_FILES/scl_pdk/design_kit/drclvs_rsf/ANTENNA.header"

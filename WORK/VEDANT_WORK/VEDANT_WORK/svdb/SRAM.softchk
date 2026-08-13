@@ -1,0 +1,11 @@
+SRAM 1000
+SOFTCHK NWELL.
+0 0 0 Jun 25 12:31:13 2026                                                      
+SOFTCHK PSUB.
+0 0 0 Jun 25 12:31:13 2026                                                      
+SOFTCHK WB.
+0 0 0 Jun 25 12:31:13 2026                                                      
+SOFTCHK IPW_SL.
+0 0 0 Jun 25 12:31:13 2026                                                      
+SOFTCHK IPW_FE.
+0 0 0 Jun 25 12:31:13 2026                                                      

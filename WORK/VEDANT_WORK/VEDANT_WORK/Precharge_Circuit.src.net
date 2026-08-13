@@ -1,0 +1,42 @@
+************************************************************************
+* auCdl Netlist:
+* 
+* Library Name:  VEDANT
+* Top Cell Name: Precharge_Circuit
+* View Name:     schematic
+* Netlisted on:  Jul  8 21:44:53 2026
+************************************************************************
+
+*.EQUATION
+*.SCALE METER
+*.MEGA
+.PARAM
+
+
+
+************************************************************************
+* Library Name: VEDANT
+* Cell Name:    CMOS_INV
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT CMOS_INV out vdd vin vss
+*.PININFO vdd:I vin:I vss:I out:O
+MM1 out vin vss vss N W=0.42 L=0.18 m=1
+MM0 out vin vdd vdd P W=0.42 L=0.18 m=1
+.ENDS
+
+************************************************************************
+* Library Name: VEDANT
+* Cell Name:    Precharge_Circuit
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT Precharge_Circuit BL BLB PRE VDD VSS
+*.PININFO VSS:I BL:B BLB:B PRE:B VDD:B
+MM2 BL net1 BLB VDD P W=0.42 L=0.18 m=1
+MM1 VDD net1 BL VDD P W=0.42 L=0.18 m=1
+MM0 BLB net1 VDD VDD P W=0.42 L=0.18 m=1
+XI0 net1 VDD PRE VSS / CMOS_INV
+.ENDS
+

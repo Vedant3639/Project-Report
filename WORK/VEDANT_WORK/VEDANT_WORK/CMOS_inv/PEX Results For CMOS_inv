@@ -1,0 +1,34 @@
+//  Runset file generated on Fri May 29 12:47:53 2026
+//  by Calibre Interactive v2022.4_37.20    Fri Dec 2 17:41:17 PST 2022
+//
+//      *** PLEASE DO NOT MODIFY THIS FILE ***
+//
+//
+
+xrc.rulesFile.value = "/progs/FOUNDRY/SCL_FILES/scl_pdk/design_kit/pex_rsf/calibre_xrc/RCX_4LM_new.header(copy)"
+xrc.layout.layoutFile.value = "CMOS_inv.calibre.db"
+cmn.layout.defFiles.value = [ "CMOS_inv.def" ]
+xrc.layout.topCellLibrary.value = "CMOS_inv"
+cmn.layout.topCellLibraryFDI.value = "CMOS_inv"
+xrc.layout.topCell.value = "CMOS_inv"
+xrc.layout.topCellView.value = "layout"
+cmn.layout.topCellViewFDI.value = "layout"
+xrc.source.sourceFile.value = "CMOS_inv.src.net"
+xrc.source.topCellLibrary.value = "CMOS_inv"
+xrc.source.topCellLibraryFDI.value = "CMOS_inv"
+xrc.source.topCell.value = "CMOS_inv"
+xrc.source.topCellFDI.value = "CMOS_inv"
+xrc.source.topCellView.value = "schematic"
+xrc.source.topCellViewFDI.value = "schematic"
+xrc.xCells.xCellsFile.value = "hcells"
+xrc.pexNetlist.netlistFile.value = "CMOS_inv.pex.netlist"
+xrc.pexNetlist.netlistFormat.value = "CALIBREVIEW"
+xrc.pexNetlist.system.value = "SCHEMATICONLY"
+xrc.reports.lvsReport.value = "CMOS_inv.lvs.report"
+xrc.reports.pexReport.value = "CMOS_inv.pex.report"
+xrc.supply.groundNames.value = [ "gnd!" ]
+xrc.supply.groundNames.specified = true
+
+xrc.blockExtraction.setADMSNetlistOutputFiles("{CMOS_inv CMOS_inv.pex.netlist} ")
+xrc.blockExtraction.setADMSNetlistOutputVerilogModules("{CMOS_inv CMOS_inv} ")
+

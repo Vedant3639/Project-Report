@@ -1,0 +1,9 @@
+# Automagically generated file: Please do not edit!
+lvs_ExtfVersion 3
+lvs_ExtRunTimes 1784444918 1784444920
+lvs_ExtOutFile RUNDIR /home/Vedant_int/Desktop/VEDANT_WORK
+lvs_ExtOutFile RULES_FILE _LVS_iopad.header_
+lvs_ExtInfoExtSummary {0 0 0 0 0 0 0 0 0 0 0}
+lvs_ExtInfoDfmSummary {0}
+lvs_ExtOutFile LAYOUT_NETLIST Padring.sp
+lvs_ExtOutFile EXTRACTION_REPORT Padring.lvs.report.ext

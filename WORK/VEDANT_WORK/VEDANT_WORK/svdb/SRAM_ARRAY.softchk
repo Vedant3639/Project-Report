@@ -1,0 +1,23 @@
+SRAM_ARRAY 1000
+SOFTCHK NWELL.
+1 1 2 Jul  9 16:29:52 2026                                                      
+Net VDD is selected for stamping.
+Rejected nets: 4
+p 1 4
+CN SRAM_ARRAY c 1 0 0 1 0 0 0
+DN VDD
+LL NWELL
+OL NWELL
+SC  SCONNECT  NTAP NWELL
+25830 -89310
+91550 -89310
+91550 -88030
+25830 -88030
+SOFTCHK PSUB.
+0 0 0 Jul  9 16:29:52 2026                                                      
+SOFTCHK WB.
+0 0 0 Jul  9 16:29:52 2026                                                      
+SOFTCHK IPW_SL.
+0 0 0 Jul  9 16:29:52 2026                                                      
+SOFTCHK IPW_FE.
+0 0 0 Jul  9 16:29:52 2026                                                      

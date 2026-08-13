@@ -1,0 +1,6 @@
+# CALIBRE-LVS DISCREPANCY VIEWER TCL FILE 
+# FILE: svdb/ColumnMux.dv
+dv_start matched                                  
+dv_cell {ColumnMux} {ColumnMux} matched
+dv_obj_count -transformed_nets {10 10} -transformed_inst {3 3} -transformed_port {0 0}
+dv_end

@@ -1,0 +1,28 @@
+************************************************************************
+* auCdl Netlist:
+* 
+* Library Name:  VEDANT
+* Top Cell Name: cmos_inv
+* View Name:     schematic
+* Netlisted on:  Jul  2 20:00:31 2026
+************************************************************************
+
+*.EQUATION
+*.SCALE METER
+*.MEGA
+.PARAM
+
+
+
+************************************************************************
+* Library Name: VEDANT
+* Cell Name:    cmos_inv
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT cmos_inv out vdd vin vss
+*.PININFO vdd:I vin:I vss:I out:O
+MM0 out vin vdd vdd P W=0.42 L=0.18 m=1
+MM1 out vin vss vss N W=0.42 L=0.18 m=1
+.ENDS
+

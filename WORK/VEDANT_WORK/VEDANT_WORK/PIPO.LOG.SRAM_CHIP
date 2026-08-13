@@ -1,0 +1,221 @@
+********************************************************************************
+Product   : Virtuoso(R) XStream Out
+Program   : @(#)$CDS: strmout version 6.1.8-64b 04/27/2021 19:14 (cpgsrv11) $
+          : sub-version  IC6.1.8-64b.500.18 
+Started at: 20-Jul-2026  18:02:37
+User Name : Vedant_int
+Host Name : nsdcs.iiti.ac.in
+Directory : /home/Vedant_int/Desktop/VEDANT_WORK
+CADENCE Design Systems, Inc.
+********************************************************************************
+Info: Cellview Rev Num:99,  Tech Rev Num:59
+
+WARNING (XSTRM-20): Output Stream file '/home/Vedant_int/Desktop/VEDANT_WORK/SRAM_CHIP.calibre.db' already exists. It will be overwritten.
+INFO (XSTRM-217): Reading the layer map file, /progs/FOUNDRY/SCL_FILES/scl_pdk/design_kit/pdklib/cadence/OA/ts018_compana_4M1L_OA/rev0.0/ref_libs/ts018_scl_prim/ts018_scl_prim.layermap
+INFO (XSTRM-217): Reading the object map file, /progs/FOUNDRY/SCL_FILES/scl_pdk/design_kit/pdklib/cadence/OA/ts018_compana_4M1L_OA/rev0.0/ref_libs/ts018_scl_prim/ts018_scl_prim.objectmap
+INFO (XSTRM-162): You have not used the viaMap option. If the OpenAccess design has native oaVia instances, use the -viaMap option for preserving oaVia instances in a Stream Out - Stream In round trip. Using the -viaMap option improves performance and VM usage of applications using the Streamed-In design.  For details on the viaMap option, refer to the "Design Data Translator's Reference" guide for XStream.
+
+Summary of Options :
+library                                 VEDANT_NEW
+strmFile                                /home/Vedant_int/Desktop/VEDANT_WORK/SRAM_CHIP.calibre.db
+topCell                                 SRAM_CHIP
+view                                    layout
+runDir                                  /home/Vedant_int/Desktop/VEDANT_WORK/
+logFile                                 PIPO.LOG.SRAM_CHIP
+summaryFile                             PIPO.SUM.SRAM_CHIP
+layerMap                                /progs/FOUNDRY/SCL_FILES/scl_pdk/design_kit/pdklib/cadence/OA/ts018_compana_4M1L_OA/rev0.0/ref_libs/ts018_scl_prim/ts018_scl_prim.layermap
+objectMap                                /progs/FOUNDRY/SCL_FILES/scl_pdk/design_kit/pdklib/cadence/OA/ts018_compana_4M1L_OA/rev0.0/ref_libs/ts018_scl_prim/ts018_scl_prim.objectmap
+case                                    Preserve
+convertDot                              node
+convertPcellPin                         geometry
+
+INFO (XSTRM-223): 1. Translating stdVia ts018_scl_prim/M2_M1_S/layout as STRUCTURE M2_M1_S_CDNS_784550757530.
+INFO (XSTRM-223): 2. Translating stdVia ts018_scl_prim/M3_M2_S/layout as STRUCTURE M3_M2_S_CDNS_784550757531.
+INFO (XSTRM-223): 3. Translating stdVia ts018_scl_prim/M3_M2_S/layout as STRUCTURE M3_M2_S_CDNS_784550757532.
+INFO (XSTRM-223): 4. Translating stdVia ts018_scl_prim/M2_M1_S/layout as STRUCTURE M2_M1_S_CDNS_784550757533.
+INFO (XSTRM-223): 5. Translating stdVia ts018_scl_prim/M3_M2_S/layout as STRUCTURE M3_M2_S_CDNS_784550757534.
+INFO (XSTRM-223): 6. Translating stdVia ts018_scl_prim/M2_M1_S/layout as STRUCTURE M2_M1_S_CDNS_784550757535.
+INFO (XSTRM-223): 7. Translating cellView importpads/subil_iorule/layout as STRUCTURE subil_iorule.
+INFO (XSTRM-223): 8. Translating cellView importpads/subil_m_via3/layout as STRUCTURE subil_m_via3.
+INFO (XSTRM-223): 9. Translating cellView importpads/subil_m_via5/layout as STRUCTURE subil_m_via5.
+INFO (XSTRM-223): 10. Translating cellView importpads/subil_m_via4/layout as STRUCTURE subil_m_via4.
+INFO (XSTRM-223): 11. Translating cellView importpads/subil_m_via2/layout as STRUCTURE subil_m_via2.
+INFO (XSTRM-223): 12. Translating cellView importpads/subil_powermetal/layout as STRUCTURE subil_powermetal.
+INFO (XSTRM-223): 13. Translating cellView importpads/subil_psegment/layout as STRUCTURE subil_psegment.
+INFO (XSTRM-223): 14. Translating cellView importpads/subil_m_via/layout as STRUCTURE subil_m_via.
+INFO (XSTRM-223): 15. Translating cellView importpads/subil_cornerarray/layout as STRUCTURE subil_cornerarray.
+INFO (XSTRM-223): 16. Translating cellView importpads/subil_via2array/layout as STRUCTURE subil_via2array.
+INFO (XSTRM-223): 17. Translating cellView importpads/subil_via1array/layout as STRUCTURE subil_via1array.
+INFO (XSTRM-223): 18. Translating cellView importpads/subil_padmetal/layout as STRUCTURE subil_padmetal.
+INFO (XSTRM-223): 19. Translating cellView importpads/subil_pad/layout as STRUCTURE subil_pad.
+INFO (XSTRM-223): 20. Translating cellView importpads/subil_pc3d00con_ESD/layout as STRUCTURE subil_pc3d00con_ESD.
+INFO (XSTRM-223): 21. Translating stdVia ts018_scl_prim/M3_M2/layout as STRUCTURE M3_M2_CDNS_784550757536.
+INFO (XSTRM-223): 22. Translating stdVia ts018_scl_prim/M2_M1/layout as STRUCTURE M2_M1_CDNS_784550757537.
+INFO (XSTRM-223): 23. Translating cellView importpads/subil_m_cc/layout as STRUCTURE subil_m_cc.
+INFO (XSTRM-223): 24. Translating cellView importpads/subil_preside/layout as STRUCTURE subil_preside.
+INFO (XSTRM-223): 25. Translating cellView importpads/subil_pnesd3d00/layout as STRUCTURE subil_pnesd3d00.
+INFO (XSTRM-223): 26. Translating cellView importpads/subil_ppdrive3d00_ESD/layout as STRUCTURE subil_ppdrive3d00_ESD.
+INFO (XSTRM-223): 27. Translating cellView importpads/subil_ppgatebotring/layout as STRUCTURE subil_ppgatebotring.
+INFO (XSTRM-223): 28. Translating cellView importpads/subil_ppgatebuff/layout as STRUCTURE subil_ppgatebuff.
+INFO (XSTRM-223): 29. Translating cellView importpads/subil_ppgate2buff/layout as STRUCTURE subil_ppgate2buff.
+INFO (XSTRM-223): 30. Translating cellView importpads/subil_ppgate2bufftop/layout as STRUCTURE subil_ppgate2bufftop.
+INFO (XSTRM-223): 31. Translating cellView importpads/subil_ppgatering/layout as STRUCTURE subil_ppgatering.
+INFO (XSTRM-223): 32. Translating cellView importpads/subil_ppgate2buffend3d00_ESD/layout as STRUCTURE subil_ppgate2buffend3d00_ESD.
+INFO (XSTRM-223): 33. Translating cellView importpads/subil_ppbuff3d00_ESD/layout as STRUCTURE subil_ppbuff3d00_ESD.
+INFO (XSTRM-223): 34. Translating cellView importpads/subil_pngatering_440/layout as STRUCTURE subil_pngatering_440.
+INFO (XSTRM-223): 35. Translating cellView importpads/subil_pngatebuffsing_503/layout as STRUCTURE subil_pngatebuffsing_503.
+INFO (XSTRM-223): 36. Translating cellView importpads/subil_pngate2buffsing/layout as STRUCTURE subil_pngate2buffsing.
+INFO (XSTRM-223): 37. Translating cellView importpads/subil_pnbuff3d00/layout as STRUCTURE subil_pnbuff3d00.
+INFO (XSTRM-223): 38. Translating cellView importpads/subil_ppolyres/layout as STRUCTURE subil_ppolyres.
+INFO (XSTRM-223): 39. Translating cellView importpads/subil_pobuffcon/layout as STRUCTURE subil_pobuffcon.
+INFO (XSTRM-223): 40. Translating cellView importpads/asubil_pdiodepower/layout as STRUCTURE asubil_pdiodepower.
+INFO (XSTRM-223): 41. Translating cellView importpads/subil_dio2/layout as STRUCTURE subil_dio2.
+INFO (XSTRM-223): 42. Translating cellView importpads/subil_nwellres/layout as STRUCTURE subil_nwellres.
+INFO (XSTRM-223): 43. Translating cellView importpads/subil_nwellres1000/layout as STRUCTURE subil_nwellres1000.
+INFO (XSTRM-223): 44. Translating cellView importpads/subil_ppwellbias3d00/layout as STRUCTURE subil_ppwellbias3d00.
+INFO (XSTRM-223): 45. Translating cellView importpads/subil_p3d00bulkcon/layout as STRUCTURE subil_p3d00bulkcon.
+INFO (XSTRM-223): 46. Translating cellView importpads/subil_p3d00block/layout as STRUCTURE subil_p3d00block.
+INFO (XSTRM-223): 47. Translating cellView importpads/pc3d00/layout as STRUCTURE pc3d00.
+INFO (XSTRM-223): 48. Translating cellView importpads/subil_pngatebuff_ESD22/layout as STRUCTURE subil_pngatebuff_ESD22.
+INFO (XSTRM-223): 49. Translating cellView importpads/subil_pngate2buff_ESD22/layout as STRUCTURE subil_pngate2buff_ESD22.
+INFO (XSTRM-223): 50. Translating cellView importpads/subil_pngatering_ESD22/layout as STRUCTURE subil_pngatering_ESD22.
+INFO (XSTRM-223): 51. Translating cellView importpads/subil_pnbuff_ESD22/layout as STRUCTURE subil_pnbuff_ESD22.
+INFO (XSTRM-223): 52. Translating cellView importpads/subil_pviblockcell/layout as STRUCTURE subil_pviblockcell.
+INFO (XSTRM-223): 53. Translating cellView importpads/subil_iorulepower/layout as STRUCTURE subil_iorulepower.
+INFO (XSTRM-223): 54. Translating cellView importpads/subil_ppgatebuffpower_0di_ESD22/layout as STRUCTURE subil_ppgatebuffpower_0di_ESD22.
+INFO (XSTRM-223): 55. Translating cellView importpads/subil_ppgate2buffpower_0di_ESD22/layout as STRUCTURE subil_ppgate2buffpower_0di_ESD22.
+INFO (XSTRM-223): 56. Translating cellView importpads/subil_ppgatebotringpower_0di/layout as STRUCTURE subil_ppgatebotringpower_0di.
+INFO (XSTRM-223): 57. Translating cellView importpads/subil_ppgateringpower_0di/layout as STRUCTURE subil_ppgateringpower_0di.
+INFO (XSTRM-223): 58. Translating cellView importpads/subil_ppbuffpower_0di_ESD22/layout as STRUCTURE subil_ppbuffpower_0di_ESD22.
+INFO (XSTRM-223): 59. Translating cellView importpads/subil_powermetalring_ESD2/layout as STRUCTURE subil_powermetalring_ESD2.
+INFO (XSTRM-223): 60. Translating cellView importpads/subil_pdiodepower/layout as STRUCTURE subil_pdiodepower.
+INFO (XSTRM-223): 61. Translating cellView importpads/subil_m_via_546/layout as STRUCTURE subil_m_via_546.
+INFO (XSTRM-223): 62. Translating cellView importpads/subil_m_via2_545/layout as STRUCTURE subil_m_via2_545.
+INFO (XSTRM-223): 63. Translating cellView importpads/cnwnmos_thn2t$$44657708/layout as STRUCTURE cnwnmos_thn2t$$44657708.
+INFO (XSTRM-223): 64. Translating cellView importpads/subil_pcappower/layout as STRUCTURE subil_pcappower.
+INFO (XSTRM-223): 65. Translating cellView importpads/subil_powerbase_1/layout as STRUCTURE subil_powerbase_1.
+INFO (XSTRM-223): 66. Translating cellView importpads/subil_powerbase_ESD2/layout as STRUCTURE subil_powerbase_ESD2.
+INFO (XSTRM-223): 67. Translating cellView importpads/subil_presistorpower/layout as STRUCTURE subil_presistorpower.
+INFO (XSTRM-223): 68. Translating cellView importpads/subil_powerbaseconvsso_ESD1/layout as STRUCTURE subil_powerbaseconvsso_ESD1.
+INFO (XSTRM-223): 69. Translating cellView importpads/subil_4via_ESD/layout as STRUCTURE subil_4via_ESD.
+INFO (XSTRM-223): 70. Translating cellView importpads/subil_pv0icon_ESD/layout as STRUCTURE subil_pv0icon_ESD.
+INFO (XSTRM-223): 71. Translating cellView importpads/pv0i/layout as STRUCTURE pv0i.
+INFO (XSTRM-223): 72. Translating cellView importpads/subil_midconer2/layout as STRUCTURE subil_midconer2.
+INFO (XSTRM-223): 73. Translating cellView importpads/pfrelr/layout as STRUCTURE pfrelr.
+INFO (XSTRM-223): 74. Translating cellView importpads/subil_pvblockcell/layout as STRUCTURE subil_pvblockcell.
+INFO (XSTRM-223): 75. Translating cellView importpads/subil_pngatering/layout as STRUCTURE subil_pngatering.
+INFO (XSTRM-223): 76. Translating cellView importpads/subil_pngatebuff_ESD1/layout as STRUCTURE subil_pngatebuff_ESD1.
+INFO (XSTRM-223): 77. Translating cellView importpads/subil_pngate2buff_ESD1/layout as STRUCTURE subil_pngate2buff_ESD1.
+INFO (XSTRM-223): 78. Translating cellView importpads/subil_pnbuff_ESD1/layout as STRUCTURE subil_pnbuff_ESD1.
+INFO (XSTRM-223): 79. Translating cellView importpads/subil_ppgatebotringpower/layout as STRUCTURE subil_ppgatebotringpower.
+INFO (XSTRM-223): 80. Translating cellView importpads/subil_ppgatebuffpower/layout as STRUCTURE subil_ppgatebuffpower.
+INFO (XSTRM-223): 81. Translating cellView importpads/subil_ppgate2buffpower/layout as STRUCTURE subil_ppgate2buffpower.
+INFO (XSTRM-223): 82. Translating cellView importpads/subil_ppgateringpower/layout as STRUCTURE subil_ppgateringpower.
+INFO (XSTRM-223): 83. Translating cellView importpads/subil_ppbuffpower/layout as STRUCTURE subil_ppbuffpower.
+INFO (XSTRM-223): 84. Translating cellView importpads/subil_pvdacon_ESD/layout as STRUCTURE subil_pvdacon_ESD.
+INFO (XSTRM-223): 85. Translating cellView importpads/subil_powerbasecon_ESD/layout as STRUCTURE subil_powerbasecon_ESD.
+INFO (XSTRM-223): 86. Translating cellView importpads/subil_powerbasevsso/layout as STRUCTURE subil_powerbasevsso.
+INFO (XSTRM-223): 87. Translating cellView importpads/subil_powermetalring/layout as STRUCTURE subil_powermetalring.
+INFO (XSTRM-223): 88. Translating cellView importpads/pvda/layout as STRUCTURE pvda.
+INFO (XSTRM-223): 89. Translating cellView importpads/subil_pngatebuff_ESD/layout as STRUCTURE subil_pngatebuff_ESD.
+INFO (XSTRM-223): 90. Translating cellView importpads/subil_pngate2buff_ESD/layout as STRUCTURE subil_pngate2buff_ESD.
+INFO (XSTRM-223): 91. Translating cellView importpads/subil_pnbuff_ESD/layout as STRUCTURE subil_pnbuff_ESD.
+INFO (XSTRM-223): 92. Translating cellView importpads/subil_powerbasevsso_ESD/layout as STRUCTURE subil_powerbasevsso_ESD.
+INFO (XSTRM-223): 93. Translating cellView importpads/subil_powermetalring_ESD/layout as STRUCTURE subil_powermetalring_ESD.
+INFO (XSTRM-223): 94. Translating cellView importpads/subil_powerbaseconvsso_ESD/layout as STRUCTURE subil_powerbaseconvsso_ESD.
+INFO (XSTRM-223): 95. Translating cellView importpads/subil_pv0acon_ESD/layout as STRUCTURE subil_pv0acon_ESD.
+INFO (XSTRM-223): 96. Translating cellView importpads/pv0a/layout as STRUCTURE pv0a.
+INFO (XSTRM-223): 97. Translating cellView importpads/subil_pngatebuff_ESD122/layout as STRUCTURE subil_pngatebuff_ESD122.
+INFO (XSTRM-223): 98. Translating cellView importpads/subil_pngate2buff_ESD122/layout as STRUCTURE subil_pngate2buff_ESD122.
+INFO (XSTRM-223): 99. Translating cellView importpads/subil_pngatering22/layout as STRUCTURE subil_pngatering22.
+INFO (XSTRM-223): 100. Translating cellView importpads/subil_pnbuff_ESD122/layout as STRUCTURE subil_pnbuff_ESD122.
+INFO (XSTRM-223): 101. Translating cellView importpads/subil_powermetalring_ESD1/layout as STRUCTURE subil_powermetalring_ESD1.
+INFO (XSTRM-223): 102. Translating cellView importpads/subil_powerbase_ESD1/layout as STRUCTURE subil_powerbase_ESD1.
+INFO (XSTRM-223): 103. Translating cellView importpads/subil_pvdicon_ESD/layout as STRUCTURE subil_pvdicon_ESD.
+INFO (XSTRM-223): 104. Translating cellView importpads/pvdi/layout as STRUCTURE pvdi.
+INFO (XSTRM-223): 105. Translating cellView importpads/pfeed30000/layout as STRUCTURE pfeed30000.
+INFO (XSTRM-223): 106. Translating cellView padring1/padring/layout as STRUCTURE padring.
+INFO (XSTRM-223): 107. Translating stdVia ts018_scl_prim/M3_M2_S/layout as STRUCTURE M3_M2_S_CDNS_784550757538.
+INFO (XSTRM-223): 108. Translating stdVia ts018_scl_prim/ML_M3_S/layout as STRUCTURE ML_M3_S_CDNS_784550757539.
+INFO (XSTRM-223): 109. Translating stdVia ts018_scl_prim/M2_M1_S/layout as STRUCTURE M2_M1_S_CDNS_7845507575310.
+INFO (XSTRM-223): 110. Translating stdVia ts018_scl_prim/ML_M3_S/layout as STRUCTURE ML_M3_S_CDNS_7845507575311.
+INFO (XSTRM-223): 111. Translating stdVia ts018_scl_prim/M3_M2_S/layout as STRUCTURE M3_M2_S_CDNS_7845507575312.
+INFO (XSTRM-223): 112. Translating stdVia ts018_scl_prim/M2_M1_S/layout as STRUCTURE M2_M1_S_CDNS_7845507575313.
+INFO (XSTRM-223): 113. Translating stdVia ts018_scl_prim/M2_M1_S/layout as STRUCTURE M2_M1_S_CDNS_7845507575314.
+INFO (XSTRM-223): 114. Translating stdVia ts018_scl_prim/M2_M1_S/layout as STRUCTURE M2_M1_S_CDNS_7845507575315.
+INFO (XSTRM-223): 115. Translating stdVia ts018_scl_prim/M1_PO_4X/layout as STRUCTURE M1_PO_4X_CDNS_7845507575316.
+INFO (XSTRM-223): 116. Translating cellView ts018_scl_prim/pmos_18/layout as STRUCTURE pmos_18_CDNS_784550757530.
+WARNING (XSTRM-35): The objects in the layer-purpose pair 'instance:drawing' are ignored. This is because the layer-purpose pair used in the design is not specified in the layer map file. Specify the layer-purpose pair in the layer map file and try again.
+INFO (XSTRM-223): 117. Translating cellView ts018_scl_prim/nmos_18/layout as STRUCTURE nmos_18_CDNS_784550757531.
+INFO (XSTRM-223): 118. Translating stdVia ts018_scl_prim/M3_M2_S/layout as STRUCTURE M3_M2_S_CDNS_7845507575317.
+INFO (XSTRM-223): 119. Translating stdVia ts018_scl_prim/M2_M1_S/layout as STRUCTURE M2_M1_S_CDNS_7845507575318.
+INFO (XSTRM-223): 120. Translating stdVia ts018_scl_prim/M2_M1_S/layout as STRUCTURE M2_M1_S_CDNS_7845507575319.
+INFO (XSTRM-223): 121. Translating stdVia ts018_scl_prim/M3_M2_S/layout as STRUCTURE M3_M2_S_CDNS_7845507575320.
+INFO (XSTRM-223): 122. Translating stdVia ts018_scl_prim/ML_M3_S/layout as STRUCTURE ML_M3_S_CDNS_7845507575321.
+INFO (XSTRM-223): 123. Translating cellView CMOS_inv/CMOS_inv/layout as STRUCTURE CMOS_inv.
+WARNING (XSTRM-154): The object map file does not contain any mapping for the OpenAccess object 'Marker' and the sub-object 'annotation'. Therefore, these objects in the design will not be translated. To enable the translation of these objects in the Stream file, provide a valid mapping in the object map file. For details on the format of object map file, refer to the "Design Data Translator's Reference" guide for XStream.
+INFO (XSTRM-223): 124. Translating cellView VEDANT_NEW/Column_Mux/layout as STRUCTURE Column_Mux.
+INFO (XSTRM-317): The 'VEDANT_NEW/Column_Mux/layout' has a pathSeg with diagonal orientation, or end style as custom or chamfer at (7320, 3770). This pathSeg will be translated as a boundary record in the GDS file during Stream Out.
+INFO (XSTRM-317): The 'VEDANT_NEW/Column_Mux/layout' has a pathSeg with diagonal orientation, or end style as custom or chamfer at (5360, 3770). This pathSeg will be translated as a boundary record in the GDS file during Stream Out.
+INFO (XSTRM-317): The 'VEDANT_NEW/Column_Mux/layout' has a pathSeg with diagonal orientation, or end style as custom or chamfer at (3350, 3745). This pathSeg will be translated as a boundary record in the GDS file during Stream Out.
+INFO (XSTRM-317): The 'VEDANT_NEW/Column_Mux/layout' has a pathSeg with diagonal orientation, or end style as custom or chamfer at (9355, 3775). This pathSeg will be translated as a boundary record in the GDS file during Stream Out.
+INFO (XSTRM-317): The 'VEDANT_NEW/Column_Mux/layout' has a pathSeg with diagonal orientation, or end style as custom or chamfer at (4640, 3120). This pathSeg will be translated as a boundary record in the GDS file during Stream Out.
+INFO (XSTRM-223): 125. Translating stdVia ts018_scl_prim/M1_PO_4X/layout as STRUCTURE M1_PO_4X_CDNS_7845507575322.
+INFO (XSTRM-223): 126. Translating stdVia ts018_scl_prim/M3_M2_S/layout as STRUCTURE M3_M2_S_CDNS_7845507575323.
+INFO (XSTRM-223): 127. Translating stdVia ts018_scl_prim/M2_M1_S/layout as STRUCTURE M2_M1_S_CDNS_7845507575324.
+INFO (XSTRM-223): 128. Translating stdVia ts018_scl_prim/M3_M2_S/layout as STRUCTURE M3_M2_S_CDNS_7845507575325.
+INFO (XSTRM-223): 129. Translating cellView ts018_scl_prim/nmos_18/layout as STRUCTURE nmos_18_CDNS_784550757532.
+INFO (XSTRM-223): 130. Translating cellView ts018_scl_prim/nmos_18/layout as STRUCTURE nmos_18_CDNS_784550757533.
+INFO (XSTRM-223): 131. Translating cellView ts018_scl_prim/pmos_18/layout as STRUCTURE pmos_18_CDNS_784550757534.
+INFO (XSTRM-223): 132. Translating cellView ts018_scl_prim/pmos_18/layout as STRUCTURE pmos_18_CDNS_784550757535.
+INFO (XSTRM-223): 133. Translating cellView VEDANT_NEW/Diff_Sense_Amp/layout as STRUCTURE Diff_Sense_Amp.
+INFO (XSTRM-223): 134. Translating cellView VEDANT_NEW/Write_Driver/layout as STRUCTURE Write_Driver.
+INFO (XSTRM-223): 135. Translating stdVia ts018_scl_prim/M3_M2_S/layout as STRUCTURE M3_M2_S_CDNS_7845507575326.
+INFO (XSTRM-223): 136. Translating cellView ts018_scl_prim/pmos_18/layout as STRUCTURE pmos_18_CDNS_784550757536.
+INFO (XSTRM-223): 137. Translating cellView ts018_scl_prim/pmos_18/layout as STRUCTURE pmos_18_CDNS_784550757537.
+INFO (XSTRM-223): 138. Translating cellView VEDANT_NEW/Pre_charge_CKT/layout as STRUCTURE Pre_charge_CKT.
+INFO (XSTRM-223): 139. Translating stdVia ts018_scl_prim/M3_M2_S/layout as STRUCTURE M3_M2_S_CDNS_7845507575327.
+INFO (XSTRM-223): 140. Translating stdVia ts018_scl_prim/M3_M2_S/layout as STRUCTURE M3_M2_S_CDNS_7845507575328.
+INFO (XSTRM-223): 141. Translating stdVia ts018_scl_prim/M2_M1_S/layout as STRUCTURE M2_M1_S_CDNS_7845507575329.
+INFO (XSTRM-223): 142. Translating stdVia ts018_scl_prim/M2_M1_S/layout as STRUCTURE M2_M1_S_CDNS_7845507575330.
+INFO (XSTRM-223): 143. Translating cellView ts018_scl_prim/nmos_18/layout as STRUCTURE nmos_18_CDNS_784550757538.
+INFO (XSTRM-223): 144. Translating cellView ts018_scl_prim/pmos_18/layout as STRUCTURE pmos_18_CDNS_784550757539.
+INFO (XSTRM-223): 145. Translating cellView ts018_scl_prim/nmos_18/layout as STRUCTURE nmos_18_CDNS_7845507575310.
+INFO (XSTRM-223): 146. Translating cellView VEDANT_NEW/SRAM/layout as STRUCTURE SRAM.
+INFO (XSTRM-223): 147. Translating cellView ts018_scl_prim/nmos_18/layout as STRUCTURE nmos_18_CDNS_7845507575311.
+INFO (XSTRM-223): 148. Translating cellView ts018_scl_prim/pmos_18/layout as STRUCTURE pmos_18_CDNS_7845507575312.
+INFO (XSTRM-223): 149. Translating cellView ts018_scl_prim/pmos_18/layout as STRUCTURE pmos_18_CDNS_7845507575313.
+INFO (XSTRM-223): 150. Translating cellView VEDANT_NEW/NAND_3IP/layout as STRUCTURE NAND_3IP.
+INFO (XSTRM-223): 151. Translating cellView VEDANT_NEW/Decoder_3X8/layout as STRUCTURE Decoder_3X8.
+INFO (XSTRM-223): 152. Translating cellView VEDANT_NEW/6TSRAM_ARRAY/layout as STRUCTURE 6TSRAM_ARRAY.
+WARNING (XSTRM-145): The structure name 'SRAM_CHIP' has been changed to 'SRAM_CHIP_0' by the translator. This could be because multiple cells with the same cell name exist in different libraries, the same cell name has been mapped to multiple cell names, or the cell name length is greater than the '32' that was specified using the '-respectGDSIINameLimit' or '-gdsCellNameLength' option.
+INFO (XSTRM-223): 153. Translating cellView dummy_SRAM_CHIP/SRAM_CHIP/layout as STRUCTURE SRAM_CHIP_0.
+INFO (XSTRM-223): 154. Translating cellView VEDANT_NEW/SRAM_CHIP/layout as STRUCTURE SRAM_CHIP.
+
+Summary of Objects Translated:
+	Scalar Instances:                       80227
+	Array Instances:                        0
+	Polygons:                               953
+	Paths:                                  117
+	Rectangles:                             86093
+	Lines:                                  0
+	Arcs:                                   0
+	Donuts:                                 0
+	Dots:                                   0
+	Ellipses:                               0
+	Boundaries:                             9
+	Area Blockages:                         0
+	Layer Blockages:                        0
+	Area Halos:                             0
+	Markers:                                0
+	Rows:                                   0
+	Standard Vias                           370
+	Custom Vias:                            0
+	CdsGen Vias:                            0
+	Pathsegs:                               572
+	Text:                                   309
+	TextDisplay:                            0
+	Cells:                                  154
+
+Elapsed Time: 2.6s   User Time: 0.5s   CPU Time: 0.1s   Peak VM: 26628KB
+INFO (XSTRM-234): Translation completed. '0' error(s) and '4' warning(s) found.

@@ -1,0 +1,53 @@
+Warning: Invalid path /progs/cadence/INCISIVE152/tools/affirma_ams/etc/connect_lib/connectLib on line 31 of /home/Vedant_int/Desktop/VEDANT_WORK/cds.lib
+Warning: Same file has different definitions for library library avTech from /home/Vedant_int/Desktop/VEDANT_WORK/cds.lib line 42, redefines
+    library avTech from same file line 29 defined earlier. on line 42 of /home/Vedant_int/Desktop/VEDANT_WORK/cds.lib
+Warning: Invalid path /home/Vedant_int/Desktop/VEDANT_WORK/VEDANT2 on line 58 of /home/Vedant_int/Desktop/VEDANT_WORK/cds.lib
+Warning: Invalid path /home/Vedant_int/Desktop/VEDANT_WORK/cmos_inv on line 59 of /home/Vedant_int/Desktop/VEDANT_WORK/cds.lib
+INFO: cds.lib has been converted to lib.defs /var/tmp/34661_result_lib.defs
+RUNNING PEX back-annotation...
+//  Calibre FDI  v2022.4_37.20 Fri Dec 2 17:31:31 PST 2022
+//
+//                  Copyright Mentor Graphics Corporation 2008-2022
+//                             All Rights Reserved.
+//         THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+//             WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION
+//               OR ITS LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+//
+//  Mentor Graphics software executing under x86-64 Linux
+//  64 bit virtual addressing enabled
+//
+//         This software is in pre-production form and is considered to be
+//         beta code that is subject to the terms of the current Mentor
+//         Graphics End-User License Agreement or your signed agreement
+//         with Mentor Graphics that contains beta terms, whichever applies.
+//
+//  Running on Linux nsdcs.iiti.ac.in 3.10.0-1160.119.1.el7.x86_64 #1 SMP Tue Jun 4 14:43:51 UTC 2024 x86_64
+//  OS: CentOS Linux release 7.9.2009 (Core)[3.10.0-1160.119.1.el7.x86_64]
+//
+//  Entries in /proc/meminfo:
+//
+//  MemTotal:       131759196 kB
+//  MemFree:        57356532 kB
+//  Cached:         44416108 kB
+//  SwapCached:            0 kB
+//  Dirty:             11900 kB
+//  Writeback:             0 kB
+//
+//  Processor : Intel(R) Xeon(R) CPU E5-2650 v4 @ 2.20GHz
+//  CPU Info: Cores = 12
+//  Process ID: 34661
+//  Starting time: Fri Jun 19 11:26:03 2026
+INFO: Parsing command line arguments...
+INFO: License checked out successfully for calibreqdb.
+INFO: Parsing cellmap file...
+WARNING: [FDI3062] The device "r_1x_ll" with 2 pins is already defined in the cellmap file. Ignoring the previous definitions.
+WARNING: [FDI3062] The device "r_1x_ll" with 2 pins is already defined in the cellmap file. Ignoring the previous definitions.
+WARNING: [FDI3062] The device "r_1x_ll" with 2 pins is already defined in the cellmap file. Ignoring the previous definitions.
+WARNING: [FDI3062] The device "r_1x_ll" with 2 pins is already defined in the cellmap file. Ignoring the previous definitions.
+WARNING: [FDI3062] The device "r_2x_ll" with 2 pins is already defined in the cellmap file. Ignoring the previous definitions.
+WARNING: [FDI3062] The device "r_4x_ll" with 2 pins is already defined in the cellmap file. Ignoring the previous definitions.
+INFO: Executing back annotation...
+INFO: Creating new view: calibre in library: VEDANT cell: SenseAmplifier.
+INFO: Back annotation is completed.
+Calibre View generation completed with 6 WARNINGs and 0 ERRORs.
+Please consult the CIW transcript for messages.

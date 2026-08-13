@@ -1,0 +1,39 @@
+                       LAYOUT PATH "/home/Vedant_int/Desktop/VEDANT_WORK/SRAM_CHIP.gds"
+                       LAYOUT PRIMARY "SRAM_CHIP"
+                       LAYOUT SYSTEM GDSII
+
+                       // Output Database/report 
+                       DRC SUMMARY REPORT "DRC_dummy_SRAM_CHIP" REPLACE HIER
+  		       DRC RESULTS DATABASE  "dummy_SRAM_CHIP.gds"  GDSII 
+
+                       DRC MAXIMUM RESULTS ALL
+                       DRC MAXIMUM VERTEX ALL
+                       DRC CELL NAME YES CELL SPACE XFORM
+                       // User defined options.
+                       //---------------------
+                       DRC ICSTATION YES
+
+// Select Metal Options
+//#define 2LM
+//#define 3LM
+#define 4LM
+//#define 5LM
+//#define 6LM
+//#define 4M1T
+
+// Select Generated Layers
+#define AA_gen
+#define GC_gen
+#define M1_gen
+#define M2_gen
+#define M3_gen
+#define M4_gen
+#define M5_gen
+#define MT_gen
+
+// Select Density Check
+//#define DENSITY_CHECKS
+
+                       //INCLUDE /usr1/dtech/scl18sl/design_kit/v2/drclvs_rsf/DUMMYFILL_TS18SL_SCL_CALIBRE
+                      INCLUDE /home/Vedant_int/Desktop/VEDANT_WORK/DUMMYFILL_TS18SL_SCL_CALIBRE
+

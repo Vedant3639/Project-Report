@@ -1,0 +1,73 @@
+************************************************************************
+* auCdl Netlist:
+* 
+* Library Name:  SAMPLE
+* Top Cell Name: 3_8_DECODER
+* View Name:     schematic
+* Netlisted on:  Jul  5 04:48:05 2026
+************************************************************************
+
+*.EQUATION
+*.SCALE METER
+*.MEGA
+.PARAM
+
+
+
+************************************************************************
+* Library Name: SAMPLE
+* Cell Name:    NAND
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT NAND A B C VDD VSS Y
+*.PININFO A:I B:I C:I Y:O VDD:B VSS:B
+MM0 Y C VDD VDD P W=0.42 L=0.18 m=1
+MM1 Y B VDD VDD P W=0.42 L=0.18 m=1
+MM4 Y A VDD VDD P W=0.42 L=0.18 m=1
+MM2 Y A net25 VSS N W=0.42 L=0.18 m=1
+MM3 net25 B net24 VSS N W=0.42 L=0.18 m=1
+MM5 net24 C VSS VSS N W=0.42 L=0.18 m=1
+.ENDS
+
+************************************************************************
+* Library Name: SAMPLE
+* Cell Name:    INVERTER
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT INVERTER out vdd vin vss
+*.PININFO vdd:I vin:I vss:I out:O
+MM0 out vin vdd vdd P W=0.42 L=0.18 m=1
+MM1 out vin vss vss N W=0.42 L=0.18 m=1
+.ENDS
+
+************************************************************************
+* Library Name: SAMPLE
+* Cell Name:    3_8_DECODER
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT 3_8_DECODER A B C VDD VSS Y0 Y1 Y2 Y3 Y4 Y5 Y6 Y7
+*.PININFO A:I B:I C:I Y0:O Y1:O Y2:O Y3:O Y4:O Y5:O Y6:O Y7:O VDD:B VSS:B
+XI21 A B C VDD VSS net4 / NAND
+XI20 A net13 net14 VDD VSS net9 / NAND
+XI19 A net13 C VDD VSS net10 / NAND
+XI18 A B net14 VDD VSS net11 / NAND
+XI17 net12 B C VDD VSS net8 / NAND
+XI16 net12 B net14 VDD VSS net7 / NAND
+XI15 net12 net13 C VDD VSS net6 / NAND
+XI14 net12 net13 net14 VDD VSS net5 / NAND
+XI13 net14 VDD C VSS / INVERTER
+XI12 net13 VDD B VSS / INVERTER
+XI11 net12 VDD A VSS / INVERTER
+XI29 Y6 VDD net11 VSS / INVERTER
+XI28 Y5 VDD net10 VSS / INVERTER
+XI27 Y4 VDD net9 VSS / INVERTER
+XI26 Y3 VDD net8 VSS / INVERTER
+XI25 Y2 VDD net7 VSS / INVERTER
+XI24 Y1 VDD net6 VSS / INVERTER
+XI23 Y0 VDD net5 VSS / INVERTER
+XI30 Y7 VDD net4 VSS / INVERTER
+.ENDS
+

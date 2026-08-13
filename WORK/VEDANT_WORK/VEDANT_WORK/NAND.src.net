@@ -1,0 +1,32 @@
+************************************************************************
+* auCdl Netlist:
+* 
+* Library Name:  SAMPLE
+* Top Cell Name: NAND
+* View Name:     schematic
+* Netlisted on:  Jun 21 17:20:43 2026
+************************************************************************
+
+*.EQUATION
+*.SCALE METER
+*.MEGA
+.PARAM
+
+
+
+************************************************************************
+* Library Name: SAMPLE
+* Cell Name:    NAND
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT NAND A B C VDD VSS Y
+*.PININFO A:I B:I C:I Y:O VDD:B VSS:B
+MM0 Y C VDD VDD P W=0.42 L=0.18 m=1
+MM1 Y B VDD VDD P W=0.42 L=0.18 m=1
+MM4 Y A VDD VDD P W=0.42 L=0.18 m=1
+MM2 Y A net25 VSS N W=0.42 L=0.18 m=1
+MM3 net25 B net24 VSS N W=0.42 L=0.18 m=1
+MM5 net24 C VSS VSS N W=0.42 L=0.18 m=1
+.ENDS
+

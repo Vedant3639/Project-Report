@@ -1,0 +1,6 @@
+# CALIBRE-LVS DISCREPANCY VIEWER TCL FILE 
+# FILE: svdb/Precharge_Circuit.dv
+dv_start matched                                  
+dv_cell {Precharge_Circuit} {Precharge_Circuit} matched
+dv_obj_count -transformed_nets {6 6} -transformed_inst {4 4} -transformed_port {0 0}
+dv_end

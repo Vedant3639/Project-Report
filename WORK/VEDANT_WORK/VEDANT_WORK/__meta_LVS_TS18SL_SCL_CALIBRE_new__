@@ -1,0 +1,15 @@
+
+
+// +++ CUSTOMIZATION SETTINGS START +++
+
+#define "LVS_TECH" ts18scl
+#define "4M1L" 
+#define "ANALOG_TYPE" NO
+#define "PORT_NAMES" YES
+#define "SET_TOL" NO
+
+// +++ CUSTOMIZATION SETTINGS END +++
+
+DRC ICSTATION YES
+
+INCLUDE "/progs/FOUNDRY/SCL_FILES/scl_pdk/design_kit/drclvs_rsf/LVS_TS18SL_SCL_CALIBRE_new"

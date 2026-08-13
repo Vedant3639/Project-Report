@@ -1,0 +1,6 @@
+# CALIBRE-LVS DISCREPANCY VIEWER TCL FILE 
+# FILE: svdb/Write_Driver.dv
+dv_start matched                                  
+dv_cell {Write_Driver} {Write_Driver} matched
+dv_obj_count -transformed_nets {5 5} -transformed_inst {2 2} -transformed_port {0 0}
+dv_end

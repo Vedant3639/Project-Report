@@ -1,0 +1,32 @@
+( ( nil
+  version "2.1"
+  mapType "incremental"
+  blockName "SRAM_CHIP"
+  repList "auCdl schematic"
+  stopList "auCdl"
+  hierDelim "."
+  netlistDir "/home/Vedant_int/Desktop/VEDANT_WORK/"
+ )
+( model
+( "CMOS_inv/CMOS_inv/schematic" "CMOS_inv" )
+( "VEDANT_NEW/SRAM/schematic" "SRAM" )
+( "VEDANT_NEW/Pre_charge_CKT/schematic" "Pre_charge_CKT" )
+( "VEDANT_NEW/6TSRAM_ARRAY/schematic" "6TSRAM_ARRAY" )
+( "VEDANT_NEW/Diff_Sense_Amp/schematic" "Diff_Sense_Amp" )
+( "VEDANT_NEW/SRAM_CHIP/schematic" "SRAM_CHIP" )
+( "VEDANT_NEW/Column_Mux/schematic" "Column_Mux" )
+( "VEDANT_NEW/NAND_3IP/schematic" "NAND_3IP" )
+( "VEDANT_NEW/Decoder_3X8/schematic" "Decoder_3X8" )
+( "VEDANT_NEW/Write_Driver/schematic" "Write_Driver" )
+ )
+( "6TSRAM_ARRAY" "ihnl/cds8/map" )
+( "SRAM_CHIP" "ihnl/cds9/map" )
+( "CMOS_inv" "ihnl/cds1/map" )
+( "Diff_Sense_Amp" "ihnl/cds0/map" )
+( "Write_Driver" "ihnl/cds7/map" )
+( "Pre_charge_CKT" "ihnl/cds4/map" )
+( "SRAM" "ihnl/cds3/map" )
+( "NAND_3IP" "ihnl/cds5/map" )
+( "Decoder_3X8" "ihnl/cds6/map" )
+( "Column_Mux" "ihnl/cds2/map" )
+ )

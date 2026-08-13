@@ -1,0 +1,2564 @@
+// $Id: LVS_TS18SL_SCL_CALIBRE.rca 1.11 Wed Feb 17 16:17:23 2010 oferta Experimental $
+// BEGIN_HEADER 
+//                                         ********************************************
+//                                         *          RESTRICTED CIRCULATION          *
+//                                         *                                          *
+//                                         *   THIS SPEC IS PART OF A CUSTOMER DCB    *
+//                                         *                                          *
+//                                         ********************************************
+//   
+//
+//    TITLE:  CALIBRE LVS RUNSET FOR TS18SL SCL. 
+//    ----------------------------------------------------------------------------------------------------------------
+//    SPEC NAME: LVS_TS18SL_SCL_CALIBRE 
+//    ----------------------------------------------------------------------------------------------------------------
+//    REFERENCE DESIGN RULES:  DR2 0018 SCL rev. 0.0
+//    ----------------------------------------------------------------------------------------------------------------
+//                  R E V I S I O N         H I S T O R Y
+//    ----------------------------------------------------------------------------------------------------------------
+//    REV |ECN #| ORIGINATOR |  DATE        |BY|PAGE/PARAGRAPH-CHANGED/DELETED
+//    ----------------------------------------------------------------------------------------------------------------
+//    0.0 |     | Ofer       | 18.11.2009   |  | New runset per DRM
+//        |     | Elimeleh   |              |  | 
+//  ----------------------------------------------------------------------------------------------------------------------------
+//
+// END_HEADER
+//            ALL PAGES OF THIS SPECIFICATION ARE THE SAME REVISION AS PAGE 1
+//
+//                             COMPANY PRIVATE
+//
+//                   DO NOT REPRODUCE WITHOUT WRITTEN PERMISSION
+//                           TOWER  SEMICONDUCTOR  LIMITED
+//    ----------------------------------------------------------------------------------------------------------------
+//
+//  
+//  STATEMENT OF USE 
+//
+//  This information contains confidential and proprietary information of Tower. No part of this information may be reproduced,
+//  transmitted, transcribed, stored in a retrieval system, or translated into any human or computer language, in any form or by any
+//  means, electronic, mechanical, magnetic, optical, chemical, manual, or otherwise, without the prior written permission of
+//  Tower. Tower reserves the right to make changes in the information at any time and without notice.
+//
+//
+//	  =====================================================
+//	  Note:   Checked with Calibre revision: v2008.2_11.12
+//	  =====================================================
+//  _____________________________________________________________ 
+//
+//
+//1.0 PURPOSE AND SCOPE
+//
+//1.1 Purpose
+//       This document defines the Calibre LVS runset that does Layout Versus Schematic Checks (LVS)
+//       on layout designs for TS18 SL  processes .
+//
+//1.2 Scope
+//       All products to be manifactured in TSL in process TS18 SL  ,
+//       according to Design Rules DR2-0018 SL   must use this runset to verify the designs.
+//
+//
+//2.0 TABLE OF CONTENTS
+//
+// Section Title                        Section Number
+// -------------                        --------------
+//   2.1 Purpose and Scope                 1.0
+//   2.2 Table of Contents                 2.0
+//   2.3 Applicable Documents              3.0
+//   2.4 Definitions                       4.0
+//   2.5 Equipment                         5.0
+//   2.6 Safety                            6.0
+//   2.7 Supplies/Materials                7.0
+//   2.8 Updating this Spec                8.0
+//   2.8 Procedures                        9.0
+//
+//
+//3.0 APPLICABLE DOCUMENTS
+//
+//3.1 Design Rules for TS18 SL  Process.
+//                                                        
+//
+//4.0 DEFINITIONS
+//
+//N/A
+//
+//
+//5.0 EQUIPMENT AND S/W
+//
+//5.1 Equipment
+//    UNIX Computer terminal linked to TSL lan.
+//
+//6.0 SUPPLIES AND MATERIAL
+//
+//N/A
+//
+//
+//
+//7.0 SAFETY
+//
+// N/A
+//
+//8.0 UPDATING THIS SPEC
+//
+//8.1 Changes to Document
+//       An ECN should be submitted detailing all the changes to be made to
+//       the spec
+//
+//9.0 PROCEDURE
+//
+//9.1 Calibre LVS runset inputs:
+//       The user should run the runset on a stream format (binary) file representing
+//       the graphic database.
+//
+//9.2 Calibre LVS runset
+//    The runset to use is as specified below:
+//
+//	This file includes SVRF/TVF Technology under license by Mentor Graphics Corporation.
+//	"SVRF/TVF Technology" shall mean Mentor Graphics' Standard Verification Rule Format ("SVRF") and Tcl Verification Format ("TVF")
+//	proprietary syntaxes for expressing process rules.  You shall not use SVRF/TVF Technology unless you are a Mentor Graphics
+//	customer with a license to use the applicable Mentor Graphics software.  The exact terms of your obligations and rights are
+//	governed by your respective license.
+//	You shall not use SVRF/TVF Technology except: (a) for your internal business purposes and (b) for use with Mentor Graphics' Calibre tools.
+//	All SVRF/TVF Technology constitutes or contains trade secrets and confidential information of Mentor Graphics or its licensors.
+//	You shall not make SVRF/TVF Technology available in any form to any person other than your employees and on-site contractors,
+//	excluding Mentor Graphics competitors, whose job performance requires access and who are under obligations of confidentiality.
+//
+//9.3 Please add the INCLUDE statements for the LVS Modules
+//    as shown below , at the end of the runset.
+//    
+// Runset Include  statement
+// INCLUDE "<path to runset>" 
+//
+//
+// ----------------------------------------------
+//  Runtime Environment Settings and Definitions 
+// ----------------------------------------------
+
+// The following lines May need to be uncommented , depending on run mode (Calibre Interactive/Include/command line or other ).
+
+//Input GDS/Cellname/System Definition .
+
+//LAYOUT PATH "CELLNAME.gds"
+//LAYOUT PRIMARY CELLNAME
+//LAYOUT SYSTEM GDSII
+
+//LAYOUT CASE YES
+
+//SOURCE PATH "CELLNAME.cdl"
+//SOURCE PRIMARY CELLNAME
+//SOURCE SYSTEM SPICE
+
+// Results
+
+//LVS REPORT "lvs_report"
+
+// ---------------------------------------------
+// IMPORTANT - LVS run is the Default run . 
+
+// For RCX Runs It is needed to define an Environment variable for Proper "R" device extraction prior of RCX run.
+// setenv PEX_FMT_R_MODEL WIRE
+
+//#define RCX_run
+
+//#ifndef RCX_run //(
+//MASK SVDB DIRECTORY "./svdb" QUERY
+//#endif  //)
+
+
+//#ifdef RCX_run //(
+// User should select which Extraction tool is Used , by Uncommenting the Relevant line.
+
+//MASK SVDB DIRECTORY "svdb" QUERY XCALIBRE
+//MASK SVDB DIRECTORY "svdb" QUERY XRC
+//MASK SVDB DIRECTORY "./svdb" QUERY
+//#endif  //)
+
+//MASK RESULTS DATABASE NONE
+//DRC RESULTS DATABASE CELLNAME.db
+
+// MUST - Please Select Metal Level for LVS Run 
+// #define 2LM
+// #define 3LM
+// #define 4LM
+
+// Please Choose 3TERM to enable  extraction ot 3 Terminal model for Spice.
+// #define 3TERM
+// Please Choose 2TERM to enable  extraction ot 2 Terminal model for Spice.
+// #define 2TERM
+// In order to extract 2 and 3 terminal designs leave the 3TERM/2TERM commented and use DEV_AREA;3t support layer in your design
+
+
+
+// LVS OPTIONS
+
+UNIT LENGTH 1E-06
+
+LVS IGNORE PORTS YES
+
+LVS REPORT MAXIMUM 2000
+LVS REPORT OPTION S
+
+LVS RECOGNIZE GATES ALL
+
+
+VIRTUAL CONNECT COLON YES
+TEXT DEPTH PRIMARY
+
+//  ******************************************************************************************************************
+//  **********   NOTE:  TO CANCEL FILTERING OF UNUSED DEVICES PLEASE COMMENT OUT THE LINE BELOW!       ***************
+//  ******************************************************************************************************************
+
+LVS FILTER UNUSED OPTION AB RC RE RG
+
+//    **************************************************************************************************************
+
+LVS POWER NAME VDD vdd VCC vcc "VDD!" "vdd!" "VCC!" "vcc!" AVDD DVDD
+LVS GROUND NAME GND gnd VSS vss "GND!" "gnd!" "VSS!" "vss!" AVSS DVSS
+LVS ISOLATE SHORTS YES CELL PRIMARY
+LVS ALL CAPACITOR PINS SWAPPABLE NO
+
+// LVS SHOW SEED PROMOTIONS YES
+// LVS SHOW SEED PROMOTIONS MAXIMUM 50
+
+// Please Comment the following "define" line in case Deep Nwell devices should not be compared.
+// In any case they will be extracted to the Spice netlist.
+// By Default,they are compared.
+
+#define DNW
+
+#ifndef DNW //(
+LVS FILTER D(DDWNPS18) OPEN
+LVS FILTER D(DDWNPW18) OPEN 
+#endif  //)
+
+// For customers using Industry Standart designs containing Varactors in Nwell ( 1.8V Varactor and 3.3V Varactor device ),
+// and MIM (Metal to Metal) Capacitors, It is required to uncomment the following "define" Statement.
+
+
+// For cases where there are undetectable shorts throught substrate , where only extraction report is generated,
+// uncommenting the following line changed the connectivity from soft-connect to connect , which enables an easier short detection.
+
+// #define sub_short
+
+// LVS BOX Setup
+
+LVS NETLIST BOX CONTENTS NO
+LVS NETLIST UNNAMED BOX PINS NO
+
+// When using LVS BOX The following lines containing the LVS BOX cellnames need to be modified to contain the correct cellname .
+
+//VARIABLE lvs_box_names "CELLNAME1" "CELLNAME2" "CELLNAME3" "etc"
+//LVS BOX lvs_box_names
+
+// This Special Variable is defined when TS18IS is not defined.
+
+
+////////////////////////////////////////////////////////////////////
+// METALS OPTIONS SORTING 
+////////////////////////////////////////////////////////////////////
+
+//-------------- STANDARD OR MT OPTIONS --------------------
+
+#ifdef 2LM //(
+	#define ML_st_tk
+#endif  //)
+#ifdef 3LM //(
+	#define ML_st_tk
+#endif  //)
+#ifdef 4LM //(
+	#define ML_st_tk
+#endif  //)
+#ifdef 5LM //{
+	#define ML_st_tk
+#endif  //}
+#ifdef 6LM //{
+	#define ML_st_tk
+#endif  //}
+
+//----------- MT ONLY OPTIONS ---------------------
+
+#ifdef 3M1T //(
+	#ifdef ML_st_tk  //(
+		#ifndef 3LM  //(
+			DRC_SAFE = copy STANDART_METAL_OPTIONS_CONFLICT_THICK_OPTION
+		#endif  //)
+	#endif  //)
+	#define ML_st_tk
+	#define MTk
+	#define 3LM
+#endif  //)
+
+#ifdef 4M1T //(
+	#ifdef ML_st_tk  //(
+		#ifndef 4LM  //(
+			DRC_SAFE = copy STANDART_METAL_OPTIONS_CONFLICT_THICK_OPTION
+		#endif  //)
+	#endif  //)
+	#define ML_st_tk
+	#define MTk
+	#define 4LM
+#endif  //)
+
+//----------- METAL SEP DEFINITIONS ---------------------
+
+#ifdef 3LM //(
+#define 3LM_sep
+#endif  //)
+
+
+#ifdef 4LM //(
+#define 3LM_sep
+#define 4LM_sep
+#endif  //)
+
+#ifdef 5LM //{
+#define 3LM_sep
+#define 4LM_sep
+#define 5LM_sep
+#endif  //}
+
+#ifdef 6LM //{
+#define 3LM_sep
+#define 4LM_sep
+#define 5LM_sep
+#define 6LM_sep
+#define 6LM_level
+#endif  //}
+
+#ifndef 2LM //{
+	#ifndef 3LM //{
+		#ifndef 4LM //{
+			#ifndef 5LM //{
+				#ifndef 6LM //{
+
+BULK = copy PLEASE_CHOOSE_METAL_LEVEL
+				#endif //}
+			#endif //}
+		#endif //}
+	#endif //}
+#endif //}
+// Both definition cannot be define together, so this is Irrelevant.
+
+// --------------------------------
+//       Property comparison
+// --------------------------------
+
+// MOS Transistors property tracing.
+//TRACE PROPERTY mp w w 3
+//TRACE PROPERTY mp l l 3
+//TRACE PROPERTY mn w w 3
+//TRACE PROPERTY mn l l 3
+
+//MOS CAPS
+TRACE PROPERTY C(CL) w w 3
+TRACE PROPERTY C(CL) l l 3
+TRACE PROPERTY C(CL3) w w 3
+TRACE PROPERTY C(CL3) l l 3
+TRACE PROPERTY C(CH) w w 3
+TRACE PROPERTY C(CH) l l 3
+TRACE PROPERTY C(CH3) w w 3
+TRACE PROPERTY C(CH3) l l 3
+// Resistors property tracing.
+
+#ifndef RCX_run //(
+TRACE PROPERTY r(RL) r r 10
+TRACE PROPERTY r(RT) r r 10
+TRACE PROPERTY r(RA) r r 10
+TRACE PROPERTY r(RB) r r 10
+TRACE PROPERTY r(RC) r r 10
+TRACE PROPERTY r(RD) r r 10
+TRACE PROPERTY r(RE) r r 10
+TRACE PROPERTY r(RG) r r 10
+TRACE PROPERTY r(RH) r r 10
+TRACE PROPERTY r(RW) r r 10
+TRACE PROPERTY r(RF) r r 10
+TRACE PROPERTY r(RK) r r 10
+TRACE PROPERTY r(RM) r r 10
+TRACE PROPERTY r(R1) r r 10
+TRACE PROPERTY r(R2) r r 10
+TRACE PROPERTY r(RB3) r r 10  
+TRACE PROPERTY r(RA3) r r 10 
+TRACE PROPERTY r(RC3) r r 10 
+TRACE PROPERTY r(RD3) r r 10 
+TRACE PROPERTY r(RE3) r r 10 
+TRACE PROPERTY r(RG3) r r 10  
+TRACE PROPERTY r(RH3) r r 10 
+TRACE PROPERTY r(RW3) r r 10 
+TRACE PROPERTY r(RF3) r r 10 
+TRACE PROPERTY r(RK3) r r 10 
+TRACE PROPERTY r(RM3) r r 10 
+
+#ifdef 4LM_sep //(
+TRACE PROPERTY r(R3) r r 10
+#endif  //)
+#ifdef 5LM_sep //{
+TRACE PROPERTY r(R4) r r 10
+#endif  //}
+
+#ifdef 6LM_sep //{
+TRACE PROPERTY r(R5) r r 10
+#endif  //}
+
+#ifdef ANALOG //(
+TRACE PROPERTY r(RL) l l 3
+TRACE PROPERTY r(RT) l l 3
+TRACE PROPERTY r(RA) l l 3
+TRACE PROPERTY r(RB) l l 3
+TRACE PROPERTY r(RC) l l 3
+TRACE PROPERTY r(RD) l l 3
+TRACE PROPERTY r(RE) l l 3
+TRACE PROPERTY r(RG) l l 3
+TRACE PROPERTY r(RH) l l 3
+TRACE PROPERTY r(RW) l l 3
+TRACE PROPERTY r(RF) l l 3
+TRACE PROPERTY r(RK) l l 3
+TRACE PROPERTY r(RM) l l 3
+TRACE PROPERTY r(R1) l l 3
+TRACE PROPERTY r(R2) l l 3
+TRACE PROPERTY r(RB3) l l 3  
+TRACE PROPERTY r(RA3) l l 3 
+TRACE PROPERTY r(RC3) l l 3 
+TRACE PROPERTY r(RD3) l l 3 
+TRACE PROPERTY r(RE3) l l 3 
+TRACE PROPERTY r(RG3) l l 3  
+TRACE PROPERTY r(RH3) l l 3 
+TRACE PROPERTY r(RW3) l l 3 
+TRACE PROPERTY r(RF3) l l 3 
+TRACE PROPERTY r(RK3) l l 3 
+TRACE PROPERTY r(RM3) l l 3 
+
+#ifdef 4LM_sep //(
+TRACE PROPERTY r(R3) l l 3
+#endif  //)
+#ifdef 5LM_sep //{
+TRACE PROPERTY r(R4) l l 3
+#endif  //}
+#ifdef 6LM_sep //{
+TRACE PROPERTY r(R5) l l 3
+#endif  //}
+#endif   // ANALOG FLAG  //)
+
+#ifdef ANALOG //(
+TRACE PROPERTY r(RL) w w 3
+TRACE PROPERTY r(RT) w w 3
+TRACE PROPERTY r(RA) w w 3
+TRACE PROPERTY r(RB) w w 3
+TRACE PROPERTY r(RC) w w 3
+TRACE PROPERTY r(RD) w w 3
+TRACE PROPERTY r(RE) w w 3
+TRACE PROPERTY r(RG) w w 3
+TRACE PROPERTY r(RH) w w 3
+TRACE PROPERTY r(RW) w w 3
+TRACE PROPERTY r(RF) w w 3
+TRACE PROPERTY r(RK) w w 3
+TRACE PROPERTY r(RM) w w 3
+TRACE PROPERTY r(R1) w w 3
+TRACE PROPERTY r(R2) w w 3
+TRACE PROPERTY r(RB3) w w 3  
+TRACE PROPERTY r(RA3) w w 3 
+TRACE PROPERTY r(RC3) w w 3 
+TRACE PROPERTY r(RD3) w w 3 
+TRACE PROPERTY r(RE3) w w 3 
+TRACE PROPERTY r(RG3) w w 3  
+TRACE PROPERTY r(RH3) w w 3 
+TRACE PROPERTY r(RW3) w w 3 
+TRACE PROPERTY r(RF3) w w 3 
+TRACE PROPERTY r(RK3) w w 3 
+TRACE PROPERTY r(RM3) w w 3 
+
+
+#ifdef 4LM_sep //(
+TRACE PROPERTY r(R3) w w 3
+#endif  //)
+#ifdef 5LM_sep //{
+TRACE PROPERTY r(R4) w w 3
+#endif  //}
+#ifdef 6LM_sep //{
+TRACE PROPERTY r(R5) w w 3
+#endif  //}
+#endif //ANALOG FLAG  //)
+
+#endif  //)
+
+//TRACE PROPERTY r l l 3
+//TRACE PROPERTY r w w 3
+
+#ifdef 3LM_sep //{
+// MIM Capacitors property tracing.
+
+#ifndef RCX_run //(
+
+TRACE PROPERTY c(CB)  C C 6
+#endif //)
+
+#ifdef ANALOG //(
+
+TRACE PROPERTY c(CB)  l l 3
+TRACE PROPERTY c(CB)  w w 3
+
+#endif  //)
+
+#endif //}
+//Currently for Poly/Metal Capacitor , No Property is traced. 
+
+// Diodes property tracing.
+TRACE PROPERTY D(NS) A A 10
+TRACE PROPERTY D(DN) A A 10
+TRACE PROPERTY D(N3) A A 10
+TRACE PROPERTY D(PS) A A 10
+TRACE PROPERTY D(DP) A A 10
+TRACE PROPERTY D(P3) A A 10
+
+TRACE PROPERTY D(NS) P P 10
+TRACE PROPERTY D(DN) P P 10
+TRACE PROPERTY D(N3) P P 10
+TRACE PROPERTY D(PS) P P 10
+TRACE PROPERTY D(DP) P P 10
+TRACE PROPERTY D(P3) P P 10
+
+//FIXED BJT trace property.
+//----------------------------
+TRACE PROPERTY Q(VD) M M 0
+TRACE PROPERTY Q(VD5) M M 0
+TRACE PROPERTY Q(VD10) M M 0
+TRACE PROPERTY Q(VH) M M 0
+TRACE PROPERTY Q(VH5) M M 0
+TRACE PROPERTY Q(VH10) M M 0
+
+//SCALABLE BJT trace property.
+//----------------------------
+TRACE PROPERTY Q(VPNP18_S) A A 10
+TRACE PROPERTY Q(VPNP33_S) A A 10
+TRACE PROPERTY Q(VNPN18_S) A A 10
+
+TRACE PROPERTY Q(VPNP18_S) P P 10
+TRACE PROPERTY Q(VPNP33_S) P P 10
+TRACE PROPERTY Q(VNPN18_S) P P 10
+
+// May Flag false property violations in parallel diodes.
+
+// Variables for Resistors and Capacitance Values.
+variable RHPAA 120.0 // High Resistance P+ Active Resistor // Value for REV 3.0
+//variable RHPAA 114.4 // High Resistance P+ Active Resistor // Value for REV 2.9
+
+variable RHNAA 70.0 // High Resistance N+ Active Resistor // Value for REV 3.0
+//variable RHNAA 69.3 // High Resistance N+ Active Resistor // Value for REV 2.9
+
+variable RHIPO 1000 // High Resistance POLY Resistor // Value for REV 3.0
+//variable RHIPO 983.7 // High Resistance POLY Resistor // Value for REV 2.9
+
+variable RPMOPO 310.0 // Medium Resistance P+ POLY Resistor // Value for REV 3.0
+//variable RPMOPO 311.6 // Medium Resistance P+ POLY Resistor // Value for REV 2.9
+
+variable RNMOPO 400.0 // Medium Resistance N+ POLY Resistor // Value for REV 3.0
+//variable RNMOPO 405.2 // Medium Resistance N+ POLY Resistor // Value for REV 2.9
+
+variable RPLOPO 5.0 // Low Resistance P+ POLY Resistor // Value for REV 3.0
+//variable RPLOPO 5.34 // Low Resistance P+ POLY Resistor // Value for REV 2.9
+
+variable RNLOPO 6 // Low Resistance N+ POLY Resistor // Value for REV 3.0
+//variable RNLOPO 6.58 // Low Resistance N+ POLY Resistor // Value for REV 2.9
+
+variable RWNSTI 1000.0 // NWell Resistor on STI // Value for REV3.0/2.9
+
+variable RWNAA 450.0   // NWell Resistor on Active // Value for REV 3.0
+//variable RWNAA 467.8   // NWell Resistor on Active // Value for REV 2.9
+
+variable RLNAA 7 // Low Resistance N+ Active Resistor // Value for REV 3.0
+//variable RLNAA 6.64 // Low Resistance N+ Active Resistor // Value for REV 2.9
+
+variable RLPAA 5  // Low Resistance P+ Active Resistor // Value for REV 3.0
+//variable RLPAA 5.04 // Low Resistance P+ Active Resistor // Value for REV 2.9
+
+variable RM1 0.08 // M1..MTOP-1 Resistor // Value for REV3.0/2.9
+variable RMI 0.08 // M1..MTOP-1 Resistor // Value for REV3.0/2.9
+variable RMT 0.04 // MTOP Resistor // Value for REV3.0/2.9
+
+variable RM_THICK 0.015 // MTOP Resistor // Value for REV3.0/2.9
+
+variable CS_GC_res 7 // POLY Contact Resistance
+variable CS_AA_res 10 // ACTIVE Contact Resistance
+variable CS_pitch 0.47e-6 // Contact Pitch
+
+variable dW_HIPO 0.056e-6 // Delta W for HIPO resistor
+variable dW_PMOPO 0.031e-6 // Delta W for PMOPO resistor
+variable dW_NMOPO 0.055e-6 // Delta W for NMOPO resistor
+variable dW_NAA 0.051e-6 // Delta W for N+AA resistor
+variable dW_PAA -2.6e-8 // Delta W for P+AA resistor
+variable dW_NWAA 5.2e-7 // Delta W for NW resistor on AA resistor
+variable dW_NWSTI 3.3e-7 // Delta W for NW resistor on STI resistor
+
+variable  rphpoly_rint  176e-6 // HIPO Interface Resistance
+variable  rpmpoly_rint  158e-6 // PMOPO Interface Resistance 
+variable  rnmpoly_rint  93e-6  // NMOPO Interface Resistance
+
+variable CCL 9.08e-3 // Low Voltage Gate/NWell Capacitor.
+variable CCH 5.1e-3 // High Voltage Gate/NWell Capacitor.
+variable CCY 9.37e-3 // Low Voltage Gate/PWell Capacitor.
+variable CCZ 5.18e-3 // High Voltage Gate/PWell Capacitor.
+
+variable CMIMa 1.0e-3     //square and narrow mim capacitor area   capacitance
+variable CMIMp 0.11e-9    //square and narrow mim capacitor fringe capacitance
+
+	
+LVS REDUCE PARALLEL MOS yes
+LVS REDUCE PARALLEL BIPOLAR yes
+LVS FILTER UNUSED MOS no
+//LVS FILTER UNUSED BIPOLAR yes
+LVS REDUCE SERIES CAPACITORS NO
+LVS REDUCE PARALLEL CAPACITORS NO
+
+LVS SPICE REPLICATE DEVICES YES
+
+//Reduce PARALLEL device calculations for BJT
+//--------------------------------------------------
+LVS REDUCE Q(VD) PARALLEL yes
+[
+	effective M
+	M = count()
+]
+LVS REDUCE Q(VD5) PARALLEL yes
+[
+	effective M
+	M = count()
+]
+LVS REDUCE Q(VD10) PARALLEL yes
+[
+	effective M
+	M = count()
+]
+LVS REDUCE Q(VH) PARALLEL yes
+[
+	effective M
+	M = count()
+]
+LVS REDUCE Q(VH5) PARALLEL yes
+[
+	effective M
+	M = count()
+]
+LVS REDUCE Q(VH10) PARALLEL yes
+[
+	effective M
+	M = count()
+]
+
+//Reduce PARALLEL device calculations for cpacitors
+//--------------------------------------------------
+
+LVS REDUCE  C(CL) PARALLEL yes
+[ 
+	effective w, l
+	P = sum( W * L ) // Sum of Wi * Li
+	Q = sum( W / L ) // Sum of Wi / Li
+	L = sqrt( P / Q ) // Effective L
+	W= sum(W)
+]
+
+LVS REDUCE  C(CH) PARALLEL yes
+[ 
+	effective w, l
+	P = sum( W * L ) // Sum of Wi * Li
+	Q = sum( W / L ) // Sum of Wi / Li
+	L = sqrt( P / Q ) // Effective L
+	W= sum(W)
+]
+
+LVS REDUCE  C(CH3) PARALLEL yes
+[ 
+	effective w, l
+	P = sum( W * L ) // Sum of Wi * Li
+	Q = sum( W / L ) // Sum of Wi / Li
+	L = sqrt( P / Q ) // Effective L
+	W= sum(W)
+]
+
+LVS REDUCE  C(CL3) PARALLEL yes
+[ 
+	effective w, l
+	P = sum( W * L ) // Sum of Wi * Li
+	Q = sum( W / L ) // Sum of Wi / Li
+	L = sqrt( P / Q ) // Effective L
+	W= sum(W)
+]
+
+//-------------------------------------
+
+#ifndef RCX_run//{
+
+#ifdef 3LM_sep //{
+LVS REDUCE C(CB) PARALLEL yes //prallel reduce for square mim capacitor
+[
+	#ifdef ANALOG //(
+		effective W,L,C
+	l = sum(l)/count()
+	w = sum(w)
+	c = sum(c)
+
+	#else
+		effective C
+	#endif  //)
+
+	c = sum(c)
+]
+#endif //}
+#endif //}
+//-------------------------------------
+
+LVS REDUCE SERIES RESISTORS yes
+
+LVS REDUCE PARALLEL RESISTORS yes
+
+LVS REDUCE PARALLEL DIODES yes
+
+LVS REDUCE SPLIT GATES yes
+
+// Please Comment "LVS STRICT SUBTYPES YES" Statement
+// ,in order to Enable ambiguity subtype matching.
+
+// Uncommenting the "LVS STRICT SUBTYPES YES" Statement,
+// Causes Calibre to disable ambiguity subtype matching.
+// Which is used when when source netlist does not contain a subtype for devices.
+
+// LVS STRICT SUBTYPES YES
+
+//---------------------------------------------------------
+
+// LAYERS
+
+layer SPC_stack_i 7856
+layer map 78 datatype 56 7856
+SPC_stack = SPC_stack_i not DEV_ext
+
+layer DEV_ext 7765
+layer map 77 datatype 65 7765
+
+layer NODUMMY 810
+layer map 81 datatype 0 810
+
+layer PADi 6800
+layer map 68 datatype 0 6800
+
+LAYER NMIN_i 301 // WN
+LAYER MAP 3 DATATYPE == 0 301 // WN
+
+LAYER PSUB2_i 400
+LAYER MAP 3 DATATYPE == 51 400
+
+LAYER HOT_WN_i 401
+LAYER MAP 3 DATATYPE == 27 401
+
+//LAYER COMP 9 // ACTIVE 
+
+LAYER AAlc_i 303
+LAYER MAP 9 DATATYPE == 0 303 
+LAYER AAdy_i 304 
+LAYER MAP 9 DATATYPE == 8 304 
+
+//LAYER POLY  8 // GC
+
+LAYER GClc_i 305
+LAYER MAP 8 DATATYPE == 0 305
+LAYER GCdy_i 306
+LAYER MAP 8 DATATYPE == 8 306
+
+LAYER PIMP_i  3100	// XP
+layer map 31 datatype 0 3100
+
+LAYER NIMP_i  3200  // XN
+layer map 32 datatype 0 3200
+
+LAYER VNN_i   1700  // VNN
+layer map 17 datatype 0 1700
+
+LAYER CONT_i  3400  // CS
+layer map 34 datatype 0 3400
+
+//LAYER MT1   40  // M1
+LAYER M1lc_i 307
+LAYER MAP 40 DATATYPE == 0 307 
+LAYER M1dy_i 308 
+LAYER MAP 40 DATATYPE == 8 308
+LAYER M1slits_i 309 
+LAYER MAP 40 DATATYPE == 59 309 
+LAYER VI2 410
+LAYER MAP  41 DATATYPE == 0 410  // V2
+//LAYER MT2   42  // M2
+LAYER M2lc_i 310
+LAYER MAP 42 DATATYPE == 0 310 
+LAYER M2dy_i 311 
+LAYER MAP 42 DATATYPE == 8 311
+LAYER M2slits_i 312 
+LAYER MAP 42 DATATYPE == 59 312 
+LAYER VI3   430 
+LAYER MAP 43 DATATYPE == 0 430 // V3
+//LAYER MT3   44  // M3
+LAYER M3lc_i 313
+LAYER MAP 44 DATATYPE == 0 313 
+LAYER M3dy_i 314 
+LAYER MAP 44 DATATYPE == 8 314
+LAYER M3slits_i 315 
+LAYER MAP 44 DATATYPE == 59 315 
+
+M4lc = M4lc_i not DEV_ext
+M4dy = M4dy_i not DEV_ext
+M4slits = M4slits_i not DEV_ext
+
+M5lc = M5lc_i not DEV_ext
+M5dy = M5dy_i not DEV_ext
+M5slits = M5slits_i not DEV_ext
+
+LAYER VI4   450 
+LAYER MAP 45 DATATYPE == 0 450 // V4 
+
+//LAYER MT4   46  // M4
+LAYER M4lc_i 316
+LAYER MAP 46 DATATYPE == 0 316 
+LAYER M4dy_i 317 
+LAYER MAP 46 DATATYPE == 8 317
+LAYER M4slits_i 318 
+LAYER MAP 46 DATATYPE == 59 318 
+
+LAYER VI5   470
+LAYER MAP 47 DATATYPE == 0 470  // V5
+
+
+//LAYER MT5   48  // M5
+LAYER M5lc_i 319
+LAYER MAP 48 DATATYPE == 0 319 
+LAYER M5dy_i 320 
+LAYER MAP 48 DATATYPE == 8 320
+LAYER M5slits_i 321 
+LAYER MAP 48 DATATYPE == 59 321 
+
+LAYER TOP_VI  490
+LAYER MAP 49 DATATYPE == 0 490   // VL 
+
+//LAYER TOP_M  50  // ML
+LAYER MTlc_i 322
+LAYER MAP 50 DATATYPE == 0 322 
+LAYER MTdy_i 323
+LAYER MAP 50 DATATYPE == 8 323
+LAYER MTslits_i 324 
+LAYER MAP 50 DATATYPE == 59 324
+
+//Thick metal definition.
+//-----------------------
+LAYER MAP 59 DATATYPE == 0 322 //MTlc_i
+LAYER MAP 59 DATATYPE == 8 323 //MTdy_i
+LAYER MAP 59 DATATYPE == 59 324 //MTslits_i
+LAYER MAP 59  TEXTTYPE == 7  113
+LAYER MT_thick 590
+LAYER MAP 59 DATATYPE == 0 590 //MTlc_i
+LAYER MT_thick_res 5955
+LAYER MAP 59 DATATYPE == 55 5955
+
+
+
+LAYER AREA2_i 7200  // AREA2	 
+LAYER MAP 72 DATATYPE 0 7200
+LAYER MR_i    8700  // MR
+LAYER MAP 87 DATATYPE 0 8700
+LAYER NS_i    8800  // NS
+LAYER MAP 88 DATATYPE == 0 8800
+
+LAYER CE_i    9900 // CE
+LAYER MAP 99 DATATYPE 0 9900
+LAYER ESD5OVT_i	1160 // Esd implant
+LAYER MAP 116 DATATYPE 0 1160
+//
+LAYER RES_i	104
+LAYER MAP 77 DATATYPE == 42 104
+
+LAYER DIO_i	105
+LAYER MAP 77 DATATYPE == 44 105
+
+LAYER CAP_i_ext	106
+LAYER MAP 77 DATATYPE == 43 106
+
+LAYER CAP1_i	107
+LAYER MAP 77 DATATYPE == 47 107
+
+layer DEV_LLi 7741
+layer map 77 datatype 41 7741
+DEV_LL = DEV_LLi not DEV_ext
+
+layer DEV_padi 7746
+layer map 77 datatype 46 7746
+
+layer DEV_esdi 7750
+layer map 77 datatype 50 7750
+
+layer ESDsrc 950
+layer map 9 datatype 50 950
+
+LAYER WB_i   397
+LAYER MAP 4 DATATYPE == 0 397
+
+LAYER MAB_i   523
+LAYER MAP 39 DATATYPE == 23 523
+
+LAYER WN_DIO_i   524
+LAYER MAP 3 DATATYPE == 44 524
+
+LAYER DIODE_BGR_i   623
+LAYER MAP 78 DATATYPE == 44 623
+
+LAYER DEV_3ti 7786
+LAYER MAP 77 DATATYPE == 86 7786
+
+#ifdef 3TERM //(
+   #ifdef 2TERM	 //(
+      IMPOSSIBLE_COMBINED_3TERM_2TERM
+   #endif  //)
+#endif  //)
+
+
+#ifndef 3TERM //(
+   #ifndef 2TERM	 //(
+     DEV_3t = DEV_3ti and DRC:1 
+   #endif  //)
+#endif  //)
+
+#ifdef 3TERM    //(
+   DEV_3t = copy DRC:1 
+#endif	  //)
+#ifdef 2TERM    //(
+   DEV_3t = NIMP and PIMP
+#endif	  //)
+
+//RF ID layers
+
+layer SPC_cei 7874
+layer map 78 datatype 74 7874
+
+SPC_ce = SPC_cei not  DEV_ext
+DEV_esd=not DEV_esdi DEV_ext
+DEV_pad=not DEV_padi DEV_ext
+
+// check only when not DEV_ext========
+
+CAP_i = CAP_i_ext not DEV_ext
+NMIN = NMIN_i not DEV_ext
+PSUB2 = PSUB2_i not DEV_ext
+HOT_WN = HOT_WN_i not DEV_ext
+AAlc = AAlc_i not DEV_ext
+AAdy = AAdy_i not DEV_ext
+GClc = GClc_i not DEV_ext
+GCdy = GCdy_i not DEV_ext
+PIMP = PIMP_i not DEV_ext
+NIMP = NIMP_i not DEV_ext
+VNN = VNN_i not DEV_ext
+CONT = CONT_i not DEV_ext
+M1lc = M1lc_i not DEV_ext
+M1dy = M1dy_i not DEV_ext
+M1slits = M1slits_i not DEV_ext
+M2lc = M2lc_i not DEV_ext
+M2dy = M2dy_i not DEV_ext
+M2slits = M2slits_i not DEV_ext
+M3lc = M3lc_i not DEV_ext
+M3dy = M3dy_i not DEV_ext
+M3slits = M3slits_i not DEV_ext
+
+MTlc = MTlc_i not DEV_ext
+MTdy = MTdy_i not DEV_ext
+MTslits = MTslits_i not DEV_ext
+AREA2 = AREA2_i not DEV_ext
+MR = MR_i not DEV_ext
+NS = NS_i not DEV_ext
+CE = CE_i not DEV_ext
+ESD5OVT = ESD5OVT_i not DEV_ext
+RES = RES_i not DEV_ext
+DIO = DIO_i not DEV_ext
+CAP1 = CAP1_i not DEV_ext
+WB = WB_i not DEV_ext
+WN_DIO = WN_DIO_i not DEV_ext
+DIODE_BGR = DIODE_BGR_i not DEV_ext
+PAD = PADi not DEV_ext
+//=====================================
+
+COMP=copy AAlc
+POLY= copy GClc 
+MT1=(M1lc or M1dy) not M1slits
+MT2=(M2lc or M2dy) not M2slits
+MT3=(M3lc or M3dy) not M3slits
+MT4=(M4lc or M4dy) not M4slits
+MT5=(M5lc or M5dy) not M5slits
+TOP_M=(MTlc or MTdy) not MTslits
+
+//
+TEXT LAYER 122	// label on POLY
+ATTACH 122 POLYO
+LAYER MAP 8 TEXTTYPE == 7 122
+PORT LAYER TEXT 122
+//
+TEXT LAYER 110
+ATTACH 110 MT11
+LAYER MAP 40  TEXTTYPE == 7  110
+PORT LAYER TEXT 110
+//
+#ifdef 3LM_sep //(
+TEXT LAYER 111
+ATTACH 111 MT21
+LAYER MAP 42  TEXTTYPE == 7  111
+PORT LAYER TEXT 111
+#endif  //)
+
+#ifdef 4LM_sep //(
+TEXT LAYER 112
+ATTACH 112 MT31
+LAYER MAP 44  TEXTTYPE == 7  112
+PORT LAYER TEXT 112
+#endif  //)
+
+#ifdef 5LM_sep //{
+TEXT LAYER 114
+ATTACH 114 MT41
+LAYER MAP 46  TEXTTYPE == 7  114
+PORT LAYER TEXT 114
+#endif  //}
+
+#ifdef 6LM_sep //{
+TEXT LAYER 115
+ATTACH 115 MT51
+LAYER MAP 48  TEXTTYPE == 7  115
+PORT LAYER TEXT 115
+#endif  //}
+
+//
+TEXT LAYER 113
+ATTACH 113 TOP_M1
+LAYER MAP 50  TEXTTYPE == 7  113
+PORT LAYER TEXT 113
+LAYER NMRES	393
+LAYER MAP 77 DATATYPE == 55 393
+
+LAYER NMRES_M4	4655
+LAYER MAP 46 DATATYPE == 55 4655
+
+LAYER NMRES_M5	4855
+LAYER MAP 48 DATATYPE == 55 4855
+
+
+LAYER NMRES_M1	4055
+LAYER MAP 40 DATATYPE == 55 4055
+
+LAYER NMRES_M2	4255
+LAYER MAP 42 DATATYPE == 55 4255
+
+LAYER NMRES_M3	4455
+LAYER MAP 44 DATATYPE == 55 4455
+
+LAYER NMRES_MTOPi	5055
+LAYER MAP 50 DATATYPE == 55 5055
+
+NMRES_MTOP = NMRES_MTOPi or MT_thick_res
+// ******************** LAYERS FOR LL PROCESS *********************
+
+LAYER CNHi 100
+LAYER MAP 10 DATATYPE 0 100 // Low Leakage NMOS devices (high WP)
+CNH = CNHi not DEV_ext
+
+#ifndef LL_ONLY //{
+NLL_AREA = CNH or DEV_LL
+#else
+NLL_AREA = copy PBULK
+#endif //}
+
+LAYER CPHi 650
+LAYER MAP 65 DATATYPE 0 650 // Low Leakage PMOS devices (high WN)
+CPH = CPHi not DEV_ext
+#ifndef LL_ONLY //{
+PLL_AREA = CPH or DEV_LL
+#else
+PLL_AREA = copy PBULK
+#endif //}
+
+//
+//  LAYER OPERATION
+//
+
+DRC:1 = EXTENT
+PBULK = SIZE DRC:1 BY 1.0
+
+// Define connectivity 
+
+PSUB_TMP = PBULK NOT (WNR or WBR)
+
+PSUB2S = SIZE PSUB2 BY -0.05
+PSUB2R = NOT PSUB2 PSUB2S
+
+WBR = EXPAND EDGE(COINCIDENT OUTSIDE EDGE NWELL (IPW_SL OR IPW_FE)) BY 0.005
+
+PSUB2SC=PSUB2 not NWELL
+
+// Please Choose ONE of the Following OVERALL Value Options.
+// =========================================================
+
+#ifndef 3TERM
+WNR = NWELL not interact (NWCAP_3t or NWCAPH_3t)
+#endif
+ 
+#ifdef 3TERM
+WNR = NWELL not interact ((NWCAP_3t or NWCAP_2t) or (NWCAPH_3t or NWCAPH_2t))
+#endif
+
+PSUB = PSUB_TMP NOT PSUB2R
+
+#ifdef 6LM //{
+NMRES_TOP = (NMRES interact (NMRES and TOP_M)) or NMRES_MTOP
+NMRES5 = ((NMRES interact (NMRES and MT5)) not NMRES_TOP) or NMRES_M5
+NMRES4 = ((NMRES interact (NMRES and MT4)) not (NMRES_TOP or NMRES5)) or NMRES_M4
+NMRES3 = ((NMRES interact (NMRES and MT3)) not ((NMRES_TOP or NMRES5) or NMRES4)) or NMRES_M3
+NMRES2 = ((NMRES interact (NMRES and MT2)) not ((NMRES_TOP or NMRES5) or (NMRES4 or NMRES3))) or NMRES_M2
+NMRES1 = ((NMRES interact (NMRES and MT1)) not ((NMRES_TOP or NMRES5) or ((NMRES4 or NMRES3) or NMRES2))) or NMRES_M1
+// NMRES_M1 NMRES1
+
+
+MT_TOP_RES  = NMRES_TOP AND TOP_M
+MT5RES  = NMRES5 AND MT5
+MT4RES  = NMRES4 AND MT4
+MT3RES  = NMRES3 AND MT3
+MT2RES  = NMRES2 AND MT2
+//METAL_LEVEL_NOT_DEFINED  = NMRES1 AND MT1
+MT1RES =  NMRES1 AND MT1
+
+#endif  //}
+
+#ifdef 5LM //{
+NMRES_TOP = (NMRES interact (NMRES and TOP_M)) or NMRES_MTOP
+NMRES4 = ((NMRES interact (NMRES and MT4)) not NMRES_TOP) or NMRES_M4
+NMRES3 = ((NMRES interact (NMRES and MT3)) not (NMRES_TOP or NMRES4)) or NMRES_M3
+NMRES2 = ((NMRES interact (NMRES and MT2)) not (NMRES_TOP or (NMRES4 or NMRES3))) or NMRES_M2
+NMRES1 = ((NMRES interact (NMRES and MT1)) not (NMRES_TOP or ((NMRES4 or NMRES3) or NMRES2))) or NMRES_M1
+
+MT_TOP_RES  = NMRES_TOP AND TOP_M
+MT4RES  = NMRES4 AND MT4
+MT3RES  = NMRES3 AND MT3
+MT2RES  = NMRES2 AND MT2
+//METAL_LEVEL_NOT_DEFINED  = NMRES1 AND MT1
+MT1RES =  NMRES1 AND MT1
+
+#endif  //}
+
+#ifdef 4LM //(
+NMRES_TOP = (NMRES interact (NMRES and TOP_M)) or NMRES_MTOP
+NMRES3 = ((NMRES interact (NMRES and MT3)) not NMRES_TOP) or NMRES_M3
+NMRES2 = ((NMRES interact (NMRES and MT2)) not (NMRES_TOP or NMRES3)) or NMRES_M2
+NMRES1 = ((NMRES interact (NMRES and MT1)) not (NMRES_TOP or (NMRES3 or NMRES2))) or NMRES_M1
+
+MT_TOP_RES  = NMRES_TOP AND TOP_M
+MT3RES  = NMRES3 AND MT3
+MT2RES  = NMRES2 AND MT2
+MT1RES =  NMRES1 AND MT1
+
+#endif  //)
+
+#ifdef 3LM //(
+NMRES_TOP = (NMRES interact (NMRES and TOP_M)) or NMRES_MTOP
+NMRES2 = ((NMRES interact (NMRES and MT2)) not NMRES_TOP) or NMRES_M2
+NMRES1 = ((NMRES interact (NMRES and MT1)) not (NMRES_TOP or NMRES2)) or NMRES_M1
+
+MT_TOP_RES  = NMRES_TOP AND TOP_M
+MT2RES  = NMRES2 AND MT2
+MT1RES =  NMRES1 AND MT1
+
+#endif  //)
+#ifdef 2LM //(
+NMRES_TOP = (NMRES interact (NMRES and TOP_M)) or NMRES_MTOP
+NMRES1 = ((NMRES interact (NMRES and MT1)) not NMRES_TOP) or NMRES_M1
+NMRES2 = ((NMRES interact (NMRES and MT2)) not NMRES_TOP) or NMRES_M2
+MT2RES  = NMRES2 AND MT2
+
+MT_TOP_RES  = NMRES_TOP AND TOP_M
+MT1RES =  NMRES1 AND MT1
+
+#endif  //)
+
+//Thick metsl resistors.
+//======================
+
+MTRES_THICK =  (NMRES_MTOP and TOP_M)   and  MT_thick_res 
+DEVICE R(RT) MTRES_THICK  MT_TOP_LEGS1 MT_TOP_LEGS1 NETLIST MODEL RMT NETLIST ELEMENT X
+[
+#ifndef RCX_run //(
+  property L,W,R
+#endif  //)
+#ifdef RCX_run //(
+  property L,W
+#endif  //)
+  W = PERIMETER_COINCIDE(MTRES_THICK,MT_TOP_LEGS1)/2
+  L = AREA(MTRES_THICK)/W
+#ifndef RCX_run //(
+    R = RM_THICK*(L/W)
+#endif  //)
+]
+
+////////////////////////////// end of resistors
+
+AA_sch_HP = (COMP not (PIMP or NIMP)) interact DIO
+NWELL = (NMIN NOT ( RSNWEL or RSNMIN )) not AA_sch_HP
+NWELL_float = NWELL outside NTAP
+NWELL_conn = NWELL not NWELL_float
+
+POLYO = POLY NOT RES
+POLYFIELD = POLYO NOT COMP // for xcalibre extraction
+
+ABUT_NS = (expand edge (PIMP coin edge NIMP) by 0.005) and (COMP and NS)
+
+CMCOMP = COMP NOT (RES_COMP or ABUT_NS)
+NTCOMP = CMCOMP AND NIMP
+PTCOMP = CMCOMP AND PIMP
+
+GATE = POLYO AND COMP  
+POLYGATE = COPY GATE
+
+SRC = ((CMCOMP NOT GATE) not NWRAA) or (NWRAA and NIMP)
+
+SRC_sqc = SRC not interact CONT
+
+PSRC = PTCOMP NOT GATE
+NSRC = NTCOMP NOT GATE
+
+CAP = CAP_i interact (POLYO or COMP)
+CAP_mfc =  CAP_i not CAP
+
+GC_holes_cap = holes ((POLYO and COMP) and CAP)
+
+NGATE = ((NTCOMP and GATE) NOT NWELL) not interact GC_holes_cap
+PGATE = ((PTCOMP and GATE) AND NWELL) not interact GC_holes_cap
+
+NTAP_1 = NSRC AND NWELL
+NTAP = (NTAP_1 interact CONT) OR BUTTED_NSUB 
+
+PTAP_1 = (PSRC and PSUB ) NOT NWELL  
+PTAP =  (PTAP_1 interact CONT) OR BUTTED_PSUB
+
+BUTTED_NSUB=touch NTAP_1 (PSRC interact (POLY or CONT))
+BUTTED_PSUB=touch PTAP_1 (NSRC interact (POLY or CONT)) 
+BUTTED_DIFF=BUTTED_NSUB or BUTTED_PSUB
+
+NTAP_pin = copy NTAP
+
+#ifndef RCX_run //(
+        sconnect NTAP NTAP_pin
+#else
+        sconnect SRC NTAP_pin by NTAP
+#endif  //)
+
+NSRC:1 = NSRC NOT NWELL
+PSRC:1 = PSRC AND NWELL
+
+// NWCAP
+NWCAP1_A =  ((NTCOMP and POLY)   AND CAP) not interact GC_holes_cap
+NWCAP    =  NWCAP1_A NOT AREA2  
+NWCAPH   =  NWCAP1_A AND AREA2 
+
+//
+// 3.3 V Nmos
+//
+NGATEHA1 = ( NGATE AND AREA2 ) not SPC_ce
+NSRCHA   = NSRC:1 AND AREA2
+NGATEE = NGATEHA1 INSIDE	ESD5OVT
+//NSRCE = NSRCHA1 AND ESD5OVT
+
+NGATEHA = COPY NGATEHA1 
+
+//NSRCHA = NSRCHA1 NOT ESD5OVT
+NGATEHB = NGATEHA NOT VNN
+NGATEH = COPY NGATEHB 
+NNGATEH = NGATEHA AND VNN
+NNGATEH_3V = NNGATEH AND AREA2
+
+//
+// 1.8 V Nmos
+// 
+NGATEL1 = NGATE NOT AREA2
+NGATEL2	= NGATEL1 NOT VNN
+NGATEL  = NGATEL2 NOT  NLL_AREA 
+NNGATEL =  NGATEL1    AND VNN
+NSRCL   = NSRC:1 NOT AREA2
+NGATELL  = NGATEL2 and NLL_AREA
+//
+// 3.3 V Pmos
+//
+PGATEH	= ( PGATE AND AREA2 ) not  SPC_ce
+PSRCH   = PSRC:1 AND AREA2
+
+//
+// 1.8 V Pmos
+//
+PGATEL1 = PGATE NOT AREA2
+PGATEL =  PGATEL1 NOT PLL_AREA 
+PSRCL   = PSRC:1  NOT AREA2
+PGATELL =  PGATEL1 and  PLL_AREA 
+
+// Vertical PNP
+
+CPEMIT = PTCOMP INTERACT CAP1
+CPEMV = CPEMIT NOT INTERACT POLY
+CPEMV2 =  (rectangle  CPEMV  >=1.9  <=2.1 ) not CAP
+CPEMV5 =  (rectangle  CPEMV  >=4.75 <=5.25) not CAP
+CPEMV10 = (rectangle  CPEMV  >=9.5  <=10.5) not CAP
+CPEMV_S = (CPEMV not interact ((CPEMV2 or CPEMV5) or CPEMV10)) and CAP
+
+PNPNWV =  NWELL   INTERACT CPEMV   
+PNPVLo = PNPNWV NOT AREA2                   // for 1.8 V
+PNPVHi = PNPNWV AND AREA2 // for 3.3 V
+
+#ifndef RCX_run //(
+        sconnect NTAP PNPNWV
+#else
+        sconnect SRC PNPNWV by NTAP
+#endif  //)
+
+// Vertical NPN
+
+CNEMIT = NTCOMP INTERACT CAP1
+CNEMV = CNEMIT NOT INTERACT POLY
+CNEMV5 = (rectangle CNEMV >=4.75 <=5.25 ) not interact CAP
+CNEMV_S = (CNEMV not interact CNEMV5) and CAP
+
+//
+// Resistors
+//
+
+NWRAA=COMP enclose (NMIN interact (RES not interact POLY)) 
+COMP_RES = COMP not NWRAA
+
+RES_COMP = RES and COMP_RES
+RES_GC = RES and POLY
+RES_WN = (RES not (RES_GC or RES_COMP)) not interact (RES_COMP or RES_GC)
+
+// N+/P+ Diffusion resistor
+
+RNCOM     = (RES_COMP and NIMP) AND NS
+RNCOM_SAL = (RES_COMP and NIMP) NOT NS
+
+RPCOM     = (RES_COMP and PIMP) AND NS
+RPCOM_SAL = (RES_COMP and PIMP) NOT NS
+
+// Hipo resistor
+
+HIPRES = RES_GC AND MR
+HRSPOLY = POLY INTERACT HIPRES
+HRSLEGS = (HRSPOLY NOT HIPRES) INTERACT CONT
+
+// MOPO/LOPO resistors
+
+MOPO_RES = (RES_GC not MR) and NS
+LOPO_RES = (RES_GC not MR) not NS
+
+PMOPRES = MOPO_RES and PIMP
+NMOPRES = MOPO_RES and NIMP
+
+PLOPRES = LOPO_RES and PIMP
+NLOPRES = LOPO_RES and NIMP
+
+PMPLEGS = (POLY interact PMOPRES) not PMOPRES
+NMPLEGS = (POLY interact NMOPRES) not NMOPRES
+
+PLPLEGS = (POLY interact PLOPRES) not PLOPRES
+NLPLEGS = (POLY interact NLOPRES) not NLOPRES
+
+// NWELL Resistors
+
+NWLNP  = NTCOMP AND NWELL
+
+// NWELL on AA Resistor
+RSNWEL = (RES_WN interact (size COMP by -0.005)) and NMIN
+
+RSNWLEGS = NTAP INTERACT RSNWEL
+
+#ifndef RCX_run //(
+        sconnect NTAP RSNWLEGS
+#else
+        sconnect SRC RSNWLEGS by NTAP
+#endif  //)
+
+// NWELL on STI Resistor
+RSNMIN = (RES_WN not RSNWEL) and NMIN
+
+//  diodes
+// ndiodes
+
+NDIO1	= NSRC:1	AND	DIO
+NDIO	= NDIO1	NOT NWELL
+NDIO_NOSAL = NDIO INTERACT NS
+NDIO_SAL1 = NDIO NOT NDIO_NOSAL
+NDIO_SAL = NDIO_SAL1 NOT AREA2
+NDIO_SAL_3 = NDIO_SAL1 AND AREA2
+
+// pdiodes
+XP_holes = holes PIMP INNER
+
+PDIO1	= PSRC:1	AND	DIO
+PDIO	= PDIO1	AND	NWELL
+PDIO_NOSAL = PDIO INTERACT NS
+PDIO_SAL1 = PDIO NOT PDIO_NOSAL
+
+PDIO_SAL = PDIO_SAL1 NOT AREA2
+
+PDIO_SAL_3 = PDIO_SAL1 AND AREA2
+// nwldio
+
+DIONW = DIO NOT INTERACT  PDIO
+NWLDIO1 = NWELL INTERACT DIONW
+
+
+DIONWELL = AND NWELL DIONW
+NWLDIO = NWLDIO1 NOT INTERACT AREA2
+NWLDIO_3 = NWLDIO1 INTERACT AREA2
+
+
+
+PSUB_3:1 = copy PSUB
+PSUB_3 = stamp PSUB_3:1 by PSUB
+
+//
+// Metal resistors
+//
+
+//MT1RES=  copy METAL_LEVEL_NOT_DEFINED
+MT1LEGS = (MT1 INTERACT  MT1RES) NOT MT1RES
+MT2LEGS = (MT2 INTERACT  MT2RES) NOT MT2RES 
+MT_TOP_LEGS = (TOP_M INTERACT  MT_TOP_RES) NOT  MT_TOP_RES
+
+#ifdef 6LM_sep //{
+MT5LEGS = (MT5 INTERACT  MT5RES) NOT MT5RES
+#endif  //}
+
+#ifdef 5LM_sep //{
+MT4LEGS = (MT4 INTERACT  MT4RES) NOT MT4RES
+#endif  //}
+
+#ifdef 4LM_sep //(
+MT3LEGS = (MT3 INTERACT  MT3RES) NOT MT3RES
+#endif  //)
+
+
+MT11 = MT1 NOT MT1RES
+
+MT21 = MT2 NOT MT2RES
+TOP_M1 = TOP_M NOT  (MT_TOP_RES or MT_thick_res)
+
+#ifdef 4LM_sep //{
+MT31 = MT3 NOT MT3RES
+#endif  //} 4LM_sep
+
+#ifdef 5LM_sep //{
+MT41 = MT4 NOT MT4RES
+#endif  //} 5LM_sep
+
+#ifdef 6LM_sep //{
+MT51 = MT5 NOT MT5RES
+#endif  //} 6LM_sep
+//
+// Capacitors
+//
+// Wide MiM capacitor
+
+stack_ce = (CE and SPC_stack) interact TOP_V
+
+TOP_V = TOP_VI INTERACT CE
+
+MT_TOP_MiMCAP = TOP_M INTERACT TOP_V
+
+#ifdef 3LM //(
+MiMCAP = CE INTERACT TOP_VI
+MT2MiMCAP = MT2 INTERACT MiMCAP
+MT2MiMCAP_B = MT2 INTERACT MiMCAP
+MiMCAP_B = MiMCAP INTERACT MT2MiMCAP_B
+VI31 = TOP_VI NOT CE
+#endif  //)
+
+#ifdef 4LM //(
+
+MiMCAP = CE INTERACT TOP_VI
+MT3MiMCAP = MT3 INTERACT MiMCAP
+MT3MiMCAP_B = MT3 INTERACT MiMCAP
+MiMCAP_B = MiMCAP INTERACT MT3MiMCAP_B
+VI41 = TOP_VI NOT CE
+VI3_no_stk = VI3 not  stack_ce
+
+#endif  //)
+
+#ifdef 5LM //{
+MiMCAP = CE INTERACT TOP_VI
+MT4MiMCAP = MT4 INTERACT MiMCAP
+MT4MiMCAP_B = MT4 INTERACT MiMCAP
+MiMCAP_B = MiMCAP INTERACT MT4MiMCAP_B
+VI51 = TOP_VI NOT CE
+VI4_no_stk = VI4 not  stack_ce
+VI3_no_stk = VI3 not  stack_ce
+VI41 = TOP_VI NOT CE
+#endif  //}
+
+#ifdef 6LM   //{
+MiMCAP = CE INTERACT TOP_VI
+MT5MiMCAP = MT5 INTERACT MiMCAP
+MT5MiMCAP_B = MT5 INTERACT MiMCAP
+MiMCAP_B = MiMCAP INTERACT MT5MiMCAP_B
+VI61 = TOP_VI NOT CE
+VI5_no_stk = VI5 not  stack_ce
+VI4_no_stk = VI4 not  stack_ce
+VI3_no_stk = VI3 not  stack_ce
+VI41 = TOP_VI NOT CE
+#endif  //}
+
+// Narrow MiM capacitor
+
+CONNECT MT11 POLYFIELD POLYO BY CONT
+
+#ifdef 2LM //(
+CONNECT TOP_M1  MT11 BY TOP_VI
+#else
+CONNECT MT21 MT11 BY VI2
+CONNECT MT21 MT11 BY VI2
+#endif // 2LM)
+
+#ifdef 3LM //(
+	CONNECT TOP_M1 MT21 BY VI31
+#endif  //)
+
+#ifdef 4LM //(
+	CONNECT MT31 MT21 BY VI3_no_stk
+	CONNECT TOP_M1 MT31 BY VI41
+#endif  //)
+#ifdef 5LM //{
+	CONNECT MT31 MT21 BY VI3_no_stk
+	CONNECT MT41 MT31 BY VI4_no_stk
+	CONNECT MT31 MT21 BY VI3
+	CONNECT MT41 MT31 BY VI4
+	CONNECT TOP_M1 MT41 BY VI51
+#endif  //}
+#ifdef 6LM //{
+	CONNECT MT31 MT21 BY VI3_no_stk
+	CONNECT MT41 MT31 BY VI4_no_stk
+	CONNECT MT51 MT41 BY VI5_no_stk
+	CONNECT MT31 MT21 BY VI3
+	CONNECT MT41 MT31 BY VI4
+	CONNECT TOP_M1 MT51 BY VI61
+#endif  //}
+	
+//----------------------------------- ---------------------//
+
+// DISTRIBUTE CONNECTIVITY to 4 Types of diffusion.
+
+CONNECT SRC_sqc
+
+#ifndef RCX_run //(	
+	#ifndef sub_short //(
+		SCONNECT MT11 SRC BY CONT
+		SCONNECT SRC_sqc SRC	
+		
+		SCONNECT MT11 NTAP BY CONT
+		SCONNECT MT11 PTAP BY CONT
+
+		COMP_conn = NSRC:1 or PSRC:1
+		SCONNECT MT11 COMP_conn BY CONT
+		SCONNECT SRC_sqc COMP_conn		
+		SCONNECT COMP_conn NSRC:1
+		SCONNECT COMP_conn PSRC:1
+		
+		SCONNECT PTAP NSRC:1 abut also
+		SCONNECT NTAP PSRC:1 abut also
+	
+	#endif  //)
+
+	#ifdef sub_short //(
+		CONNECT MT11 SRC BY CONT
+		CONNECT MT11 NSRC:1 BY CONT
+		CONNECT MT11 PSRC:1 BY CONT
+		CONNECT SRC_sqc SRC
+		CONNECT SRC_sqc NSRC:1
+		CONNECT SRC_sqc PSRC:1
+		CONNECT MT11 PTAP BY CONT
+		CONNECT  NSRC:1 PTAP
+		CONNECT MT11 NTAP BY CONT
+		CONNECT  PSRC:1 NTAP
+	#endif  //)
+#endif  //)
+
+#ifdef RCX_run //(
+	#ifndef sub_short //(
+		SCONNECT MT11 SRC BY CONT
+		SCONNECT MT11 NSRC:1 BY CONT
+		SCONNECT MT11 PSRC:1 BY CONT
+		
+		SCONNECT SRC_sqc SRC
+		SCONNECT SRC_sqc NSRC:1
+		SCONNECT SRC_sqc PSRC:1
+	#endif  //)
+	
+	#ifdef sub_short //(		
+		CONNECT MT11 SRC BY CONT
+		CONNECT MT11 NSRC:1 BY CONT
+		CONNECT MT11 PSRC:1 BY CONT
+		
+		CONNECT SRC_sqc SRC
+		CONNECT SRC_sqc NSRC:1
+		CONNECT SRC_sqc PSRC:1
+	#endif  //)
+#endif  //)
+
+POLYCONTF = POLYO AND POLYFIELD  // for xcalibre extraction
+POLYCONTG = POLYO AND POLYGATE
+CONNECT POLYGATE POLYO BY POLYCONTG
+CONNECT POLYFIELD POLYO BY POLYCONTF
+
+#ifdef RCX_run //(
+	#ifndef sub_short //(
+		SCONNECT SRC OVERALL BY PTAP
+		SCONNECT SRC NWELL BY NTAP 
+		SCONNECT NWELL NWELL_conn
+	#endif  //)
+
+	#ifdef sub_short //(
+		CONNECT SRC OVERALL BY PTAP
+		CONNECT SRC NWELL BY NTAP
+		CONNECT NWELL NWELL_conn
+	#endif  //)
+
+#endif  //)
+
+
+#ifndef RCX_run //(
+	#ifndef sub_short //(
+		SCONNECT NTAP NWELL
+		SCONNECT NWELL NWELL_conn
+		SCONNECT PTAP OVERALL  
+	#endif  //)
+
+	#ifdef sub_short //(
+		CONNECT NTAP NWELL
+		CONNECT NWELL NWELL_conn
+		CONNECT PTAP OVERALL
+	#endif  //)
+#endif  //)
+
+
+#ifdef WN_RING_SHORT //(
+	OVERALL = (size PBULK by 0.01 overunder) not ((WBR and NWELL) or PSUB2R)  
+#endif  //)
+
+#ifndef WN_RING_SHORT //(
+	OVERALL = copy PSUB
+#endif  //)
+
+SCONNECT OVERALL PSUB 
+
+WB_SL = WB interact NWELL   //WB inside (size (NWELL or (WB interact NWELL)) by -0.005)
+
+IPW_SL = ((holes NMIN) not NWELL) inside WB 
+
+// TS18FE DEVICE/Layers
+WB_FE = WB interact NWELL //WB not inside (size (NWELL or (WB interact NWELL)) by -0.005)
+IPW_FE = ((holes (NMIN or (WB and VNN))) not NWELL) inside WB
+
+CFD2_SL = WB_SL or (NWELL interact WB_SL)
+
+#ifndef RCX_run //(
+	#ifndef sub_short //(
+		SCONNECT NTAP CFD2_SL
+		SCONNECT PTAP IPW_SL
+		SCONNECT PTAP IPW_FE
+	#endif  //)
+	#ifdef sub_short //(
+		CONNECT NTAP CFD2_SL
+		CONNECT PTAP IPW_SL
+		CONNECT PTAP IPW_FE
+	#endif  //)
+#endif  //)
+
+#ifdef RCX_run //(
+	SCONNECT SRC CFD2_SL BY NTAP 
+	SCONNECT SRC IPW_SL BY PTAP   
+	SCONNECT SRC IPW_FE BY PTAP   
+#endif  //)
+
+PSUB_CFD2=PSUB not WB 
+
+#ifndef sub_short //(
+LVS SOFTCHK NWELL
+LVS SOFTCHK PSUB
+//:)
+#ifndef RCX_run
+	sconnect NWELL WB
+	LVS SOFTCHK WB
+#endif
+LVS SOFTCHK IPW_SL
+LVS SOFTCHK IPW_FE
+#endif  //)
+
+CPEMV2:1 = STAMP CPEMV2 BY PSRC:1
+CPEMV5:1 = STAMP CPEMV5 BY PSRC:1
+CNEMV5:1 = STAMP CNEMV5 BY NSRC:1
+CNEMV_S:1 = STAMP CNEMV_S BY NSRC:1
+
+CPEMV10:1 = STAMP CPEMV10 BY PSRC:1
+CPEMV_S:1 = STAMP CPEMV_S BY PSRC:1
+
+HRSLEGS1 = STAMP HRSLEGS BY POLYO
+PMPLEGS1 = STAMP PMPLEGS BY POLYO
+NMPLEGS1 = STAMP NMPLEGS BY POLYO
+PLPLEGS1 = STAMP PLPLEGS BY POLYO
+NLPLEGS1 = STAMP NLPLEGS BY POLYO
+MT1LEGS1 = STAMP MT1LEGS BY MT11
+
+STAMP_NWELL= STAMP NWELL by NTAP
+
+#ifdef 3LM_sep //{
+MT2LEGS1 = STAMP MT2LEGS BY MT21
+CONNECT	TOP_M1	MiMCAP BY TOP_V
+
+#endif //}
+
+#ifdef 3LM //(
+	CONNECT MT2MiMCAP MT21
+#endif  //)
+
+#ifdef 4LM //(
+	CONNECT MT3MiMCAP MT31
+#endif  //)
+#ifdef 5LM //{
+	CONNECT MT4MiMCAP MT41
+#endif  //}
+#ifdef 6LM //{
+	CONNECT MT5MiMCAP MT51
+#endif  //}
+#ifdef 4LM_sep //(
+	MT3LEGS1 = STAMP MT3LEGS BY MT31
+#endif  //)
+#ifdef 5LM_sep //{
+	MT4LEGS1 = STAMP MT4LEGS BY MT41
+#endif  //}
+
+#ifdef 6LM_sep //{
+	MT5LEGS1 = STAMP MT5LEGS BY MT51
+#endif  //}
+
+MT_TOP_LEGS1 = STAMP MT_TOP_LEGS BY TOP_M1
+
+//
+// DEVICES
+//
+
+DEVICE MN(NH) NGATEH	POLYO(G) NSRCHA(S) NSRCHA(D) PSUB(B) <COMP> NETLIST MODEL NHV  
+[
+#ifdef RCX_run //(
+ property W,L,AD,AS,PD,PS
+#endif  //)
+#ifndef RCX_run //(
+ property W,L
+#endif  //)
+
+ L = (PERIMETER(NGATEH) - PERIMETER_COINCIDE(NGATEH,NSRCHA)) / 2
+ W = PERIMETER_COINCIDE(NGATEH,NSRCHA) / 2
+ IF (BENDS(NGATEH) > 0) L= AREA(NGATEH)/W
+    // Calculate the SRC/DRN Perimeter/Area
+#ifdef RCX_run //(
+ PI_S_OD =  perimeter_inside(S, COMP)
+   IF (PI_S_OD > 0){ 
+      AS = area(S) * W / PI_S_OD
+      PS = perimeter(S) * W / PI_S_OD
+   } ELSE { AS = 0 PS = 0 }
+
+   PI_D_OD =  perimeter_inside(D, COMP)
+   IF (PI_D_OD > 0) {
+      AD = area(D) * W / PI_D_OD
+      PD = perimeter(D) * W / PI_D_OD
+   } ELSE { AD = 0 PD = 0 }
+#endif  //)
+]
+
+DEVICE MN(N) NGATEL	POLYO(G) NSRCL(S) NSRCL(D) PSUB(B) <COMP> NETLIST MODEL N18
+[
+
+#ifdef RCX_run //(
+ property W,L,AD,AS,PD,PS
+#endif  //)
+#ifndef RCX_run //(
+ property W,L
+#endif  //)
+
+ L = (PERIMETER(NGATEL) - PERIMETER_COINCIDE(NGATEL,NSRCL)) / 2
+ W = PERIMETER_COINCIDE(NGATEL,NSRCL) / 2
+ IF (BENDS(NGATEL) > 0) L= AREA(NGATEL)/W
+    // Calculate the SRC/DRN Perimeter/Area
+#ifdef RCX_run //(
+   PI_S_OD =  perimeter_inside(S, COMP)
+   IF (PI_S_OD > 0) {
+      AS = area(S) * W / PI_S_OD
+      PS = perimeter(S) * W / PI_S_OD
+   } ELSE { AS = 0 PS = 0 }
+
+   PI_D_OD =  perimeter_inside(D, COMP)
+   IF (PI_D_OD > 0) {
+      AD = area(D) * W / PI_D_OD
+      PD = perimeter(D) * W / PI_D_OD
+   } ELSE { AD = 0 PD = 0 }
+#endif  //)
+]
+
+DEVICE MN(N18LL) NGATELL POLYO(G) NSRCL(S) NSRCL(D) PSUB(B) <COMP> NETLIST MODEL n18llb3
+[
+
+#ifdef RCX_run //(
+ property W,L,AD,AS,PD,PS
+#endif  //)
+#ifndef RCX_run //(
+ property W,L
+#endif  //)
+
+ L = (PERIMETER(NGATELL) - PERIMETER_COINCIDE(NGATELL,NSRCL)) / 2
+ W = PERIMETER_COINCIDE(NGATELL,NSRCL) / 2
+ IF (BENDS(NGATELL) > 0) L= AREA(NGATELL)/W
+    // Calculate the SRC/DRN Perimeter/Area
+#ifdef RCX_run //(
+   PI_S_OD =  perimeter_inside(S, COMP)
+   IF (PI_S_OD > 0) {
+      AS = area(S) * W / PI_S_OD
+      PS = perimeter(S) * W / PI_S_OD
+   } ELSE { AS = 0 PS = 0 }
+
+   PI_D_OD =  perimeter_inside(D, COMP)
+   IF (PI_D_OD > 0) {
+      AD = area(D) * W / PI_D_OD
+      PD = perimeter(D) * W / PI_D_OD
+   } ELSE { AD = 0 PD = 0 }
+#endif  //)
+]
+
+DEVICE MN(NA) NNGATEL	POLYO(G) NSRCL(S) NSRCL(D) PSUB(B) <COMP>  NETLIST MODEL NATLV   
+[
+
+#ifdef RCX_run //(
+ property W,L,AD,AS,PD,PS
+#endif  //)
+#ifndef RCX_run //(
+ property W,L
+#endif  //)
+
+ L = (PERIMETER(NNGATEL) - PERIMETER_COINCIDE(NNGATEL,NSRCL)) / 2
+ W = PERIMETER_COINCIDE(NNGATEL,NSRCL) / 2
+ IF (BENDS(NNGATEL) > 0) L= AREA(NNGATEL)/W
+    // Calculate the SRC/DRN Perimeter/Area
+#ifdef RCX_run //(
+   PI_S_OD =  perimeter_inside(S, COMP)
+   IF (PI_S_OD > 0) {
+      AS = area(S) * W / PI_S_OD
+      PS = perimeter(S) * W / PI_S_OD
+   } ELSE { AS = 0 PS = 0 }
+
+   PI_D_OD =  perimeter_inside(D, COMP)
+   IF (PI_D_OD > 0) {
+      AD = area(D) * W / PI_D_OD
+      PD = perimeter(D) * W / PI_D_OD
+   } ELSE { AD = 0 PD = 0 }
+#endif  //)
+]
+
+DEVICE MN(NB) NNGATEH_3V POLYO(G) NSRCHA(S) NSRCHA(D) PSUB(B) <COMP>  NETLIST MODEL NATHV  
+[
+
+#ifdef RCX_run //(
+ property W,L,AD,AS,PD,PS
+#endif  //)
+#ifndef RCX_run //(
+ property W,L
+#endif  //)
+
+ L = (PERIMETER(NNGATEH_3V) - PERIMETER_COINCIDE(NNGATEH_3V,NSRCHA)) / 2
+ W = PERIMETER_COINCIDE(NNGATEH_3V,NSRCHA) / 2
+ IF (BENDS(NNGATEH_3V) > 0) L= AREA(NNGATEH_3V)/W
+   // Calculate the SRC/DRN Perimeter/Area
+
+#ifdef RCX_run //(
+   PI_S_OD =  perimeter_inside(S, COMP)
+   IF (PI_S_OD > 0) {
+      AS = area(S) * W / PI_S_OD
+      PS = perimeter(S) * W / PI_S_OD
+   } ELSE { AS = 0 PS = 0 }
+
+   PI_D_OD =  perimeter_inside(D, COMP)
+   IF (PI_D_OD > 0) {
+      AD = area(D) * W / PI_D_OD
+      PD = perimeter(D) * W / PI_D_OD
+   } ELSE { AD = 0 PD = 0 }
+#endif  //)
+]
+
+DEVICE MP(P) PGATEL	POLYO(G) PSRCL(S) PSRCL(D) NWELL(B) <COMP> NETLIST MODEL P18
+[
+
+#ifdef RCX_run //(
+ property W,L,AD,AS,PD,PS
+#endif  //)
+#ifndef RCX_run //(
+ property W,L
+#endif  //)
+
+ L = (PERIMETER(PGATEL) - PERIMETER_COINCIDE(PGATEL,PSRCL)) / 2
+ W = PERIMETER_COINCIDE(PGATEL,PSRCL) / 2
+ IF (BENDS(PGATEL) > 0) L= AREA(PGATEL)/W
+    // Calculate the SRC/DRN Perimeter/Area
+#ifdef RCX_run //(
+   PI_S_OD =  perimeter_inside(S, COMP)
+   IF (PI_S_OD > 0) {
+      AS = area(S) * W / PI_S_OD
+      PS = perimeter(S) * W / PI_S_OD
+   } ELSE { AS = 0 PS = 0 }
+
+   PI_D_OD =  perimeter_inside(D, COMP)
+   IF (PI_D_OD > 0) {
+      AD = area(D) * W / PI_D_OD
+      PD = perimeter(D) * W / PI_D_OD
+   } ELSE { AD = 0 PD = 0 }
+#endif  //)
+]
+
+DEVICE MP(P18LL) PGATELL POLYO(G) PSRCL(S) PSRCL(D) NWELL(B) <COMP> NETLIST MODEL p18llb3
+[
+
+#ifdef RCX_run //(
+ property W,L,AD,AS,PD,PS
+#endif  //)
+#ifndef RCX_run //(
+ property W,L
+#endif  //)
+
+ L = (PERIMETER(PGATELL) - PERIMETER_COINCIDE(PGATELL,PSRCL)) / 2
+ W = PERIMETER_COINCIDE(PGATELL,PSRCL) / 2
+ IF (BENDS(PGATELL) > 0) L= AREA(PGATELL)/W
+    // Calculate the SRC/DRN Perimeter/Area
+#ifdef RCX_run //(
+   PI_S_OD =  perimeter_inside(S, COMP)
+   IF (PI_S_OD > 0) {
+      AS = area(S) * W / PI_S_OD
+      PS = perimeter(S) * W / PI_S_OD
+   } ELSE { AS = 0 PS = 0 }
+
+   PI_D_OD =  perimeter_inside(D, COMP)
+   IF (PI_D_OD > 0) {
+      AD = area(D) * W / PI_D_OD
+      PD = perimeter(D) * W / PI_D_OD
+   } ELSE { AD = 0 PD = 0 }
+#endif  //)
+]
+
+DEVICE MP(PH) PGATEH	POLYO(G) PSRCH(S) PSRCH(D) NWELL(B) <COMP> NETLIST MODEL PHV   
+[
+
+#ifdef RCX_run //(
+ property W,L,AD,AS,PD,PS
+#endif  //)
+#ifndef RCX_run //(
+ property W,L
+#endif  //)
+
+ L = (PERIMETER(PGATEH) - PERIMETER_COINCIDE(PGATEH,PSRCH)) / 2
+ W = PERIMETER_COINCIDE(PGATEH,PSRCH) / 2
+ IF (BENDS(PGATEH) > 0) L= AREA(PGATEH)/W
+    // Calculate the SRC/DRN Perimeter/Area
+#ifdef RCX_run //(
+   PI_S_OD =  perimeter_inside(S, COMP)
+   IF (PI_S_OD > 0) {
+      AS = area(S) * W / PI_S_OD
+      PS = perimeter(S) * W / PI_S_OD
+   } ELSE { AS = 0 PS = 0 }
+
+   PI_D_OD =  perimeter_inside(D, COMP)
+   IF (PI_D_OD > 0) {
+      AD = area(D) * W / PI_D_OD
+      PD = perimeter(D) * W / PI_D_OD
+   } ELSE { AD = 0 PD = 0 }
+#endif  //)
+]
+
+// Device extraction for Bipolar transistors.
+
+DEVICE Q(VD) PNPVLo   PSUB  PNPNWV CPEMV2:1 NETLIST MODEL VD2   
+cmacro f_bjt_prop CPEMV2:1
+DEVICE Q(VD5) PNPVLo   PSUB  PNPNWV CPEMV5:1 NETLIST MODEL VD5   
+cmacro f_bjt_prop CPEMV5:1
+DEVICE Q(VD10) PNPVLo   PSUB  PNPNWV CPEMV10:1 NETLIST MODEL VD10   
+cmacro f_bjt_prop CPEMV10:1
+DEVICE Q(VPNP18_S) PNPVLo PSUB  PNPNWV CPEMV_S:1 NETLIST MODEL VPNP18_S   
+cmacro bjt_prop CPEMV_S:1
+
+DEVICE Q(VH) PNPVHi   PSUB  PNPNWV CPEMV2:1 NETLIST MODEL VD2   
+cmacro f_bjt_prop CPEMV2:1
+DEVICE Q(VH5) PNPVHi   PSUB  PNPNWV CPEMV5:1 NETLIST MODEL VD5   
+cmacro f_bjt_prop CPEMV5:1
+DEVICE Q(VH10) PNPVHi   PSUB  PNPNWV CPEMV10:1 NETLIST MODEL VD10   
+cmacro f_bjt_prop CPEMV10:1
+DEVICE Q(VPNP33_S)  PNPVHi  PSUB  PNPNWV CPEMV_S:1 NETLIST MODEL VPNP33_S   
+cmacro bjt_prop  CPEMV_S:1
+
+NPN_seed = IPW_SL interact (CNEMV5:1 or CNEMV_S:1)
+DEVICE Q(VNPN18_S) NPN_seed  NWELL IPW_SL CNEMV_S:1 NETLIST MODEL VNPN18_S    
+cmacro bjt_prop CNEMV_S:1
+
+
+// Device extraction for Resistors.
+// resitors macro description
+//res_prop       seed_layer port_  sheet_res  delta_W  R_contact  cs_pitch
+
+//----------------------------------------
+RNCOM_3t = RNCOM interact DEV_3t
+RNCOM_2t = RNCOM not interact DEV_3t
+
+DEVICE R(RB) RNCOM_2t NSRC:1 NSRC:1 NETLIST MODEL RNPLUS2T NETLIST ELEMENT X
+CMACRO res_prop RNCOM_2t NSRC:1  RHNAA dW_NAA  CS_AA_res CS_pitch
+
+DEVICE R(RB3) RNCOM_3t NSRC:1 NSRC:1 PSUB NETLIST MODEL RNPLUS3T NETLIST ELEMENT X
+CMACRO res_prop RNCOM_3t NSRC:1  RHNAA dW_NAA  CS_AA_res CS_pitch
+
+//----------------------------------------
+
+RPCOM_3t =  RPCOM interact DEV_3t
+RPCOM_2t =  RPCOM not interact DEV_3t
+
+DEVICE R(RA) RPCOM_2t PSRC:1 PSRC:1  NETLIST MODEL RPPLUS2T NETLIST ELEMENT X
+CMACRO res_prop  RPCOM_2t   PSRC:1 RHPAA    dW_PAA   CS_AA_res CS_pitch
+
+DEVICE R(RA3) RPCOM_3t PSRC:1 PSRC:1  NWELL NETLIST MODEL RPPLUS3T NETLIST ELEMENT X
+CMACRO res_prop  RPCOM_3t   PSRC:1 RHPAA   dW_PAA   CS_AA_res CS_pitch
+
+//----------------------------------------
+
+HIPRES_psub_3t =  (HIPRES not NWELL) interact DEV_3t
+HIPRES_wn_3t =  (HIPRES and NWELL) interact DEV_3t
+
+HIPRES_2t =  HIPRES not interact DEV_3t
+
+DEVICE R(RC) HIPRES_2t HRSLEGS1 HRSLEGS1 NETLIST MODEL RPHPOLY2T NETLIST ELEMENT X
+CMACRO res_prop_rint  HIPRES_2t HRSLEGS1 RHIPO  dW_HIPO CS_GC_res CS_pitch rphpoly_rint
+
+DEVICE R(RC3) HIPRES_wn_3t HRSLEGS1 HRSLEGS1 NWELL NETLIST MODEL RPHPOLY3T NETLIST ELEMENT X
+CMACRO res_prop_rint  HIPRES_wn_3t HRSLEGS1 RHIPO  dW_HIPO CS_GC_res CS_pitch rphpoly_rint
+
+DEVICE R(RC3) HIPRES_psub_3t HRSLEGS1 HRSLEGS1 PSUB NETLIST MODEL RPHPOLY3T NETLIST ELEMENT X
+CMACRO res_prop_rint  HIPRES_psub_3t HRSLEGS1 RHIPO  dW_HIPO CS_GC_res CS_pitch rphpoly_rint
+
+//----------------------------------------
+
+PMOPRES_psub_3t =  (PMOPRES not interact NMIN) interact DEV_3t	
+PMOPRES_wn_3t =    (PMOPRES interact NMIN) interact DEV_3t   
+PMOPRES_2t =  PMOPRES not interact DEV_3t 
+
+DEVICE R(RD) PMOPRES_2t PMPLEGS1 PMPLEGS1 NETLIST MODEL RPMPOLY2T NETLIST ELEMENT X
+CMACRO res_prop_rint  PMOPRES_2t PMPLEGS1 RPMOPO  dW_PMOPO CS_GC_res CS_pitch rpmpoly_rint
+
+DEVICE R(RD3) PMOPRES_wn_3t PMPLEGS1 PMPLEGS1 NWELL NETLIST MODEL RPMPOLY3T NETLIST ELEMENT X
+CMACRO res_prop_rint  PMOPRES_wn_3t PMPLEGS1 RPMOPO  dW_PMOPO CS_GC_res CS_pitch rpmpoly_rint
+
+DEVICE R(RD3) PMOPRES_psub_3t PMPLEGS1 PMPLEGS1 PSUB NETLIST MODEL RPMPOLY3T NETLIST ELEMENT X
+CMACRO res_prop_rint  PMOPRES_psub_3t PMPLEGS1 RPMOPO  dW_PMOPO CS_GC_res CS_pitch rpmpoly_rint
+
+//---------------------------------------- 
+
+NMOPRES_wn_3t =   (NMOPRES interact NMIN)  interact DEV_3t
+NMOPRES_psub_3t = (NMOPRES not interact NMIN)  interact DEV_3t
+
+NMOPRES_2t =  NMOPRES not interact DEV_3t
+
+DEVICE R(RE) NMOPRES_2t NMPLEGS1 NMPLEGS1 NETLIST MODEL RNMPOLY2T NETLIST ELEMENT X
+CMACRO res_prop_rint NMOPRES_2t NMPLEGS1  RNMOPO  dW_NMOPO  CS_GC_res CS_pitch rnmpoly_rint
+
+DEVICE R(RE3) NMOPRES_psub_3t NMPLEGS1 NMPLEGS1 PSUB NETLIST MODEL RNMPOLY3T NETLIST ELEMENT X
+CMACRO res_prop_rint NMOPRES_psub_3t  NMPLEGS1 RNMOPO  dW_NMOPO  CS_GC_res CS_pitch rnmpoly_rint
+
+DEVICE R(RE3) NMOPRES_wn_3t NMPLEGS1 NMPLEGS1 NWELL NETLIST MODEL RNMPOLY3T NETLIST ELEMENT X
+CMACRO res_prop_rint NMOPRES_wn_3t  NMPLEGS1 RNMOPO  dW_NMOPO  CS_GC_res CS_pitch rnmpoly_rint
+
+//---------------------------------------- 
+
+PLOPRES_wn_3t =  (PLOPRES interact NMIN)   interact DEV_3t
+PLOPRES_psub_3t =  (PLOPRES not interact NMIN)  interact DEV_3t
+PLOPRES_2t =  PLOPRES not interact DEV_3t
+
+DEVICE R(RG) PLOPRES_2t PLPLEGS1 PLPLEGS1 NETLIST MODEL RPLPOLY2T NETLIST ELEMENT X
+CMACRO res_prop PLOPRES_2t PLPLEGS1   RPLOPO 0  CS_GC_res CS_pitch
+
+DEVICE R(RG3) PLOPRES_wn_3t PLPLEGS1 PLPLEGS1 NWELL NETLIST MODEL RPLPOLY3T NETLIST ELEMENT X
+CMACRO res_prop PLOPRES_wn_3t PLPLEGS1   RPLOPO 0  CS_GC_res CS_pitch
+
+DEVICE R(RG3) PLOPRES_psub_3t PLPLEGS1 PLPLEGS1 PSUB NETLIST MODEL RPLPOLY3T NETLIST ELEMENT X
+CMACRO res_prop PLOPRES_psub_3t PLPLEGS1   RPLOPO 0  CS_GC_res CS_pitch
+
+//---------------------------------------------------
+NLOPRES_wn_3t =  (NLOPRES  interact NMIN) interact DEV_3t
+NLOPRES_psub_3t =  (NLOPRES not interact NMIN)  interact DEV_3t
+
+NLOPRES_2t =  NLOPRES not interact DEV_3t
+
+DEVICE R(RH) NLOPRES_2t NLPLEGS1 NLPLEGS1 NETLIST MODEL RNLPOLY2T NETLIST ELEMENT X
+CMACRO res_prop  NLOPRES_2t  NLPLEGS1 RNLOPO   0    CS_GC_res  CS_pitch
+
+DEVICE R(RH3) NLOPRES_psub_3t NLPLEGS1 NLPLEGS1 PSUB NETLIST MODEL RNLPOLY3T NETLIST ELEMENT X
+CMACRO res_prop  NLOPRES_psub_3t  NLPLEGS1 RNLOPO   0    CS_GC_res  CS_pitch
+
+DEVICE R(RH3) NLOPRES_wn_3t NLPLEGS1 NLPLEGS1 NWELL NETLIST MODEL RNLPOLY3T NETLIST ELEMENT X
+CMACRO res_prop  NLOPRES_wn_3t  NLPLEGS1 RNLOPO   0    CS_GC_res  CS_pitch
+
+//---------------------------------------------------
+
+RSNMIN_3t = RSNMIN interact DEV_3t
+RSNMIN_2t = RSNMIN not interact DEV_3t
+
+DEVICE R(RW) RSNMIN_2t NTAP_pin NTAP_pin  NETLIST MODEL RNWELLSTI2T NETLIST ELEMENT X  
+CMACRO res_prop RSNMIN_2t NTAP_pin  RWNSTI  dW_NWSTI CS_AA_res CS_pitch
+
+DEVICE R(RW3) RSNMIN_3t NTAP_pin NTAP_pin PSUB NETLIST MODEL RNWELLSTI3T NETLIST ELEMENT X
+CMACRO res_prop RSNMIN_3t NTAP_pin  RWNSTI  dW_NWSTI CS_AA_res CS_pitch
+
+//---------------------------------------------------
+
+RSNWEL_3t = RSNWEL interact DEV_3t
+RSNWEL_2t = RSNWEL not interact DEV_3t
+
+DEVICE R(RF) RSNWEL_2t RSNWLEGS RSNWLEGS NETLIST MODEL RNWELLAA2T NETLIST ELEMENT X   
+CMACRO res_prop RSNWEL_2t RSNWLEGS  RWNAA dW_NWAA CS_AA_res CS_pitch
+                                           
+DEVICE R(RF3) RSNWEL_3t RSNWLEGS RSNWLEGS PSUB NETLIST MODEL RNWELLAA3T NETLIST ELEMENT X   
+CMACRO res_prop RSNWEL_3t RSNWLEGS  RWNAA dW_NWAA CS_AA_res CS_pitch
+
+//---------------------------------------------------
+
+RNCOM_SAL_3t = RNCOM_SAL interact DEV_3t
+RNCOM_SAL_2t = RNCOM_SAL not interact DEV_3t
+
+DEVICE R(RK) RNCOM_SAL_2t NSRC:1 NSRC:1  NETLIST MODEL NASR2T NETLIST ELEMENT X
+CMACRO res_prop RNCOM_SAL_2t NSRC:1  RLNAA 0  CS_AA_res CS_pitch
+
+DEVICE R(RK3) RNCOM_SAL_3t NSRC:1 NSRC:1 PSUB NETLIST MODEL NASR3T NETLIST ELEMENT X
+CMACRO res_prop RNCOM_SAL_3t NSRC:1  RLNAA 0  CS_AA_res CS_pitch
+
+//---------------------------------------------------
+
+RPCOM_SAL_3t = RPCOM_SAL interact DEV_3t
+RPCOM_SAL_2t = RPCOM_SAL not interact DEV_3t
+
+DEVICE R(RM) RPCOM_SAL_2t PSRC:1 PSRC:1  NETLIST MODEL PASR2T NETLIST ELEMENT X
+CMACRO res_prop RPCOM_SAL_2t PSRC:1  RLPAA 0  CS_AA_res CS_pitch
+
+DEVICE R(RM3) RPCOM_SAL_3t PSRC:1 PSRC:1  NWELL NETLIST MODEL PASR3T NETLIST ELEMENT X
+CMACRO res_prop RPCOM_SAL_3t PSRC:1  RLPAA 0  CS_AA_res CS_pitch
+
+//---------------------------------------------------
+
+DEVICE R(R1) MT1RES MT1LEGS1 MT1LEGS1	 NETLIST MODEL RM1 NETLIST ELEMENT X 
+ [
+#ifndef RCX_run //(
+  property L,W,R
+#endif  //)
+#ifdef RCX_run //(
+  property L,W
+#endif  //)
+  W = PERIMETER_COINCIDE(MT1RES,MT1LEGS1)/2
+  L = AREA(MT1RES)/W
+#ifndef RCX_run //(
+    R = RM1*(L/W)
+#endif   //)
+ ]
+
+#ifdef 4LM_sep //{
+DEVICE R(R3) MT3RES MT3LEGS1 MT3LEGS1	 NETLIST MODEL RM3 NETLIST ELEMENT X 
+ [
+  property L,W,R
+
+  W = PERIMETER_COINCIDE(MT3RES,MT3LEGS1)/2
+  L = AREA(MT3RES)/W
+  R = RMI*(L/W)
+ ]
+#endif  //}
+#ifdef 5LM_sep //{
+  DEVICE R(R4) MT4RES MT4LEGS1 MT4LEGS1 NETLIST MODEL RM4 NETLIST ELEMENT X 
+ [
+  property L,W,R
+
+  W = PERIMETER_COINCIDE(MT4RES,MT4LEGS1)/2
+  L = AREA(MT4RES)/W
+  R = RMI*(L/W)
+ ]
+#endif  //}
+
+#ifdef 6LM_sep //{
+  DEVICE R(R5) MT5RES MT5LEGS1 MT5LEGS1	NETLIST MODEL RM5 NETLIST ELEMENT X 
+ [
+  property L,W,R
+
+  W = PERIMETER_COINCIDE(MT5RES,MT5LEGS1)/2
+  L = AREA(MT5RES)/W
+  R = RMI*(L/W)
+ ]
+#endif  //}
+
+#ifdef 3LM_sep //(
+DEVICE R(R2) MT2RES MT2LEGS1 MT2LEGS1	 NETLIST MODEL RM2 NETLIST ELEMENT X 
+ [
+#ifndef RCX_run //(
+  property L,W,R
+#endif  //)
+#ifdef RCX_run //(
+  property L,W
+#endif  //)
+  W = PERIMETER_COINCIDE(MT2RES,MT2LEGS1)/2
+  L = AREA(MT2RES)/W
+#ifndef RCX_run //(
+    R = RMI*(L/W)
+#endif   //)
+ ]
+#endif   //)
+
+
+
+MT_TOP_RES_top = MT_TOP_RES not interact MT_thick_res
+ DEVICE R(RL) MT_TOP_RES_top MT_TOP_LEGS1 MT_TOP_LEGS1	NETLIST MODEL RML NETLIST ELEMENT X
+[
+#ifndef RCX_run //(
+  property L,W,R
+#endif  //)
+#ifdef RCX_run //(
+  property L,W
+#endif  //)
+  W = PERIMETER_COINCIDE(MT_TOP_RES_top,MT_TOP_LEGS1)/2
+  L = AREA(MT_TOP_RES_top)/W
+#ifndef RCX_run //(
+    R = RMT*(L/W)
+#endif   //)
+]
+
+// Device extraction for Diodes.
+
+DEVICE D(NS) NDIO_NOSAL PSUB	NSRC:1 NETLIST MODEL DNH
+[
+	PROPERTY A,P
+	A = AREA(NDIO_NOSAL)
+	P = PERIMETER(NDIO_NOSAL)
+]
+DEVICE D(DN) NDIO_SAL PSUB	NSRC:1 NETLIST MODEL DN18
+[
+	PROPERTY A,P
+	A = AREA(NDIO_SAL)
+	P = PERIMETER(NDIO_SAL)
+]
+DEVICE D(N3) NDIO_SAL_3 PSUB	NSRC:1 NETLIST MODEL DNH   
+[
+	PROPERTY A,P
+	A = AREA(NDIO_SAL_3)
+	P = PERIMETER(NDIO_SAL_3)
+]
+DEVICE D(PS) PDIO_NOSAL PSRC:1	NWELL NETLIST MODEL DPH  
+[
+	PROPERTY A,P
+	A = AREA(PDIO_NOSAL)
+	P = PERIMETER(PDIO_NOSAL)
+]
+DEVICE D(DP) PDIO_SAL PSRC:1	NWELL NETLIST MODEL DP18
+[
+	PROPERTY A,P
+	A = AREA(PDIO_SAL)
+	P = PERIMETER(PDIO_SAL)
+]
+DEVICE D(P3) PDIO_SAL_3 PSRC:1	NWELL NETLIST MODEL DPH   
+[
+	PROPERTY A,P
+	A = AREA(PDIO_SAL_3)
+	P = PERIMETER(PDIO_SAL_3)
+]
+DEVICE D(DW) NWLDIO  OVERALL NTAP_pin  NETLIST MODEL DNWELL
+[
+	PROPERTY A,P
+	A = AREA(NWLDIO)
+	P = PERIMETER(NWLDIO)
+]
+
+DEVICE D(W3) NWLDIO_3 PSUB_3 DIONWELL NETLIST MODEL DNWELL33  
+[
+	PROPERTY A,P
+	A = AREA(NWLDIO_3)
+	P = PERIMETER(NWLDIO_3)
+]
+
+//Schotky diode layers to be ignore by the lvs when extracting deep nwell parasitic diodes.
+//=========================================================================================
+isp = ((holes (NMIN interact WB)) and WB) not NWELL
+sk_dio_aa = (((CMCOMP not NIMP) not PIMP) and DIO) and isp
+
+
+IPW_SL_A = IPW_SL not interact NPN_seed 
+
+DEVICE D(DDWNPW18) IPW_SL_A IPW_SL NWELL NETLIST MODEL DDWNPW18    
+[
+	PROPERTY A,P
+	A = AREA(IPW_SL)
+	P = PERIMETER(IPW_SL)
+]
+
+
+DEVICE D(DDWNPS18) CFD2_SL PSUB_CFD2 CFD2_SL NETLIST MODEL DDWNPS18   
+[
+	PROPERTY A,P
+	A = AREA(CFD2_SL)
+	P = PERIMETER(CFD2_SL)
+]
+
+// -------------- schottky diodes extraction ----------------
+//The L is calculated by: Area/fixed_width
+//The area is of a rectangle ( the corners are taken into account ).
+
+#ifndef RCX_run //{(
+
+	SCONNECT ptap isp
+    #else //)
+	SCONNECT SRC isp BY PTAP
+
+#endif //}
+
+
+// Device extraction for Capacitors.
+
+
+NWCAP_3t =  NWCAP interact DEV_3t  
+NWCAP_2t = NWCAP not interact DEV_3t 
+
+connect NWCAP POLYO 
+
+DEVICE C(CL) NWCAP_2t NWCAP  SRC  NETLIST MODEL NWCAP2T   NETLIST ELEMENT X
+[	PROPERTY L,W
+	L = (PERIMETER(NWCAP_2t) - PERIMETER_COINCIDE(NWCAP_2t,SRC)) / 2
+	W = PERIMETER_COINCIDE(NWCAP_2t,SRC) / 2
+]
+
+NWCAP_PROP = copy NWCAP
+
+DEVICE C(CL3) NWCAP_3t NWCAP SRC  PSUB <NWCAP_PROP>  NETLIST MODEL NWCAP3T   NETLIST ELEMENT X
+[	PROPERTY L,W
+	F = count (NWCAP)
+	L = ((PERIMETER(NWCAP) - PERIMETER_COINCIDE(NWCAP,SRC)) / 2) / F
+	W = PERIMETER_COINCIDE(NWCAP,SRC) / 2
+]
+
+NWCAPH_3t = NWCAPH interact DEV_3t
+NWCAPH_2t = NWCAPH not interact DEV_3t
+
+connect NWCAPH POLYO
+
+DEVICE C(CH) NWCAPH_2t NWCAPH SRC  NETLIST MODEL NWCAPH2T   NETLIST ELEMENT X   
+[	PROPERTY L,W
+	L = (PERIMETER(NWCAPH_2t) - PERIMETER_COINCIDE(NWCAPH_2t,SRC)) / 2
+	W = PERIMETER_COINCIDE(NWCAPH_2t,SRC) / 2
+]
+
+DEVICE C(CH3) NWCAPH_3t NWCAPH SRC PSUB  NETLIST MODEL NWCAPH3T  NETLIST ELEMENT X   
+[	PROPERTY L,W
+	F = count (NWCAPH)
+	L = ((PERIMETER(NWCAPH) - PERIMETER_COINCIDE(NWCAPH,SRC)) / 2) / F
+	W = PERIMETER_COINCIDE(NWCAPH,SRC) / 2
+]	
+
+#ifdef 3LM_sep //{
+//         mim capacitor.
+//------------------------
+//1-a. Square mim capacitor.
+//------------------------
+
+
+MiMCAP_C  = (MiMCAP_B interact TOP_M) not interact SPC_stack
+
+#ifdef 3LM //(
+ DEVICE C(CB) MiMCAP_C MiMCAP(POS) MT21(NEG)	NETLIST MODEL CMIM_SQ  NETLIST ELEMENT X
+#endif  //)
+
+#ifdef 4LM //(
+     DEVICE C(CB) MiMCAP_C MiMCAP(POS) MT31(NEG)	NETLIST MODEL CMIM_SQ  NETLIST ELEMENT X
+#endif  //)
+
+#ifdef 5LM //{
+   DEVICE C(CB) MiMCAP_C MiMCAP(POS) MT41(NEG)	NETLIST MODEL CMIM_SQ  NETLIST ELEMENT X
+#endif  //}
+
+#ifdef 6LM //{
+   DEVICE C(CB) MiMCAP_C MiMCAP(POS) MT51(NEG)	NETLIST MODEL CMIM_SQ  NETLIST ELEMENT X
+#endif 
+CMACRO mim_prop  MiMCAP_C CMIMa CMIMp // Capacitance calculation for squrae MIM  
+
+//Square mim capacitor end.
+//--------------------------
+
+
+#endif //}
+
+// End of Device Extraction
+// -------------------------------------------------------
+
+
+// ==============================================
+//        ERC Section
+// ==============================================
+//
+// In order to activate the ERC check please uncomment the lines below following the instructions.
+//
+
+
+// Please uncomment/update the Foll owing variables according to labelling methodology.
+// variable GROUND_net "GND" "AGND" "VSS" "AVSS" "VS33" "VSSPST" "VSSG" "AVS33" "AVSSR" "AVSSG" "AVSSB" "AVSSBG" "AVS33R" "AVS33G" "AVS33B" "AVSSUB" "VSSUB" "AVS33SUB" "VS33SUB" "TAVSS" "TAVSSPST" "DVSS"
+// variable POWER_net "VDD" "AVDD" "VD33" "VDDSA" "VDDPST" "VDD5V" "VDDG" "AVD33" "AVDDR" "AVDDG" "AVDDB" "AVDDBG" "AVD33R" "AVD33G" "AVD33B" "AVDWELL" "VDWELL" "AVD33WELL" "VD33WELL" "TAVDD" "TAVD33" "TAVD33PST" "TAVDDPST" "DVDD"
+
+// Nodes with a path to power but not ground ( Uncomment next line to Activate )
+// ERC PATHCHK GROUND && !POWER
+
+// Nodes with a path to ground but not power ( Uncomment next line to Activate )
+// ERC PATHCHK POWER && !GROUND
+
+// Nodes without a path to power and ground ( Uncomment next line to Activate )
+// ERC PATHCHK !POWER && !GROUND
+// ERC PATHCHK !LABELED
+
+
+// In Order to check the following , please execute a DRC run on this runset.  ( Uncomment next line to Activate )
+
+/*
+ERC_PTAP { @ PTAP Cannot be connected to POWER
+	NET PTAP POWER_net
+}
+
+ERC_NTAP { @ NTAP Cannot be connected to GROUND
+	NET NTAP GROUND_net
+}
+
+N1ndiff = NET NSRC:1 POWER_net
+T1ndiff = ngate  TOUCH N1ndiff
+N2ndiff = NET NSRC:1 GROUND_net
+T2ndiff = ngate  TOUCH N2ndiff
+
+ERC_NMOS { @ NMOS Not allowed to be connected to POWER and GROUND .
+ T1ndiff AND T2ndiff
+}
+
+N1pdiff = NET PSRC:1  POWER_net
+T1pdiff =  pgate TOUCH N1pdiff
+N2pdiff = NET PSRC:1  GROUND_net
+T2pdiff =  pgate TOUCH N2pdiff
+ERC_PMOS { @ PMOS Not allowed to be connected to POWER and GROUND .
+ T1pdiff AND T2pdiff
+}
+
+*/ 
+
+// *****************************************************************
+// ****************************    MACROS   ************************
+// *****************************************************************
+//  !NOTE
+//  In the 'res_prop' macro there are 2 ways to calculate 'R' one is:
+//  Calculation for resistor ( not metal ) R.
+//  rcon = (cres*pitch)/w
+//  R=2*rcon + rsh*l/(w-dw)
+//  L- resistor Body length
+//  W- Width
+//  Rc' - contact resistance per width (= typical single contact resistance* contact pitch).
+//  The same macro is applicable for metal resistors only R_contact should be set to 0.
+//  This code is commeneted out and should be used explicitly by the user by uncommenting the code
+
+//  The second way is:
+//  sheet_res*(L/W) it is the default resistance calculation. 
+//----------------------------------------------------------------------
+
+DMACRO res_prop seed_layer port_ sheet_res delta_W  cres cs_pitch {
+ [
+
+#ifndef RCX_run //(
+  property L,W,R
+#endif  //)
+#ifdef RCX_run //(
+  property L,W
+#endif  //)
+  W = PERIMETER_COINCIDE(seed_layer,port_)/2
+  L = AREA(seed_layer)/W
+  rcon= (cres*cs_pitch)/W
+#ifndef RCX_run //(
+   R = (2*rcon) + (sheet_res * L)/(W - delta_W)
+//     R = sheet_res*(L/W)
+#endif   //)
+ ]
+}
+
+//=====================================================
+
+DMACRO res_prop_rint seed_layer port_ sheet_res delta_W  cres cs_pitch  rint {
+ [
+
+#ifndef RCX_run //(
+  property L,W,R
+#endif  //)
+#ifdef RCX_run //(
+  property L,W
+#endif  //)
+  W = PERIMETER_COINCIDE(seed_layer,port_)/2
+  L = AREA(seed_layer)/W
+  rcon= (cres*cs_pitch)/W
+  rend = rint/(W-delta_W) 
+#ifndef RCX_run //(
+   R = (2*rcon) + (2*rend) + (sheet_res * L)/(W - delta_W)
+// R = sheet_res*(L/W)
+#endif   //)
+ ]
+}
+
+
+
+// Fixed Bjt property macro 
+//---------------------------------------------------------
+DMACRO f_bjt_prop  aux_layer {
+[
+	PROPERTY M
+	M=1
+]
+}
+
+// Bjt property macro 
+//---------------------------------------------------------
+DMACRO bjt_prop  aux_layer {
+[
+ property  A,P
+    A = AREA (aux_layer)
+    P = PERIM(aux_layer) 
+   
+]
+}
+
+#ifdef 3LM_sep //{
+// MIM_sq property macro
+//---------------------------------------------------------
+
+
+DMACRO mim_prop  seed_layer area_c fringe_c {
+[
+
+#ifndef RCX_run //{
+        	PROPERTY L,W,C
+	        A = area(seed_layer)
+	        P = perimeter(seed_layer)
+	        C = A*area_c + P*fringe_c
+#else
+        	PROPERTY L,W
+	        A = area(seed_layer)
+	        P = perimeter(seed_layer)
+#endif //}
+
+	if (16*A-P*P > 0)
+	{        W = P/4
+	         L = P/4
+	}
+	else    
+	{       W = (P-sqrt(P*P-16*A))/4
+	        L = (P+sqrt(P*P-16*A))/4
+	}
+]
+}
+
+#endif //}
+
+

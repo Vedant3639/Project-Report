@@ -1,0 +1,50 @@
+# CALIBRE-LVS DISCREPANCY VIEWER TCL FILE 
+# FILE: svdb/SRAM.dv
+dv_start unmatched                                
+dv_cell {SRAM} {SRAM} unmatched
+dv_obj_count -transformed_nets {7 5} -transformed_inst {1 1} -transformed_port {0 0}
+dv_discrep 1 {Incorrect Nets} -inst_count { 0 0}
+dv_discrep_line {Net } -lnet {8} {                                                     ** no similar net **}
+dv_discrep_line {}
+dv_discrep 2 {Incorrect Nets} -inst_count { 0 0}
+dv_discrep_line {Net } -lnet {9} {                                                     ** no similar net **}
+dv_discrep_line {}
+dv_discrep 3 {Incorrect Instances}
+dv_discrep_line {} -ldev {X1/M0} {} -lloc {(2.815,3.665)} {  MP(P)                                 } -sdev {MM5} {  MP(P)}
+dv_discrep_line {  } -lport {d} {: } -lnet {VDD} {                                                    } -sport {d} {: } -snet {VDD} {}
+dv_discrep_line {  } -lport {b} {: } -lnet {8} {                                                      ** no similar net **}
+dv_discrep_line {  ** } -lnet {VDD} { **                                                 } -sport {b} {: } -snet {VDD} {}
+dv_discrep_line {}
+dv_discrep 4 {Incorrect Instances}
+dv_discrep_line {} -ldev {X5/M0} {} -lloc {(2.815,1.860)} {  MN(N)                                 } -sdev {MM2} {  MN(N)}
+dv_discrep_line {  } -lport {d} {: } -lnet {VSS} {                                                    } -sport {d} {: } -snet {VSS} {}
+dv_discrep_line {  } -lport {b} {: } -lnet {9} {                                                      ** no similar net **}
+dv_discrep_line {  ** } -lnet {VSS} { **                                                 } -sport {b} {: } -snet {VSS} {}
+dv_discrep_line {}
+dv_discrep 5 {Incorrect Instances}
+dv_discrep_line {} -ldev {X0/M0} {} -lloc {(1.415,3.665)} {  MP(P)                                 } -sdev {MM1} {  MP(P)}
+dv_discrep_line {  } -lport {d} {: } -lnet {VDD} {                                                    } -sport {d} {: } -snet {VDD} {}
+dv_discrep_line {  } -lport {b} {: } -lnet {8} {                                                      ** no similar net **}
+dv_discrep_line {  ** } -lnet {VDD} { **                                                 } -sport {b} {: } -snet {VDD} {}
+dv_discrep_line {}
+dv_discrep 6 {Incorrect Instances}
+dv_discrep_line {} -ldev {X4/M0} {} -lloc {(1.415,1.860)} {  MN(N)                                 } -sdev {MM0} {  MN(N)}
+dv_discrep_line {  } -lport {d} {: } -lnet {VSS} {                                                    } -sport {d} {: } -snet {VSS} {}
+dv_discrep_line {  } -lport {b} {: } -lnet {9} {                                                      ** no similar net **}
+dv_discrep_line {  ** } -lnet {VSS} { **                                                 } -sport {b} {: } -snet {VSS} {}
+dv_discrep_line {}
+dv_discrep 7 {Incorrect Instances}
+dv_discrep_line {} -ldev {X2/M0} {} -lloc {(1.055,0.630)} {  MN(N)                                 } -sdev {MM3} {  MN(N)}
+dv_discrep_line {  } -lport {g} {: } -lnet {WL} {                                                     } -sport {g} {: } -snet {WL} {}
+dv_discrep_line {  } -lport {s} {: } -lnet {5} {                                                      } -sport {s} {: } -snet {BL} {}
+dv_discrep_line {  } -lport {b} {: } -lnet {9} {                                                      ** no similar net **}
+dv_discrep_line {  ** } -lnet {VSS} { **                                                 } -sport {b} {: } -snet {VSS} {}
+dv_discrep_line {}
+dv_discrep 8 {Incorrect Instances}
+dv_discrep_line {} -ldev {X3/M0} {} -lloc {(3.170,0.810)} {  MN(N)                                 } -sdev {MM4} {  MN(N)}
+dv_discrep_line {  } -lport {g} {: } -lnet {WL} {                                                     } -sport {g} {: } -snet {WL} {}
+dv_discrep_line {  } -lport {s} {: } -lnet {6} {                                                      } -sport {s} {: } -snet {BLB} {}
+dv_discrep_line {  } -lport {b} {: } -lnet {9} {                                                      ** no similar net **}
+dv_discrep_line {  ** } -lnet {VSS} { **                                                 } -sport {b} {: } -snet {VSS} {}
+dv_discrep_line {}
+dv_end

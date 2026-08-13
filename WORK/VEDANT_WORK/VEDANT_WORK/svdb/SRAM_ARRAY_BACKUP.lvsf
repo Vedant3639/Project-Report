@@ -1,0 +1,31 @@
+# Automagically generated file: Please do not edit!
+lvs_LvsOutFile RUNDIR /home/Vedant_int/Desktop/VEDANT_WORK
+lvs_LvsfVersion 4
+lvs_LvsInputSummary {0 0 0}
+lvs_LvsComparisonSummary {5 1 3 0}
+lvs_SourceCase YES
+lvs_LayoutCase YES
+lvs_PowerName VDD
+lvs_PowerName vdd
+lvs_PowerName VCC
+lvs_PowerName vcc
+lvs_PowerName VDD!
+lvs_PowerName vdd!
+lvs_PowerName VCC!
+lvs_PowerName vcc!
+lvs_PowerName AVDD
+lvs_PowerName DVDD
+lvs_GroundName GND
+lvs_GroundName gnd
+lvs_GroundName VSS
+lvs_GroundName vss
+lvs_GroundName GND!
+lvs_GroundName gnd!
+lvs_GroundName VSS!
+lvs_GroundName vss!
+lvs_GroundName AVSS
+lvs_GroundName DVSS
+lvs_LvsOutFile LVS_REPORT SRAM_ARRAY_BACKUP.lvs.report
+lvs_LvsOutFile SOURCE_NETLIST SRAM_ARRAY_BACKUP.src.net
+lvs_LvsOutFile RULES_FILE _LVS.header_
+lvs_LvsRunTimes 1783597554 1783597554

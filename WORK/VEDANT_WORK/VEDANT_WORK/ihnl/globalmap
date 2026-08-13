@@ -1,0 +1,17 @@
+CADENCE IHNL11140
+$model
+VEDANT_NEW/Decoder_3X8/schematic Decoder_3X8
+VEDANT_NEW/Diff_Sense_Amp/schematic Diff_Sense_Amp
+VEDANT_NEW/6TSRAM_ARRAY/schematic 6TSRAM_ARRAY
+VEDANT_NEW/SRAM_CHIP/schematic SRAM_CHIP
+VEDANT_NEW/Pre_charge_CKT/schematic Pre_charge_CKT
+VEDANT_NEW/SRAM/schematic SRAM
+VEDANT_NEW/Column_Mux/schematic Column_Mux
+VEDANT_NEW/Write_Driver/schematic Write_Driver
+CMOS_inv/CMOS_inv/schematic CMOS_inv
+VEDANT_NEW/NAND_3IP/schematic NAND_3IP
+$endmodel
+$net
+$endnet
+$param
+$endparam

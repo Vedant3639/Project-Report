@@ -1,0 +1,47 @@
+OK
+VERSION          2
+TIME_NUMBER 6379989389
+LAYER_COUNT         36
+VIACOR_COUNT          4
+FIELD_NAMES drc_layer_nb layer_name
+        74 CONT
+       194 NWELL
+       199 IPW_FE
+       202 IPW_SL
+       206 POLYO
+       222 NWCAPH
+       224 NWCAP
+       233 PSUB
+       274 NTAP
+       276 NWELL_conn
+       277 POLYFIELD
+       278 POLYGATE
+       282 SRC
+       283 SRC_sqc
+       296 PTAP
+       298 NTAP_pin
+       299 NSRC:1
+       300 PSRC:1
+       335 PNPNWV
+       370 RSNWLEGS
+       389 PSUB_3:1
+       399 MT11
+       400 MT21
+       402 TOP_M1
+       403 MT31
+       406 TOP_V
+       410 MiMCAP
+       411 MT3MiMCAP
+       413 VI41
+       416 VI3_no_stk
+       417 POLYCONTF
+       418 POLYCONTG
+       421 CFD2_SL
+       482 isp
+       523 VI2
+       908 temporary_layer908
+VIACOR_FIELD_NAMES VIA_drc_layer_nb LAYER1_drc_layer_nb LAYER2_drc_layer_nb
+908  206  399
+523  399  400
+416  400  403
+413  402  403

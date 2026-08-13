@@ -1,0 +1,117 @@
+********************************************************************************
+Product   : Virtuoso(R) XStream Out
+Program   : @(#)$CDS: strmout version 6.1.8-64b 04/27/2021 19:14 (cpgsrv11) $
+          : sub-version  IC6.1.8-64b.500.18 
+Started at: 20-Jul-2026  03:13:01
+User Name : Vedant_int
+Host Name : nsdcs.iiti.ac.in
+Directory : /home/Vedant_int/Desktop/VEDANT_WORK
+CADENCE Design Systems, Inc.
+********************************************************************************
+Info: Cellview Rev Num:99,  Tech Rev Num:59
+
+WARNING (XSTRM-20): Output Stream file '/home/Vedant_int/Desktop/VEDANT_WORK/6TSRAM_ARRAY.calibre.db' already exists. It will be overwritten.
+INFO (XSTRM-217): Reading the layer map file, /progs/FOUNDRY/SCL_FILES/scl_pdk/design_kit/pdklib/cadence/OA/ts018_compana_4M1L_OA/rev0.0/ref_libs/ts018_scl_prim/ts018_scl_prim.layermap
+INFO (XSTRM-217): Reading the object map file, /progs/FOUNDRY/SCL_FILES/scl_pdk/design_kit/pdklib/cadence/OA/ts018_compana_4M1L_OA/rev0.0/ref_libs/ts018_scl_prim/ts018_scl_prim.objectmap
+INFO (XSTRM-162): You have not used the viaMap option. If the OpenAccess design has native oaVia instances, use the -viaMap option for preserving oaVia instances in a Stream Out - Stream In round trip. Using the -viaMap option improves performance and VM usage of applications using the Streamed-In design.  For details on the viaMap option, refer to the "Design Data Translator's Reference" guide for XStream.
+
+Summary of Options :
+library                                 VEDANT_NEW
+strmFile                                /home/Vedant_int/Desktop/VEDANT_WORK/6TSRAM_ARRAY.calibre.db
+topCell                                 6TSRAM_ARRAY
+view                                    layout
+runDir                                  /home/Vedant_int/Desktop/VEDANT_WORK/
+logFile                                 PIPO.LOG.6TSRAM_ARRAY
+summaryFile                             PIPO.SUM.6TSRAM_ARRAY
+layerMap                                /progs/FOUNDRY/SCL_FILES/scl_pdk/design_kit/pdklib/cadence/OA/ts018_compana_4M1L_OA/rev0.0/ref_libs/ts018_scl_prim/ts018_scl_prim.layermap
+objectMap                                /progs/FOUNDRY/SCL_FILES/scl_pdk/design_kit/pdklib/cadence/OA/ts018_compana_4M1L_OA/rev0.0/ref_libs/ts018_scl_prim/ts018_scl_prim.objectmap
+case                                    Preserve
+convertDot                              node
+convertPcellPin                         geometry
+
+INFO (XSTRM-223): 1. Translating stdVia ts018_scl_prim/M2_M1_S/layout as STRUCTURE M2_M1_S_CDNS_784497381780.
+INFO (XSTRM-223): 2. Translating stdVia ts018_scl_prim/M3_M2_S/layout as STRUCTURE M3_M2_S_CDNS_784497381781.
+INFO (XSTRM-223): 3. Translating stdVia ts018_scl_prim/M2_M1_S/layout as STRUCTURE M2_M1_S_CDNS_784497381782.
+INFO (XSTRM-223): 4. Translating stdVia ts018_scl_prim/ML_M3_S/layout as STRUCTURE ML_M3_S_CDNS_784497381783.
+INFO (XSTRM-223): 5. Translating stdVia ts018_scl_prim/M3_M2_S/layout as STRUCTURE M3_M2_S_CDNS_784497381784.
+INFO (XSTRM-223): 6. Translating stdVia ts018_scl_prim/M2_M1_S/layout as STRUCTURE M2_M1_S_CDNS_784497381785.
+INFO (XSTRM-223): 7. Translating stdVia ts018_scl_prim/ML_M3_S/layout as STRUCTURE ML_M3_S_CDNS_784497381786.
+INFO (XSTRM-223): 8. Translating stdVia ts018_scl_prim/M3_M2_S/layout as STRUCTURE M3_M2_S_CDNS_784497381787.
+INFO (XSTRM-223): 9. Translating stdVia ts018_scl_prim/M2_M1_S/layout as STRUCTURE M2_M1_S_CDNS_784497381788.
+INFO (XSTRM-223): 10. Translating stdVia ts018_scl_prim/M2_M1_S/layout as STRUCTURE M2_M1_S_CDNS_784497381789.
+INFO (XSTRM-223): 11. Translating stdVia ts018_scl_prim/M2_M1_S/layout as STRUCTURE M2_M1_S_CDNS_7844973817810.
+INFO (XSTRM-223): 12. Translating stdVia ts018_scl_prim/M2_M1_S/layout as STRUCTURE M2_M1_S_CDNS_7844973817811.
+INFO (XSTRM-223): 13. Translating stdVia ts018_scl_prim/M1_PO_4X/layout as STRUCTURE M1_PO_4X_CDNS_7844973817812.
+INFO (XSTRM-223): 14. Translating cellView ts018_scl_prim/pmos_18/layout as STRUCTURE pmos_18_CDNS_784497381780.
+WARNING (XSTRM-35): The objects in the layer-purpose pair 'instance:drawing' are ignored. This is because the layer-purpose pair used in the design is not specified in the layer map file. Specify the layer-purpose pair in the layer map file and try again.
+INFO (XSTRM-223): 15. Translating cellView ts018_scl_prim/nmos_18/layout as STRUCTURE nmos_18_CDNS_784497381781.
+INFO (XSTRM-223): 16. Translating stdVia ts018_scl_prim/M3_M2_S/layout as STRUCTURE M3_M2_S_CDNS_7844973817813.
+INFO (XSTRM-223): 17. Translating stdVia ts018_scl_prim/M2_M1_S/layout as STRUCTURE M2_M1_S_CDNS_7844973817814.
+INFO (XSTRM-223): 18. Translating stdVia ts018_scl_prim/M2_M1_S/layout as STRUCTURE M2_M1_S_CDNS_7844973817815.
+INFO (XSTRM-223): 19. Translating stdVia ts018_scl_prim/M3_M2_S/layout as STRUCTURE M3_M2_S_CDNS_7844973817816.
+INFO (XSTRM-223): 20. Translating stdVia ts018_scl_prim/ML_M3_S/layout as STRUCTURE ML_M3_S_CDNS_7844973817817.
+INFO (XSTRM-223): 21. Translating cellView CMOS_inv/CMOS_inv/layout as STRUCTURE CMOS_inv.
+WARNING (XSTRM-154): The object map file does not contain any mapping for the OpenAccess object 'Marker' and the sub-object 'annotation'. Therefore, these objects in the design will not be translated. To enable the translation of these objects in the Stream file, provide a valid mapping in the object map file. For details on the format of object map file, refer to the "Design Data Translator's Reference" guide for XStream.
+INFO (XSTRM-223): 22. Translating cellView VEDANT_NEW/Column_Mux/layout as STRUCTURE Column_Mux.
+INFO (XSTRM-317): The 'VEDANT_NEW/Column_Mux/layout' has a pathSeg with diagonal orientation, or end style as custom or chamfer at (7320, 3770). This pathSeg will be translated as a boundary record in the GDS file during Stream Out.
+INFO (XSTRM-317): The 'VEDANT_NEW/Column_Mux/layout' has a pathSeg with diagonal orientation, or end style as custom or chamfer at (5360, 3770). This pathSeg will be translated as a boundary record in the GDS file during Stream Out.
+INFO (XSTRM-317): The 'VEDANT_NEW/Column_Mux/layout' has a pathSeg with diagonal orientation, or end style as custom or chamfer at (3350, 3745). This pathSeg will be translated as a boundary record in the GDS file during Stream Out.
+INFO (XSTRM-317): The 'VEDANT_NEW/Column_Mux/layout' has a pathSeg with diagonal orientation, or end style as custom or chamfer at (9355, 3775). This pathSeg will be translated as a boundary record in the GDS file during Stream Out.
+INFO (XSTRM-317): The 'VEDANT_NEW/Column_Mux/layout' has a pathSeg with diagonal orientation, or end style as custom or chamfer at (4640, 3120). This pathSeg will be translated as a boundary record in the GDS file during Stream Out.
+INFO (XSTRM-223): 23. Translating stdVia ts018_scl_prim/M1_PO_4X/layout as STRUCTURE M1_PO_4X_CDNS_7844973817818.
+INFO (XSTRM-223): 24. Translating stdVia ts018_scl_prim/M3_M2_S/layout as STRUCTURE M3_M2_S_CDNS_7844973817819.
+INFO (XSTRM-223): 25. Translating stdVia ts018_scl_prim/M2_M1_S/layout as STRUCTURE M2_M1_S_CDNS_7844973817820.
+INFO (XSTRM-223): 26. Translating stdVia ts018_scl_prim/M3_M2_S/layout as STRUCTURE M3_M2_S_CDNS_7844973817821.
+INFO (XSTRM-223): 27. Translating cellView ts018_scl_prim/nmos_18/layout as STRUCTURE nmos_18_CDNS_784497381782.
+INFO (XSTRM-223): 28. Translating cellView ts018_scl_prim/nmos_18/layout as STRUCTURE nmos_18_CDNS_784497381783.
+INFO (XSTRM-223): 29. Translating cellView ts018_scl_prim/pmos_18/layout as STRUCTURE pmos_18_CDNS_784497381784.
+INFO (XSTRM-223): 30. Translating cellView ts018_scl_prim/pmos_18/layout as STRUCTURE pmos_18_CDNS_784497381785.
+INFO (XSTRM-223): 31. Translating cellView VEDANT_NEW/Diff_Sense_Amp/layout as STRUCTURE Diff_Sense_Amp.
+INFO (XSTRM-223): 32. Translating stdVia ts018_scl_prim/M3_M2_S/layout as STRUCTURE M3_M2_S_CDNS_7844973817822.
+INFO (XSTRM-223): 33. Translating cellView VEDANT_NEW/Write_Driver/layout as STRUCTURE Write_Driver.
+INFO (XSTRM-223): 34. Translating stdVia ts018_scl_prim/M3_M2_S/layout as STRUCTURE M3_M2_S_CDNS_7844973817823.
+INFO (XSTRM-223): 35. Translating cellView ts018_scl_prim/pmos_18/layout as STRUCTURE pmos_18_CDNS_784497381786.
+INFO (XSTRM-223): 36. Translating cellView ts018_scl_prim/pmos_18/layout as STRUCTURE pmos_18_CDNS_784497381787.
+INFO (XSTRM-223): 37. Translating cellView VEDANT_NEW/Pre_charge_CKT/layout as STRUCTURE Pre_charge_CKT.
+INFO (XSTRM-223): 38. Translating stdVia ts018_scl_prim/M3_M2_S/layout as STRUCTURE M3_M2_S_CDNS_7844973817824.
+INFO (XSTRM-223): 39. Translating stdVia ts018_scl_prim/M3_M2_S/layout as STRUCTURE M3_M2_S_CDNS_7844973817825.
+INFO (XSTRM-223): 40. Translating stdVia ts018_scl_prim/M2_M1_S/layout as STRUCTURE M2_M1_S_CDNS_7844973817826.
+INFO (XSTRM-223): 41. Translating stdVia ts018_scl_prim/M2_M1_S/layout as STRUCTURE M2_M1_S_CDNS_7844973817827.
+INFO (XSTRM-223): 42. Translating cellView ts018_scl_prim/nmos_18/layout as STRUCTURE nmos_18_CDNS_784497381788.
+INFO (XSTRM-223): 43. Translating cellView ts018_scl_prim/pmos_18/layout as STRUCTURE pmos_18_CDNS_784497381789.
+INFO (XSTRM-223): 44. Translating cellView ts018_scl_prim/nmos_18/layout as STRUCTURE nmos_18_CDNS_7844973817810.
+INFO (XSTRM-223): 45. Translating cellView VEDANT_NEW/SRAM/layout as STRUCTURE SRAM.
+INFO (XSTRM-223): 46. Translating cellView ts018_scl_prim/nmos_18/layout as STRUCTURE nmos_18_CDNS_7844973817811.
+INFO (XSTRM-223): 47. Translating cellView ts018_scl_prim/pmos_18/layout as STRUCTURE pmos_18_CDNS_7844973817812.
+INFO (XSTRM-223): 48. Translating cellView ts018_scl_prim/pmos_18/layout as STRUCTURE pmos_18_CDNS_7844973817813.
+INFO (XSTRM-223): 49. Translating cellView VEDANT_NEW/NAND_3IP/layout as STRUCTURE NAND_3IP.
+INFO (XSTRM-223): 50. Translating cellView VEDANT_NEW/Decoder_3X8/layout as STRUCTURE Decoder_3X8.
+INFO (XSTRM-223): 51. Translating cellView VEDANT_NEW/6TSRAM_ARRAY/layout as STRUCTURE 6TSRAM_ARRAY.
+
+Summary of Objects Translated:
+	Scalar Instances:                       151
+	Array Instances:                        0
+	Polygons:                               0
+	Paths:                                  117
+	Rectangles:                             424
+	Lines:                                  0
+	Arcs:                                   0
+	Donuts:                                 0
+	Dots:                                   0
+	Ellipses:                               0
+	Boundaries:                             9
+	Area Blockages:                         0
+	Layer Blockages:                        0
+	Area Halos:                             0
+	Markers:                                0
+	Rows:                                   0
+	Standard Vias                           316
+	Custom Vias:                            0
+	CdsGen Vias:                            0
+	Pathsegs:                               455
+	Text:                                   86
+	TextDisplay:                            0
+	Cells:                                  51
+
+Elapsed Time: 2.8s   User Time: 0.3s   CPU Time: 0.1s   Peak VM: 16836KB
+INFO (XSTRM-234): Translation completed. '0' error(s) and '3' warning(s) found.

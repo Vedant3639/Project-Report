@@ -1,0 +1,977 @@
+
+
+
+                  ##################################################
+                  ##                                              ##
+                  ##         C A L I B R E    S Y S T E M         ##
+                  ##                                              ##
+                  ##             L V S   R E P O R T              ##
+                  ##                                              ##
+                  ##################################################
+
+
+
+REPORT FILE NAME:         SRAM_ARRAY_BACKUP.lvs.report
+LAYOUT NAME:              SRAM_ARRAY_BACKUP.sp ('SRAM_ARRAY_BACKUP')
+SOURCE NAME:              SRAM_ARRAY_BACKUP.src.net ('SRAM_ARRAY_BACKUP')
+RULE FILE:                _LVS.header_
+CREATION TIME:            Thu Jul  9 17:15:54 2026
+CURRENT DIRECTORY:        /home/Vedant_int/Desktop/VEDANT_WORK
+USER NAME:                Vedant_int
+CALIBRE VERSION:          v2022.4_37.20    Fri Dec 2 17:41:13 PST 2022
+
+
+
+                               OVERALL COMPARISON RESULTS
+
+
+
+                  #   #         #####################  
+                   # #          #                   #  
+                    #           #     INCORRECT     #  
+                   # #          #                   #  
+                  #   #         #####################  
+
+
+  Error:    Different numbers of nets.
+  Error:    Different numbers of instances.
+  Error:    Connectivity errors.
+  Warning:  Ambiguity points were found and resolved arbitrarily.
+
+
+**************************************************************************************************************
+                                      CELL  SUMMARY
+**************************************************************************************************************
+
+  Result         Layout                        Source
+  -----------    -----------                   --------------
+  INCORRECT      SRAM_ARRAY_BACKUP             SRAM_ARRAY_BACKUP
+
+
+
+**************************************************************************************************************
+                                      LVS PARAMETERS
+**************************************************************************************************************
+
+
+o LVS Setup:
+
+   // LVS COMPONENT TYPE PROPERTY
+   // LVS COMPONENT SUBTYPE PROPERTY
+   // LVS PIN NAME PROPERTY
+   LVS POWER NAME                         "VDD" "vdd" "VCC" "vcc" "VDD!" "vdd!" "VCC!" "vcc!" "AVDD" "DVDD"
+   LVS GROUND NAME                        "GND" "gnd" "VSS" "vss" "GND!" "gnd!" "VSS!" "vss!" "AVSS" "DVSS"
+   LVS CELL SUPPLY                        NO
+   LVS RECOGNIZE GATES                    ALL
+   // LVS HCELL REPORT
+   LVS IGNORE PORTS                       YES
+   LVS CHECK PORT NAMES                   NO
+   LVS IGNORE TRIVIAL NAMED PORTS         NO
+   LVS BUILTIN DEVICE PIN SWAP            YES
+   LVS ALL CAPACITOR PINS SWAPPABLE       NO
+   LVS DISCARD PINS BY DEVICE             NO
+   LVS SOFT SUBSTRATE PINS                NO
+   LVS INJECT LOGIC                       YES
+   LVS EXPAND UNBALANCED CELLS            YES
+   LVS FLATTEN INSIDE CELL                NO
+   LVS EXPAND SEED PROMOTIONS             NO
+   LVS PRESERVE PARAMETERIZED CELLS       NO
+   LVS GLOBALS ARE PORTS                  YES
+   LVS RELAX INITIAL CPOINTS              NONE
+   LVS REVERSE WL                         NO
+   // LVS NETLIST FILTER DEVICES          NO
+   // LVS PRESERVE BOX PORTS              NO
+   LVS SPICE PREFER PINS                  NO
+   LVS SPICE SLASH IS SPACE               YES
+   LVS SPICE ALLOW FLOATING PINS          YES
+   // LVS SPICE ALLOW INLINE PARAMETERS     
+   LVS SPICE ALLOW UNQUOTED STRINGS       NO
+   LVS SPICE CONDITIONAL LDD              NO
+   LVS SPICE CULL PRIMITIVE SUBCIRCUITS   NO
+   // LVS SPICE EXCLUDE CELL SOURCE
+   // LVS SPICE EXCLUDE CELL LAYOUT
+   LVS SPICE IMPLIED MOS AREA             NO
+   // LVS SPICE MULTIPLIER NAME
+   LVS SPICE OVERRIDE GLOBALS             NO
+   LVS SPICE REDEFINE PARAM               NO
+   LVS SPICE REPLICATE DEVICES            YES
+   LVS SPICE SCALE X PARAMETERS           NO
+   LVS SPICE STRICT WL                    NO
+   // LVS SPICE OPTION
+   LVS STRICT SUBTYPES                    NO
+   LVS EXACT SUBTYPES                     NO
+   LAYOUT CASE                            YES
+   SOURCE CASE                            YES
+   LVS COMPARE CASE                       NO
+   LVS COMPARE CASE STRICT                NO
+   LVS DOWNCASE DEVICE                    NO
+   LVS REPORT MAXIMUM                     2000
+   LVS PROPERTY RESOLUTION MAXIMUM        32
+   // LVS SIGNATURE MAXIMUM
+   LVS FILTER UNUSED OPTION               AB RC RE RG
+   LVS REPORT OPTION                      S
+   LVS REPORT UNITS                       YES
+   LVS SWAPPABLE HCELL PINS               GENERAL
+   // LVS NON USER NAME PORT
+   // LVS NON USER NAME NET
+   // LVS NON USER NAME INSTANCE
+   // LVS IGNORE DEVICE PIN
+   // LVS PREFER NETS FILTER SOURCE
+   // LVS PREFER NETS FILTER LAYOUT
+   LVS PREFER PORT NETS                   NO
+   LVS EXPAND ON ERROR                    NO
+   LVS EXPAND AMBIGUOUSLY HIGH SHORTED HCELLS NO
+
+   // Reduction
+
+   LVS REDUCE SERIES MOS                  NO
+   LVS REDUCE PARALLEL MOS                YES
+   LVS REDUCE SEMI SERIES MOS             NO
+   LVS REDUCE SPLIT GATES                 YES
+   LVS REDUCE PARALLEL BIPOLAR            YES
+   LVS REDUCE SERIES CAPACITORS           NO
+   LVS REDUCE PARALLEL CAPACITORS         NO
+   LVS REDUCE SERIES RESISTORS            YES
+   LVS REDUCE PARALLEL RESISTORS          YES
+   LVS REDUCE PARALLEL DIODES             YES
+
+   LVS REDUCE  Q(VD)  PARALLEL
+   LVS REDUCE  Q(VD5)  PARALLEL
+   LVS REDUCE  Q(VD10)  PARALLEL
+   LVS REDUCE  Q(VH)  PARALLEL
+   LVS REDUCE  Q(VH5)  PARALLEL
+   LVS REDUCE  Q(VH10)  PARALLEL
+   LVS REDUCE  C(CL)  PARALLEL
+   LVS REDUCE  C(CH)  PARALLEL
+   LVS REDUCE  C(CH3)  PARALLEL
+   LVS REDUCE  C(CL3)  PARALLEL
+   LVS REDUCE  C(CB)  PARALLEL
+   LVS REDUCTION PRIORITY                 PARALLEL
+   
+   LVS SHORT EQUIVALENT NODES             NO
+
+   // Trace Property
+
+   TRACE PROPERTY  c(cl)  w w 3
+   TRACE PROPERTY  c(cl)  l l 3
+   TRACE PROPERTY  c(cl3)  w w 3
+   TRACE PROPERTY  c(cl3)  l l 3
+   TRACE PROPERTY  c(ch)  w w 3
+   TRACE PROPERTY  c(ch)  l l 3
+   TRACE PROPERTY  c(ch3)  w w 3
+   TRACE PROPERTY  c(ch3)  l l 3
+   TRACE PROPERTY  r(rl)  r r 10
+   TRACE PROPERTY  r(rt)  r r 10
+   TRACE PROPERTY  r(ra)  r r 10
+   TRACE PROPERTY  r(rb)  r r 10
+   TRACE PROPERTY  r(rc)  r r 10
+   TRACE PROPERTY  r(rd)  r r 10
+   TRACE PROPERTY  r(re)  r r 10
+   TRACE PROPERTY  r(rg)  r r 10
+   TRACE PROPERTY  r(rh)  r r 10
+   TRACE PROPERTY  r(rw)  r r 10
+   TRACE PROPERTY  r(rf)  r r 10
+   TRACE PROPERTY  r(rk)  r r 10
+   TRACE PROPERTY  r(rm)  r r 10
+   TRACE PROPERTY  r(r1)  r r 10
+   TRACE PROPERTY  r(r2)  r r 10
+   TRACE PROPERTY  r(rb3)  r r 10
+   TRACE PROPERTY  r(ra3)  r r 10
+   TRACE PROPERTY  r(rc3)  r r 10
+   TRACE PROPERTY  r(rd3)  r r 10
+   TRACE PROPERTY  r(re3)  r r 10
+   TRACE PROPERTY  r(rg3)  r r 10
+   TRACE PROPERTY  r(rh3)  r r 10
+   TRACE PROPERTY  r(rw3)  r r 10
+   TRACE PROPERTY  r(rf3)  r r 10
+   TRACE PROPERTY  r(rk3)  r r 10
+   TRACE PROPERTY  r(rm3)  r r 10
+   TRACE PROPERTY  r(r3)  r r 10
+   TRACE PROPERTY  c(cb)  c c 6
+   TRACE PROPERTY  d(ns)  a a 10
+   TRACE PROPERTY  d(dn)  a a 10
+   TRACE PROPERTY  d(n3)  a a 10
+   TRACE PROPERTY  d(ps)  a a 10
+   TRACE PROPERTY  d(dp)  a a 10
+   TRACE PROPERTY  d(p3)  a a 10
+   TRACE PROPERTY  d(ns)  p p 10
+   TRACE PROPERTY  d(dn)  p p 10
+   TRACE PROPERTY  d(n3)  p p 10
+   TRACE PROPERTY  d(ps)  p p 10
+   TRACE PROPERTY  d(dp)  p p 10
+   TRACE PROPERTY  d(p3)  p p 10
+   TRACE PROPERTY  q(vd)  m m 0
+   TRACE PROPERTY  q(vd5)  m m 0
+   TRACE PROPERTY  q(vd10)  m m 0
+   TRACE PROPERTY  q(vh)  m m 0
+   TRACE PROPERTY  q(vh5)  m m 0
+   TRACE PROPERTY  q(vh10)  m m 0
+   TRACE PROPERTY  q(vpnp18_s)  a a 10
+   TRACE PROPERTY  q(vpnp33_s)  a a 10
+   TRACE PROPERTY  q(vnpn18_s)  a a 10
+   TRACE PROPERTY  q(vpnp18_s)  p p 10
+   TRACE PROPERTY  q(vpnp33_s)  p p 10
+   TRACE PROPERTY  q(vnpn18_s)  p p 10
+
+
+
+                   CELL COMPARISON RESULTS ( TOP LEVEL )
+
+
+
+                  #   #         #####################  
+                   # #          #                   #  
+                    #           #     INCORRECT     #  
+                   # #          #                   #  
+                  #   #         #####################  
+
+
+  Error:    Different numbers of nets (see below).
+  Error:    Different numbers of instances (see below).
+  Error:    Connectivity errors.
+  Warning:  Ambiguity points were found and resolved arbitrarily.
+
+LAYOUT CELL NAME:         SRAM_ARRAY_BACKUP
+SOURCE CELL NAME:         SRAM_ARRAY_BACKUP
+
+--------------------------------------------------------------------------------------------------------------
+
+INITIAL NUMBERS OF OBJECTS
+--------------------------
+
+                Layout    Source         Component Type
+                ------    ------         --------------
+ Nets:             275       278    *
+
+ Instances:        387       387         MN (4 pins)
+                   275       275         MP (4 pins)
+                ------    ------
+ Total Inst:       662       662
+
+
+NUMBERS OF OBJECTS AFTER TRANSFORMATION
+---------------------------------------
+
+                Layout    Source         Component Type
+                ------    ------         --------------
+ Nets:             123       124    *
+
+ Instances:         40        40         MN (4 pins)
+                    55        54    *    MP (4 pins)
+                     8         8         _bitrow8v (12 pins)
+                    16        16         _invb (6 pins)
+                    35        35         _invv (4 pins)
+                     8         8         _invx2v (4 pins)
+                     8         8         _nand3v (6 pins)
+                     0         1    *    _smp2v (4 pins)
+                ------    ------
+ Total Inst:       170       170
+
+
+       * = Number of objects in layout different from number in source.
+
+
+
+**************************************************************************************************************
+                                 INCORRECT OBJECTS
+**************************************************************************************************************
+
+
+LEGEND:
+-------
+
+  ne  = Naming Error (same layout name found in source
+        circuit, but object was matched otherwise).
+
+
+**************************************************************************************************************
+                                   INCORRECT NETS
+
+DISC#  LAYOUT NAME                                               SOURCE NAME
+**************************************************************************************************************
+
+  1    Net VDD                                                   VDD
+       --- 128 Connections On This Net ---                       --- 121 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       (_invv):sup1                                              ** missing connection **
+         X136/X0/X5/X1/M0(62.490,-49.580):b
+         X136/X0/X5/X1/M0(62.490,-49.580):s
+       
+       
+       X136/X0/M2(65.430,-49.580):b                              ** missing connection **
+       X136/X0/M2(65.430,-49.580):d                              ** missing connection **
+       X136/X0/M1(64.710,-49.580):b                              ** missing connection **
+       X136/X0/M0(63.990,-49.580):b                              ** missing connection **
+       X136/X0/M0(63.990,-49.580):s                              ** missing connection **
+       X134/X1/M1(51.390,-49.580):b                              ** missing connection **
+       X89/M3(50.010,-78.410):g                                  ** missing connection **
+       X89/M1(50.730,-79.700):d                                  ** missing connection **
+       
+       
+       
+       ** missing connection **                                  (_smp2v):out2
+                                                                   XI67/MM0:b
+                                                                   XI67/MM2:b
+                                                                   XI67/MM2:s
+       
+       
+       ** missing connection **                                  (_invv):sup2
+                                                                   XI70/XI0/MM1:b
+                                                                   XI70/XI0/MM1:s
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+  2    Net VSS                                                   VSS
+       --- 107 Connections On This Net ---                       --- 112 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       (_invv):sup2                                              ** missing connection **
+         X136/X0/X5/X2/M0(62.490,-50.865):b
+         X136/X0/X5/X2/M0(62.490,-50.865):s
+       
+       
+       ** missing connection **                                  (_invv):sup1
+                                                                   XI70/XI0/MM0:b
+                                                                   XI70/XI0/MM0:s
+       
+       
+       ** missing connection **                                  XI70/MM0:b
+       ** missing connection **                                  XI70/MM0:s
+       ** missing connection **                                  XI70/MM1:b
+       ** missing connection **                                  XI70/MM1:d
+       ** missing connection **                                  XI70/MM2:b
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+  3    Net 3                                                     XI169/net2
+       --- 4 Connections On This Net ---                         --- 4 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       X86/M3(23.010,-78.410):g                                  ** missing connection **
+       X86/M1(23.730,-79.700):d                                  ** missing connection **
+       
+       ** missing connection **                                  XI169/MM3:d
+       ** missing connection **                                  XI169/MM1:g
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+  4    Net 4                                                     XI80/net2
+       --- 4 Connections On This Net ---                         --- 4 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       X87/M3(32.020,-78.410):g                                  ** missing connection **
+       X87/M1(32.740,-79.700):d                                  ** missing connection **
+       
+       ** missing connection **                                  XI80/MM3:d
+       ** missing connection **                                  XI80/MM1:g
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+  5    Net 86                                                    net21
+       --- 3 Connections On This Net ---                         --- 3 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       X89/M0(50.010,-79.700):g                                  ** missing connection **
+       
+       ** missing connection **                                  XI169/MM3:g
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+  6    Net 111                                                   net20
+       --- 3 Connections On This Net ---                         --- 3 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       X89/M1(50.730,-79.700):g                                  ** missing connection **
+       
+       ** missing connection **                                  XI169/MM2:g
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+  7    Net 6                                                     XI74/net2
+       --- 4 Connections On This Net ---                         --- 4 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       X90/M3(59.010,-78.410):g                                  ** missing connection **
+       X90/M1(59.730,-79.700):d                                  ** missing connection **
+       
+       ** missing connection **                                  XI74/MM3:d
+       ** missing connection **                                  XI74/MM1:g
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+  8    Net 7                                                     XI77/net2
+       --- 4 Connections On This Net ---                         --- 4 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       X91/M3(68.020,-78.410):g                                  ** missing connection **
+       X91/M1(68.740,-79.700):d                                  ** missing connection **
+       
+       ** missing connection **                                  XI77/MM3:d
+       ** missing connection **                                  XI77/MM1:g
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+  9    Net 8                                                     XI73/net2
+       --- 4 Connections On This Net ---                         --- 4 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       X92/M3(77.020,-78.410):g                                  ** missing connection **
+       X92/M1(77.740,-79.700):d                                  ** missing connection **
+       
+       ** missing connection **                                  XI73/MM3:d
+       ** missing connection **                                  XI73/MM1:g
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+ 10    Net 9                                                     XI78/net2
+       --- 4 Connections On This Net ---                         --- 4 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       X93/M3(86.010,-78.410):g                                  ** missing connection **
+       X93/M1(86.730,-79.700):d                                  ** missing connection **
+       
+       ** missing connection **                                  XI78/MM3:d
+       ** missing connection **                                  XI78/MM1:g
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+ 11    Net 84                                                    BLB3
+       --- 6 Connections On This Net ---                         --- 4 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       X134/X1/M1(51.390,-49.580):s                              ** missing connection **
+       X134/X1/M0(50.670,-49.580):d                              ** missing connection **
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+ 12    Net X86/VOUT                                              out1
+       --- 2 Connections On This Net ---                         --- 2 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       X86/M0(23.010,-79.700):s                                  ** missing connection **
+       
+       ** missing connection **                                  XI74/MM2:d
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+ 13    Net X87/VOUT                                              out2
+       --- 2 Connections On This Net ---                         --- 2 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       X87/M0(32.020,-79.700):s                                  ** missing connection **
+       
+       ** missing connection **                                  XI75/MM2:d
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+ 14    Net X88/VOUT                                              out5
+       --- 2 Connections On This Net ---                         --- 2 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       X88/M0(41.020,-79.700):s                                  ** missing connection **
+       
+       ** missing connection **                                  XI78/MM2:d
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+ 15    Net X90/VOUT                                              out7
+       --- 2 Connections On This Net ---                         --- 2 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       X90/M3(59.010,-78.410):s                                  ** missing connection **
+       X90/M0(59.010,-79.700):s                                  ** missing connection **
+       
+       ** missing connection **                                  XI80/MM2:d
+       ** missing connection **                                  XI80/MM1:d
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+ 16    Net X91/VOUT                                              out0
+       --- 2 Connections On This Net ---                         --- 2 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       X91/M0(68.020,-79.700):s                                  ** missing connection **
+       
+       ** missing connection **                                  XI73/MM2:d
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+ 17    Net X92/VOUT                                              out4
+       --- 2 Connections On This Net ---                         --- 2 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       X92/M0(77.020,-79.700):s                                  ** missing connection **
+       
+       ** missing connection **                                  XI77/MM2:d
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+ 18    Net X93/VOUT                                              out6
+       --- 2 Connections On This Net ---                         --- 2 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       X93/M0(86.010,-79.700):s                                  ** missing connection **
+       
+       ** missing connection **                                  XI79/MM2:d
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+ 19    Net X134/X1/6                                             XI67/net1
+       --- 4 Connections On This Net ---                         --- 4 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       X134/X1/M1(51.390,-49.580):g                              ** missing connection **
+       X134/X1/M0(50.670,-49.580):g                              ** missing connection **
+       
+       
+       
+       ** missing connection **                                  (_smp2v):in2
+                                                                   XI67/MM0:g
+       
+       
+       ** missing connection **                                  (_smp2v):in1
+                                                                   XI67/MM2:g
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+ 20    Net 5                                                     ** no similar net **
+
+--------------------------------------------------------------------------------------------------------------
+
+ 21    ** no similar net **                                      XI79/net2
+
+--------------------------------------------------------------------------------------------------------------
+
+ 22    ** no similar net **                                      XI75/net2
+
+
+**************************************************************************************************************
+                                 INCORRECT INSTANCES
+
+DISC#  LAYOUT NAME                                               SOURCE NAME
+**************************************************************************************************************
+
+ 23    X136/X0/X5/X1/M0(62.490,-49.580)  MP(P)                   XI70/XI0/MM0  MP(P)
+         g: PRE                                                    g: PRE
+         s: X136/X0/6                                              s: XI70/net1
+         d: VDD                                                    ** VDD **
+         b: VDD                                                    ** VDD **
+         ** VSS **                                                 d: VSS
+         ** VSS **                                                 b: VSS
+
+--------------------------------------------------------------------------------------------------------------
+
+ 24    X136/X0/X5/X2/M0(62.490,-50.865)  MN(N)                   XI70/XI0/MM1  MN(N)
+         g: PRE                                                    g: PRE
+         s: X136/X0/6                                              s: XI70/net1
+         d: VSS                                                    ** VSS **
+         b: VSS                                                    ** VSS **
+         ** VDD **                                                 d: VDD
+         ** VDD **                                                 b: VDD
+
+--------------------------------------------------------------------------------------------------------------
+
+ 25    X134/X1/M1(51.390,-49.580)  MP(P)                         ** missing instance **
+
+--------------------------------------------------------------------------------------------------------------
+
+ 26    ** missing injected instance **                           (_smp2v)
+
+                                                                 Devices: 
+                                                                   XI67/MM2  MP(P)
+                                                                   XI67/MM0  MP(P)
+
+
+
+**************************************************************************************************************
+                               INFORMATION AND WARNINGS
+**************************************************************************************************************
+
+
+                  Matched    Matched    Unmatched    Unmatched    Component
+                   Layout     Source       Layout       Source    Type
+                  -------    -------    ---------    ---------    ---------
+   Nets:              122        122            1            2
+
+   Instances:          40         40            0            0    MN(N)
+                       54         54            1            0    MP(P)
+                        8          8            0            0    _bitrow8v
+                       16         16            0            0    _invb
+                       35         35            0            0    _invv
+                        8          8            0            0    _invx2v
+                        8          8            0            0    _nand3v
+                        0          0            0            1    _smp2v
+                  -------    -------    ---------    ---------
+   Total Inst:        169        169            1            1
+
+
+o Statistics:
+
+   1 isolated source net was deleted.
+
+   1 unused layout mos transistor was deleted.
+
+   5 nets and 7 instances were matched arbitrarily.
+
+
+o Isolated Source Nets:
+
+      (Source nets which are not connected to any instances or ports).
+
+   gnd!
+
+
+o Initial Correspondence Points:
+
+   Nets:         VDD VSS PRE YSR WL6 WL7 WL5 WL4 WL3 WL0 WL2 WL1 WL_EN SE
+
+
+o Ambiguity Resolution Points:
+
+      (Each one of the following objects belongs to a group of indistinguishable objects.
+       The listed objects were matched arbitrarily by the Ambiguity Resolution feature of LVS.
+       Arbitrary matching may be prevented by assigning names to these objects or to adjacent nets).
+
+       Layout                                                    Source
+       ------                                                    ------
+
+                                     Nets
+                                     ----
+
+       89                                                        BL7
+       77                                                        BL2
+       92                                                        BL0
+       64                                                        BL1
+       81                                                        BL5
+
+
+                                   Instances
+                                   ---------
+
+       X92/M4(77.740,-78.410)  MP(P)                             XI73/MM0  MP(P)
+       X134/X1/M0(50.670,-49.580)  MP(P)                         XI79/MM0  MP(P)
+       X90/M4(59.730,-78.410)  MP(P)                             XI74/MM0  MP(P)
+       X93/M4(86.730,-78.410)  MP(P)                             XI78/MM0  MP(P)
+       X90/M3(59.010,-78.410)  MP(P)                             XI75/MM0  MP(P)
+       X87/M4(32.740,-78.410)  MP(P)                             XI80/MM0  MP(P)
+       X88/M4(41.740,-78.410)  MP(P)                             XI80/MM1  MP(P)
+
+
+
+**************************************************************************************************************
+                             DETAILED INSTANCE CONNECTIONS
+
+       LAYOUT NAME                                               SOURCE NAME
+**************************************************************************************************************
+
+          (This section contains detailed information about connections of
+           matched instances that are involved in net discrepancies).
+
+--------------------------------------------------------------------------------------------------------------
+
+       X86/M0(23.010,-79.700)  MN(N)                             XI74/MM3  MN(N)
+         g: 65                                                     g: net9
+         d: X86/8                                                  s: XI74/net3
+         b: VSS                                                    b: VSS
+         s: X86/VOUT                                               ** out1 **
+         ** 6 **                                                   d: XI74/net2
+
+--------------------------------------------------------------------------------------------------------------
+
+       X86/M1(23.730,-79.700)  MN(N)                             XI74/MM2  MN(N)
+         g: 105                                                    g: net8
+         s: X86/8                                                  s: XI74/net3
+         b: VSS                                                    b: VSS
+         d: 3                                                      ** XI169/net2 **
+         ** X86/VOUT **                                            d: out1
+
+--------------------------------------------------------------------------------------------------------------
+
+       X86/M3(23.010,-78.410)  MP(P)                             XI74/MM1  MP(P)
+         s: X86/VOUT                                               d: out1
+         d: VDD                                                    s: VDD
+         b: VDD                                                    b: VDD
+         g: 3                                                      ** XI169/net2 **
+         ** 6 **                                                   g: XI74/net2
+
+--------------------------------------------------------------------------------------------------------------
+
+       X87/M0(32.020,-79.700)  MN(N)                             XI75/MM3  MN(N)
+         g: 78                                                     g: net15
+         d: X87/8                                                  s: XI75/net3
+         b: VSS                                                    b: VSS
+         s: X87/VOUT                                               ** out2 **
+         ** no similar net **                                      d: XI75/net2
+
+--------------------------------------------------------------------------------------------------------------
+
+       X87/M1(32.740,-79.700)  MN(N)                             XI75/MM2  MN(N)
+         g: 107                                                    g: net14
+         s: X87/8                                                  s: XI75/net3
+         b: VSS                                                    b: VSS
+         d: 4                                                      ** XI80/net2 **
+         ** X87/VOUT **                                            d: out2
+
+--------------------------------------------------------------------------------------------------------------
+
+       X87/M3(32.020,-78.410)  MP(P)                             XI75/MM1  MP(P)
+         s: X87/VOUT                                               d: out2
+         d: VDD                                                    s: VDD
+         b: VDD                                                    b: VDD
+         g: 4                                                      ** XI80/net2 **
+         ** no similar net **                                      g: XI75/net2
+
+--------------------------------------------------------------------------------------------------------------
+
+       X88/M0(41.020,-79.700)  MN(N)                             XI78/MM3  MN(N)
+         g: 82                                                     g: net33
+         d: X88/8                                                  s: XI78/net3
+         b: VSS                                                    b: VSS
+         s: X88/VOUT                                               ** out5 **
+         ** 9 **                                                   d: XI78/net2
+
+--------------------------------------------------------------------------------------------------------------
+
+       X88/M1(41.740,-79.700)  MN(N)                             XI78/MM2  MN(N)
+         g: 109                                                    g: net32
+         s: X88/8                                                  s: XI78/net3
+         b: VSS                                                    b: VSS
+         d: 5                                                      ** no similar net **
+         ** X88/VOUT **                                            d: out5
+
+--------------------------------------------------------------------------------------------------------------
+
+       X88/M3(41.020,-78.410)  MP(P)                             XI78/MM1  MP(P)
+         s: X88/VOUT                                               d: out5
+         d: VDD                                                    s: VDD
+         b: VDD                                                    b: VDD
+         g: 5                                                      ** no similar net **
+         ** 9 **                                                   g: XI78/net2
+
+--------------------------------------------------------------------------------------------------------------
+
+       X88/M4(41.740,-78.410)  MP(P)                             XI80/MM1  MP(P)
+         s: VDD                                                    s: VDD
+         b: VDD                                                    b: VDD
+         g: 5                                                      ** no similar net **
+         d: 5                                                      ** no similar net **
+         ** 4 **                                                   g: XI80/net2
+         ** X90/VOUT **                                            d: out7
+
+--------------------------------------------------------------------------------------------------------------
+
+       X89/M0(50.010,-79.700)  MN(N)                             XI169/MM2  MN(N)
+         s: X89/VOUT                                               d: out3
+         d: X89/8                                                  s: XI169/net3
+         b: VSS                                                    b: VSS
+         g: 86                                                     ** net21 **
+         ** 111 **                                                 g: net20
+
+--------------------------------------------------------------------------------------------------------------
+
+       X89/M1(50.730,-79.700)  MN(N)                             XI169/MM3  MN(N)
+         s: X89/8                                                  s: XI169/net3
+         b: VSS                                                    b: VSS
+         g: 111                                                    ** net20 **
+         d: VDD                                                    ** VDD **
+         ** 86 **                                                  g: net21
+         ** 3 **                                                   d: XI169/net2
+
+--------------------------------------------------------------------------------------------------------------
+
+       X89/M3(50.010,-78.410)  MP(P)                             XI169/MM1  MP(P)
+         s: X89/VOUT                                               d: out3
+         d: VDD                                                    s: VDD
+         b: VDD                                                    b: VDD
+         g: VDD                                                    ** VDD **
+         ** 3 **                                                   g: XI169/net2
+
+--------------------------------------------------------------------------------------------------------------
+
+       X90/M0(59.010,-79.700)  MN(N)                             XI80/MM3  MN(N)
+         g: 90                                                     g: net45
+         d: X90/8                                                  s: XI80/net3
+         b: VSS                                                    b: VSS
+         s: X90/VOUT                                               ** out7 **
+         ** 4 **                                                   d: XI80/net2
+
+--------------------------------------------------------------------------------------------------------------
+
+       X90/M1(59.730,-79.700)  MN(N)                             XI80/MM2  MN(N)
+         g: 113                                                    g: net44
+         s: X90/8                                                  s: XI80/net3
+         b: VSS                                                    b: VSS
+         d: 6                                                      ** XI74/net2 **
+         ** X90/VOUT **                                            d: out7
+
+--------------------------------------------------------------------------------------------------------------
+
+       X90/M3(59.010,-78.410)  MP(P)                             XI75/MM0  MP(P)
+         d: VDD                                                    s: VDD
+         b: VDD                                                    b: VDD
+         g: 6                                                      ** XI74/net2 **
+         s: X90/VOUT                                               ** out7 **
+         ** no similar net **                                      g: XI75/net2
+         ** no similar net **                                      d: XI75/net2
+
+--------------------------------------------------------------------------------------------------------------
+
+       X91/M0(68.020,-79.700)  MN(N)                             XI73/MM3  MN(N)
+         g: 96                                                     g: net3
+         d: X91/8                                                  s: XI73/net3
+         b: VSS                                                    b: VSS
+         s: X91/VOUT                                               ** out0 **
+         ** 8 **                                                   d: XI73/net2
+
+--------------------------------------------------------------------------------------------------------------
+
+       X91/M1(68.740,-79.700)  MN(N)                             XI73/MM2  MN(N)
+         g: 115                                                    g: net2
+         s: X91/8                                                  s: XI73/net3
+         b: VSS                                                    b: VSS
+         d: 7                                                      ** XI77/net2 **
+         ** X91/VOUT **                                            d: out0
+
+--------------------------------------------------------------------------------------------------------------
+
+       X91/M3(68.020,-78.410)  MP(P)                             XI73/MM1  MP(P)
+         s: X91/VOUT                                               d: out0
+         d: VDD                                                    s: VDD
+         b: VDD                                                    b: VDD
+         g: 7                                                      ** XI77/net2 **
+         ** 8 **                                                   g: XI73/net2
+
+--------------------------------------------------------------------------------------------------------------
+
+       X92/M0(77.020,-79.700)  MN(N)                             XI77/MM3  MN(N)
+         g: 100                                                    g: net27
+         d: X92/8                                                  s: XI77/net3
+         b: VSS                                                    b: VSS
+         s: X92/VOUT                                               ** out4 **
+         ** 7 **                                                   d: XI77/net2
+
+--------------------------------------------------------------------------------------------------------------
+
+       X92/M1(77.740,-79.700)  MN(N)                             XI77/MM2  MN(N)
+         g: 117                                                    g: net26
+         s: X92/8                                                  s: XI77/net3
+         b: VSS                                                    b: VSS
+         d: 8                                                      ** XI73/net2 **
+         ** X92/VOUT **                                            d: out4
+
+--------------------------------------------------------------------------------------------------------------
+
+       X92/M3(77.020,-78.410)  MP(P)                             XI77/MM1  MP(P)
+         s: X92/VOUT                                               d: out4
+         d: VDD                                                    s: VDD
+         b: VDD                                                    b: VDD
+         g: 8                                                      ** XI73/net2 **
+         ** 7 **                                                   g: XI77/net2
+
+--------------------------------------------------------------------------------------------------------------
+
+       X93/M0(86.010,-79.700)  MN(N)                             XI79/MM3  MN(N)
+         g: 102                                                    g: net39
+         d: X93/8                                                  s: XI79/net3
+         b: VSS                                                    b: VSS
+         s: X93/VOUT                                               ** out6 **
+         ** no similar net **                                      d: XI79/net2
+
+--------------------------------------------------------------------------------------------------------------
+
+       X93/M1(86.730,-79.700)  MN(N)                             XI79/MM2  MN(N)
+         g: 119                                                    g: net38
+         s: X93/8                                                  s: XI79/net3
+         b: VSS                                                    b: VSS
+         d: 9                                                      ** XI78/net2 **
+         ** X93/VOUT **                                            d: out6
+
+--------------------------------------------------------------------------------------------------------------
+
+       X93/M3(86.010,-78.410)  MP(P)                             XI79/MM1  MP(P)
+         s: X93/VOUT                                               d: out6
+         d: VDD                                                    s: VDD
+         b: VDD                                                    b: VDD
+         g: 9                                                      ** XI78/net2 **
+         ** no similar net **                                      g: XI79/net2
+
+--------------------------------------------------------------------------------------------------------------
+
+       X134/X1/M0(50.670,-49.580)  MP(P)                         XI79/MM0  MP(P)
+         s: VDD                                                    s: VDD
+         b: VDD                                                    b: VDD
+         g: X134/X1/6                                              ** XI67/net1 **
+         d: 84                                                     ** BLB3 **
+         ** no similar net **                                      g: XI79/net2
+         ** no similar net **                                      d: XI79/net2
+
+--------------------------------------------------------------------------------------------------------------
+
+       X136/X0/M0(63.990,-49.580)  MP(P)                         XI70/MM0  MP(P)
+         g: X136/X0/6                                              g: XI70/net1
+         d: 93                                                     d: BLB4
+         s: VDD                                                    ** VDD **
+         b: VDD                                                    ** VDD **
+         ** VSS **                                                 s: VSS
+         ** VSS **                                                 b: VSS
+
+--------------------------------------------------------------------------------------------------------------
+
+       X136/X0/M1(64.710,-49.580)  MP(P)                         XI70/MM2  MP(P)
+         g: X136/X0/6                                              g: XI70/net1
+         s: 93                                                     s: BLB4
+         d: 95                                                     d: BL4
+         b: VDD                                                    ** VDD **
+         ** VSS **                                                 b: VSS
+
+--------------------------------------------------------------------------------------------------------------
+
+       X136/X0/M2(65.430,-49.580)  MP(P)                         XI70/MM1  MP(P)
+         g: X136/X0/6                                              g: XI70/net1
+         s: 95                                                     s: BL4
+         d: VDD                                                    ** VDD **
+         b: VDD                                                    ** VDD **
+         ** VSS **                                                 d: VSS
+         ** VSS **                                                 b: VSS
+
+--------------------------------------------------------------------------------------------------------------
+
+       (_invv)                                                   (_invv)
+         in: PRE                                                   in: PRE
+         out: X136/X0/6                                            out: XI70/net1
+         sup1: VDD                                                 ** VDD **
+         sup2: VSS                                                 ** VSS **
+         ** VSS **                                                 sup1: VSS
+         ** VDD **                                                 sup2: VDD
+
+       Devices: 
+         X136/X0/X5/X1/M0(62.490,-49.580)  MP(P)                   XI70/XI0/MM0  MP(P) 
+         X136/X0/X5/X2/M0(62.490,-50.865)  MN(N)                   XI70/XI0/MM1  MN(N) 
+
+
+**************************************************************************************************************
+                                         SUMMARY
+**************************************************************************************************************
+
+Total CPU Time:      0 sec
+Total Elapsed Time:  0 sec

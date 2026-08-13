@@ -1,0 +1,27 @@
+//
+//  Rule file generated on Fri Jun 19 11:25:28 2026
+//  by Calibre Interactive v2022.4_37.20    Fri Dec 2 17:41:17 PST 2022
+//
+//      *** PLEASE DO NOT MODIFY THIS FILE ***
+//
+//
+
+LAYOUT PATH "SenseAmplifier.calibre.db"
+LAYOUT SYSTEM GDSII
+LAYOUT PRIMARY "SenseAmplifier"
+
+SOURCE PATH "SenseAmplifier.src.net"
+SOURCE SYSTEM SPICE
+SOURCE PRIMARY "SenseAmplifier"
+
+PEX NETLIST "SenseAmplifier.pex.netlist" CALIBREVIEW SCHEMATICONLY
+
+MASK SVDB DIRECTORY "svdb" QUERY XRC
+
+LVS REPORT "SenseAmplifier.lvs.report"
+
+LVS GROUND NAME "gnd!"
+
+DRC ICSTATION YES
+
+INCLUDE "/progs/FOUNDRY/SCL_FILES/scl_pdk/design_kit/pex_rsf/calibre_xrc/RCX_4LM_new.header(copy)"

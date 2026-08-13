@@ -1,0 +1,28 @@
+************************************************************************
+* auCdl Netlist:
+* 
+* Library Name:  SAMPLE
+* Top Cell Name: INVERTER
+* View Name:     schematic
+* Netlisted on:  Jun 21 17:01:01 2026
+************************************************************************
+
+*.EQUATION
+*.SCALE METER
+*.MEGA
+.PARAM
+
+
+
+************************************************************************
+* Library Name: SAMPLE
+* Cell Name:    INVERTER
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT INVERTER out vdd vin vss
+*.PININFO vdd:I vin:I vss:I out:O
+MM0 out vin vdd vdd P W=0.42 L=0.18 m=1
+MM1 out vin vss vss N W=0.42 L=0.18 m=1
+.ENDS
+

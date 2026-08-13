@@ -1,0 +1,36 @@
+                
+LAYOUT PATH "<Path to GDS file>"
+                       LAYOUT PRIMARY "<Top Cell Name>"
+                       LAYOUT SYSTEM GDSII
+                       LAYOUT CASE YES
+
+                       SOURCE PATH "<Path to Netlist file>"
+                       SOURCE PRIMARY "<Top Cell Name>"
+                       SOURCE SYSTEM SPICE
+                       SOURCE CASE YES
+
+		       LVS REPORT "<LVS Report file name>"
+
+
+                       MASK RESULTS DATABASE NONE
+                       MASK SVDB DIRECTORY "svdb" QUERY
+                       LVS REPORT OPTION S
+                       DRC ICSTATION YES
+
+	   	       VIRTUAL CONNECT NAME ?
+
+                       // User defined options.
+                       //---------------------
+
+// Select Metal Options
+//#define 2LM
+//#define 3LM
+#define 4LM
+//#define 5LM
+//#define 6LM
+//#define 4M1T
+ 
+// Select w/l property check for res/cap devices
+//#define ANALOG 
+ INCLUDE /home/Vedant_int/Desktop/LVS_TS18SL_SCL_CALIBRE_new_iopad
+

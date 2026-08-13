@@ -1,0 +1,5 @@
+# Automagically generated file: Please do not edit!
+pex_PexParam RUNDIR /home/Vedant_int/Desktop/VEDANT_WORK
+pex_PexParam LAYOUT_PRIMARY NAND_GATE_3INP
+pex_PexParam TOOL xRC
+pex_PexParam CORNER_PDBS { {NAND_GATE_3INP "" NAND_GATE_3INP.pdb "" } } 

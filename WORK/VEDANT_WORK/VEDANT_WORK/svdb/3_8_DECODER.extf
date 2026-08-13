@@ -1,0 +1,9 @@
+# Automagically generated file: Please do not edit!
+lvs_ExtfVersion 3
+lvs_ExtRunTimes 1783207089 1783207090
+lvs_ExtOutFile RUNDIR /home/Vedant_int/Desktop/VEDANT_WORK
+lvs_ExtOutFile RULES_FILE _LVS.header_
+lvs_ExtInfoExtSummary {0 0 0 0 0 0 0 0 0 0 0}
+lvs_ExtInfoDfmSummary {0}
+lvs_ExtOutFile LAYOUT_NETLIST 3_8_DECODER.sp
+lvs_ExtOutFile EXTRACTION_REPORT 3_8_DECODER.lvs.report.ext

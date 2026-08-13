@@ -1,0 +1,31 @@
+************************************************************************
+* auCdl Netlist:
+* 
+* Library Name:  VEDANT
+* Top Cell Name: SenseAmplifier
+* View Name:     schematic
+* Netlisted on:  Jul  8 18:11:37 2026
+************************************************************************
+
+*.EQUATION
+*.SCALE METER
+*.MEGA
+.PARAM
+
+
+
+************************************************************************
+* Library Name: VEDANT
+* Cell Name:    SenseAmplifier
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT SenseAmplifier BL BLB SE VDD VOUT VSS
+*.PININFO VOUT:O BL:B BLB:B SE:B VDD:B VSS:B
+MM1 VOUT net2 VDD VDD P W=0.42 L=0.18 m=1
+MM0 net2 net2 VDD VDD P W=0.42 L=0.18 m=1
+MM4 net3 SE VSS VSS N W=0.42 L=0.18 m=1
+MM3 net2 BL net3 VSS N W=0.42 L=0.18 m=1
+MM2 VOUT BLB net3 VSS N W=0.42 L=0.18 m=1
+.ENDS
+

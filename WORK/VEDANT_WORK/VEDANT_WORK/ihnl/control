@@ -1,0 +1,87 @@
+hnlLastStopCellInfo = '(
+                           ( "importpads" "pc3d00" "auCdl" "167" "1784413002" )
+                          ( "importpads" "pvdi" "auCdl" "85" "1784122387" )
+                          ( "importpads" "pvda" "auCdl" "85" "1784122355" )
+                          ( "importpads" "pv0i" "auCdl" "85" "1784412882" )
+                          ( "importpads" "pv0a" "auCdl" "85" "1784412865" )
+                          ( "ts018_scl_prim" "pmos_18" "auCdl" "50" "1391493343" )
+                          ( "ts018_scl_prim" "nmos_18" "auCdl" "49" "1391493341" )
+                       )
+hnlLastMaxNameLength = 60
+hnlLastNamePrefix = "hnl_"
+hnlLastNetNamePrefix = "N"
+hnlLastInstNamePrefix = ""
+hnlLastModelNamePrefix = ""
+hnlLastGlobalNetPrefix = "G"
+hnlLastModulePrefix = "sub"
+hnlLastHierarchyDelimiter = "."
+hnlLastMapNetFirstChar = '(
+                            "	"
+                            " "
+                            "$"
+                            ","
+                            "/"
+                            "0"
+                            "1"
+                            "2"
+                            "3"
+                            "4"
+                            "5"
+                            "6"
+                            "7"
+                            "8"
+                            "9"
+                            ":"
+                            ";"
+                            "="
+                          )
+hnlLastMapNetInName = '(
+                            "	"
+                            " "
+                            "$"
+                            ","
+                            "/"
+                            ":"
+                            ";"
+                            "="
+                          )
+hnlLastMapInstFirstChar = '(
+                            "	"
+                            " "
+                            "$"
+                            ","
+                            "/"
+                            "0"
+                            "1"
+                            "2"
+                            "3"
+                            "4"
+                            "5"
+                            "6"
+                            "7"
+                            "8"
+                            "9"
+                            ":"
+                            ";"
+                            "="
+                          )
+hnlLastMapInstInName = '(
+                            "	"
+                            " "
+                            "$"
+                            ","
+                            "/"
+                            ":"
+                            ";"
+                            "="
+                          )
+hnlLastInstNameDifferentFrom = '( )
+hnlLastModelNameDifferentFrom = '( )
+hnlLastNetNameDifferentFrom = '( )
+hnlLastTermNameDifferentFrom = '( )
+hnlLastParamNameDifferentFrom = '( )
+hnlLastLibInfo = '(
+                    ( "VEDANT_NEW" "1783344363" )
+                   ( "CMOS_inv" "1779797770" )
+                  )
+hnlLastDesignVars = '( )

@@ -1,0 +1,940 @@
+// $Id: DUMMYFILL_TS18SL_SCL_CALIBRE.rca 1.5 Thu Feb 18 16:24:12 2010 oferta Experimental $
+// BEGIN_HEADER
+//
+//                                         ********************************************
+//                                         *          RESTRICTED CIRCULATION          *
+//                                         *                                          *
+//                                         *   THIS SPEC IS PART OF A CUSTOMER DCB    *
+//                                         *                                          *
+//                                         ********************************************
+//    ----------------------------------------------------------------------------------------------------------------
+//    TITLE:  DUMMY FILL RUNSET FOR TS18 SL dummy poly,active & metals creation calibre runsets
+//    ----------------------------------------------------------------------------------------------------------------
+//    SPEC NAME: DUMMYFILL_TS18SL_SCL_CALIBRE
+//    ----------------------------------------------------------------------------------------------------------------
+//    REFERENCE DESIGN RULES : DR2 0018SL SCL rev. 0.0 ;   DR2 0018SL DUMMY FILL SCL rev 0.0
+//    ----------------------------------------------------------------------------------------------------------------
+//                  R E V I S I O N         H I S T O R Y
+//    ----------------------------------------------------------------------------------------------------------------
+//    REV |ECN #| ORIGINATOR |  DATE        |BY|PAGE/PARAGRAPH-CHANGED/DELETED
+//    ----------------------------------------------------------------------------------------------------------------
+//     0.0|     |Ronen Hasnes| 18.11.2009   |  | New runset per DRM          
+//        |     |            |              |  |                            
+//    ------------------------------------------------------------------------------------------------------------
+//        |     |            |              |  |                            
+//    ------------------------------------------------------------------------------------------------------------
+// END_HEADER
+//            ALL PAGES OF THIS SPECIFICATION ARE THE SAME REVISION AS PAGE 1
+//
+//                             COMPANY PRIVATE
+//
+//                   DO NOT REPRODUCE WITHOUT WRITTEN PERMISSION
+//                           TOWER  SEMICONDUCTOR  LIMITED
+//    ------------------------------------------------------------------------------------------------------------
+//
+//
+//  _____________________________________________________________ 
+//
+//  STATEMENT OF USE 
+//
+//  This information contains confidential and proprietary information of Tower. No part of this information may be reproduced,
+//  transmitted, transcribed, stored in a retrieval system, or translated into any human or computer language, in any form or by any
+//  means, electronic, mechanical, magnetic, optical, chemical, manual, or otherwise, without the prior written permission of
+//  Tower. Tower reserves the right to make changes in the information at any time and without notice.
+//
+//
+//
+//	  =====================================================
+//	  Note:   Checked with Calibre revision: v2008.2_11.12
+//	  =====================================================
+//  _____________________________________________________________ 
+//
+//
+//
+//1.0 PURPOSE AND SCOPE
+//
+//1.1 Purpose
+//       This document defines the Calibre runset for dummy poly/active & metals creation
+//       on layout designs for TS18SL processes
+//
+//1.2 Scope
+//       All products to be manifactured in TSL in process TS18SL  ,
+//       according to Design Rules DR2-0018SL must use this runset for MDP.
+//
+//
+//
+//2.0 TABLE OF CONTENTS
+//
+// Section Title                        Section Number
+// -------------                        --------------
+//   2.1 Purpose and Scope                 1.0
+//   2.2 Table of Contents                 2.0
+//   2.3 Applicable Documents              3.0
+//   2.4 Definitions                       4.0
+//   2.5 Equipment                         5.0
+//   2.6 Safety                            6.0
+//   2.7 Supplies/Materials                7.0
+//   2.8 Updating this Spec                8.0
+//   2.8 Procedures                        9.0
+//
+//
+//3.0 APPLICABLE DOCUMENTS
+//
+//4.0 DEFINITIONS
+//
+//N/A
+//
+//5.0 EQUIPMENT AND S/W
+//
+//5.1 Equipment
+//    UNIX Computer terminal linked to TSL lan.
+//
+//6.0 SUPPLIES AND MATERIAL
+//
+//N/A
+//
+//7.0 SAFETY
+//
+//7.1 All personnel must read and comply with Tower Safety procedures, in spec
+//       (TSL)SOP-9-008.
+//
+//8.0 UPDATING THIS SPEC
+//
+//8.1 Changes to Document
+//       An ECN should be submitted detailing all the changes to be made to
+//       the spec
+//
+//8.2 Marking Modifications
+//
+//9.0 PROCEDURE
+//
+//9.1 Calibre Dummy Generation runset inputs:
+//       The user should run the runset on a stream format (binary) file representing
+//       the graphic database.
+//
+//9.2 Calibre Dummy Generation runset
+//    The runset to use is as specified below:
+//
+//	This file includes SVRF/TVF Technology under license by Mentor Graphics Corporation.
+//	"SVRF/TVF Technology" shall mean Mentor Graphics' Standard Verification Rule Format ("SVRF") and Tcl Verification Format ("TVF")
+//	proprietary syntaxes for expressing process rules.  You shall not use SVRF/TVF Technology unless you are a Mentor Graphics
+//	customer with a license to use the applicable Mentor Graphics software.  The exact terms of your obligations and rights are
+//	governed by your respective license.
+//	You shall not use SVRF/TVF Technology except: (a) for your internal business purposes and (b) for use with Mentor Graphics' Calibre tools.
+//	All SVRF/TVF Technology constitutes or contains trade secrets and confidential information of Mentor Graphics or its licensors.
+//	You shall not make SVRF/TVF Technology available in any form to any person other than your employees and on-site contractors,
+//	excluding Mentor Graphics competitors, whose job performance requires access and who are under obligations of confidentiality.
+//
+//-------------------------------------------------------------------------------------------
+
+// ----------------------------------------------
+//  Runtime Environment Settings and Definitions 
+// ----------------------------------------------
+
+// The following lines May need to be uncommented , depending on run mode (Calibre Interactive/Include/command line or other ).
+
+// DEFINE INPUT DATA --
+// LAYOUT SYSTEM GDSII
+// LAYOUT PATH "CELLNAME_nodummy.gds"
+// LAYOUT PRIMARY CELLNAME
+
+// DEFINE OUTPUT DATA --
+// DRC SUMMARY REPORT   "CELLNAME_dummy.rpt"
+
+// Please remove the "//" after "GDSII" in order to add the "-dummy" suffix to the
+// output GDS cell names.
+
+// DRC RESULTS DATABASE "CELLNAME_dummy.gds" GDSII // _dummy
+
+// SYSTEM PARAMETERS --
+//DRC MAXIMUM RESULTS ALL
+//DRC MAXIMUM VERTEX 199
+PRECISION  1000
+RESOLUTION 5
+
+//-------------------------------------------------------------------------------------------
+//9.2 Calibre Dummy Generation runset
+//-------------------------------------------------------------------------------------------
+
+// MUST - Please Select Desired Metal Level for dummy Metal Generation.
+
+//#define 4M1T
+//#define 6LM
+//#define 5LM
+//#define 4LM
+//#define 3LM
+//#define 2LM
+
+#ifdef 4M1T //(
+	#define 4LM
+	#define metalThick
+#endif  //)
+// MUST - Please Select desired Dummy layer to Generate, Multiple/Single selections are allowed.
+
+//#define AA_gen
+//#define GC_gen
+//#define M1_ge
+//#define M2_gen
+//#define M3_gen
+//#define M4_gen
+//#define M5_gen
+//#define MT_gen
+//#define ThickM_gen
+
+#ifdef metalThick //{
+  #ifdef MT_gen //{
+    #define ThickM_gen
+    #undefine MT_gen
+  #endif //}
+#endif //}
+#ifndef metalThick //{
+  #ifdef ThickM_gen //{
+    #undefine ThickM_gen
+    #define MT_gen
+  #endif //}
+#endif //}
+
+//-------------------------------------------------------------------------------------------
+#ifdef 6LM
+#define 6LM_sep
+#define 5LM_sep
+#define 4LM_sep
+#endif
+
+#ifdef 5LM
+#define 5LM_sep
+#define 4LM_sep
+#endif
+
+#ifdef 4LM
+#define 4LM_sep
+#endif
+
+
+
+// == INPUT LAYER MAPPING TO CALIBRE LAYER ====
+
+ LAYER MAP 3 DATATYPE 0 1003
+ LAYER lc_WN 1003
+
+ LAYER MAP 4 DATATYPE 0 1004
+ LAYER lc_WB 1004
+
+ LAYER MAP 8 DATATYPE 0 1008
+ LAYER lc_GC 1008
+
+ LAYER MAP 9 DATATYPE 0 1009
+ LAYER lc_AA 1009
+
+ LAYER MAP 34 DATATYPE 0 1034
+ LAYER lc_CS 1034
+
+ LAYER MAP 41 DATATYPE 0 1041
+ LAYER lc_V2 1041
+
+ LAYER MAP 43 DATATYPE 0 1043
+ LAYER lc_V3 1043
+
+ LAYER MAP 45 DATATYPE 0 1045
+ LAYER lc_V4 1045
+
+ LAYER MAP 47 DATATYPE 0 1047
+ LAYER lc_V5 1047
+ LAYER MAP 49 DATATYPE 0 1049
+ LAYER lc_VT 1049
+
+ LAYER MAP 40 DATATYPE 0 1040
+ LAYER lc_M1 1040
+
+ LAYER MAP 42 DATATYPE 0 1042
+ LAYER lc_M2 1042
+
+ LAYER MAP 44 DATATYPE 0 1044
+ LAYER lc_M3 1044
+
+ LAYER MAP 46 DATATYPE 0 1046
+ LAYER lc_M4 1046
+
+ LAYER MAP 48 DATATYPE 0 1048
+ LAYER lc_M5 1048
+
+ LAYER MAP 31 DATATYPE 0 1031
+ LAYER lc_XP 1031
+
+ LAYER MAP 32 DATATYPE 0 1032
+ LAYER lc_XN 1032
+
+ // The duplication in MT (50) & Thick metal (59) is valid since they never comes together
+ LAYER MAP 50 DATATYPE 0 1050
+ LAYER MAP 59 DATATYPE 0 1050
+ LAYER lc_MT 1050
+
+ LAYER MAP 72 DATATYPE 0 1072
+ LAYER lc_AREA2 1072
+
+ LAYER MAP 81 DATATYPE 0 1081
+ LAYER lc_NODUMMYi 1081
+
+ LAYER MAP 81 DATATYPE 63 8163
+ LAYER lc_NODUMMY_ipi 8163
+
+ LAYER MAP 88 DATATYPE 0 1088
+ LAYER lc_NS 1088
+
+ LAYER MAP 68 DATATYPE 0 1068
+ LAYER lc_PADi 1068
+
+ LAYER MAP 17 DATATYPE 0 1017
+ LAYER lc_VNN 1017
+
+ LAYER MAP 116 DATATYPE 0 1116
+ LAYER lc_ESD5V 1116
+
+ LAYER MAP 99 DATATYPE 0 1099
+ LAYER lc_CE 1099
+
+ LAYER MAP 235 DATATYPE 0 1235
+ LAYER lc_PRB 1235
+
+
+ LAYER MAP 8 DATATYPE 5 1352
+ LAYER mk_GC 1352
+
+ LAYER MAP 9 DATATYPE 5 1353
+ LAYER mk_Active 1353
+
+ LAYER MAP 40 DATATYPE 5 1384
+ LAYER mk_M1 1384
+
+ LAYER MAP 41 DATATYPE 5 1385
+ LAYER mk_V2 1385
+
+ LAYER MAP 42 DATATYPE 5 1386
+ LAYER mk_M2 1386
+
+ LAYER MAP 43 DATATYPE 5 1387
+ LAYER mk_V3 1387
+
+ LAYER MAP 44 DATATYPE 5 1388
+ LAYER mk_M3 138
+
+ LAYER MAP 46 DATATYPE 5 1390
+ LAYER mk_M4 1390
+
+ LAYER MAP 47 DATATYPE 5 1391
+ LAYER mk_V5 1391
+
+ LAYER MAP 48 DATATYPE 5 1392
+ LAYER mk_M5 1392
+ LAYER MAP 49 DATATYPE 5 1393
+ LAYER mk_VL 1393
+
+ LAYER MAP 50 DATATYPE 5 1394
+ LAYER mk_MT 1394
+
+ LAYER MAP 8 DATATYPE 8 1468
+ LAYER dy_GC 1468
+
+ LAYER MAP 9 DATATYPE 8 1469
+ LAYER dy_AA 1469
+
+ LAYER MAP 40 DATATYPE 8 1473
+ LAYER dy_M1 1473
+
+ LAYER MAP 42 DATATYPE 8 1475
+ LAYER dy_M2 1475
+
+ LAYER MAP 44 DATATYPE 8 1477
+ LAYER dy_M3 1477
+
+ LAYER MAP 46 DATATYPE 8 1478
+ LAYER dy_M4 1478
+
+ LAYER MAP 48 DATATYPE 8 1479
+ LAYER dy_M5 1479
+
+ LAYER MAP 50 DATATYPE 8 1480
+ LAYER MAP 59 DATATYPE 8 1480
+ LAYER dy_MT 1480
+
+ LAYER MAP 68 DATATYPE 8 1481
+ LAYER dy_PADi 1481
+
+ LAYER MAP 80 DATATYPE 30 3002
+ LAYER oc_AREA10 3002
+
+ LAYER MAP 77 DATATYPE 42 7742
+ LAYER res_DEV  7742
+
+ LAYER MAP 77 DATATYPE 56 7756
+ LAYER mim_DEV  7756
+
+ LAYER MAP 77 DATATYPE 57 7757
+ LAYER nmim_DEV  775
+
+ LAYER MAP 77 DATATYPE 65 7765
+ LAYER ext_DEV  7765
+
+ LAYER MAP 77 DATATYPE 45 7745
+ LAYER seal_DEV  7745
+
+ LAYER MAP 8 DATATYPE 35 2008
+ LAYER GC_nodummy  2008
+
+ LAYER MAP 9 DATATYPE 35 2009
+ LAYER AA_nodummy  2009
+
+ LAYER MAP 40 DATATYPE 35 2040
+ LAYER M1_nodummy  2040
+
+ LAYER MAP 42 DATATYPE 35 2042
+ LAYER M2_nodummy  2042
+
+ LAYER MAP 44 DATATYPE 35 2044
+ LAYER M3_nodummy  2044
+
+LAYER MAP 46 DATATYPE 35 2046
+ LAYER M4_nodummy  2046
+
+ LAYER MAP 48 DATATYPE 35 2048
+ LAYER M5_nodummy  2048
+
+ LAYER MAP 50 DATATYPE 35 2050
+ LAYER MAP 59 DATATYPE 35 2050
+ LAYER MT_nodummy  2050
+ 
+ LAYER MAP 50 DATATYPE 59 5059
+ LAYER MAP 59 DATATYPE 59 5059
+ LAYER MT_ms  5059
+
+ LAYER M1slitsi 4059
+ LAYER MAP 40 DATATYPE 59 4059
+  
+ LAYER M2slitsi 4259
+ LAYER MAP 42 DATATYPE 59 4259
+
+ LAYER M3slitsi 4459
+ LAYER MAP 44 DATATYPE 59 4459
+
+ layer M4slitsi 4659
+ layer map 46 datatype 59 4659
+
+ layer M5slitsi 4859
+ layer map 48 datatype 59 4859
+ 
+ LAYER Sai 8060
+ LAYER MAP 80 DATATYPE 60 8060
+
+dy_PAD = dy_PADi not ext_DEV
+lc_PAD = lc_PADi not ext_DEV
+
+LAYER all_lc1 lc_WN lc_WB lc_GC lc_AA lc_M1 lc_M2 lc_M3 lc_M4 lc_M5 lc_XP lc_XN lc_MT
+LAYER all_lc2 lc_AREA2 lc_NODUMMYi lc_NS lc_PADi lc_VNN lc_ESD5V lc_PRB
+LAYER all_lc3 lc_CS lc_V2 lc_V3 lc_V4 lc_V5 lc_VT
+LAYER all_dy dy_GC dy_AA dy_M1 dy_M2 dy_M3 dy_M4 dy_M5 dy_MT dy_PADi
+all_bulk= (all_lc1 or (all_lc2 or all_lc3)) or all_dy
+BULK = extent all_bulk
+
+PAD=or lc_PAD dy_PAD
+lc_NODUMMY_ip_block = size lc_NODUMMY_ipi by 2
+
+no_DUMMY_12=size (lc_NODUMMYi or AA_nodummy) by 1.22
+no_DUMMY_GC_12 = size GC_nodummy by 1.22
+no_DUMMY_M1_12 =size M1_nodummy by 1.22
+no_DUMMY_M2_12 =size M2_nodummy by 1.22
+no_DUMMY_M3_12 =size M3_nodummy by 1.22
+no_DUMMY_M4_12 =size M4_nodummy by 1.22
+no_DUMMY_M5_12 =size M5_nodummy by 1.22
+no_DUMMY_MT_12 =size MT_nodummy by 1.22
+
+
+
+lc_NODUMMY_GC_MET = size (lc_NODUMMYi or ext_DEV) by 1.22
+
+all_AA = lc_AA or dy_AA
+all_GC = OR lc_GC dy_GC
+M1 = OR (OR lc_M1 dy_M1 ) mk_M1
+M2 = OR (OR lc_M2 dy_M2 ) mk_M2
+M3 = OR (OR lc_M3 dy_M3 ) mk_M3
+M4 = OR (OR lc_M4 dy_M4 ) mk_M4
+M5 = OR (OR lc_M5 dy_M5 ) mk_M5
+MT = OR (OR lc_MT dy_MT ) mk_MT
+
+AA_2 = size all_AA by 2
+M1_2 = size M1 by 2
+M2_2 = size M2 by 2
+M3_2 = size M3 by 2
+M4_2 = size M4 by 2
+M5_2 = size M5 by 2
+MT_2 = size MT by 2
+GC_2 = size all_GC by 2
+lc_AA_2 = size lc_AA by 2
+lc_AA_9 = size lc_AA by 9
+M1_5 = size M1 by 5
+M2_5 = size M2 by 5
+M3_5 = size M3 by 5
+M4_5 = size M4 by 5
+M5_5 = size M5 by 5
+MT_5 = size MT by 5
+
+chip_area = SIZE BULK BY -10.0
+chip_area_2_5 = SIZE BULK BY -2.5
+
+NWRAA=lc_AA enclose (lc_WN interact (res_DEV not interact lc_GC))
+COMP_RES = lc_AA not NWRAA 
+RES_COMP = res_DEV and COMP_RES
+RES_GC = res_DEV and lc_GC
+WN_res = (res_DEV not (RES_GC or RES_COMP)) not interact (RES_COMP or RES_GC)
+
+WN_res_12 = size (WN_res and lc_WN) by 1.22
+WN_ring = (size lc_WN by 0.62) not (size lc_WN by -0.62)
+
+AA_12 = size (lc_AA or dy_AA) by 1.22
+lc_GC_12 = size lc_GC by 1.22
+
+MICRO_PAD = size ( area ((lc_PAD not interact seal_DEV) or dy_PAD) <=1000 ) by 2
+FULL_PAD_GCi=area ((lc_PAD not interact seal_DEV) or dy_PAD) >1000
+FULL_PAD_GC = snap (size FULL_PAD_GCi by -2) 5
+
+#ifdef 6LM
+	all_MET_IN= (M1 or M2) or ((M3 or M4) or (M5 or MT))
+	METAL_LEVEL_NOT_DEFINED=M5 interact lc_CE
+#endif
+
+#ifdef 5LM
+	all_MET_IN=(M1 or M2) or ((M3 or M4) or MT)
+	METAL_LEVEL_NOT_DEFINED=M4 interact lc_CE
+#endif
+
+#ifdef 4LM //{ 
+	all_MET_IN=(M1 or M2) or (M3 or MT)
+	METAL_LEVEL_NOT_DEFINED=M3 interact lc_CE
+#endif //}
+
+#ifdef 3LM //{
+	all_MET_IN=(M1 or M2) or MT
+	METAL_LEVEL_NOT_DEFINED=M2 interact lc_CE
+#endif //}
+
+#ifdef 2LM //{
+	all_MET_IN= M1 or MT
+	METAL_LEVEL_NOT_DEFINED=M1 interact lc_CE // For 2LM this allways be empty since there is no MIM for 2LM
+                                          // This variable was set in order to keep the same structure in further use. 
+#endif //}
+
+MET_EX = (size all_MET_IN by 2) or PAD
+BOT_PLATE=copy METAL_LEVEL_NOT_DEFINED
+
+GCNOdy_tiles = ((or ((GC_2 or (size lc_AA by 2)) or lc_NODUMMY_GC_MET) ((MET_EX or (size lc_CS by 0.5))  or BOT_PLATE)) or no_DUMMY_GC_12)  or MICRO_PAD
+GCNOdy_pad   = (GC_2 or (size lc_AA by 2)) or (((lc_NODUMMY_GC_MET or BOT_PLATE) or no_DUMMY_GC_12) or (size lc_CS by 0.5))
+
+//                   AA      GC       M-2     M-1      M        M+1      M+2    lc_NODUMMY_GC_MET     PAD     BOT_PLATE     lc_NODUMMY_ip_block
+//------            ------  -------  ----    -------  -------  -------  -----  --------------------  ------  ------------  ---------------------
+#ifdef 6LM
+//                  AA      GC       M-2    M-1      M        M+1      M+2    lc_NODUMMY_GC_MET     PAD     BOT_PLATE     lc_NODUMMY_ip_block
+//------           ------  -------  ----   -------  -------  -------  -----  --------------------  ------  ------------  ---------------------
+M1NOdy1 = ((((((  (lc_AA_2 or GC_2) or                 M1_5) or M2_2) or M3) or lc_NODUMMY_GC_MET) or PAD) or BOT_PLATE) or lc_NODUMMY_ip_block
+M2NOdy1 = ((((((( (lc_AA_2 or GC_2) or        M1_2) or M2_5) or M3_2) or M4) or lc_NODUMMY_GC_MET) or PAD) or BOT_PLATE) or lc_NODUMMY_ip_block
+M3NOdy1 = (((((((((lc_AA   or GC_2) or M1) or M2_2) or M3_5) or M4_2) or M5) or lc_NODUMMY_GC_MET) or PAD) or BOT_PLATE) or lc_NODUMMY_ip_block
+M4NOdy1 = (((((((((lc_AA   or GC_2) or M2) or M3_2) or M4_5) or M5_2) or MT) or lc_NODUMMY_GC_MET) or PAD) or BOT_PLATE) or lc_NODUMMY_ip_block
+M5NOdy1 = ((((((( (lc_AA   or GC_2) or M3) or M4_2) or M5_5) or MT_2) or        lc_NODUMMY_GC_MET) or PAD) or BOT_PLATE) or lc_NODUMMY_ip_block
+MTNOdy1 = ((((((  (lc_AA   or GC_2) or M4) or M5_2) or MT_5) or                 lc_NODUMMY_GC_MET) or PAD) or BOT_PLATE) or lc_NODUMMY_ip_block
+
+M1NOdy = M1NOdy1 or no_DUMMY_M1_12
+M2NOdy = M2NOdy1 or no_DUMMY_M2_12
+M3NOdy = M3NOdy1 or no_DUMMY_M3_12
+M4NOdy = M4NOdy1 or no_DUMMY_M4_12
+M5NOdy = M5NOdy1 or no_DUMMY_M5_12
+MTNOdy = MTNOdy1 or no_DUMMY_MT_12
+#endif
+
+
+#ifdef 5LM
+M1NOdy1 = (((lc_AA_2 or GC_2) or (M2_2 or M3)) or (M1_5 or (lc_NODUMMY_GC_MET or (PAD or BOT_PLATE)))) or lc_NODUMMY_ip_block
+M2NOdy1 = (((lc_AA_2 or GC_2) or (M1_2 or (M3_2 or M4))) or (M2_5 or (lc_NODUMMY_GC_MET or (PAD or BOT_PLATE)))) or lc_NODUMMY_ip_block
+M3NOdy1 = (((lc_AA or GC_2) or ((M1 or M2_2) or ( M4_2 or MT))) or (M3_5 or (lc_NODUMMY_GC_MET or (PAD or BOT_PLATE)))) or lc_NODUMMY_ip_block
+M4NOdy1 = (((lc_AA or all_GC) or ((M2 or M3_2) or MT_2)) or (M4_5 or (lc_NODUMMY_GC_MET or (PAD or BOT_PLATE)))) or lc_NODUMMY_ip_block
+MTNOdy1 = ((lc_AA or (M3 or M4_2)) or (MT_5 or (lc_NODUMMY_GC_MET or (PAD or BOT_PLATE)))) or lc_NODUMMY_ip_block
+
+M1NOdy = M1NOdy1 or no_DUMMY_M1_12 
+M2NOdy = M2NOdy1 or no_DUMMY_M2_12
+M3NOdy = M3NOdy1 or no_DUMMY_M3_12
+M4NOdy = M4NOdy1 or no_DUMMY_M4_12
+MTNOdy = MTNOdy1 or no_DUMMY_MT_12
+#endif
+
+#ifdef 4LM //{
+M1NOdy1 = (((lc_AA_2 or GC_2) or (M2_2 or M3)) or (M1_5 or (lc_NODUMMY_GC_MET or (PAD or BOT_PLATE)))) or lc_NODUMMY_ip_block
+M2NOdy1 = (((lc_AA_2 or GC_2) or (M1_2 or (M3_2 or MT))) or (M2_5 or (lc_NODUMMY_GC_MET or (PAD or BOT_PLATE)))) or lc_NODUMMY_ip_block
+M3NOdy1 = (((lc_AA or GC_2) or ((M1 or M2_2) or MT_2)) or (M3_5 or (lc_NODUMMY_GC_MET or (PAD or BOT_PLATE)))) or lc_NODUMMY_ip_block
+MTNOdy1 = (((lc_AA or all_GC) or (M2 or M3_2)) or (MT_5 or (lc_NODUMMY_GC_MET or (PAD or BOT_PLATE)))) or lc_NODUMMY_ip_block
+
+M1NOdy = M1NOdy1 or no_DUMMY_M1_12 
+M2NOdy = M2NOdy1 or no_DUMMY_M2_12
+M3NOdy = M3NOdy1 or no_DUMMY_M3_12
+MTNOdy = MTNOdy1 or no_DUMMY_MT_12
+#endif //}
+
+#ifdef 3LM //{
+M1NOdy1 = (((lc_AA_2 or GC_2) or (M2_2 or MT)) or (M1_5 or (lc_NODUMMY_GC_MET or (PAD or BOT_PLATE)))) or lc_NODUMMY_ip_block
+M2NOdy1 = (((lc_AA_2 or GC_2) or (M1_2 or MT_2)) or (M2_5 or (lc_NODUMMY_GC_MET or (PAD or BOT_PLATE)))) or lc_NODUMMY_ip_block
+MTNOdy1 = (((lc_AA or GC_2) or (M1 or M2_2)) or (MT_5 or (lc_NODUMMY_GC_MET or (PAD or BOT_PLATE)))) or lc_NODUMMY_ip_block
+
+M1NOdy = M1NOdy1 or no_DUMMY_M1_12 
+M2NOdy = M2NOdy1 or no_DUMMY_M2_12
+MTNOdy = MTNOdy1 or no_DUMMY_MT_12
+#endif //}
+
+#ifdef 2LM //{
+M1NOdy1 = (((lc_AA_2 or GC_2) or (M2_2 or MT)) or (M1_5 or (lc_NODUMMY_GC_MET or (PAD or BOT_PLATE)))) or lc_NODUMMY_ip_block
+MTNOdy1 = (((lc_AA or GC_2) or M1) or (MT_5 or (lc_NODUMMY_GC_MET or (PAD or BOT_PLATE)))) or lc_NODUMMY_ip_block
+
+M1NOdy = M1NOdy1 or no_DUMMY_M1_12 
+MTNOdy = MTNOdy1 or no_DUMMY_MT_12
+#endif //}
+
+// Dummy GC/Metals Variable Assignment.
+
+// Large Dummy GC  Width/Length. 
+VARIABLE dumGCWL 6.5
+VARIABLE dumGCLL 7.3
+
+// Dummy Metal  Width/Length. 
+VARIABLE dumMTW 3.6
+VARIABLE dumMTL 6.1
+
+// Small Dummy GC  Width/Length. 
+VARIABLE dumGCWS 2
+VARIABLE dumGCLS 2
+
+// Large Dummy GC/Metal Offset
+VARIABLE offsetXL 0.79
+VARIABLE offsetYL 0.79
+
+// Small Dummy GC Offset
+VARIABLE offsetXS 0.40
+VARIABLE offsetYS 0.40
+
+// Small Dummy GC Space
+VARIABLE dumGCSX 1.60
+VARIABLE dumGCSY 1.60
+
+// Large Dummy GC/Metal Block Size
+VARIABLE blockWX 7.9
+VARIABLE blockWY 7.9
+
+dumINarea_GC1_all = RECTANGLES dumGCWL dumGCLL blockWX-dumGCWL+offsetXL blockWY-dumGCLL+offsetYL offset offsetXL offsetYL inside of layer chip_area
+dumINarea_GC2_all = RECTANGLES dumGCWS dumGCLS dumGCSX dumGCSY  offset offsetXS offsetYS inside of layer chip_area
+
+dumINarea_MX_all = shift(RECTANGLES dumMTW dumMTL blockWX-dumMTW+offsetXL blockWY-dumMTL+offsetYL offset offsetXL offsetYL  inside of layer chip_area) by (dumGCWL - dumMTW)/2 dumGCLL-dumMTL
+
+dumINarea_GC_all11=dumINarea_GC1_all not interact GCNOdy_tiles
+dumINarea_GC_all12=dumINarea_GC2_all not interact (GCNOdy_tiles or (size dumINarea_GC_all11 by 1.22)) 
+dumINarea_GC_all = dumINarea_GC_all11 or dumINarea_GC_all12
+MDP08_8_PAD = size (FULL_PAD_GC not GCNOdy_pad) by 1 underover
+
+#ifdef GC_gen //{
+MDP08_8_large  {copy dumINarea_GC_all11} drc check map MDP08_8_large 8 8  AREF GC1dum dumGCWL dumGCLL
+MDP08_8_small  {copy dumINarea_GC_all12} drc check map MDP08_8_small 8 8  AREF GC2dum dumGCWS dumGCLS
+MDP08_8_PAD    {copy MDP08_8_PAD} drc check map MDP08_8_PAD 8 8
+#endif //}
+
+#ifdef M1_gen //{
+MDP40_8 = dumINarea_MX_all not interact M1NOdy
+MDP40_8  {COPY MDP40_8} drc check map MDP40_8 40 8 AREF M1dum dumMTW dumMTL
+#endif //}
+
+#ifdef M2_gen //{
+MDP42_8 = dumINarea_MX_all not interact M2NOdy
+MDP42_8  {COPY MDP42_8} drc check map MDP42_8 42 8 AREF M2dum dumMTW dumMTL
+#endif //}
+
+#ifdef MT_gen
+MDP50_8 = dumINarea_MX_all not interact MTNOdy
+MDP50_8 {COPY MDP50_8} drc check map MDP50_8 50 8 AREF MTdum dumMTW dumMTL
+#endif //}
+
+#ifdef ThickM_gen //{
+MDP59_8 = dumINarea_MX_all not interact MTNOdy
+MDP59_8 {COPY MDP59_8} drc check map MDP59_8 59 8 AREF MTdum dumMTW dumMTL
+#endif //}
+
+#ifdef 6LM_sep
+#ifdef M5_gen
+MDP48_8 = dumINarea_MX_all not interact M5NOdy
+MDP48_8  {COPY MDP48_8} drc check map MDP48_8 48 8 AREF M5dum dumMTW dumMTL
+#endif
+#endif
+
+#ifdef 5LM_sep
+#ifdef M4_gen
+MDP46_8 = dumINarea_MX_all not interact M4NOdy
+MDP46_8  {COPY MDP46_8} drc check map MDP46_8 46 8 AREF M4dum dumMTW dumMTL
+#endif
+#endif
+
+#ifdef 4LM_sep //{
+	#ifdef M3_gen //{
+		MDP44_8 = dumINarea_MX_all not interact M3NOdy
+		MDP44_8  {COPY MDP44_8} drc check map MDP44_8 44 8 AREF M3dum dumMTW dumMTL
+	#endif //}
+#endif //}
+
+#ifdef AA_gen //{
+// Forbidden Area Definition:
+// AA_12 : Dummy/Logic AA Sized by 1.22.
+// lc_GC_12 : Logic GC Sized by 1.22.
+// WN_res_12 : WN Resistor Area ( Overlap of WN and Marking Layer ) Sized by 1.22, Terminals are covered by AA12 Layer.
+// no_DUMMY_12 : Sized Input NODUMMY layer by 1.22 .
+
+	AANOdy = ((AA_12 or lc_GC_12 ) or WN_res_12) or (WN_ring or no_DUMMY_12)
+	dumINarea_AA_all = RECTANGLES 5 5 1.5 offset 0.5 inside of layer chip_area
+	dumINarea_AA_all1 = dumINarea_AA_all not AANOdy
+	dumINarea_AA_all2 = (size dumINarea_AA_all1 by 0.25 underover) not AANOdy
+	dumINarea_AA_all3 = dumINarea_AA_all2 not ( int dumINarea_AA_all2 < 0.24 abut < 90 region opposite )
+	dumINarea_AA_all4 = area dumINarea_AA_all3 > 0.202
+	dumINarea_AA_all5 = dumINarea_AA_all4 not interact (internal dumINarea_AA_all4 <0.24 region singular abut>0<90)
+	dumINarea_AA_all6 = dumINarea_AA_all5 not interact (external dumINarea_AA_all5 <1.2 region singular abut>0<90)
+	dumINarea_AA_all7 = snap dumINarea_AA_all6 5
+	dumINarea_AA_all {COPY dumINarea_AA_all7} drc check map dumINarea_AA_all 9 8 AREF AAdum 5 5
+#endif //}
+
+//---- Check density option ----------------------------------------------------
+
+#ifdef DENSITY_CHECKS //{
+
+	// Please Modify the Step Values for AA and GC , by modifying the Variable values for density check window steps.
+	//
+	variable AA_step_value 2
+	variable GC_step_value 2
+
+	MTcov = OR (NOT MT (OR MT_ms ext_DEV)) (NOT dy_MT ext_DEV)
+	NO_DUMMY_ip = lc_NODUMMY_ipi not ext_DEV
+	AA_SDU0469i=size (size (lc_AA or dy_AA) by 0.469) by -0.469
+
+	#ifdef AA_gen //{
+
+		AA_SDU_den_3R = (AA_SDU0469i not NO_DUMMY_ip) OR dumINarea_AA_all7
+		XX_LT30 = density AA_SDU_den_3R NO_DUMMY_ip backup  < 0.30 window 200 step 100 [AREA(AA_SDU_den_3R)/(AREA()-AREA(NO_DUMMY_ip))] print 3R_LT30_CELLNAME.log
+		AAcov = OR (not lc_AA ext_DEV) (not dy_AA ext_DEV)
+		AA_for_sizing = AAcov and XX_LT30
+		WW_P2 = size AA_for_sizing by 2
+		WW_P4 = size WW_P2 by 2
+		WW_P6 = size WW_P4 by 2
+		WW_P8 = size WW_P6 by 2
+		WW_P10 = size WW_P8 by 2
+		WW_10 = XX_LT30 not WW_P10
+		WW_4 =  XX_LT30 not (size (size AA_for_sizing by 2) by 2)
+
+		AAcovi=or lc_AA dy_AA
+		AA_den = AAcovi not NO_DUMMY_ip
+		Sall=copy Sai
+		AA_SDU_den_3T = (AA_SDU0469i not NO_DUMMY_ip ) not Sall
+
+		#ifdef AA_step //{
+			_3R { @3R: Sized AA density also inside NODUMMY region, should be min 0.30 ( 3R ).
+				density AA_SDU_den_3R NO_DUMMY_ip BACKUP < 0.30  window 200 step AA_step_value [AREA(AA_SDU_den_3R)/(AREA()-AREA(NO_DUMMY_ip))] print 3R_CELLNAME_cov.log
+			}
+ 
+			drc check map _3R ASCII "density_errors.db"
+		#endif  //}  ifdef AA_step
+ 
+ 		#ifndef AA_step  //{
+			_3R_LT15 { @3R: Sized AA density also inside NODUMMY region, should be min 0.15 , for Window of 200X200 microns ( 3R ).
+				density AA_SDU_den_3R NO_DUMMY_ip backup < 0.15  window 200 step 100 [AREA(AA_SDU_den_3R)/(AREA()-AREA(NO_DUMMY_ip))] print 3R_LT15_CELLNAME_cov.log
+			}
+
+			drc check map _3R_LT15 ASCII "density_errors.db"
+ 
+			_3R_LT20 { @3R: Sized AA density also inside NODUMMY region, should be min 0.20 , for Window of 100X100 microns ( 3R ).
+				   @  : Except where spacing is smaller than 8 Microns.   
+				density AA_SDU_den_3R NO_DUMMY_ip WW_4 backup < 0.20 >=0.15 window 100 step 100 print 3R_LT20_CELLNAME_cov.log
+				[!!AREA(WW_4)*(AREA(AA_SDU_den_3R)/(AREA()-AREA(NO_DUMMY_ip)))]
+			}
+			drc check map _3R_LT20 ASCII "density_errors.db"
+ 
+			_3R_LT30 { @3R: Sized AA density also inside NODUMMY region, should be min 0.30 , for Window of 100X100 microns ( 3R ).
+				   @  : Except where spacing is smaller than 20 Microns.   
+				density AA_SDU_den_3R NO_DUMMY_ip WW_10 backup < 0.30 >=0.20  window 100 step 100
+				[!!AREA(WW_10)*(AREA(AA_SDU_den_3R)/(AREA()-AREA(NO_DUMMY_ip)))]
+			}
+			drc check map _3R_LT30 ASCII "density_errors.db"
+ 
+		#endif  //}  ifndef AA_step
+ 
+		_3S { @3S: AA Coverage greater than 0.95, for Window of 64X64 microns ( 3S ).
+			#ifndef AA_step //{
+   				density AA_den NO_DUMMY_ip backup >0.95 inside of layer bulk window 64 step 32 [AREA(AA_den)/(AREA()-AREA(NO_DUMMY_ip))] print 3S_CELLNAME_cov.log
+			#endif //}
+			#ifdef AA_step //{
+   				density AA_den NO_DUMMY_ip backup >0.95 inside of layer bulk window 64 step 32 AA_step_value [AREA(AA_den)/(AREA()-AREA(NO_DUMMY_ip))] print 3S_CELLNAME_cov.log
+			#endif //}
+		}
+		drc check map _3S ASCII "density_errors.db"
+ 
+		_3T { @3T: sized AA Coverage greater than 0.95 , for Window of 200X200 microns ( 3T ).
+
+			#ifndef AA_step //{
+    				density AA_SDU_den_3T NO_DUMMY_ip backup > 0.95  window 200 step 100 [AREA(AA_SDU_den_3T)/(AREA()-AREA(NO_DUMMY_ip))] print 3T_CELLNAME_cov.log
+			#endif //}
+			#ifdef AA_step //{
+    				density AA_SDU_den_3T NO_DUMMY_ip backup > 0.95  window 200 step AA_step_value [AREA(AA_SDU_den_3T)/(AREA()-AREA(NO_DUMMY_ip))] print 3T_CELLNAME_cov.log
+			#endif //}
+		}
+		drc check map _3T ASCII "density_errors.db"
+
+
+	#endif  //}  AA_gen
+
+	#ifdef GC_gen //{
+
+		GCcovi = OR dy_GC lc_GC
+		gc_s = (size GCcovi by 0.30) not NO_DUMMY_ip
+		WN = not lc_WN ext_DEV
+		AA = not lc_AA ext_DEV
+		GC = not lc_GC ext_DEV
+		GCfox = not GC AA
+		DEV_res = not res_DEV ext_DEV
+
+		_6W { @6W: GC Coverage less than 0.14 ( 6W ).
+			GC_den =  (GCcovi not NO_DUMMY_ip) OR dumINarea_GC_all
+		       	density GC_den NO_DUMMY_ip <0.14 >0 inside of layer bulk [AREA(GC_den) / (AREA()-AREA(NO_DUMMY_ip))] print 6W_CELLNAME_cov.lo
+		}
+		drc check map _6W ASCII "density_errors.db"
+
+		_6V { @6V: Sized GC Coverage Greater than 0.95 , for Windows 1000X1000 ( 6V ).
+			#ifndef GC_step //{
+				density gc_s NO_DUMMY_ip >0.95 inside of layer bulk [AREA(gc_s) / (AREA()-AREA(NO_DUMMY_ip))]  window 1000 step 500 print 6V_CELLNAME_cov.log
+			#endif //}
+			#ifdef GC_step //{
+				density gc_s NO_DUMMY_ip >0.95 inside of layer bulk  [AREA(gc_s) / (AREA()-AREA(NO_DUMMY_ip))] window 1000 step GC_step_value print 6V_CELLNAME_cov.log
+			#endif //}
+		}
+		drc check map _6V ASCII "density_errors.db"
+
+		_6P { @6P: Sized GC on FOX/WN Resistors density for 200X200 Micron Squares , steps 100 , max 70 percent (6P).
+			@  : This Rule is a Pre-Check for 3R Rule.
+			XX = ((GCfox size by 1.45 overunder) or (((WN and DEV_res) not AA) size by 0.85 overunder)) not AA_SDU0469i
+			density XX backup >0.7 inside of layer bulk window 200 step 100 print 6P_CELLNAME_cov.log
+		}
+		drc check map _6P ASCII "density_errors.db"
+
+		GC.C.2 { @GC.C.2: GC coverage for total chip area max 40%
+			GC_den = GCcovi or (dumINarea_GC_all or MDP08_8_PAD)
+			density GC_den > 0.40 inside of layer bulk  print GC.C.2_cov.log
+		}
+		drc check map GC.C.2 ASCII "density_errors.db"
+
+	#endif // } GC_gen
+
+	#ifdef M1_gen //{
+
+		M1slits=not M1slitsi ext_DEV
+		M1SND=or M1slits ext_DEV
+		M1cov = OR (not dy_M1 ext_DEV) (not lc_M1 M1SND)
+
+		_9X { @9X: M1 Coverage less than 0.20 ( 9X ).
+			M1_den = ((M1cov not NO_DUMMY_ip) not M1slits) OR MDP40_8
+			density M1_den NO_DUMMY_ip <0.2 >0 inside of layer bulk [ AREA(M1_den) / (AREA()-AREA(NO_DUMMY_ip))] print M1_CELLNAME_cov.log
+		}
+		drc check map _9X ASCII "density_errors.db"
+
+	#endif	// } M1_gen
+
+        #ifdef M2_gen //{
+
+        	M2slits=not M2slitsi ext_DEV
+		M2SND=or M2slits ext_DEV
+		M2cov= OR (not dy_M2 ext_DEV) (not lc_M2 M2SND)
+
+		_11X { @11X: M2 Coverage less than 0.20 ( 11X ).
+			M2_den = ((M2cov not NO_DUMMY_ip) not M2slits) OR MDP42_8
+			density M2_den NO_DUMMY_ip <0.2 >0 inside of layer bulk [ AREA(M2_den) / (AREA()-AREA(NO_DUMMY_ip))] print M2_CELLNAME_cov.log
+		}
+		drc check map _11X ASCII "density_errors.db"
+
+	#endif	// } M2_gen
+
+	#ifdef M3_gen //{
+
+		M3slits=not M3slitsi ext_DEV
+		M3SND=or M3slits ext_DEV
+		M3cov= OR (not dy_M3 ext_DEV) (not lc_M3 M3SND)
+
+		_13X { @13X: M3 Coverage less than 0.20 ( 13X ).
+			M3_den = ((M3cov not NO_DUMMY_ip) not M3slits) OR MDP44_8
+			density M3_den NO_DUMMY_ip <0.2 >0 inside of layer bulk [ AREA(M3_den) / (AREA()-AREA(NO_DUMMY_ip))] print M3_CELLNAME_cov.log
+		}
+		drc check map _13X ASCII "density_errors.db"
+
+	#endif	// } M3_gen
+#ifdef M4_gen
+M4slits=not M4slitsi ext_DEV
+M4SND=or M4slits ext_DEV
+M4cov= OR (not dy_M4 ext_DEV) (not lc_M4 M4SND)
+
+
+_15X
+{
+    @15X: M4 Coverage less than 0.20 ( 15X ).
+    M4_den = ((M4cov not NO_DUMMY_ip) not M4slits) OR MDP46_8
+    density M4_den NO_DUMMY_ip <0.2 >0 inside of layer bulk [ AREA(M4_den) / (AREA()-AREA(NO_DUMMY_ip))] print M4_CELLNAME_cov.log
+}
+drc check map _15X ASCII "density_errors.db"
+
+#endif	//M4_gen
+
+#ifdef M5_gen
+
+M5slits=not M5slitsi ext_DEV
+M5SND=or M5slits ext_DEV
+M5cov= OR (not dy_M5 ext_DEV) (not lc_M5 M5SND)
+
+_17X
+{
+    @17X: M5 Coverage less than 0.20  ( 17X ).
+    M5_den = ((M5cov not NO_DUMMY_ip) not M5slits) OR MDP48_8
+    density M5_den NO_DUMMY_ip <0.2 >0 inside of layer bulk [ AREA(M5_den) / (AREA()-AREA(NO_DUMMY_ip))] print M5_CELLNAME_cov.log
+}
+drc check map _17X ASCII "density_errors.db"
+
+#endif	//M5_gen
+
+	#ifdef MT_gen //{
+
+		MT_den = ((MTcov not NO_DUMMY_ip) not (NOT MT_ms ext_DEV)) OR MDP50_8
+		MT_den_space = external MT_den <0.55 region singular abut>0<90
+		bulk_19y1 = bulk interact MT_den_space
+		bulk_19y2 = bulk not interact MT_den_space
+
+		_19X { @19X: MTOP Coverage less than 0.20 when design not include image sensor ( 19X ).
+			MT_den = ((MTcov not NO_DUMMY_ip) not (NOT MT_ms ext_DEV)) OR MDP50_8
+			density MT_den NO_DUMMY_ip <0.2 >0 inside of layer bulk [ AREA(MT_den ) / (AREA()-AREA(NO_DUMMY_ip))] print MT_CELLNAME_cov.log
+		}
+		drc check map _19X ASCII "density_errors.db"
+
+		_19Y1 { @19Y1: Coverage of (TOP_M + Dummy TOP_M) area/chip area. Max 58%
+			@This rule is applicable where chip area contain  at least two  (TOP_M + Dummy TOP_M)  polygons placed at less then 0.55u spacing.
+			density MT_den NO_DUMMY_ip >0.58 inside of layer bulk_19y1 [ AREA(MT_den) / (AREA()-AREA(NO_DUMMY_ip))] print 19Y1_cov.log	
+		}
+		drc check map _19Y1 ASCII "density_errors.db"
+
+		_19Y2 { @Coverage of (TOP_M + Dummy TOP_M) area/chip area. Max 73%
+			@This rule is applicable where chip area doesn't contain two  (TOP_M + Dummy TOP_M)  polygons placed at less then 0.55u spacing.
+			density MT_den NO_DUMMY_ip >0.73 inside of layer bulk_19y2 [ AREA(MT_den) / (AREA()-AREA(NO_DUMMY_ip))] print 19Y2_cov.log		
+		}
+		drc check map _19Y2 ASCII "density_errors.db"
+
+	#endif	// } MT_gen
+
+	#ifdef ThickM_gen // {
+		MT.C.1 { @MT.C.1: Coverage of MT area not include image sensor - min 30% (MT.C.1).
+			MT_den = ((MTcov not NO_DUMMY_ip) not (NOT MT_ms ext_DEV)) OR MDP59_8
+			density MT_den NO_DUMMY_ip <0.30 >0 inside of layer bulk [ AREA(MT_den) / (AREA()-AREA(NO_DUMMY_ip))] print ThickM_CELLNAME_cov.log
+		}
+		drc check map MT.C.1 ASCII "density_errors.db"
+
+	#endif	// } ThickM_gen
+
+#endif // } DENSITY_CHECKS
+//---- end of file -------------------------------------------------------------

@@ -1,0 +1,32 @@
+************************************************************************
+* auCdl Netlist:
+* 
+* Library Name:  VEDANT
+* Top Cell Name: NAND_GATE_3INP
+* View Name:     schematic
+* Netlisted on:  Jun 22 23:34:44 2026
+************************************************************************
+
+*.EQUATION
+*.SCALE METER
+*.MEGA
+.PARAM
+
+
+
+************************************************************************
+* Library Name: VEDANT
+* Cell Name:    NAND_GATE_3INP
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT NAND_GATE_3INP A B C VDD VSS Y
+*.PININFO A:I B:I C:I Y:O VDD:B VSS:B
+MM4 Y A VDD VDD P W=0.42 L=0.18 m=1
+MM1 Y B VDD VDD P W=0.42 L=0.18 m=1
+MM0 Y C VDD VDD P W=0.42 L=0.18 m=1
+MM5 net9 C VSS VSS N W=0.42 L=0.18 m=1
+MM3 net7 B net9 VSS N W=0.42 L=0.18 m=1
+MM2 Y A net7 VSS N W=0.42 L=0.18 m=1
+.ENDS
+

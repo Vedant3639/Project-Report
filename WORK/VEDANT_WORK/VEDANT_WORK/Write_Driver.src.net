@@ -1,0 +1,41 @@
+************************************************************************
+* auCdl Netlist:
+* 
+* Library Name:  VEDANT
+* Top Cell Name: Write_Driver
+* View Name:     schematic
+* Netlisted on:  Jul  4 21:21:57 2026
+************************************************************************
+
+*.EQUATION
+*.SCALE METER
+*.MEGA
+.PARAM
+
+
+
+************************************************************************
+* Library Name: VEDANT
+* Cell Name:    CMOS_INV
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT CMOS_INV out vdd vin vss
+*.PININFO vdd:I vin:I vss:I out:O
+MM1 out vin vss vss N W=0.42 L=0.18 m=1
+MM0 out vin vdd vdd P W=0.42 L=0.18 m=1
+.ENDS
+
+************************************************************************
+* Library Name: VEDANT
+* Cell Name:    Write_Driver
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT Write_Driver BL BLB Din VDD VSS
+*.PININFO Din:I VDD:I VSS:I BL:O BLB:O
+XI2 net1 VDD Din VSS / CMOS_INV
+XI3 BLB VDD Din VSS / CMOS_INV
+XI0 BL VDD net1 VSS / CMOS_INV
+.ENDS
+

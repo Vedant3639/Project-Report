@@ -1,0 +1,21 @@
+//  Runset file generated on Fri May 29 12:47:31 2026
+//  by Calibre Interactive v2022.4_37.20    Fri Dec 2 17:41:17 PST 2022
+//
+//      *** PLEASE DO NOT MODIFY THIS FILE ***
+//
+//
+
+drc.rulesFile.value = "/progs/FOUNDRY/SCL_FILES/scl_pdk/design_kit/drclvs_rsf/DRC.header"
+drc.layout.layoutFile.value = "cmos_inv.calibre.db"
+cmn.layout.defFiles.value = [ "cmos_inv.def" ]
+drc.layout.topCellLibrary.value = "VEDANT"
+cmn.layout.topCellLibraryFDI.value = "VEDANT"
+drc.layout.topCell.value = "cmos_inv"
+drc.layout.topCellView.value = "layout"
+cmn.layout.topCellViewFDI.value = "layout"
+drc.drcdb.resultsFile.value = "cmos_inv.drc.results"
+drc.reports.drcSummaryReport.value = "cmos_inv.drc.summary"
+drc.reports.drcSummaryReport.specified = true
+drc.rhdb.fileName.value = "cmos_inv.rhdb"
+drc.dfmDefaults.resultsFile.value = "cmos_inv.dfmDefaults.db"
+

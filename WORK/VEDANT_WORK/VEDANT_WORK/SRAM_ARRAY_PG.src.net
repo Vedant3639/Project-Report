@@ -1,0 +1,271 @@
+************************************************************************
+* auCdl Netlist:
+* 
+* Library Name:  VEDANT_NEW
+* Top Cell Name: SRAM_ARRAY_PG
+* View Name:     schematic
+* Netlisted on:  Jul 18 17:32:37 2026
+************************************************************************
+
+*.EQUATION
+*.SCALE METER
+*.MEGA
+.PARAM
+
+
+
+************************************************************************
+* Library Name: CMOS_inv
+* Cell Name:    CMOS_inv
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT CMOS_inv out vdd vin vss
+*.PININFO vdd:I vin:I vss:I out:O
+MM0 out vin vdd vdd P W=0.42 L=0.18 m=1
+MM1 out vin vss vss N W=0.42 L=0.18 m=1
+.ENDS
+
+************************************************************************
+* Library Name: VEDANT_NEW
+* Cell Name:    Pre_charge_CKT
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT Pre_charge_CKT BL BLB PRE VDD VSS
+*.PININFO VDD:I VSS:I BL:B BLB:B PRE:B
+XI0 net1 VDD PRE VSS / CMOS_inv
+MM2 BL net1 VDD VDD P W=0.42 L=0.18 m=1
+MM1 BLB net1 VDD VDD P W=0.42 L=0.18 m=1
+MM0 BL net1 BLB VDD P W=0.42 L=0.18 m=1
+.ENDS
+
+************************************************************************
+* Library Name: VEDANT_NEW
+* Cell Name:    NAND_3IP
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT NAND_3IP A B C VDD VSS Y
+*.PININFO A:I B:I C:I Y:O VDD:B VSS:B
+MM4 Y A VDD VDD P W=0.42 L=0.18 m=1
+MM1 Y B VDD VDD P W=0.42 L=0.18 m=1
+MM0 Y C VDD VDD P W=0.42 L=0.18 m=1
+MM5 net2 C VSS VSS N W=0.42 L=0.18 m=1
+MM3 net6 B net2 VSS N W=0.42 L=0.18 m=1
+MM2 Y A net6 VSS N W=0.42 L=0.18 m=1
+.ENDS
+
+************************************************************************
+* Library Name: VEDANT_NEW
+* Cell Name:    Decoder_3X8
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT Decoder_3X8 A B C VDD VSS Y0 Y1 Y2 Y3 Y4 Y5 Y6 Y7
+*.PININFO A:I B:I C:I Y0:O Y1:O Y2:O Y3:O Y4:O Y5:O Y6:O Y7:O VDD:B VSS:B
+XI19 Y7 VDD net9 VSS / CMOS_inv
+XI18 Y0 VDD net7 VSS / CMOS_inv
+XI17 Y6 VDD net10 VSS / CMOS_inv
+XI16 Y5 VDD net8 VSS / CMOS_inv
+XI15 Y4 VDD net11 VSS / CMOS_inv
+XI14 Y3 VDD net2 VSS / CMOS_inv
+XI13 Y2 VDD net3 VSS / CMOS_inv
+XI12 Y1 VDD net4 VSS / CMOS_inv
+XI10 net1 VDD A VSS / CMOS_inv
+XI9 net6 VDD C VSS / CMOS_inv
+XI8 net5 VDD B VSS / CMOS_inv
+XI7 A B C VDD VSS net9 / NAND_3IP
+XI6 A B net6 VDD VSS net10 / NAND_3IP
+XI5 A net5 C VDD VSS net8 / NAND_3IP
+XI4 A net5 net6 VDD VSS net11 / NAND_3IP
+XI3 net1 B C VDD VSS net2 / NAND_3IP
+XI2 net1 B net6 VDD VSS net3 / NAND_3IP
+XI1 net1 net5 C VDD VSS net4 / NAND_3IP
+XI0 net1 net5 net6 VDD VSS net7 / NAND_3IP
+.ENDS
+
+************************************************************************
+* Library Name: VEDANT_NEW
+* Cell Name:    Column_Mux
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT Column_Mux BL BLB SA_BL SA_BLB VDD VSS WD_BL WD_BLB YSR
+*.PININFO VDD:I VSS:I YSR:I SA_BL:O SA_BLB:O BL:B BLB:B WD_BL:B WD_BLB:B
+MM3 WD_BLB YSR_BAR BLB VDD P W=0.42 L=0.18 m=1
+MM2 SA_BL YSR BL VDD P W=0.42 L=0.18 m=1
+MM1 WD_BL YSR_BAR BL VDD P W=0.42 L=0.18 m=1
+MM0 SA_BLB YSR BLB VDD P W=0.42 L=0.18 m=1
+MM7 BLB YSR WD_BLB VSS N W=0.42 L=0.18 m=1
+MM6 BL YSR_BAR SA_BL VSS N W=0.42 L=0.18 m=1
+MM5 BL YSR WD_BL VSS N W=0.42 L=0.18 m=1
+MM4 BLB YSR_BAR SA_BLB VSS N W=0.42 L=0.18 m=1
+XI0 YSR_BAR VDD YSR VSS / CMOS_inv
+.ENDS
+
+************************************************************************
+* Library Name: VEDANT_NEW
+* Cell Name:    Diff_Sense_Amp
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT Diff_Sense_Amp BL BLB SE VDD VOUT VSS
+*.PININFO VOUT:O BL:B BLB:B SE:B VDD:B VSS:B
+MM6 net1 net1 VDD VDD P W=0.42 L=0.18 m=1
+MM0 VOUT net1 VDD VDD P W=0.42 L=0.18 m=1
+MM4 net2 SE VSS VSS N W=0.42 L=0.18 m=1
+MM3 VOUT BLB net2 VSS N W=0.42 L=0.18 m=1
+MM2 net1 BL net2 VSS N W=0.42 L=0.18 m=1
+.ENDS
+
+************************************************************************
+* Library Name: VEDANT_NEW
+* Cell Name:    Write_Driver
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT Write_Driver BL BLB DIN VDD VSS
+*.PININFO DIN:I VDD:I VSS:I BL:O BLB:O
+XI3 net1 VDD DIN VSS / CMOS_inv
+XI1 BLB VDD DIN VSS / CMOS_inv
+XI0 BL VDD net1 VSS / CMOS_inv
+.ENDS
+
+************************************************************************
+* Library Name: VEDANT_NEW
+* Cell Name:    SRAM
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT SRAM BL BLB VDD VSS WL
+*.PININFO BL:B BLB:B VDD:B VSS:B WL:B
+MM5 BLB WL net2 VSS N W=0.22 L=0.18 m=1
+MM4 net1 WL BL VSS N W=0.22 L=0.18 m=1
+MM2 net1 net2 VSS VSS N W=0.44 L=0.18 m=1
+MM7 net2 net1 VSS VSS N W=0.44 L=0.18 m=1
+MM3 net1 net2 VDD VDD P W=0.22 L=0.18 m=1
+MM0 net2 net1 VDD VDD P W=0.22 L=0.18 m=1
+.ENDS
+
+************************************************************************
+* Library Name: VEDANT_NEW
+* Cell Name:    SRAM_ARRAY_PG
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT SRAM_ARRAY_PG A B BL0 BL1 BL2 BL3 BL4 BL5 BL6 BL7 BLB0 BLB1 BLB2 BLB3 
++ BLB4 BLB5 BLB6 BLB7 C D0 D1 D2 D3 D4 D5 D6 D7 EN OUT0 OUT1 OUT2 OUT3 OUT4 
++ OUT5 OUT6 OUT7 PRE SE VDD VSS WL0 WL1 WL2 WL3 WL4 WL5 WL6 WL7 YSR
+*.PININFO A:B B:B BL0:B BL1:B BL2:B BL3:B BL4:B BL5:B BL6:B BL7:B BLB0:B 
+*.PININFO BLB1:B BLB2:B BLB3:B BLB4:B BLB5:B BLB6:B BLB7:B C:B D0:B D1:B D2:B 
+*.PININFO D3:B D4:B D5:B D6:B D7:B EN:B OUT0:B OUT1:B OUT2:B OUT3:B OUT4:B 
+*.PININFO OUT5:B OUT6:B OUT7:B PRE:B SE:B VDD:B VSS:B WL0:B WL1:B WL2:B WL3:B 
+*.PININFO WL4:B WL5:B WL6:B WL7:B YSR:B
+XI215 BL7 BLB7 PRE VDD VSS / Pre_charge_CKT
+XI214 BL6 BLB6 PRE VDD VSS / Pre_charge_CKT
+XI213 BL5 BLB5 PRE VDD VSS / Pre_charge_CKT
+XI212 BL4 BLB4 PRE VDD VSS / Pre_charge_CKT
+XI211 BL3 BLB3 PRE VDD VSS / Pre_charge_CKT
+XI210 BL2 BLB2 PRE VDD VSS / Pre_charge_CKT
+XI209 BL1 BLB1 PRE VDD VSS / Pre_charge_CKT
+XI204 BL0 BLB0 PRE VDD VSS / Pre_charge_CKT
+XI218 A B C EN VSS WL0 WL1 WL2 WL3 WL4 WL5 WL6 WL7 / Decoder_3X8
+XI226 BL7 BLB7 net16 net24 VDD VSS net34 net29 YSR / Column_Mux
+XI225 BL6 BLB6 net33 net28 VDD VSS net38 net14 YSR / Column_Mux
+XI224 BL5 BLB5 net37 net13 VDD VSS net15 net23 YSR / Column_Mux
+XI223 BL4 BLB4 net12 net22 VDD VSS net32 net27 YSR / Column_Mux
+XI222 BL3 BLB3 net31 net26 VDD VSS net36 net10 YSR / Column_Mux
+XI221 BL2 BLB2 net39 net41 VDD VSS net11 net21 YSR / Column_Mux
+XI220 BL1 BLB1 net20 net35 VDD VSS net30 net25 YSR / Column_Mux
+XI219 BL0 BLB0 net19 net17 VDD VSS net18 net40 YSR / Column_Mux
+XI241 net16 net24 SE VDD OUT7 VSS / Diff_Sense_Amp
+XI240 net33 net28 SE VDD OUT6 VSS / Diff_Sense_Amp
+XI237 net37 net13 SE VDD OUT5 VSS / Diff_Sense_Amp
+XI236 net12 net22 SE VDD OUT4 VSS / Diff_Sense_Amp
+XI233 net31 net26 SE VDD OUT3 VSS / Diff_Sense_Amp
+XI232 net39 net41 SE VDD OUT2 VSS / Diff_Sense_Amp
+XI229 net20 net35 SE VDD OUT1 VSS / Diff_Sense_Amp
+XI227 net19 net17 SE VDD OUT0 VSS / Diff_Sense_Amp
+XI242 net34 net29 D7 VDD VSS / Write_Driver
+XI239 net38 net14 D6 VDD VSS / Write_Driver
+XI238 net15 net23 D5 VDD VSS / Write_Driver
+XI235 net32 net27 D4 VDD VSS / Write_Driver
+XI234 net36 net10 D3 VDD VSS / Write_Driver
+XI231 net11 net21 D2 VDD VSS / Write_Driver
+XI230 net30 net25 D1 VDD VSS / Write_Driver
+XI228 net18 net40 D0 VDD VSS / Write_Driver
+XI193 BL7 BLB7 VDD net5 WL2 / SRAM
+XI194 BL7 BLB7 VDD net3 WL1 / SRAM
+XI195 BL7 BLB7 VDD net4 WL0 / SRAM
+XI152 BL6 BLB6 VDD net5 WL2 / SRAM
+XI136 BL6 BLB6 VDD net3 WL1 / SRAM
+XI181 BL6 BLB6 VDD net8 WL4 / SRAM
+XI150 BL6 BLB6 VDD net6 WL3 / SRAM
+XI166 BL5 BLB5 VDD net8 WL4 / SRAM
+XI148 BL5 BLB5 VDD net6 WL3 / SRAM
+XI185 BL4 BLB4 VDD net8 WL4 / SRAM
+XI146 BL4 BLB4 VDD net6 WL3 / SRAM
+XI201 BL3 BLB3 VDD net8 WL4 / SRAM
+XI199 BL3 BLB3 VDD net6 WL3 / SRAM
+XI157 BL2 BLB2 VDD net8 WL4 / SRAM
+XI145 BL2 BLB2 VDD net6 WL3 / SRAM
+XI129 BL6 BLB6 VDD net4 WL0 / SRAM
+XI143 BL5 BLB5 VDD net5 WL2 / SRAM
+XI135 BL5 BLB5 VDD net3 WL1 / SRAM
+XI128 BL5 BLB5 VDD net4 WL0 / SRAM
+XI154 BL4 BLB4 VDD net5 WL2 / SRAM
+XI138 BL4 BLB4 VDD net3 WL1 / SRAM
+XI131 BL4 BLB4 VDD net4 WL0 / SRAM
+XI203 BL3 BLB3 VDD net5 WL2 / SRAM
+XI202 BL3 BLB3 VDD net3 WL1 / SRAM
+XI196 BL3 BLB3 VDD net4 WL0 / SRAM
+XI141 BL2 BLB2 VDD net5 WL2 / SRAM
+XI133 BL2 BLB2 VDD net3 WL1 / SRAM
+XI126 BL2 BLB2 VDD net4 WL0 / SRAM
+XI140 BL1 BLB1 VDD net5 WL2 / SRAM
+XI132 BL1 BLB1 VDD net3 WL1 / SRAM
+XI125 BL1 BLB1 VDD net4 WL0 / SRAM
+XI155 BL0 BLB0 VDD net5 WL2 / SRAM
+XI139 BL0 BLB0 VDD net3 WL1 / SRAM
+XI122 BL0 BLB0 VDD net4 WL0 / SRAM
+XI189 BL7 BLB7 VDD net8 WL4 / SRAM
+XI192 BL7 BLB7 VDD net6 WL3 / SRAM
+XI156 BL1 BLB1 VDD net8 WL4 / SRAM
+XI144 BL1 BLB1 VDD net6 WL3 / SRAM
+XI187 BL0 BLB0 VDD net8 WL4 / SRAM
+XI151 BL0 BLB0 VDD net6 WL3 / SRAM
+XI172 BL1 BLB1 VDD net2 WL6 / SRAM
+XI168 BL1 BLB1 VDD net9 WL5 / SRAM
+XI167 BL0 BLB0 VDD net2 WL6 / SRAM
+XI180 BL0 BLB0 VDD net9 WL5 / SRAM
+XI164 BL0 BLB0 VDD net7 WL7 / SRAM
+XI173 BL1 BLB1 VDD net7 WL7 / SRAM
+XI162 BL6 BLB6 VDD net2 WL6 / SRAM
+XI179 BL6 BLB6 VDD net9 WL5 / SRAM
+XI174 BL5 BLB5 VDD net2 WL6 / SRAM
+XI175 BL5 BLB5 VDD net9 WL5 / SRAM
+XI186 BL4 BLB4 VDD net2 WL6 / SRAM
+XI170 BL4 BLB4 VDD net9 WL5 / SRAM
+XI197 BL3 BLB3 VDD net2 WL6 / SRAM
+XI200 BL3 BLB3 VDD net9 WL5 / SRAM
+XI178 BL2 BLB2 VDD net2 WL6 / SRAM
+XI169 BL2 BLB2 VDD net9 WL5 / SRAM
+XI160 BL5 BLB5 VDD net7 WL7 / SRAM
+XI161 BL2 BLB2 VDD net7 WL7 / SRAM
+XI184 BL4 BLB4 VDD net7 WL7 / SRAM
+XI198 BL3 BLB3 VDD net7 WL7 / SRAM
+XI191 BL7 BLB7 VDD net2 WL6 / SRAM
+XI188 BL7 BLB7 VDD net9 WL5 / SRAM
+XI190 BL7 BLB7 VDD net7 WL7 / SRAM
+XI159 BL6 BLB6 VDD net7 WL7 / SRAM
+MM7 net7 WL7 VSS VSS N W=0.42 L=0.18 m=1
+MM4 net8 WL4 VSS VSS N W=0.42 L=0.18 m=1
+MM2 net5 WL2 VSS VSS N W=0.42 L=0.18 m=1
+MM3 net6 WL3 VSS VSS N W=0.42 L=0.18 m=1
+MM1 net3 WL1 VSS VSS N W=0.42 L=0.18 m=1
+MM0 net4 WL0 VSS VSS N W=0.42 L=0.18 m=1
+MM5 net9 WL5 VSS VSS N W=0.42 L=0.18 m=1
+MM6 net2 WL6 VSS VSS N W=0.42 L=0.18 m=1
+.ENDS
+

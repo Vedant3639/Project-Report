@@ -1,0 +1,10 @@
+# Automagically generated file: Please do not edit!
+lvs_ExtfVersion 3
+lvs_ExtRunTimes 1781273359 1781273360
+lvs_ExtOutFile RUNDIR /home/Vedant_int/Desktop/VEDANT_WORK
+lvs_ExtOutFile RULES_FILE _RCX_4LM_new.header(copy)_
+lvs_ExtInfoExtSummary {0 0 0 0 0 0 0 0 0 0 0}
+lvs_ExtInfoDfmSummary {0}
+lvs_ExtOutFile LAYOUT_NETLIST svdb/6TSRAM.sp
+lvs_ExtOutFile EXTRACTION_REPORT 6TSRAM.lvs.report.ext
+lvs_ExtOutFile LAYOUT_PDSP {  svdb/6TSRAM.pdsp }

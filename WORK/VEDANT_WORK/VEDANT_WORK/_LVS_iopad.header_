@@ -1,0 +1,40 @@
+//
+//  Rule file generated on Mon Jul 20 15:14:42 2026
+//  by Calibre Interactive v2022.4_37.20    Fri Dec 2 17:41:17 PST 2022
+//
+//      *** PLEASE DO NOT MODIFY THIS FILE ***
+//
+//
+
+
+// +++ CUSTOMIZATION SETTINGS START +++
+
+#define "LVS_TECH" ts18scl
+#define "4M1L" 
+#define "ANALOG_TYPE" NO
+#define "PORT_NAMES" YES
+#define "SET_TOL" NO
+
+// +++ CUSTOMIZATION SETTINGS END +++
+
+
+LAYOUT PATH "SRAM_CHIP.calibre.db"
+LAYOUT SYSTEM GDSII
+LAYOUT PRIMARY "SRAM_CHIP"
+
+SOURCE PATH "/home/Vedant_int/Desktop/VEDANT_WORK/netlist.cdl"
+SOURCE SYSTEM SPICE
+SOURCE PRIMARY "SRAM_CHIP"
+
+MASK SVDB DIRECTORY "svdb" QUERY
+
+LVS REPORT "SRAM_CHIP.lvs.report"
+
+LVS EXECUTE ERC YES
+
+ERC RESULTS DATABASE "SRAM_CHIP.erc.results"
+ERC CELL NAME YES CELL SPACE XFORM
+
+DRC ICSTATION YES
+
+INCLUDE "/home/Vedant_int/Desktop/LVS_iopad.header"

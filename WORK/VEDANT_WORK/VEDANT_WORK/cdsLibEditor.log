@@ -1,0 +1,12 @@
+\o Program:		@(#)$CDS: cdsLibEditor version 6.1.8 - CAT37 03/31/2021 15:44 (sjfdcl1031) $
+\o Sub version:		sub-version  s184 
+\o Arguments:		-cdslib /home/Vedant_int/Desktop/VEDANT_WORK/cds.lib -mpssession virtuoso42462 -mpshost nsdcs.iiti.ac.in 
+\o Working Directory:	nsdcs.iiti.ac.in:/home/Vedant_int/Desktop/VEDANT_WORK
+\o 64-bit offsets
+\a nrSetWindowVisibility(cdsLibEditor "show")
+\o Qt version: 		5.9.1
+\a nrSetCurrentWindow(cdsLibEditor)
+\a nrListItemAction(cdsLibEditor->mainTable 0 0)
+\o Active cell: 0 0 "US_8ths"
+\a nrResizeWindow(cdsLibEditor list(50 78 500 400))
+\a exit(0)

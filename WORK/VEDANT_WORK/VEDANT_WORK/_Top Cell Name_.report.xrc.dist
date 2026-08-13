@@ -1,0 +1,140 @@
+                  ##################################################
+                  ##                                              ##
+                  ##                 Calibre xRC                  ##
+                  ##                                              ##
+                  ##          Export Lumped Parameters            ##
+                  ##                                              ##
+                  ##################################################
+ 
+ 
+ 
+LAYOUT NAME:              SenseAmplifier
+RULE FILE NAME:           rules
+CREATION TIME:            Fri Jun 19 11:25:42 2026
+ 
+UNITS:                    Resistance  = ohm
+                          Capacitance = farad
+                          Time        = ns
+ 
+ 
+---------------------------------------------------------------------------------
+CELL NAME:                SenseAmplifier
+ 
+Netid      R(UpperBound)      Cvalue      %Coupled    RC(UpperBound)   Netname
+---------+---------------+-------------+-------------+--------------+------------
+1                     0.0    1.7883e-16       45.9645            0.0  VDD
+            - Coupled nets
+               MM1:g,c_22:n,c_23:n,net2,net2,MM2:d
+            - Intrinsic Capacitance
+               9.66314e-17
+            - Coupled capacitance
+               9.41976e-18   netid: MM1:g
+               9.38917e-18   netid: c_22:n
+               5.39406e-18   netid: c_23:n
+               2.36954e-17   netid: net2
+                1.0568e-17   netid: net2
+               2.37317e-17   netid: MM2:d
+
+
+2                     0.0   7.88011e-17       43.7005            0.0  VSS
+            - Coupled nets
+               c_9:n,SE
+            - Intrinsic Capacitance
+               4.43646e-17
+            - Coupled capacitance
+                2.5404e-17   netid: c_9:n
+               9.03243e-18   netid: SE
+
+
+3                     0.0   6.35009e-16       39.1759            0.0  net3
+            - Coupled nets
+               MM3:b,MM1:g,c_23:n,net2,net2,MM2:d,MM2:d,BL,BL,SE,BLB,BLB
+            - Intrinsic Capacitance
+               3.86239e-16
+            - Coupled capacitance
+                2.5404e-17   netid: MM3:b
+               4.41551e-18   netid: MM1:g
+               1.36062e-18   netid: c_23:n
+               2.34896e-17   netid: net2
+               6.47088e-17   netid: net2
+               2.34669e-17   netid: MM2:d
+               4.27049e-17   netid: MM2:d
+               9.21945e-18   netid: BL
+               3.77051e-18   netid: BL
+               3.70129e-17   netid: SE
+               9.43141e-18   netid: BLB
+               3.78557e-18   netid: BLB
+
+
+4                     0.0   4.73288e-16       45.5661            0.0  net2
+            - Coupled nets
+               MM1:s,MM0:s,c_3:p,MM0:s,c_3:p,c_9:n,c_9:n,MM3:s,c_9:n,MM2:d,MM2:d,BL,SE,SE
+            - Intrinsic Capacitance
+               2.57629e-16
+            - Coupled capacitance
+               9.41976e-18   netid: MM1:s
+               9.38917e-18   netid: MM0:s
+               5.39406e-18   netid: c_3:p
+               2.36954e-17   netid: MM0:s
+                1.0568e-17   netid: c_3:p
+               4.41551e-18   netid: c_9:n
+               1.36062e-18   netid: c_9:n
+               2.34896e-17   netid: MM3:s
+               6.47088e-17   netid: c_9:n
+                1.7532e-17   netid: MM2:d
+               2.85871e-17   netid: MM2:d
+               1.58398e-17   netid: BL
+                8.6122e-19   netid: SE
+               3.97883e-19   netid: SE
+
+
+5                     0.0   2.13282e-16       71.2026            0.0  VOUT
+            - Coupled nets
+               MM1:s,MM2:s,c_9:n,MM1:g,net2,BLB
+            - Intrinsic Capacitance
+               6.14197e-17
+            - Coupled capacitance
+               2.37317e-17   netid: MM1:s
+               2.34669e-17   netid: MM2:s
+               4.27049e-17   netid: c_9:n
+                1.7532e-17   netid: MM1:g
+               2.85871e-17   netid: net2
+               1.58398e-17   netid: BLB
+
+
+6                     0.0   1.16226e-16       25.4727            0.0  BL
+            - Coupled nets
+               MM3:s,c_9:n,net2,BLB
+            - Intrinsic Capacitance
+               8.66201e-17
+            - Coupled capacitance
+               9.21945e-18   netid: MM3:s
+               3.77051e-18   netid: c_9:n
+               1.58398e-17   netid: net2
+               7.76113e-19   netid: BLB
+
+
+7                     0.0   1.36964e-16       34.5379            0.0  SE
+            - Coupled nets
+               MM3:b,c_9:n,c_22:n,c_23:n
+            - Intrinsic Capacitance
+               8.96595e-17
+            - Coupled capacitance
+               9.03243e-18   netid: MM3:b
+               3.70129e-17   netid: c_9:n
+                8.6122e-19   netid: c_22:n
+               3.97883e-19   netid: c_23:n
+
+
+8                     0.0   1.58737e-16       18.7939            0.0  BLB
+            - Coupled nets
+               MM2:s,c_9:n,MM2:d,BL
+            - Intrinsic Capacitance
+               1.28904e-16
+            - Coupled capacitance
+               9.43141e-18   netid: MM2:s
+               3.78557e-18   netid: c_9:n
+               1.58398e-17   netid: MM2:d
+               7.76113e-19   netid: BL
+
+

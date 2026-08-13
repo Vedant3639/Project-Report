@@ -1,0 +1,826 @@
+\# Program start time:     UTC 2026.06.03 16:17:23.339
+\# Local time: IST (UTC+05:30) 2026.06.03 21:47:23.339
+\o Program:		@(#)$CDS: virtuoso version 6.1.8-64b 04/27/2021 19:30 (cpgsrv11) $
+\o Hierarchy:		/progs/cadence/IC618/tools.lnx86/dfII/
+\o Sub version:		sub-version  IC6.1.8-64b.500.18  (64-bit addresses)
+\# Command line:	/progs/cadence/IC618/tools.lnx86/dfII/bin/64bit/virtuoso -noautostart -mpssession virtuoso24409 -mpshost nsdcs.iiti.ac.in -davinciService DaVinciService_24409_1780503438 -log /home/Vedant_int/Desktop/VEDANT_WORK/logs_Vedant_int/logs0/Job0.log -licenseLockFileName /home/Vedant_int/Desktop/VEDANT_WORK/.tmp_Vedant_int/.nsdcs.iiti.ac.in_24409 -interactiveA -interactiveE -interactiveRTT -nostdin -nographE -axlChildIdFlag 0
+\# Host name (type):	nsdcs.iiti.ac.in (x86_64)
+\# Operating system:	Linux 3.10.0-1160.119.1.el7.x86_64 #1 SMP Tue Jun 4 14:43:51 UTC 2024
+\# Linux /etc/issue:	\S
+\# Linux /etc/issue:	Kernel \r on an \m
+\# X display name (WxH):	:2746 (1024x868)
+\# Available geometry:			TL(0:0) BR(1023:867)
+\# X server:			The X.Org Foundation
+\# Depth of Visual (Root):	24 (24)
+\# Number of Planes Used:	24
+\# X version:		11.0 (vendor release 12004000)
+\# X resource pool:	base 0x400000, mask 0x1fffff (2097151), shift 0
+\# 			current id 0x0, current max 0x1ffffa (2097146)
+\# Max data seg size:	     unlimited
+\# Max process size:	     unlimited
+\# Initial sbrk value:	        563 MB
+\# Available memory:	    155,871 MB
+\# System memory:	    259,743 MB
+\# Maximum memory size:	    259,374 MB
+\# Max mem available:	    156,065 MB
+\# Initial memory used:	        194 MB
+\#        process size:	      1,721 MB
+\# Thread usage limits (effective/default):	maxthreads 4096/4096 maxload 48.00/48.00
+\# Qt version:		5.9.1
+\# Window Manager:	other
+\# User Name:		Vedant_int
+\o Working Directory:	nsdcs.iiti.ac.in:/home/Vedant_int/Desktop/VEDANT_WORK
+\# Process Id:		28832
+\o 
+\o COPYRIGHT (C) 1992-2021  CADENCE DESIGN SYSTEMS INC.  ALL RIGHTS RESERVED.
+\o           (C) 1992-2021  UNIX SYSTEMS Laboratories INC.,
+\o                          Reproduced with permission.
+\o 
+\o This Cadence Design Systems program and online documentation are
+\o proprietary/confidential information and may be disclosed/used only
+\o as authorized in a license agreement controlling such use and disclosure.
+\o 
+\o           RESTRICTED RIGHTS NOTICE (SHORT FORM)
+\o Use/reproduction/disclosure is subject to restriction
+\o set forth at FAR 1252.227-19 or its equivalent.
+\o Loading geView.cxt 
+\o Loading menuBuilder.cxt 
+\o Loading schView.cxt 
+\o Loading selectSv.cxt 
+\o Loading pvsui.cxt
+\o Loading wireEdit.cxt 
+\o Loading pte2.cxt 
+\o Loading xlUI.cxt 
+\o Loading auCore.cxt 
+\o Loading vhdl.cxt 
+\o Loading seismic.cxt 
+\o Loading ci.cxt 
+\o Loading ams.cxt 
+\o Loading oasis.cxt 
+\o Loading analog.cxt 
+\o Loading asimenv.cxt 
+\o Loading dal.cxt 
+\o Loading awv.cxt 
+\o Loading socket.cxt 
+\o Loading par.cxt 
+\o Loading alvs.cxt 
+\o Loading caa.cxt 
+\o Loading amps.cxt 
+\o Loading adexlCore.cxt 
+\o Loading adexl.cxt 
+\# Memory report: using         355 MB, process size 1,961 MB at UTC 2026.06.03 16:17:28.066
+\o *Info*    Exporting services from client ... 
+\o 
+\o Loading adexlDM.cxt 
+\o Loading cpf.cxt 
+\o Loading cli.cxt 
+\o Loading lp.cxt 
+\o INFO (ELI-00302) Connecting to parent process (session=virtuoso24409, host=nsdcs.iiti.ac.in). Connection mode is ICRP. Total timeout is 180 seconds. Connection timeout is 90 seconds.
+\o INFO (ELI-00303) Step 1: Connecting to parent. Time spent is 0 seconds.
+\o INFO (ELI-00304) The registration of the child 28832 within 90 seconds is being processed...
+\o INFO (ELI-00305) The result of registration is true. Time spent is 0 seconds.
+\o INFO (ELI-00308) The connection has ended. Result is true. Total time spent is 0 seconds.
+\# [21:47:23.158106] Configured Lic search path (20.02-p002): 5280@14.139.1.126:1717@14.139.1.126
+\w *WARNING* LIB avTech from File /home/Vedant_int/Desktop/VEDANT_WORK/cds.lib Line 30 redefines
+\w LIB avTech from the same file (defined earlier.)
+\w *WARNING* The directory: '/home/Vedant_int/Desktop/VEDANT_WORK/cmos_inv' does not exist
+\w 	but was defined in libFile '/home/Vedant_int/Desktop/VEDANT_WORK/cds.lib' for Lib 'cmos_inv'.
+\w *WARNING* The directory: '/home/Vedant_int/Desktop/VEDANT_WORK/VEDANT2' does not exist
+\w 	but was defined in libFile '/home/Vedant_int/Desktop/VEDANT_WORK/cds.lib' for Lib 'VEDANT2'.
+\w *WARNING* The directory: '/progs/cadence/INCISIVE152/tools/affirma_ams/etc/connect_lib/connectLib' does not exist
+\w 	but was defined in libFile '/home/Vedant_int/Desktop/VEDANT_WORK/cds.lib' for Lib 'connectLib'.
+\o //
+\o //  Calibre Skill Interface * (v2022.4_37.20) *
+\o //
+\o //                         Copyright Siemens 1996-2020     
+\o //                             All Rights Reserved.
+\o //         THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+\o //            WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION
+\o //              OR ITS LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+\o //
+\o //
+\o *Info*    Client has finished starting ... 
+\o 
+\o Loading vdsil.cxt 
+\p > 
+\a _treeSetOpcGUI(t)
+\# [21:47:30.198834] Periodic Lic check successful
+\# [21:47:30.198840] Feature usage summary:
+\r t
+\# Available memory:        155,724 MB at UTC 2026.06.03 16:17:33.530
+\# Memory report: Maximum memory size now 156,118 MB at UTC 2026.06.03 16:17:33.534
+\# Thread usage report: 53 active threads, active load 1.40 at UTC 2026.06.03 16:17:33.534
+\o Loading vqp.cxt 
+\o Loading hdlPkg.cxt 
+\o Loading spectrei.cxt 
+\o Loading hspiceD.cxt 
+\o Loading spectreinl.cxt 
+\o Loading msgHandler.cxt 
+\o Loading UltraSim.cxt 
+\o Loading AMSOSS.cxt 
+\o Loading AMS.cxt 
+\o 
+\o 
+\o *Info*    Configuring the session ...
+\o 
+\o Loading simui.cxt 
+\o 	Library      = VEDANT
+\o 	Cell         = 6TSRAM
+\o 	View         = schematic
+\o 	Simulator    = spectre
+\o 	State Path   = $AXL_SETUPDB_DIR/test_states
+\o 	State Name   = VEDANT:6TSRAM:1_tmpstate.157584038_MonteCarlo.0
+\o 	Results DB   = /home/Vedant_int/Desktop/VEDANT_WORK/VEDANT/6TSRAM/adexl/results/data/MonteCarlo.0.rdb
+\o 	Results Dir  = /home/Vedant_int/simulation/VEDANT/6TSRAM/adexl/results/data/MonteCarlo.0/1/VEDANT:6TSRAM:1
+\o 	Results Loc  = /home/Vedant_int/simulation/VEDANT/6TSRAM/adexl/results/data
+\o 	Project Dir  = /home/Vedant_int/simulation
+\o 	Setup DB loc = /home/Vedant_int/Desktop/VEDANT_WORK/VEDANT/6TSRAM/adexl
+\o 	File Encoding = 0
+\o 
+\o 
+\o Loading viva.cxt 
+\w *WARNING* LIB avTech from File /home/Vedant_int/Desktop/VEDANT_WORK/cds.lib Line 30 redefines
+\w LIB avTech from the same file (defined earlier.)
+\w *WARNING* The directory: '/home/Vedant_int/Desktop/VEDANT_WORK/cmos_inv' does not exist
+\w 	but was defined in libFile '/home/Vedant_int/Desktop/VEDANT_WORK/cds.lib' for Lib 'cmos_inv'.
+\w *WARNING* The directory: '/home/Vedant_int/Desktop/VEDANT_WORK/VEDANT2' does not exist
+\w 	but was defined in libFile '/home/Vedant_int/Desktop/VEDANT_WORK/cds.lib' for Lib 'VEDANT2'.
+\w *WARNING* The directory: '/progs/cadence/INCISIVE152/tools/affirma_ams/etc/connect_lib/connectLib' does not exist
+\w 	but was defined in libFile '/home/Vedant_int/Desktop/VEDANT_WORK/cds.lib' for Lib 'connectLib'.
+\o Loading ts018_scl_prim/libInit.il ...
+\o 	Loading ts018_scl_prim/loadCxt.ile ... done!
+\o 	Loading context 'ts018_scl_prim' from library 'ts018_scl_prim' ... done!
+\o 	Loading context 'pdkUtils' from library 'ts018_scl_prim' ... done!
+\o 	Loading ts018_scl_prim/display.drf ... done!
+\w *WARNING* Cannot find /progs/cadence/IC618/tools.lnx86/dfII/etc/tools/hspiceS directory to load environment variables
+\w *WARNING* envSetVal: could not find tool[.partition] 'hspiceS.opts'
+\w *WARNING* Cannot find /progs/cadence/IC618/tools.lnx86/dfII/etc/tools/eldo directory to load environment variables
+\w *WARNING* envSetVal: could not find tool[.partition] 'eldo.opts'
+\w *WARNING* Cannot find /progs/cadence/IC618/tools.lnx86/dfII/etc/tools/eldoD directory to load environment variables
+\w *WARNING* envSetVal: could not find tool[.partition] 'eldoD.opts'
+\o 	Loading ts018_scl_prim/libInitCustomExit.il ... **
+\o Attach user init procedure to Virtuoso CDL Out form**
+\o **Customize the Virtuoso CDL Out form.**
+\o done!
+\o Loaded ts018_scl_prim/libInit.il successfully!
+\o Loading devCheck.cxt 
+\o Loading relXpert.cxt 
+\# Memory report: using         485 MB, process size 2,163 MB at UTC 2026.06.03 16:19:34.109
+\o WARNING (ADE-7017): The Spectre run mode needs to be 'batch' when EM/IR analysis is enabled. Automatically setting the run mode to 'batch'.
+\o 
+\o *Info*    The auto suspension is disabled.
+\o 
+\o Loading monte.cxt 
+\o 
+\o 
+\o 
+\o 
+\o 
+\o *Info*    Run start for Point ID (0 1) on testbench [ VEDANT:6TSRAM:1
+\o           ].
+\o 
+\o Resetting statistical vars
+\o 
+\o *Info*    Setting parameter values ...
+\o 
+\o Setting var BL = "1.8"
+\o Setting var BLB = "1.8"
+\o Setting var VDD = "1.8"
+\o Setting var VIN = "1.8"
+\o Setting var VSS = "0"
+\o Setting var WL = "1.8"
+\o Setting temp(T) = 27
+\o 
+\o *Info*    Netlist Directory =
+\o           /home/Vedant_int/simulation/VEDANT/6TSRAM/adexl/results/data/MonteCarlo.0/1/VEDANT:6TSRAM:1/groupRunDataDir/netlist
+\o 
+\o 
+\o *Info*    Data Directory    =
+\o           /home/Vedant_int/simulation/VEDANT/6TSRAM/adexl/results/data/MonteCarlo.0/1/VEDANT:6TSRAM:1/groupRunDataDir
+\o 
+\o 
+\o *Info*    Creating Netlist for Point ID (0 1)
+\o 
+\o generate netlist...
+\o Loading seCore.cxt 
+\o Begin Incremental Netlisting Jun  3 21:49:35 2026
+\o Loading json.cxt 
+\o End netlisting Jun  3 21:49:35 2026
+\o 
+\o Netlisting Statistics:
+\o 	Number of components:   12
+\o 
+\o 	Elapsed time:          0.0s
+\o Errors: 0	Warnings: 0
+\o       ...successful.
+\o compose simulator input file...
+\o       ...successful.
+\o 
+\o *Info*    Running simulation on testbench [ VEDANT:6TSRAM:1 ] for
+\o           Point ID (0 1).
+\o 
+\o *Info*    Spectre controlMode is set "batch" due to monte carlo run.
+\o 
+\o Delete psf data in /home/Vedant_int/simulation/VEDANT/6TSRAM/adexl/results/data/MonteCarlo.0/1/VEDANT:6TSRAM:1/groupRunDataDir/psf.
+\o generate netlist...
+\o Begin Incremental Netlisting Jun  3 21:49:35 2026
+\o End netlisting Jun  3 21:49:35 2026
+\o 
+\o 	The netlist is up to date.
+\o 	Time taken to compare the design with netlist:   0.0s
+\o       ...successful.
+\o compose simulator input file...
+\o       ...successful.
+\o start simulator if needed...
+\o       ...successful.
+\o simulate...
+\o To view the simulator output, right-click on the test name, result 
+\o name, or any value in the "Results" tab of the Outputs section and 
+\o choose "Output Log" menu option.
+\o Loading paraplot.cxt 
+\o *Info*    Client has finished evaluating ... 
+\o 
+\o 
+\o *Info*    Run complete for Point ID (0 1) on testbench [
+\o           VEDANT:6TSRAM:1 ].
+\o 
+\o 
+\o 
+\o 
+\o 
+\o *Info*    Client has finished evaluating ... 
+\o 
+\o 
+\o *Info*    Run complete for Point ID (0 5) on testbench [
+\o           VEDANT:6TSRAM:1 ].
+\o 
+\o 
+\o 
+\o 
+\o 
+\o *Info*    Client has finished evaluating ... 
+\o 
+\o 
+\o *Info*    Run complete for Point ID (0 9) on testbench [
+\o           VEDANT:6TSRAM:1 ].
+\o 
+\o 
+\o 
+\o 
+\o 
+\o *Info*    Client has finished evaluating ... 
+\o 
+\o 
+\o *Info*    Run complete for Point ID (0 13) on testbench [
+\o           VEDANT:6TSRAM:1 ].
+\o 
+\o 
+\o 
+\o 
+\o 
+\o *Info*    Client has finished evaluating ... 
+\o 
+\o 
+\o *Info*    Run complete for Point ID (0 17) on testbench [
+\o           VEDANT:6TSRAM:1 ].
+\o 
+\o 
+\o 
+\o 
+\o 
+\o *Info*    Client has finished evaluating ... 
+\o 
+\o 
+\o *Info*    Run complete for Point ID (0 21) on testbench [
+\o           VEDANT:6TSRAM:1 ].
+\o 
+\o 
+\o 
+\o 
+\o 
+\o INFO (ADE-3071): Simulation completed successfully.
+\o reading simulation data...
+\o       ...successful.
+\o *Info*    Client has finished evaluating ... 
+\o 
+\o 
+\o *Info*    Run complete for Point ID (0 25) on testbench [
+\o           VEDANT:6TSRAM:1 ].
+\o 
+\o 
+\o 
+\o 
+\o 
+\o *Info*    Client has finished evaluating ... 
+\o 
+\o 
+\o *Info*    Run complete for Point ID (0 29) on testbench [
+\o           VEDANT:6TSRAM:1 ].
+\o 
+\o 
+\o 
+\o 
+\o 
+\o *Info*    Client has finished evaluating ... 
+\o 
+\o 
+\o *Info*    Run complete for Point ID (0 33) on testbench [
+\o           VEDANT:6TSRAM:1 ].
+\o 
+\o 
+\o 
+\o 
+\o 
+\o *Info*    Client has finished evaluating ... 
+\o 
+\o 
+\o *Info*    Run complete for Point ID (0 37) on testbench [
+\o           VEDANT:6TSRAM:1 ].
+\o 
+\o 
+\o 
+\o 
+\o 
+\o *Info*    Monte Carlo Simulation completed successfully...
+\o 
+\o 
+\o 
+\o 
+\o 
+\o *Info*    Run start for Point ID (0 2) on testbench [ VEDANT:6TSRAM:1
+\o           ].
+\o 
+\o Resetting statistical vars
+\o 
+\o *Info*    Setting parameter values ...
+\o 
+\o 
+\o *Info*    Netlist Directory =
+\o           /home/Vedant_int/simulation/VEDANT/6TSRAM/adexl/results/data/MonteCarlo.0/2/VEDANT:6TSRAM:1/groupRunDataDir/netlist
+\o 
+\o 
+\o *Info*    Data Directory    =
+\o           /home/Vedant_int/simulation/VEDANT/6TSRAM/adexl/results/data/MonteCarlo.0/2/VEDANT:6TSRAM:1/groupRunDataDir
+\o 
+\o 
+\o *Info*    Creating Netlist for Point ID (0 2)
+\o 
+\o generate netlist...
+\o Begin Incremental Netlisting Jun  3 21:50:00 2026
+\o End netlisting Jun  3 21:50:00 2026
+\o 
+\o 	The netlist is up to date.
+\o 	Time taken to compare the design with netlist:   0.0s
+\o       ...successful.
+\o compose simulator input file...
+\o       ...successful.
+\o 
+\o *Info*    Running simulation on testbench [ VEDANT:6TSRAM:1 ] for
+\o           Point ID (0 2).
+\o 
+\o *Info*    Spectre controlMode is set "batch" due to monte carlo run.
+\o 
+\o Delete psf data in /home/Vedant_int/simulation/VEDANT/6TSRAM/adexl/results/data/MonteCarlo.0/2/VEDANT:6TSRAM:1/groupRunDataDir/psf.
+\o generate netlist...
+\o Begin Incremental Netlisting Jun  3 21:50:00 2026
+\o End netlisting Jun  3 21:50:00 2026
+\o 
+\o 	The netlist is up to date.
+\o 	Time taken to compare the design with netlist:   0.0s
+\o       ...successful.
+\o compose simulator input file...
+\o       ...successful.
+\o start simulator if needed...
+\o       ...successful.
+\o simulate...
+\o To view the simulator output, right-click on the test name, result 
+\o name, or any value in the "Results" tab of the Outputs section and 
+\o choose "Output Log" menu option.
+\o *Info*    Client has finished evaluating ... 
+\o 
+\o 
+\o *Info*    Run complete for Point ID (0 2) on testbench [
+\o           VEDANT:6TSRAM:1 ].
+\o 
+\o 
+\o 
+\o 
+\o 
+\o *Info*    Client has finished evaluating ... 
+\o 
+\o 
+\o *Info*    Run complete for Point ID (0 6) on testbench [
+\o           VEDANT:6TSRAM:1 ].
+\o 
+\o 
+\o 
+\o 
+\o 
+\o *Info*    Client has finished evaluating ... 
+\o 
+\o 
+\o *Info*    Run complete for Point ID (0 10) on testbench [
+\o           VEDANT:6TSRAM:1 ].
+\o 
+\o 
+\o 
+\o 
+\o 
+\o *Info*    Client has finished evaluating ... 
+\o 
+\o 
+\o *Info*    Run complete for Point ID (0 14) on testbench [
+\o           VEDANT:6TSRAM:1 ].
+\o 
+\o 
+\o 
+\o 
+\o 
+\o *Info*    Client has finished evaluating ... 
+\o 
+\o 
+\o *Info*    Run complete for Point ID (0 18) on testbench [
+\o           VEDANT:6TSRAM:1 ].
+\o 
+\o 
+\o 
+\o 
+\o 
+\o *Info*    Client has finished evaluating ... 
+\o 
+\o 
+\o *Info*    Run complete for Point ID (0 22) on testbench [
+\o           VEDANT:6TSRAM:1 ].
+\o 
+\o 
+\o 
+\o 
+\o 
+\o INFO (ADE-3071): Simulation completed successfully.
+\o reading simulation data...
+\o       ...successful.
+\o *Info*    Client has finished evaluating ... 
+\o 
+\o 
+\o *Info*    Run complete for Point ID (0 26) on testbench [
+\o           VEDANT:6TSRAM:1 ].
+\o 
+\o 
+\o 
+\o 
+\o 
+\o *Info*    Client has finished evaluating ... 
+\o 
+\o 
+\o *Info*    Run complete for Point ID (0 30) on testbench [
+\o           VEDANT:6TSRAM:1 ].
+\o 
+\o 
+\o 
+\o 
+\o 
+\o *Info*    Client has finished evaluating ... 
+\o 
+\o 
+\o *Info*    Run complete for Point ID (0 34) on testbench [
+\o           VEDANT:6TSRAM:1 ].
+\o 
+\o 
+\o 
+\o 
+\o 
+\o *Info*    Client has finished evaluating ... 
+\o 
+\o 
+\o *Info*    Run complete for Point ID (0 38) on testbench [
+\o           VEDANT:6TSRAM:1 ].
+\o 
+\o 
+\o 
+\o 
+\o 
+\o *Info*    Monte Carlo Simulation completed successfully...
+\o 
+\o 
+\o 
+\o 
+\o 
+\o *Info*    Run start for Point ID (0 3) on testbench [ VEDANT:6TSRAM:1
+\o           ].
+\o 
+\o Resetting statistical vars
+\o 
+\o *Info*    Setting parameter values ...
+\o 
+\o 
+\o *Info*    Netlist Directory =
+\o           /home/Vedant_int/simulation/VEDANT/6TSRAM/adexl/results/data/MonteCarlo.0/3/VEDANT:6TSRAM:1/groupRunDataDir/netlist
+\o 
+\o 
+\o *Info*    Data Directory    =
+\o           /home/Vedant_int/simulation/VEDANT/6TSRAM/adexl/results/data/MonteCarlo.0/3/VEDANT:6TSRAM:1/groupRunDataDir
+\o 
+\o 
+\o *Info*    Creating Netlist for Point ID (0 3)
+\o 
+\o generate netlist...
+\o Begin Incremental Netlisting Jun  3 21:50:08 2026
+\o End netlisting Jun  3 21:50:08 2026
+\o 
+\o 	The netlist is up to date.
+\o 	Time taken to compare the design with netlist:   0.0s
+\o       ...successful.
+\o compose simulator input file...
+\o       ...successful.
+\o 
+\o *Info*    Running simulation on testbench [ VEDANT:6TSRAM:1 ] for
+\o           Point ID (0 3).
+\o 
+\o *Info*    Spectre controlMode is set "batch" due to monte carlo run.
+\o 
+\o Delete psf data in /home/Vedant_int/simulation/VEDANT/6TSRAM/adexl/results/data/MonteCarlo.0/3/VEDANT:6TSRAM:1/groupRunDataDir/psf.
+\o generate netlist...
+\o Begin Incremental Netlisting Jun  3 21:50:08 2026
+\o End netlisting Jun  3 21:50:08 2026
+\o 
+\o 	The netlist is up to date.
+\o 	Time taken to compare the design with netlist:   0.0s
+\o       ...successful.
+\o compose simulator input file...
+\o       ...successful.
+\o start simulator if needed...
+\o       ...successful.
+\o simulate...
+\o To view the simulator output, right-click on the test name, result 
+\o name, or any value in the "Results" tab of the Outputs section and 
+\o choose "Output Log" menu option.
+\o *Info*    Client has finished evaluating ... 
+\o 
+\o 
+\o *Info*    Run complete for Point ID (0 3) on testbench [
+\o           VEDANT:6TSRAM:1 ].
+\o 
+\o 
+\o 
+\o 
+\o 
+\o *Info*    Client has finished evaluating ... 
+\o 
+\o 
+\o *Info*    Run complete for Point ID (0 7) on testbench [
+\o           VEDANT:6TSRAM:1 ].
+\o 
+\o 
+\o 
+\o 
+\o 
+\o *Info*    Client has finished evaluating ... 
+\o 
+\o 
+\o *Info*    Run complete for Point ID (0 11) on testbench [
+\o           VEDANT:6TSRAM:1 ].
+\o 
+\o 
+\o 
+\o 
+\o 
+\o *Info*    Client has finished evaluating ... 
+\o 
+\o 
+\o *Info*    Run complete for Point ID (0 15) on testbench [
+\o           VEDANT:6TSRAM:1 ].
+\o 
+\o 
+\o 
+\o 
+\o 
+\o *Info*    Client has finished evaluating ... 
+\o 
+\o 
+\o *Info*    Run complete for Point ID (0 19) on testbench [
+\o           VEDANT:6TSRAM:1 ].
+\o 
+\o 
+\o 
+\o 
+\o 
+\o *Info*    Client has finished evaluating ... 
+\o 
+\o 
+\o *Info*    Run complete for Point ID (0 23) on testbench [
+\o           VEDANT:6TSRAM:1 ].
+\o 
+\o 
+\o 
+\o 
+\o 
+\o INFO (ADE-3071): Simulation completed successfully.
+\o reading simulation data...
+\o       ...successful.
+\o *Info*    Client has finished evaluating ... 
+\o 
+\o 
+\o *Info*    Run complete for Point ID (0 27) on testbench [
+\o           VEDANT:6TSRAM:1 ].
+\o 
+\o 
+\o 
+\o 
+\o 
+\o *Info*    Client has finished evaluating ... 
+\o 
+\o 
+\o *Info*    Run complete for Point ID (0 31) on testbench [
+\o           VEDANT:6TSRAM:1 ].
+\o 
+\o 
+\o 
+\o 
+\o 
+\o *Info*    Client has finished evaluating ... 
+\o 
+\o 
+\o *Info*    Run complete for Point ID (0 35) on testbench [
+\o           VEDANT:6TSRAM:1 ].
+\o 
+\o 
+\o 
+\o 
+\o 
+\o *Info*    Client has finished evaluating ... 
+\o 
+\o 
+\o *Info*    Run complete for Point ID (0 39) on testbench [
+\o           VEDANT:6TSRAM:1 ].
+\o 
+\o 
+\o 
+\o 
+\o 
+\o *Info*    Monte Carlo Simulation completed successfully...
+\o 
+\o 
+\o 
+\o 
+\o 
+\o *Info*    Run start for Point ID (0 4) on testbench [ VEDANT:6TSRAM:1
+\o           ].
+\o 
+\o Resetting statistical vars
+\o 
+\o *Info*    Setting parameter values ...
+\o 
+\o 
+\o *Info*    Netlist Directory =
+\o           /home/Vedant_int/simulation/VEDANT/6TSRAM/adexl/results/data/MonteCarlo.0/4/VEDANT:6TSRAM:1/groupRunDataDir/netlist
+\o 
+\o 
+\o *Info*    Data Directory    =
+\o           /home/Vedant_int/simulation/VEDANT/6TSRAM/adexl/results/data/MonteCarlo.0/4/VEDANT:6TSRAM:1/groupRunDataDir
+\o 
+\o 
+\o *Info*    Creating Netlist for Point ID (0 4)
+\o 
+\o generate netlist...
+\o Begin Incremental Netlisting Jun  3 21:50:16 2026
+\o End netlisting Jun  3 21:50:16 2026
+\o 
+\o 	The netlist is up to date.
+\o 	Time taken to compare the design with netlist:   0.0s
+\o       ...successful.
+\o compose simulator input file...
+\o       ...successful.
+\o 
+\o *Info*    Running simulation on testbench [ VEDANT:6TSRAM:1 ] for
+\o           Point ID (0 4).
+\o 
+\o *Info*    Spectre controlMode is set "batch" due to monte carlo run.
+\o 
+\o Delete psf data in /home/Vedant_int/simulation/VEDANT/6TSRAM/adexl/results/data/MonteCarlo.0/4/VEDANT:6TSRAM:1/groupRunDataDir/psf.
+\o generate netlist...
+\o Begin Incremental Netlisting Jun  3 21:50:16 2026
+\o End netlisting Jun  3 21:50:16 2026
+\o 
+\o 	The netlist is up to date.
+\o 	Time taken to compare the design with netlist:   0.0s
+\o       ...successful.
+\o compose simulator input file...
+\o       ...successful.
+\o start simulator if needed...
+\o       ...successful.
+\o simulate...
+\o To view the simulator output, right-click on the test name, result 
+\o name, or any value in the "Results" tab of the Outputs section and 
+\o choose "Output Log" menu option.
+\o INFO (ADE-3071): Simulation completed successfully.
+\o reading simulation data...
+\o       ...successful.
+\o *Info*    Client has finished evaluating ... 
+\o 
+\o 
+\o *Info*    Run complete for Point ID (0 4) on testbench [
+\o           VEDANT:6TSRAM:1 ].
+\o 
+\o 
+\o 
+\o 
+\o 
+\o *Info*    Client has finished evaluating ... 
+\o 
+\o 
+\o *Info*    Run complete for Point ID (0 8) on testbench [
+\o           VEDANT:6TSRAM:1 ].
+\o 
+\o 
+\o 
+\o 
+\o 
+\o *Info*    Client has finished evaluating ... 
+\o 
+\o 
+\o *Info*    Run complete for Point ID (0 12) on testbench [
+\o           VEDANT:6TSRAM:1 ].
+\o 
+\o 
+\o 
+\o 
+\o 
+\o *Info*    Client has finished evaluating ... 
+\o 
+\o 
+\o *Info*    Run complete for Point ID (0 16) on testbench [
+\o           VEDANT:6TSRAM:1 ].
+\o 
+\o 
+\o 
+\o 
+\o 
+\o *Info*    Client has finished evaluating ... 
+\o 
+\o 
+\o *Info*    Run complete for Point ID (0 20) on testbench [
+\o           VEDANT:6TSRAM:1 ].
+\o 
+\o 
+\o 
+\o 
+\o 
+\o *Info*    Client has finished evaluating ... 
+\o 
+\o 
+\o *Info*    Run complete for Point ID (0 24) on testbench [
+\o           VEDANT:6TSRAM:1 ].
+\o 
+\o 
+\o 
+\o 
+\o 
+\o *Info*    Client has finished evaluating ... 
+\o 
+\o 
+\o *Info*    Run complete for Point ID (0 28) on testbench [
+\o           VEDANT:6TSRAM:1 ].
+\o 
+\o 
+\o 
+\o 
+\o 
+\o *Info*    Client has finished evaluating ... 
+\o 
+\o 
+\o *Info*    Run complete for Point ID (0 32) on testbench [
+\o           VEDANT:6TSRAM:1 ].
+\o 
+\o 
+\o 
+\o 
+\o 
+\o *Info*    Client has finished evaluating ... 
+\o 
+\o 
+\o *Info*    Run complete for Point ID (0 36) on testbench [
+\o           VEDANT:6TSRAM:1 ].
+\o 
+\o 
+\o 
+\o 
+\o 
+\o *Info*    Client has finished evaluating ... 
+\o 
+\o 
+\o *Info*    Run complete for Point ID (0 40) on testbench [
+\o           VEDANT:6TSRAM:1 ].
+\o 
+\o 
+\o 
+\o 
+\o 
+\o *Info*    Monte Carlo Simulation completed successfully...
+\o Job 0 timed out after no activity in 300 seconds.
+\o Simulation design variables differ from those on the cellView,
+\o they have been saved in the file "/tmp/saved-design-variables2".
+\o To save future changes, copy variables to cellView before exiting.
+\o 
+\o *Info*    Received signal SIGTERM.
+\o 
+\o 

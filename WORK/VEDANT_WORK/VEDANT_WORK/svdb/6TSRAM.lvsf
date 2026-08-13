@@ -1,0 +1,23 @@
+# Automagically generated file: Please do not edit!
+lvs_LvsOutFile RUNDIR /home/Vedant_int/Desktop/VEDANT_WORK
+lvs_LvsfVersion 4
+lvs_LvsInputSummary {0 0 0}
+lvs_LvsComparisonSummary {3 1 0 0}
+lvs_SourceCase YES
+lvs_LayoutCase NO
+lvs_PowerName VDD
+lvs_PowerName vdd
+lvs_PowerName VCC
+lvs_PowerName vcc
+lvs_PowerName VDD!
+lvs_PowerName vdd!
+lvs_PowerName VCC!
+lvs_PowerName vcc!
+lvs_PowerName AVDD
+lvs_PowerName DVDD
+lvs_GroundName gnd!
+lvs_GroundName gnd
+lvs_LvsOutFile LVS_REPORT 6TSRAM.lvs.report
+lvs_LvsOutFile SOURCE_NETLIST 6TSRAM.src.net
+lvs_LvsOutFile RULES_FILE _RCX_4LM_new.header(copy)_
+lvs_LvsRunTimes 1781273360 1781273360
